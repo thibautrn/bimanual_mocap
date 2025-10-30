@@ -1,0 +1,47 @@
+# Configures how a robot calculates possible positions and movements of its joints
+# to reach a desired point. It specifies which mathematical methods (solvers) to use,
+# how long to try, and how precise these calculations should be.
+rightarm: # Name of the joint group from the SRDF file
+  kinematics_solver: kdl_kinematics_plugin/KDLKinematicsPlugin # Plugin used for solving kinematics
+  kinematics_solver_search_resolution: 0.005 #  Granularity (in radians for revolute joints) used by the solver when searching for a solution.
+  kinematics_solver_timeout: 0.05 # Maximum time the solver will spend trying to find a solution for each planning attempt
+  position_only_ik: false # If true, the solver will only consider the position of the end effector, not its orientation
+  kinematics_solver_attempts: 5 # How many times the solver will try to find a solution
+
+# Typically we don't need a complex kinematics solver for the gripper. This is for demonstration purposes only.
+leftarm:
+  kinematics_solver: pick_ik/PickIkPlugin
+  kinematics_solver_search_resolution: 0.005
+  kinematics_solver_timeout: 0.02
+  kinematics_solver_attempts: 10
+  position_only_ik: true
+  mode: local
+  position_threshold: 0.001
+  orientation_threshold: 0.01
+  position_scale: 1.0
+  rotation_scale: 0.0
+  minimal_displacement_weight: 0.05
+  cost_threshold: 0.0001
+  approximate_solution_position_threshold: 0.005
+  stop_optimization_on_valid_solution: true
+  gd_step_size: 0.0001
+
+
+
+left_arm_w1:
+  kinematics_solver: pick_ik/PickIkPlugin
+  kinematics_solver_search_resolution: 0.005
+  kinematics_solver_timeout: 0.05
+  mode: local 
+  position_only_ik: true
+  kinematics_solver_attempts: 5
+  kinematics_solver_ik_links:
+    - leftarm_wrist_2_link    # matches your SRDF tip
+
+bimanual:
+  {}
+  # kinematics_solver: lma_kinematics_plugin/LMAKinematicsPlugin
+  # kinematics_solver_search_resolution: 0.005
+  # kinematics_solver_timeout: 0.05
+  # position_only_ik: false
+  # kinematics_solver_attempts: 5

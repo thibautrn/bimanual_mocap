@@ -1,0 +1,39 @@
+[0.034s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_moveit_config': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_moveit_config -- -j6 -l6
+[4.881s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_moveit_config' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_moveit_config -- -j6 -l6
+[4.890s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_moveit_config': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_moveit_config
+[4.931s] -- Install configuration: ""
+[4.931s] -- Execute custom install script
+[4.931s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/bimanualrobot.srdf
+[4.932s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/gz_pid.yaml
+[4.932s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/initial_positions.yaml
+[4.932s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/joint_limits.yaml
+[4.933s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/kinematics.yaml
+[4.933s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/moveit_controllers.yaml
+[4.933s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/pilz_cartesian_limits.yaml
+[4.934s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/ros2_controllers.yaml
+[4.935s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/ros2_controllers_template.yaml
+[4.940s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/servo_params.yaml
+[4.940s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/ompl_planning.yaml
+[4.940s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/pilz_industrial_motion_planner_planning.yaml
+[4.940s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/stomp_planning.yaml
+[4.940s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/launch/bringup_with_servo.launch.py
+[4.941s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/launch/load_ros2_controllers.launch.py
+[4.941s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/launch/move_group.launch.py
+[4.941s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/rviz/move_group.rviz
+[4.942s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/.setup_assistant
+[4.942s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_moveit_config
+[4.942s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_moveit_config
+[4.943s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/environment/ament_prefix_path.sh
+[4.947s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/environment/ament_prefix_path.dsv
+[4.947s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/environment/path.sh
+[4.947s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/environment/path.dsv
+[4.947s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/local_setup.bash
+[4.947s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/local_setup.sh
+[4.947s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/local_setup.zsh
+[4.947s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/local_setup.dsv
+[4.948s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/package.dsv
+[4.976s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/ament_index/resource_index/packages/bimanualrobot_moveit_config
+[4.976s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/cmake/bimanualrobot_moveit_configConfig.cmake
+[4.976s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/cmake/bimanualrobot_moveit_configConfig-version.cmake
+[4.976s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/package.xml
+[5.021s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_moveit_config' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_moveit_config

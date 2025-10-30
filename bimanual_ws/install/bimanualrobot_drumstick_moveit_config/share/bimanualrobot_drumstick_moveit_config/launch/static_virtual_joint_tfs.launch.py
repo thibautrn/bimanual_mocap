@@ -1,0 +1,1 @@
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config/launch/static_virtual_joint_tfs.launch.py

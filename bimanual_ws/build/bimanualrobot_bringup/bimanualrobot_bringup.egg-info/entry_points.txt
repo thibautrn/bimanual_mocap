@@ -1,0 +1,4 @@
+[console_scripts]
+hardware_checker = bimanualrobot_bringup.hardware_checker:main
+joint_state_checker = bimanualrobot_bringup.joint_state_checker:main
+joint_trajectory_executor = bimanualrobot_bringup.joint_trajectory_executor:main

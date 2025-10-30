@@ -1,0 +1,35 @@
+# This file configures the controller management for MoveIt, specifying which controllers are available,
+# the joints each controller handles, and the type of interface (e.g. FollowJointTrajectory).
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager # Specifies the controller manager to use.
+
+# Define the controllers configured using the ROS 2 Control framework.
+moveit_simple_controller_manager:
+  controller_names:
+    - left_arm_controller # Name of the controller for the robotic arm.
+    - right_arm_controller # Name of the controller for the gripper
+
+  # Configuration for the left_arm_controller.
+  left_arm_controller:
+    action_ns: follow_joint_trajectory # ROS action namespace to which MoveIt sends trajectory commands.
+    type: FollowJointTrajectory # Type of the controller interface; follows a joint trajectory.
+    default: true # This controller is the default for the joints listed below.
+    joints: # List of joints that the left_arm_controller manages.
+      - leftarm_shoulder_pan_joint
+      - leftarm_shoulder_lift_joint
+      - leftarm_elbow_joint
+      - leftarm_wrist_1_joint
+      - leftarm_wrist_2_joint
+      - leftarm_wrist_3_joint
+
+  # Configuration for the right_arm_controller.
+  right_arm_controller:
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - rightarm_shoulder_pan_joint
+      - rightarm_shoulder_lift_joint
+      - rightarm_elbow_joint
+      - rightarm_wrist_1_joint
+      - rightarm_wrist_2_joint
+      - rightarm_wrist_3_joint

@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: bimanualrobot_description
+    relative_path: urdf/robots/bimanualrobot.urdf.xacro
+  srdf:
+    relative_path: config/bimanualrobot.srdf
+  package_settings:
+    author_name: Mohamed El Mistiri
+    author_email: melmisti@asu.edu
+    generated_timestamp: 1755994282
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

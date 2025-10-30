@@ -1,0 +1,24 @@
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/arm_loop_controller.py
+-- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_bimanual_drumsticks.py
+-- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm.py
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/src/.keep
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_bimanual_drumsticks.py
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/arm_loop_controller.py
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm.py
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_system_tests
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_system_tests
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/environment/ament_prefix_path.sh
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/environment/ament_prefix_path.dsv
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/environment/path.sh
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/environment/path.dsv
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/local_setup.bash
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/local_setup.sh
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/local_setup.zsh
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/local_setup.dsv
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/package.dsv
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/ament_index/resource_index/packages/bimanualrobot_system_tests
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/cmake/bimanualrobot_system_testsConfig.cmake
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/cmake/bimanualrobot_system_testsConfig-version.cmake
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/package.xml

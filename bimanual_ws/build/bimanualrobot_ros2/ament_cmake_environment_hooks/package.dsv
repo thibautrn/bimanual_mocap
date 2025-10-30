@@ -1,0 +1,4 @@
+source;share/bimanualrobot_ros2/local_setup.bash
+source;share/bimanualrobot_ros2/local_setup.dsv
+source;share/bimanualrobot_ros2/local_setup.sh
+source;share/bimanualrobot_ros2/local_setup.zsh

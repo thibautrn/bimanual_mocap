@@ -1,0 +1,15 @@
+# Default initial positions for bimanualrobot's ros2_control fake system
+
+initial_positions:
+  leftarm_elbow_joint: 0
+  leftarm_shoulder_lift_joint: 0
+  leftarm_shoulder_pan_joint: 0
+  leftarm_wrist_1_joint: 0
+  leftarm_wrist_2_joint: 0
+  leftarm_wrist_3_joint: 0
+  rightarm_elbow_joint: 0
+  rightarm_shoulder_lift_joint: 0
+  rightarm_shoulder_pan_joint: 0
+  rightarm_wrist_1_joint: 0
+  rightarm_wrist_2_joint: 0
+  rightarm_wrist_3_joint: 0

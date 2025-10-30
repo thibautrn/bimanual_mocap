@@ -1,0 +1,32 @@
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/bimanualrobot.srdf
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/initial_positions.yaml
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/joint_limits.yaml
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/kinematics.yaml
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/moveit_controllers.yaml
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/pilz_cartesian_limits.yaml
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/ros2_controllers.yaml
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/ros2_controllers_template.yaml
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/ompl_planning.yaml
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/pilz_industrial_motion_planner_planning.yaml
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/stomp_planning.yaml
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/launch/load_ros2_controllers.launch.py
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/launch/move_group.launch.py
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/rviz/move_group.rviz
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/.setup_assistant
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_moveit_config
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_moveit_config
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/environment/ament_prefix_path.sh
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/environment/ament_prefix_path.dsv
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/environment/path.sh
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/environment/path.dsv
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/local_setup.bash
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/local_setup.sh
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/local_setup.zsh
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/local_setup.dsv
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/package.dsv
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/ament_index/resource_index/packages/bimanualrobot_moveit_config
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/cmake/bimanualrobot_moveit_configConfig.cmake
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/cmake/bimanualrobot_moveit_configConfig-version.cmake
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/package.xml

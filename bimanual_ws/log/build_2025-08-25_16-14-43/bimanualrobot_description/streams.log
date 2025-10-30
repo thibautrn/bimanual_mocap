@@ -1,0 +1,84 @@
+[0.015s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description
+[0.051s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.295s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.295s] -- Found urdf_tutorial: 1.1.0 (/opt/ros/jazzy/share/urdf_tutorial/cmake)
+[0.295s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.476s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.476s] -- Configured 'flake8' exclude dirs and/or files: 
+[0.477s] -- Added test 'lint_cmake' to check CMake code style
+[0.477s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.479s] -- Added test 'xmllint' to check XML markup files
+[0.480s] -- Configuring done (0.5s)
+[0.482s] -- Generating done (0.0s)
+[0.483s] -- Build files have been written to: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_description
+[0.488s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description
+[0.488s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_description -- -j2 -l2
+[0.520s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_description -- -j2 -l2
+[0.528s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_description
+[0.534s] -- Install configuration: ""
+[0.535s] -- Execute custom install script
+[0.535s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/launch/robot_state_publisher.launch.py
+[0.542s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/collision/drumstick.stl
+[0.547s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/collision/drumstick_tip.stl
+[0.552s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/collision/ee_link.stl
+[0.756s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/collision/finger.dae
+[0.765s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/collision/finger.stl
+[0.771s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/collision/link3.dae
+[0.807s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/collision/link3.stl
+[0.813s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/collision/link4.dae
+[0.821s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/collision/link4.stl
+[0.832s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/collision/link6.dae
+[0.839s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/collision/link6.stl
+[0.844s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/collision/stand.dae
+[0.849s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/collision/stand.stl
+[0.855s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/drumstick.stl
+[0.860s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/drumstick_tip.stl
+[0.864s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/ee_link.stl
+[0.870s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/finger.dae
+[0.876s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/finger.stl
+[0.881s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/link_1.dae
+[0.887s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/link_1.stl
+[0.895s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/link_2.dae
+[0.901s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/link_2.stl
+[0.906s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/link_3.dae
+[0.912s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/link_3.stl
+[0.917s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/link_4.dae
+[0.922s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/link_4.stl
+[0.928s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/link_5.dae
+[0.936s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/link_5.stl
+[0.942s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/link_6.dae
+[0.947s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/link_6.stl
+[0.952s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/stand.dae
+[0.957s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/stand.stl
+[0.962s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/stand_low.dae
+[0.967s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/meshes/visual/stand_low.stl
+[0.972s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/control/arm_ros2_controller.urdf.xacro
+[0.977s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/control/bimanualrobot_ros2_controller.urdf.xacro
+[0.981s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/control/common.xacro
+[0.987s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/control/gazebo_sim_ros2_control.urdf.xacro
+[0.992s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/control/transmission.xacro
+[0.997s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/mech/drum.xacro
+[1.002s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/mech/drumstick.xacro
+[1.007s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/mech/fingers.xacro
+[1.012s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/mech/manipulator_h.xacro
+[1.017s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/mech/manipulator_h_arm.xacro
+[1.022s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/mech/materials.xacro
+[1.027s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/mech/stand.xacro
+[1.035s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/robots/bimanual_robot_gazebo.xacro
+[1.126s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/robots/bimanualrobot.urdf.xacro
+[1.133s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/rviz/bimanualrobot_description.rviz
+[1.137s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_description
+[1.142s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_description
+[1.147s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/environment/ament_prefix_path.sh
+[1.151s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/environment/ament_prefix_path.dsv
+[1.156s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/environment/path.sh
+[1.161s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/environment/path.dsv
+[1.166s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/local_setup.bash
+[1.171s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/local_setup.sh
+[1.175s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/local_setup.zsh
+[1.181s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/local_setup.dsv
+[1.185s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/package.dsv
+[1.190s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/ament_index/resource_index/packages/bimanualrobot_description
+[1.194s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/cmake/bimanualrobot_descriptionConfig.cmake
+[1.199s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/cmake/bimanualrobot_descriptionConfig-version.cmake
+[1.204s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/package.xml

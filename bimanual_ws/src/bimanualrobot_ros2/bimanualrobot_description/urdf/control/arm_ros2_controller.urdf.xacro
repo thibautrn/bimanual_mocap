@@ -1,0 +1,201 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <!--
+    Macro: dxl_arm_hardware
+    Creates a full ros2_control hardware component for a single arm (single serial port).
+    Params:
+      arm_name                - unique name for this arm/system (e.g., left_arm)
+      port_name               - serial port for this arm (e.g., /dev/ttyUSB0)
+      baud_rate               - serial baud (e.g., 1000000)
+      num_joints              - number of joints for this arm (e.g., 6)
+      joint_names             - space-separated list of joint names (size == num_joints)
+      ids                     - space-separated list of Dynamixel IDs (size == num_joints)
+      tj_matrix_csv           - CSV (row-major) num_joints x num_joints mapping transmissions->joints
+      jt_matrix_csv           - CSV (row-major) num_joints x num_joints mapping joints->transmissions
+      dxl_model_folder        - relative folder inside the dynamixel_hardware_interface share dir
+      disable_torque_at_init  - true/false
+      error_timeout_ms        - timeout for comm errors (default 500)
+    Notes:
+      - For 1:1 mapping, tj_matrix_csv and jt_matrix_csv can both be identity matrices.
+      - This plugin requires gpios defining each DXL “transmission” with state/command interfaces.
+  -->
+  <xacro:macro name="dxl_arm_hardware" params="
+      arm_name
+      port_name
+      baud_rate
+      num_joints
+      joint_names
+      ids
+      tj_matrix_csv
+      jt_matrix_csv
+      dxl_model_folder:='/param/dxl_model'
+      disable_torque_at_init:='true'
+      error_timeout_ms:='500'">
+
+    <!-- split lists -->
+    <xacro:property name="joint_list" value="${joint_names.split(' ')}"/>
+    <xacro:property name="id_list"    value="${ids.split(' ')}"/>
+
+    <ros2_control name="${arm_name}_system" type="system">
+      <hardware>
+        <plugin>dynamixel_hardware_interface/DynamixelHardware</plugin>
+
+        <param name="number_of_joints">${num_joints}</param>
+        <param name="number_of_transmissions">${num_joints}</param>
+
+        <!-- Single-port per plugin instance -->
+        <param name="port_name">${port_name}</param>
+        <param name="baud_rate">${baud_rate}</param>
+
+        <!-- Required by the plugin (path is resolved relative to package share) -->
+        <param name="dynamixel_model_folder">${dxl_model_folder}</param>
+
+        <!-- Optional behavior/safety -->
+        <param name="disable_torque_at_init">${disable_torque_at_init}</param>
+        <param name="error_timeout_ms">${error_timeout_ms}</param>
+
+        <!-- Required matrices (CSV row-major) -->
+        <param name="transmission_to_joint_matrix">${tj_matrix_csv}</param>
+        <param name="joint_to_transmission_matrix">${jt_matrix_csv}</param>
+      </hardware>
+
+      <!-- Joints for this arm: position command + position/velocity states -->
+      <joint name="${joint_list[0]}">
+        <command_interface name="position"/>
+        <command_interface name="effort"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="${joint_list[1]}">
+        <command_interface name="position"/>
+        <command_interface name="effort"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="${joint_list[2]}">
+        <command_interface name="position"/>
+        <command_interface name="effort"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="${joint_list[3]}">
+        <command_interface name="position"/>
+        <command_interface name="effort"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="${joint_list[4]}">
+        <command_interface name="position"/>
+        <command_interface name="effort"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="${joint_list[5]}">
+        <command_interface name="position"/>
+        <command_interface name="effort"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+
+      <!-- One GPIO “DXL” per transmission/ID with basic interfaces -->
+      <gpio name="${joint_list[0]}_dxl">
+        <param name="ID">${id_list[0]}</param>
+        <param name="type">dxl</param>
+        <state_interface name="Present Position"/>
+        <state_interface name="Present Velocity"/>
+        <state_interface name="Hardware Error Status"/>
+        <!-- <state_interface name="Error Code"/> -->
+        <command_interface name="Goal Position"/>
+        <command_interface name="Goal Velocity"/>
+        <!-- <command_interface name="Goal Current"/> -->
+        <param name="Torque Enable">1</param>
+        <param name="Operating Mode">3</param>
+        <param name="Position P Gain">10</param>
+        <param name="Return Delay Time">0</param>
+      </gpio>
+      <gpio name="${joint_list[1]}_dxl">
+        <param name="ID">${id_list[1]}</param>
+        <param name="type">dxl</param>
+        <state_interface name="Present Position"/>
+        <state_interface name="Present Velocity"/>
+        <state_interface name="Hardware Error Status"/>
+        <!-- <state_interface name="Error Code"/> -->
+        <command_interface name="Goal Position"/>
+        <command_interface name="Goal Velocity"/>
+        <!-- <command_interface name="Goal Current"/> -->
+        <param name="Torque Enable">1</param>
+        <param name="Operating Mode">3</param>
+        <param name="Position P Gain">10</param>
+        <param name="Return Delay Time">0</param>
+      </gpio>
+      <gpio name="${joint_list[2]}_dxl">
+        <param name="ID">${id_list[2]}</param>
+        <param name="type">dxl</param>
+        <state_interface name="Present Position"/>
+        <state_interface name="Present Velocity"/>
+        <state_interface name="Hardware Error Status"/>
+        <!-- <state_interface name="Error Code"/> -->
+        <command_interface name="Goal Position"/>
+        <command_interface name="Goal Velocity"/>
+        <!-- <command_interface name="Goal Current"/> -->
+        <param name="Torque Enable">1</param>
+        <param name="Operating Mode">3</param>
+        <param name="Position P Gain">10</param>
+        <param name="Return Delay Time">0</param>
+      </gpio>
+      <gpio name="${joint_list[3]}_dxl">
+        <param name="ID">${id_list[3]}</param>
+        <param name="type">dxl</param>
+        <state_interface name="Present Position"/>
+        <state_interface name="Present Velocity"/>
+        <state_interface name="Hardware Error Status"/>
+        <!-- <state_interface name="Error Code"/> -->
+        <command_interface name="Goal Position"/>
+        <command_interface name="Goal Velocity"/>
+        <!-- <command_interface name="Goal Current"/> -->
+        <param name="Torque Enable">1</param>
+        <param name="Operating Mode">3</param>
+        <param name="Position P Gain">10</param>
+        <param name="Return Delay Time">0</param>
+      </gpio>
+      <gpio name="${joint_list[4]}_dxl">
+        <param name="ID">${id_list[4]}</param>
+        <param name="type">dxl</param>
+        <state_interface name="Present Position"/>
+        <state_interface name="Present Velocity"/>
+        <state_interface name="Hardware Error Status"/>
+        <!-- <state_interface name="Error Code"/> -->
+        <command_interface name="Goal Position"/>
+        <command_interface name="Goal Velocity"/>
+        <!-- <command_interface name="Goal Current"/> -->
+        <param name="Torque Enable">1</param>
+        <param name="Operating Mode">3</param>
+        <param name="Position P Gain">10</param>
+        <param name="Return Delay Time">0</param>
+      </gpio>
+      <gpio name="${joint_list[5]}_dxl">
+        <param name="ID">${id_list[5]}</param>
+        <param name="type">dxl</param>
+        <state_interface name="Present Position"/>
+        <state_interface name="Present Velocity"/>
+        <state_interface name="Hardware Error Status"/>
+        <!-- <state_interface name="Error Code"/> -->
+        <command_interface name="Goal Position"/>
+        <command_interface name="Goal Velocity"/>
+        <!-- <command_interface name="Goal Current"/> -->
+        <param name="Torque Enable">1</param>
+        <param name="Operating Mode">3</param>
+        <param name="Position P Gain">10</param>
+        <param name="Return Delay Time">0</param>
+      </gpio>
+      
+    </ros2_control>
+  </xacro:macro>
+</robot>

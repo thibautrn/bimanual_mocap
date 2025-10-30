@@ -1,0 +1,52 @@
+[0.039s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests -- -j6 -l6
+[0.105s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.321s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.356s] -- Found rclcpp: 28.1.11 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.398s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.421s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.455s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.472s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.600s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.604s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.692s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.789s] -- Found rclcpp_action: 28.1.11 (/opt/ros/jazzy/share/rclcpp_action/cmake)
+[0.847s] -- Found control_msgs: 5.5.0 (/opt/ros/jazzy/share/control_msgs/cmake)
+[0.999s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.143s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.143s] -- Configured 'flake8' exclude dirs and/or files: 
+[1.143s] -- Added test 'lint_cmake' to check CMake code style
+[1.143s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.143s] -- Added test 'xmllint' to check XML markup files
+[1.144s] -- Configuring done (1.1s)
+[1.151s] -- Generating done (0.0s)
+[1.157s] -- Build files have been written to: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests
+[1.226s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests -- -j6 -l6
+[1.229s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests
+[1.262s] -- Install configuration: ""
+[1.266s] -- Execute custom install script
+[1.268s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/arm_loop_controller.py
+[1.268s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_bimanual_drumsticks.py
+[1.275s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm.py
+[1.275s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm2.py
+[1.275s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm3.py
+[1.275s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm4.py
+[1.275s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm5.py
+[1.279s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm6_anal.py
+[1.286s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/udping.py
+[1.287s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/src/.keep
+[1.288s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_bimanual_drumsticks.py
+[1.289s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/arm_loop_controller.py
+[1.294s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm.py
+[1.296s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm2.py
+[1.296s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm3.py
+[1.296s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm4.py
+[1.296s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm5.py
+[1.296s] [31mCMake Error at ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:204 (message):
+[1.296s]   ament_cmake_symlink_install_programs() can't find
+[1.296s]   '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/move_right_arm6.py'
+[1.296s] Call Stack (most recent call first):
+[1.296s]   ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:317 (ament_cmake_symlink_install_programs)
+[1.296s]   cmake_install.cmake:46 (include)
+[1.296s] 
+[1.296s] [0m
+[1.301s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests

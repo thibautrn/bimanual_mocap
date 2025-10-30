@@ -1,0 +1,28 @@
+[0.035s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_gazebo -- -j6 -l6
+[4.878s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_gazebo -- -j6 -l6
+[4.883s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_gazebo
+[4.901s] -- Install configuration: ""
+[4.902s] -- Execute custom install script
+[4.905s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo//config/ros_gz_bridge.yaml
+[4.906s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo//launch/bimanualrobot.gazebo.launch.py
+[4.907s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo//models/drum_cylinder/model.config
+[4.909s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo//models/drum_cylinder/model.sdf
+[4.911s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo//worlds/empty.world
+[4.911s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo//scripts/spawn_drum.py
+[4.911s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/lib/bimanualrobot_gazebo//spawn_drum.py
+[4.912s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_gazebo
+[4.912s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_gazebo
+[4.917s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/environment/ament_prefix_path.sh
+[4.917s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/environment/ament_prefix_path.dsv
+[4.917s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/environment/path.sh
+[4.917s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/environment/path.dsv
+[4.919s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/local_setup.bash
+[4.920s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/local_setup.sh
+[4.921s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/local_setup.zsh
+[4.921s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/local_setup.dsv
+[4.921s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/package.dsv
+[4.938s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/ament_index/resource_index/packages/bimanualrobot_gazebo
+[4.939s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/cmake/bimanualrobot_gazeboConfig.cmake
+[4.944s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/cmake/bimanualrobot_gazeboConfig-version.cmake
+[4.944s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/package.xml
+[4.996s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_gazebo

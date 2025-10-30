@@ -1,0 +1,126 @@
+controller_manager:
+  ros__parameters:
+    use_sim_time: False
+    update_rate: 40
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    left_arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    right_arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+# Hardware plugins for each arm - separate configurations for better isolation
+left_arm_dynamixel_hardware:
+  ros__parameters:
+    usb_port: "/dev/ttyUSB1" # USB port for left arm
+    baud_rate: 1000000
+    joints:
+      - leftarm_shoulder_pan_joint
+      - leftarm_shoulder_lift_joint
+      - leftarm_elbow_joint
+      - leftarm_wrist_1_joint
+      - leftarm_wrist_2_joint
+      - leftarm_wrist_3_joint
+    # Joint-specific parameters, including model
+    leftarm_shoulder_pan_joint:
+      id: 1
+      model: "H54-200-S500-R"
+    leftarm_shoulder_lift_joint:
+      id: 2
+      model: "H54-200-S500-R"
+    leftarm_elbow_joint:
+      id: 3
+      model: "H54-100-S500-R"
+    leftarm_wrist_1_joint:
+      id: 4
+      model: "H54-100-S500-R"
+    leftarm_wrist_2_joint:
+      id: 5
+      model: "H42-20-S300-R"
+    leftarm_wrist_3_joint:
+      id: 6
+      model: "H42-20-S300-R"
+
+right_arm_dynamixel_hardware:
+  ros__parameters:
+    usb_port: "/dev/ttyUSB0" # USB port for right arm
+    baud_rate: 1000000
+    joints:
+      - rightarm_shoulder_pan_joint
+      - rightarm_shoulder_lift_joint
+      - rightarm_elbow_joint
+      - rightarm_wrist_1_joint
+      - rightarm_wrist_2_joint
+      - rightarm_wrist_3_joint
+    # Joint-specific parameters, with corrected IDs
+    rightarm_shoulder_pan_joint:
+      id: 1
+      model: "H54-200-S500-R"
+    rightarm_shoulder_lift_joint:
+      id: 2
+      model: "H54-200-S500-R"
+    rightarm_elbow_joint:
+      id: 3
+      model: "H54-100-S500-R"
+    rightarm_wrist_1_joint:
+      id: 4
+      model: "H54-100-S500-R"
+    rightarm_wrist_2_joint:
+      id: 5
+      model: "H42-20-S300-R"
+    rightarm_wrist_3_joint:
+      id: 6
+      model: "H42-20-S300-R"
+
+# The controller configurations below are loaded separately by the controller_manager
+# and do not need to be nested under the dynamixel_hardware key.
+left_arm_controller:
+  ros__parameters:
+    joints:
+      - leftarm_shoulder_pan_joint
+      - leftarm_shoulder_lift_joint
+      - leftarm_elbow_joint
+      - leftarm_wrist_1_joint
+      - leftarm_wrist_2_joint
+      - leftarm_wrist_3_joint
+    command_interfaces: [position]
+    state_interfaces: [position, velocity]
+    allow_partial_joints_goal: true
+    interpolate_from_desired_state: true
+
+    # Gentler, more damped gains (tune live upward if it feels too soft)
+    pid_gains:
+      leftarm_shoulder_pan_joint:   {p: 1.0, d: 5.0,  i: 0.0, i_clamp: 0.5}
+      leftarm_shoulder_lift_joint:  {p: 1.0, d: 5.0,  i: 0.0, i_clamp: 0.5}
+      leftarm_elbow_joint:          {p: 1.0, d: 5.0,  i: 0.0, i_clamp: 0.5}
+      leftarm_wrist_1_joint:        {p: 5.0, d: 4.0,  i: 0.0, i_clamp: 0.3}
+      leftarm_wrist_2_joint:        {p: 5.0, d: 3.0,  i: 0.0, i_clamp: 0.3}
+      leftarm_wrist_3_joint:        {p: 5.0, d: 2.0,  i: 0.0, i_clamp: 0.2}
+
+right_arm_controller:
+  ros__parameters:
+    joints:
+      - rightarm_shoulder_pan_joint
+      - rightarm_shoulder_lift_joint
+      - rightarm_elbow_joint
+      - rightarm_wrist_1_joint
+      - rightarm_wrist_2_joint
+      - rightarm_wrist_3_joint
+    command_interfaces: [position]
+    state_interfaces: [position, velocity]
+    allow_partial_joints_goal: true
+    interpolate_from_desired_state: true
+    # Gentler, more damped gains (tune live upward if it feels too soft)
+    pid_gains:
+      rightarm_shoulder_pan_joint:   {p: 0.10, d: 1.0,  i: 0.0, i_clamp: 0.5}
+      rightarm_shoulder_lift_joint:  {p: 0.10, d: 1.0,  i: 0.0, i_clamp: 0.5}
+      rightarm_elbow_joint:          {p: 0.10, d: 1.0,  i: 0.0, i_clamp: 0.5}
+      rightarm_wrist_1_joint:        {p: 5.0, d: 4.0,  i: 0.0, i_clamp: 0.3}
+      rightarm_wrist_2_joint:        {p: 5.0, d: 3.0,  i: 0.0, i_clamp: 0.3}
+      rightarm_wrist_3_joint:        {p: 5.0, d: 2.0,  i: 0.0, i_clamp: 0.2}
+
+    constraints:
+      stopped_velocity_tolerance: 0.01

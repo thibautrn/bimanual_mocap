@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="drum_cylinder">
+    <static>true</static>
+    <link name="drum_link">
+      <visual name="drum_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.0775</radius>
+            <length>0.045</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.6 0.3 0.1 1</ambient>
+          <diffuse>0.6 0.3 0.1 1</diffuse>
+        </material>
+      </visual>
+      <collision name="drum_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.0775</radius>
+            <length>0.045</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

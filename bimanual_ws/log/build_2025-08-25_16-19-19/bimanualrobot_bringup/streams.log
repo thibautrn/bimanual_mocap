@@ -1,0 +1,35 @@
+[0.555s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup': AMENT_PREFIX_PATH=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/build --no-deps symlink_data
+[0.757s] running develop
+[0.869s] running egg_info
+[0.870s] creating bimanualrobot_bringup.egg-info
+[0.879s] writing bimanualrobot_bringup.egg-info/PKG-INFO
+[0.879s] writing dependency_links to bimanualrobot_bringup.egg-info/dependency_links.txt
+[0.879s] writing entry points to bimanualrobot_bringup.egg-info/entry_points.txt
+[0.879s] writing requirements to bimanualrobot_bringup.egg-info/requires.txt
+[0.879s] writing top-level names to bimanualrobot_bringup.egg-info/top_level.txt
+[0.879s] writing manifest file 'bimanualrobot_bringup.egg-info/SOURCES.txt'
+[0.901s] reading manifest file 'bimanualrobot_bringup.egg-info/SOURCES.txt'
+[0.901s] writing manifest file 'bimanualrobot_bringup.egg-info/SOURCES.txt'
+[0.911s] running build_ext
+[0.911s] Creating /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/python3.12/site-packages/bimanualrobot-bringup.egg-link (link to .)
+[0.912s] Installing hardware_checker script to /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/bimanualrobot_bringup
+[0.912s] Installing joint_state_checker script to /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/bimanualrobot_bringup
+[0.912s] Installing joint_trajectory_executor script to /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/bimanualrobot_bringup
+[0.912s] 
+[0.912s] Installed /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup
+[0.912s] running symlink_data
+[0.912s] creating /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/ament_index
+[0.912s] creating /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/ament_index/resource_index
+[0.912s] creating /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/ament_index/resource_index/packages
+[0.912s] symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/resource/bimanualrobot_bringup -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/ament_index/resource_index/packages
+[0.912s] symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/package.xml -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup
+[0.912s] creating /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/launch
+[0.912s] symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/launch/hardware_check.launch.py -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/launch
+[0.913s] symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/launch/check_connection.launch.py -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/launch
+[0.913s] symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/launch/bimanualrobot.launch.py -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/launch
+[0.913s] creating /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/config
+[0.913s] symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/config/initial_positions.yaml -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/config
+[0.913s] symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/config/hardware_controller_manager.yaml -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/config
+[0.913s] symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/config/test.yaml -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/config
+[0.913s] symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/config/hardware_controller_manager_old.yaml -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/config
+[0.934s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup' returned '0': AMENT_PREFIX_PATH=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/build --no-deps symlink_data

@@ -1,0 +1,15 @@
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_ros2
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_ros2
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/bimanualrobot_ros2/environment/ament_prefix_path.sh
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/bimanualrobot_ros2/environment/ament_prefix_path.dsv
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/bimanualrobot_ros2/environment/path.sh
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/bimanualrobot_ros2/environment/path.dsv
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/bimanualrobot_ros2/local_setup.bash
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/bimanualrobot_ros2/local_setup.sh
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/bimanualrobot_ros2/local_setup.zsh
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/bimanualrobot_ros2/local_setup.dsv
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/bimanualrobot_ros2/package.dsv
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/ament_index/resource_index/packages/bimanualrobot_ros2
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/bimanualrobot_ros2/cmake/bimanualrobot_ros2Config.cmake
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/bimanualrobot_ros2/cmake/bimanualrobot_ros2Config-version.cmake
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_ros2/share/bimanualrobot_ros2/package.xml
