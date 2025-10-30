@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <model name="pingpong">
+    <static>false</static>
+    <allow_auto_disable>true</allow_auto_disable>
+    <link name="ball_link">
+      <pose>0 0 1 0 0 0</pose>
+      <inertial>
+        <mass>0.0027</mass> <!-- 2.7 g -->
+        <!-- thin shell sphere I = 2/3 m r^2 ; r = 0.02 m -->
+        <inertia>
+          <ixx>7.2e-7</ixx><iyy>7.2e-7</iyy><izz>7.2e-7</izz>
+        </inertia>
+      </inertial>
+
+      <!-- mild air drag so it doesn't look like a steel ball -->
+      <velocity_decay>
+        <linear>0.05</linear>    <!-- raise to 0.1–0.2 for more air resistance -->
+        <angular>0.01</angular>
+      </velocity_decay>
+
+      <visual name="ball_visual">
+        <geometry><sphere><radius>0.02</radius></sphere></geometry>
+        <material><diffuse>1 1 1 1</diffuse></material>
+      </visual>
+
+      <collision name="ball_collision">
+        <geometry><sphere><radius>0.02</radius></sphere></geometry>
+        <surface>
+          <!-- ensure bounce triggers even at low speeds -->
+          <contact>
+            <collide_bitmask>0xFFFF</collide_bitmask>
+          </contact>
+          <bounce>
+            <restitution_coefficient>0.93</restitution_coefficient>
+            <threshold>0.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu><mu2>0.2</mu2>
+              <max_vel>1.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,31 @@
+left_joint_trajectory_executor:
+  ros__parameters:
+    joint_names:
+      - leftarm_shoulder_pan_joint
+      - leftarm_shoulder_lift_joint
+      - leftarm_elbow_joint
+      - leftarm_wrist_1_joint
+      - leftarm_wrist_2_joint
+      - leftarm_wrist_3_joint
+    step_names: [home]
+    home: [-3.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    duration: 3.0
+    epsilon: 0.01
+    action_topic: "/left_arm_controller/follow_joint_trajectory"
+    joint_states_topic: "/joint_states"
+
+right_joint_trajectory_executor:
+  ros__parameters:
+    joint_names:
+      - rightarm_shoulder_pan_joint
+      - rightarm_shoulder_lift_joint
+      - rightarm_elbow_joint
+      - rightarm_wrist_1_joint
+      - rightarm_wrist_2_joint
+      - rightarm_wrist_3_joint
+    step_names: [home]
+    home: [3.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    duration: 3.0
+    epsilon: 0.01
+    action_topic: "/right_arm_controller/follow_joint_trajectory"
+    joint_states_topic: "/joint_states"

@@ -1,0 +1,22 @@
+[0.009s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description
+[0.031s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.176s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.196s] [31mCMake Error at CMakeLists.txt:10 (find_package):
+[0.196s]   By not providing "Findurdf_tutorial.cmake" in CMAKE_MODULE_PATH this
+[0.196s]   project has asked CMake to find a package configuration file provided by
+[0.196s]   "urdf_tutorial", but CMake did not find one.
+[0.196s] 
+[0.196s]   Could not find a package configuration file provided by "urdf_tutorial"
+[0.196s]   with any of the following names:
+[0.196s] 
+[0.196s]     urdf_tutorialConfig.cmake
+[0.196s]     urdf_tutorial-config.cmake
+[0.196s] 
+[0.196s]   Add the installation prefix of "urdf_tutorial" to CMAKE_PREFIX_PATH or set
+[0.196s]   "urdf_tutorial_DIR" to a directory containing one of the above files.  If
+[0.196s]   "urdf_tutorial" provides a separate development package or SDK, be sure it
+[0.197s]   has been installed.
+[0.197s] 
+[0.197s] [0m
+[0.197s] -- Configuring incomplete, errors occurred!
+[0.199s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_description' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description

@@ -1,0 +1,33 @@
+running develop
+running egg_info
+creating bimanualrobot_bringup.egg-info
+writing bimanualrobot_bringup.egg-info/PKG-INFO
+writing dependency_links to bimanualrobot_bringup.egg-info/dependency_links.txt
+writing entry points to bimanualrobot_bringup.egg-info/entry_points.txt
+writing requirements to bimanualrobot_bringup.egg-info/requires.txt
+writing top-level names to bimanualrobot_bringup.egg-info/top_level.txt
+writing manifest file 'bimanualrobot_bringup.egg-info/SOURCES.txt'
+reading manifest file 'bimanualrobot_bringup.egg-info/SOURCES.txt'
+writing manifest file 'bimanualrobot_bringup.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/python3.12/site-packages/bimanualrobot-bringup.egg-link (link to .)
+Installing hardware_checker script to /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/bimanualrobot_bringup
+Installing joint_state_checker script to /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/bimanualrobot_bringup
+Installing joint_trajectory_executor script to /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/bimanualrobot_bringup
+
+Installed /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup
+running symlink_data
+creating /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/ament_index
+creating /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/ament_index/resource_index
+creating /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/ament_index/resource_index/packages
+symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/resource/bimanualrobot_bringup -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/ament_index/resource_index/packages
+symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/package.xml -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup
+creating /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/launch
+symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/launch/hardware_check.launch.py -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/launch
+symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/launch/check_connection.launch.py -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/launch
+symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/launch/bimanualrobot.launch.py -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/launch
+creating /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/config
+symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/config/initial_positions.yaml -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/config
+symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/config/hardware_controller_manager.yaml -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/config
+symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/config/test.yaml -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/config
+symbolically linking /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/config/hardware_controller_manager_old.yaml -> /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/share/bimanualrobot_bringup/config

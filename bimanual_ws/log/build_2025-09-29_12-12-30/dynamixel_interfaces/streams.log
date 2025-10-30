@@ -1,0 +1,296 @@
+[0.023s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces
+[0.334s] -- The C compiler identification is GNU 13.3.0
+[0.524s] -- The CXX compiler identification is GNU 13.3.0
+[0.541s] -- Detecting C compiler ABI info
+[0.616s] -- Detecting C compiler ABI info - done
+[0.626s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.626s] -- Detecting C compile features
+[0.629s] -- Detecting C compile features - done
+[0.633s] -- Detecting CXX compiler ABI info
+[0.712s] -- Detecting CXX compiler ABI info - done
+[0.721s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.721s] -- Detecting CXX compile features
+[0.722s] -- Detecting CXX compile features - done
+[0.733s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.886s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.944s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.985s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[1.027s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.043s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.061s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.080s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.117s] -- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[1.132s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[1.146s] -- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[2.073s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[3.053s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[3.361s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.364s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[3.488s] -- Found PythonExtra: /usr/bin/python3  
+[4.034s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[4.111s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[4.148s] -- Added test 'copyright' to check source files copyright and LICENSE
+[4.154s] -- Added test 'lint_cmake' to check CMake code style
+[4.157s] -- Added test 'xmllint' to check XML markup files
+[4.160s] -- Configuring done (4.1s)
+[4.201s] -- Generating done (0.0s)
+[4.211s] -- Build files have been written to: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces
+[4.227s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces
+[4.227s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces -- -j6 -l6
+[4.272s] [  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[4.282s] [  1%] Built target ament_cmake_python_symlink_dynamixel_interfaces
+[4.432s] running egg_info
+[4.433s] creating dynamixel_interfaces.egg-info
+[4.446s] writing dynamixel_interfaces.egg-info/PKG-INFO
+[4.446s] writing dependency_links to dynamixel_interfaces.egg-info/dependency_links.txt
+[4.446s] writing top-level names to dynamixel_interfaces.egg-info/top_level.txt
+[4.447s] writing manifest file 'dynamixel_interfaces.egg-info/SOURCES.txt'
+[4.483s] reading manifest file 'dynamixel_interfaces.egg-info/SOURCES.txt'
+[4.484s] writing manifest file 'dynamixel_interfaces.egg-info/SOURCES.txt'
+[4.510s] [  1%] Built target ament_cmake_python_build_dynamixel_interfaces_egg
+[4.554s] [  1%] Built target dynamixel_interfaces__rosidl_generator_type_description
+[4.566s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[4.580s] [  4%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[5.188s] [  4%] Built target dynamixel_interfaces__cpp
+[5.424s] [  6%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/rosidl_generator_c/dynamixel_interfaces/msg/detail/dynamixel_state__description.c.o[0m
+[5.435s] [  7%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/rosidl_generator_c/dynamixel_interfaces/msg/detail/dynamixel_state__functions.c.o[0m
+[5.439s] [  9%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/rosidl_generator_c/dynamixel_interfaces/srv/detail/get_data_from_dxl__type_support.c.o[0m
+[5.440s] [ 10%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/rosidl_generator_c/dynamixel_interfaces/srv/detail/get_data_from_dxl__description.c.o[0m
+[5.443s] [ 12%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/rosidl_generator_c/dynamixel_interfaces/srv/detail/get_data_from_dxl__functions.c.o[0m
+[5.445s] [ 14%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/rosidl_generator_c/dynamixel_interfaces/msg/detail/dynamixel_state__type_support.c.o[0m
+[5.546s] [ 15%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/rosidl_generator_c/dynamixel_interfaces/srv/detail/set_data_to_dxl__description.c.o[0m
+[5.552s] [ 17%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/rosidl_generator_c/dynamixel_interfaces/srv/detail/set_data_to_dxl__functions.c.o[0m
+[5.560s] [ 18%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/rosidl_generator_c/dynamixel_interfaces/srv/detail/set_data_to_dxl__type_support.c.o[0m
+[5.565s] [ 20%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/rosidl_generator_c/dynamixel_interfaces/srv/detail/reboot_dxl__description.c.o[0m
+[5.613s] [ 21%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/rosidl_generator_c/dynamixel_interfaces/srv/detail/reboot_dxl__functions.c.o[0m
+[5.635s] [ 23%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/rosidl_generator_c/dynamixel_interfaces/srv/detail/reboot_dxl__type_support.c.o[0m
+[5.728s] [ 25%] [32m[1mLinking C shared library libdynamixel_interfaces__rosidl_generator_c.so[0m
+[5.806s] [ 25%] Built target dynamixel_interfaces__rosidl_generator_c
+[5.830s] [ 26%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[5.830s] [ 28%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[5.830s] [ 29%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[5.831s] [ 31%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[5.837s] [ 32%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[5.837s] [ 34%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[6.450s] [ 35%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/dynamixel_interfaces/msg/dynamixel_state__type_support.cpp.o[0m
+[6.463s] [ 37%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/dynamixel_interfaces/msg/detail/dynamixel_state__type_support.cpp.o[0m
+[6.489s] [ 39%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/dynamixel_interfaces/srv/get_data_from_dxl__type_support.cpp.o[0m
+[6.564s] [ 40%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/dynamixel_interfaces/srv/set_data_to_dxl__type_support.cpp.o[0m
+[6.600s] [ 42%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/dynamixel_interfaces/msg/dynamixel_state__type_support.cpp.o[0m
+[6.612s] [ 43%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/dynamixel_interfaces/srv/reboot_dxl__type_support.cpp.o[0m
+[6.664s] [ 45%] [32m[1mLinking CXX shared library libdynamixel_interfaces__rosidl_typesupport_c.so[0m
+[6.670s] [ 46%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/dynamixel_interfaces/msg/detail/dds_fastrtps/dynamixel_state__type_support.cpp.o[0m
+[6.672s] [ 48%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/dynamixel_interfaces/msg/detail/dynamixel_state__type_support.c.o[0m
+[6.714s] [ 50%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/dynamixel_interfaces/srv/detail/get_data_from_dxl__type_support.c.o[0m
+[6.723s] [ 50%] Built target dynamixel_interfaces__rosidl_typesupport_c
+[6.737s] [ 51%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/dynamixel_interfaces/srv/detail/get_data_from_dxl__type_support.cpp.o[0m
+[6.821s] [ 53%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/dynamixel_interfaces/srv/detail/set_data_to_dxl__type_support.c.o[0m
+[7.031s] [ 57%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/dynamixel_interfaces/srv/get_data_from_dxl__type_support.cpp.o[0m
+[7.032s] [ 57%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/dynamixel_interfaces/srv/detail/reboot_dxl__type_support.c.o[0m
+[7.035s] [ 57%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/dynamixel_interfaces/msg/detail/dynamixel_state__type_support_c.cpp.o[0m
+[7.101s] [ 59%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/dynamixel_interfaces/srv/set_data_to_dxl__type_support.cpp.o[0m
+[7.164s] [ 60%] [32m[1mLinking C shared library libdynamixel_interfaces__rosidl_typesupport_introspection_c.so[0m
+[7.228s] [ 60%] Built target dynamixel_interfaces__rosidl_typesupport_introspection_c
+[7.244s] [ 62%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/dynamixel_interfaces/srv/detail/get_data_from_dxl__type_support_c.cpp.o[0m
+[7.471s] [ 64%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/dynamixel_interfaces/srv/detail/set_data_to_dxl__type_support.cpp.o[0m
+[7.621s] [ 65%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/dynamixel_interfaces/srv/detail/dds_fastrtps/get_data_from_dxl__type_support.cpp.o[0m
+[7.630s] [ 67%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/dynamixel_interfaces/srv/detail/reboot_dxl__type_support.cpp.o[0m
+[7.631s] [ 68%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/dynamixel_interfaces/srv/detail/dds_fastrtps/set_data_to_dxl__type_support.cpp.o[0m
+[7.665s] [ 70%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/dynamixel_interfaces/srv/reboot_dxl__type_support.cpp.o[0m
+[7.967s] [ 71%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/dynamixel_interfaces/srv/detail/set_data_to_dxl__type_support_c.cpp.o[0m
+[8.191s] [ 73%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/dynamixel_interfaces/srv/detail/dds_fastrtps/reboot_dxl__type_support.cpp.o[0m
+[8.225s] [ 75%] [32m[1mLinking CXX shared library libdynamixel_interfaces__rosidl_typesupport_cpp.so[0m
+[8.404s] [ 75%] Built target dynamixel_interfaces__rosidl_typesupport_cpp
+[8.434s] [ 76%] [32mBuilding CXX object CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/dynamixel_interfaces/srv/detail/reboot_dxl__type_support_c.cpp.o[0m
+[8.665s] [ 78%] [32m[1mLinking CXX shared library libdynamixel_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[8.833s] [ 78%] Built target dynamixel_interfaces__rosidl_typesupport_introspection_cpp
+[9.078s] [ 79%] [32m[1mLinking CXX shared library libdynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[9.126s] [ 81%] [32m[1mLinking CXX shared library libdynamixel_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[9.160s] [ 81%] Built target dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp
+[9.194s] [ 81%] Built target dynamixel_interfaces__rosidl_typesupport_fastrtps_c
+[9.209s] [ 81%] Built target dynamixel_interfaces
+[9.223s] [ 82%] [34m[1mGenerating Python code for ROS interfaces[0m
+[10.149s] [ 82%] Built target dynamixel_interfaces__py
+[10.166s] [ 84%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_interfaces/srv/_set_data_to_dxl_s.c.o[0m
+[10.169s] [ 85%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_interfaces/srv/_get_data_from_dxl_s.c.o[0m
+[10.171s] [ 87%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_interfaces/msg/_dynamixel_state_s.c.o[0m
+[10.174s] [ 89%] [32mBuilding C object CMakeFiles/dynamixel_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_interfaces/srv/_reboot_dxl_s.c.o[0m
+[10.353s] [ 90%] [32m[1mLinking C shared library libdynamixel_interfaces__rosidl_generator_py.so[0m
+[10.405s] [ 90%] Built target dynamixel_interfaces__rosidl_generator_py
+[10.423s] [ 95%] [32mBuilding C object CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_c.dir/rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[10.423s] [ 95%] [32mBuilding C object CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[10.423s] [ 95%] [32mBuilding C object CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[10.524s] [ 96%] [32m[1mLinking C shared module rosidl_generator_py/dynamixel_interfaces/dynamixel_interfaces_s__rosidl_typesupport_c.so[0m
+[10.524s] [ 98%] [32m[1mLinking C shared module rosidl_generator_py/dynamixel_interfaces/dynamixel_interfaces_s__rosidl_typesupport_introspection_c.so[0m
+[10.537s] [100%] [32m[1mLinking C shared module rosidl_generator_py/dynamixel_interfaces/dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c.so[0m
+[10.545s] [100%] Built target dynamixel_interfaces_s__rosidl_typesupport_introspection_c
+[10.545s] [100%] Built target dynamixel_interfaces_s__rosidl_typesupport_c
+[10.561s] [100%] Built target dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c
+[10.575s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces -- -j6 -l6
+[10.577s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces
+[10.584s] -- Install configuration: ""
+[10.585s] -- Execute custom install script
+[10.585s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/ament_index/resource_index/rosidl_interfaces/dynamixel_interfaces
+[10.591s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/msg/DynamixelState.json
+[10.598s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/srv/GetDataFromDxl.json
+[10.604s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/srv/SetDataToDxl.json
+[10.611s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/srv/RebootDxl.json
+[10.618s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/detail/dynamixel_state__functions.h
+[10.624s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/detail/dynamixel_state__struct.h
+[10.630s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/detail/dynamixel_state__type_support.h
+[10.635s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/dynamixel_state.h
+[10.640s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/rosidl_generator_c__visibility_control.h
+[10.645s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/get_data_from_dxl__functions.h
+[10.651s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/get_data_from_dxl__struct.h
+[10.656s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/get_data_from_dxl__type_support.h
+[10.661s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/reboot_dxl__functions.h
+[10.667s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/reboot_dxl__struct.h
+[10.672s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/reboot_dxl__type_support.h
+[10.677s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/set_data_to_dxl__functions.h
+[10.682s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/set_data_to_dxl__struct.h
+[10.688s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/set_data_to_dxl__type_support.h
+[10.693s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/get_data_from_dxl.h
+[10.699s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/reboot_dxl.h
+[10.705s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/set_data_to_dxl.h
+[10.711s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/environment/library_path.sh
+[10.718s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/environment/library_path.dsv
+[10.723s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/detail/dynamixel_state__rosidl_typesupport_fastrtps_c.h
+[10.729s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[10.735s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/get_data_from_dxl__rosidl_typesupport_fastrtps_c.h
+[10.743s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/reboot_dxl__rosidl_typesupport_fastrtps_c.h
+[10.753s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/set_data_to_dxl__rosidl_typesupport_fastrtps_c.h
+[10.759s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/detail/dynamixel_state__builder.hpp
+[10.766s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/detail/dynamixel_state__struct.hpp
+[10.773s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/detail/dynamixel_state__traits.hpp
+[10.781s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/detail/dynamixel_state__type_support.hpp
+[10.787s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/dynamixel_state.hpp
+[10.792s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[10.801s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/get_data_from_dxl__builder.hpp
+[10.809s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/get_data_from_dxl__struct.hpp
+[10.816s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/get_data_from_dxl__traits.hpp
+[10.827s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/get_data_from_dxl__type_support.hpp
+[10.836s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/reboot_dxl__builder.hpp
+[10.851s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/reboot_dxl__struct.hpp
+[10.861s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/reboot_dxl__traits.hpp
+[10.873s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/reboot_dxl__type_support.hpp
+[10.877s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/set_data_to_dxl__builder.hpp
+[10.885s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/set_data_to_dxl__struct.hpp
+[10.892s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/set_data_to_dxl__traits.hpp
+[10.899s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/set_data_to_dxl__type_support.hpp
+[10.907s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/get_data_from_dxl.hpp
+[10.914s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/reboot_dxl.hpp
+[10.921s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/set_data_to_dxl.hpp
+[10.929s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/detail/dynamixel_state__rosidl_typesupport_fastrtps_cpp.hpp
+[10.936s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[10.942s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/get_data_from_dxl__rosidl_typesupport_fastrtps_cpp.hpp
+[10.949s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/reboot_dxl__rosidl_typesupport_fastrtps_cpp.hpp
+[10.959s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/set_data_to_dxl__rosidl_typesupport_fastrtps_cpp.hpp
+[10.966s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/detail/dynamixel_state__rosidl_typesupport_introspection_c.h
+[10.973s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[10.979s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/get_data_from_dxl__rosidl_typesupport_introspection_c.h
+[10.987s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/reboot_dxl__rosidl_typesupport_introspection_c.h
+[10.994s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/set_data_to_dxl__rosidl_typesupport_introspection_c.h
+[11.002s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/msg/detail/dynamixel_state__rosidl_typesupport_introspection_cpp.hpp
+[11.009s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/get_data_from_dxl__rosidl_typesupport_introspection_cpp.hpp
+[11.016s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/reboot_dxl__rosidl_typesupport_introspection_cpp.hpp
+[11.022s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/include/dynamixel_interfaces/dynamixel_interfaces/srv/detail/set_data_to_dxl__rosidl_typesupport_introspection_cpp.hpp
+[11.027s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/environment/pythonpath.sh
+[11.033s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/environment/pythonpath.dsv
+[11.038s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces-1.0.1-py3.12.egg-info/PKG-INFO
+[11.046s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces-1.0.1-py3.12.egg-info/SOURCES.txt
+[11.052s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces-1.0.1-py3.12.egg-info/dependency_links.txt
+[11.060s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces-1.0.1-py3.12.egg-info/top_level.txt
+[11.066s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/__init__.py
+[11.072s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_c.c
+[11.077s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[11.085s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[11.093s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/dynamixel_interfaces_s__rosidl_typesupport_c.so
+[11.100s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[11.106s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/dynamixel_interfaces_s__rosidl_typesupport_introspection_c.so
+[11.113s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/msg/__init__.py
+[11.119s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/msg/_dynamixel_state.py
+[11.126s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/msg/_dynamixel_state_s.c
+[11.133s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/srv/__init__.py
+[11.139s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/srv/_get_data_from_dxl.py
+[11.145s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/srv/_get_data_from_dxl_s.c
+[11.152s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/srv/_reboot_dxl.py
+[11.158s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/srv/_reboot_dxl_s.c
+[11.164s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/srv/_set_data_to_dxl.py
+[11.170s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/srv/_set_data_to_dxl_s.c
+[11.176s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[11.176s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/dynamixel_interfaces_s__rosidl_typesupport_introspection_c.so
+[11.176s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/dynamixel_interfaces_s__rosidl_typesupport_c.so
+[11.176s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/msg/DynamixelState.idl
+[11.183s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/srv/GetDataFromDxl.idl
+[11.189s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/srv/SetDataToDxl.idl
+[11.196s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/srv/RebootDxl.idl
+[11.202s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/msg/DynamixelState.msg
+[11.209s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/srv/GetDataFromDxl.srv
+[11.216s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/srv/SetDataToDxl.srv
+[11.222s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/srv/RebootDxl.srv
+[11.228s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/ament_index/resource_index/package_run_dependencies/dynamixel_interfaces
+[11.233s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/ament_index/resource_index/parent_prefix_path/dynamixel_interfaces
+[11.238s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/environment/ament_prefix_path.sh
+[11.244s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/environment/ament_prefix_path.dsv
+[11.251s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/environment/path.sh
+[11.257s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/environment/path.dsv
+[11.264s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/local_setup.bash
+[11.272s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/local_setup.sh
+[11.280s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/local_setup.zsh
+[11.287s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/local_setup.dsv
+[11.297s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/package.dsv
+[11.304s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/ament_index/resource_index/packages/dynamixel_interfaces
+[11.313s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/rosidl_cmake-extras.cmake
+[11.320s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[11.327s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[11.334s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[11.342s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[11.351s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[11.361s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[11.370s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/dynamixel_interfacesConfig.cmake
+[11.380s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/dynamixel_interfacesConfig-version.cmake
+[11.391s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/package.xml
+[11.403s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_generator_c.so
+[11.404s] -- Set non-toolchain portion of runtime path of "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_generator_c.so" to ""
+[11.404s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_typesupport_fastrtps_c.so
+[11.404s] -- Set non-toolchain portion of runtime path of "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[11.404s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[11.405s] -- Set non-toolchain portion of runtime path of "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[11.405s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_typesupport_introspection_c.so
+[11.405s] -- Set non-toolchain portion of runtime path of "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[11.405s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_typesupport_c.so
+[11.406s] -- Set non-toolchain portion of runtime path of "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_typesupport_c.so" to ""
+[11.406s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_typesupport_introspection_cpp.so
+[11.406s] -- Set non-toolchain portion of runtime path of "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[11.406s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_typesupport_cpp.so
+[11.408s] -- Set non-toolchain portion of runtime path of "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_typesupport_cpp.so" to ""
+[11.451s] Listing '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces'...
+[11.451s] Compiling '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/__init__.py'...
+[11.451s] Listing '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/msg'...
+[11.451s] Compiling '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/msg/__init__.py'...
+[11.451s] Compiling '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/msg/_dynamixel_state.py'...
+[11.451s] Listing '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/srv'...
+[11.451s] Compiling '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/srv/__init__.py'...
+[11.451s] Compiling '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/srv/_get_data_from_dxl.py'...
+[11.451s] Compiling '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/srv/_reboot_dxl.py'...
+[11.451s] Compiling '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/python3.12/site-packages/dynamixel_interfaces/srv/_set_data_to_dxl.py'...
+[11.456s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_generator_py.so
+[11.456s] -- Set non-toolchain portion of runtime path of "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/lib/libdynamixel_interfaces__rosidl_generator_py.so" to ""
+[11.456s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/export_dynamixel_interfaces__rosidl_generator_cExport.cmake
+[11.456s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/export_dynamixel_interfaces__rosidl_generator_cExport-noconfig.cmake
+[11.456s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/export_dynamixel_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[11.456s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/export_dynamixel_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[11.456s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/export_dynamixel_interfaces__rosidl_generator_cppExport.cmake
+[11.457s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/export_dynamixel_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[11.457s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/export_dynamixel_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[11.457s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/dynamixel_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[11.457s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/dynamixel_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[11.457s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/dynamixel_interfaces__rosidl_typesupport_cExport.cmake
+[11.457s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/dynamixel_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[11.457s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/dynamixel_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[11.457s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/dynamixel_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[11.457s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/dynamixel_interfaces__rosidl_typesupport_cppExport.cmake
+[11.457s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/dynamixel_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[11.457s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/export_dynamixel_interfaces__rosidl_generator_pyExport.cmake
+[11.457s] -- Installing: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_interfaces/share/dynamixel_interfaces/cmake/export_dynamixel_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[11.460s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces

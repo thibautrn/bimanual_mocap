@@ -1,0 +1,4 @@
+/**:
+  dynamixel_hardware:
+    ros__parameters:
+      number_of_joints: 12

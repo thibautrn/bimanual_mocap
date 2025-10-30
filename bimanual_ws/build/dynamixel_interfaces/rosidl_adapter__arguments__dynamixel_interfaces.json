@@ -1,0 +1,9 @@
+{
+  "package_name": "dynamixel_interfaces",
+  "non_idl_tuples": [
+    "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_interfaces:msg/DynamixelState.msg",
+    "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_interfaces:srv/GetDataFromDxl.srv",
+    "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_interfaces:srv/SetDataToDxl.srv",
+    "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_interfaces:srv/RebootDxl.srv"
+  ]
+}

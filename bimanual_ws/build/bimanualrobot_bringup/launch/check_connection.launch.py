@@ -1,0 +1,1 @@
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_bringup/launch/check_connection.launch.py

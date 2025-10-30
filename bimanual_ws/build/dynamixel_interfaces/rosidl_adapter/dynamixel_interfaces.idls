@@ -1,0 +1,4 @@
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces:msg/DynamixelState.idl
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces:srv/GetDataFromDxl.idl
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces:srv/SetDataToDxl.idl
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces:srv/RebootDxl.idl

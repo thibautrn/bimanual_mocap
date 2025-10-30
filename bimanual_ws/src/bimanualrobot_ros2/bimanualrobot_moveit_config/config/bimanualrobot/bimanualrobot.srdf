@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<robot name="bimanualrobot">
+    <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="base_link"/>
+    <group name="leftarm">
+        <joint name="leftarm_shoulder_pan_joint" />
+        <joint name="leftarm_shoulder_lift_joint" />
+        <joint name="leftarm_elbow_joint" />
+        <joint name="leftarm_wrist_1_joint" />
+        <joint name="leftarm_wrist_2_joint" />
+        <joint name="leftarm_wrist_3_joint" />
+        <group name="left_arm_w1"/> 
+    </group>
+    <group name="left_arm_w1">
+        <chain base_link="base_link" tip_link="leftarm_wrist_2_link"/>
+    </group>
+    <group name="rightarm">
+        <joint name="rightarm_shoulder_pan_joint" />
+        <joint name="rightarm_shoulder_lift_joint" />
+        <joint name="rightarm_elbow_joint" />
+        <joint name="rightarm_wrist_1_joint" />
+        <joint name="rightarm_wrist_2_joint" />
+        <joint name="rightarm_wrist_3_joint" />
+    </group>
+    <group name="bimanual">
+        <group name="leftarm"/>
+        <group name="rightarm"/>
+    </group>
+
+    <group_state name="home" group="leftarm">
+        <joint name="leftarm_shoulder_pan_joint" value="0.0"/>
+        <joint name="leftarm_shoulder_lift_joint" value="0.0"/>
+        <joint name="leftarm_elbow_joint" value="0.0"/>
+        <joint name="leftarm_wrist_1_joint" value="0.0"/>
+        <joint name="leftarm_wrist_2_joint" value="0.0"/>
+        <joint name="leftarm_wrist_3_joint" value="0.0"/>
+    </group_state>
+
+    <group_state name="home" group="rightarm">
+        <joint name="rightarm_shoulder_pan_joint" value="0.0"/>
+        <joint name="rightarm_shoulder_lift_joint" value="0.0"/>
+        <joint name="rightarm_elbow_joint" value="0.0"/>
+        <joint name="rightarm_wrist_1_joint" value="0.0"/>
+        <joint name="rightarm_wrist_2_joint" value="0.0"/>
+        <joint name="rightarm_wrist_3_joint" value="0.0"/>
+    </group_state>
+
+    <group_state name="home" group="bimanual">
+        <joint name="leftarm_elbow_joint" value="0"/>
+        <joint name="leftarm_shoulder_lift_joint" value="0"/>
+        <joint name="leftarm_shoulder_pan_joint" value="0"/>
+        <joint name="leftarm_wrist_1_joint" value="0"/>
+        <joint name="leftarm_wrist_2_joint" value="0"/>
+        <joint name="leftarm_wrist_3_joint" value="0"/>
+        <joint name="rightarm_elbow_joint" value="0"/>
+        <joint name="rightarm_shoulder_lift_joint" value="0"/>
+        <joint name="rightarm_shoulder_pan_joint" value="0"/>
+        <joint name="rightarm_wrist_1_joint" value="0"/>
+        <joint name="rightarm_wrist_2_joint" value="0"/>
+        <joint name="rightarm_wrist_3_joint" value="0"/>
+    </group_state>
+
+    <group_state name="ready" group="leftarm">
+        <joint name="leftarm_shoulder_pan_joint" value="0.0"/>
+        <joint name="leftarm_shoulder_lift_joint" value="0.0"/>
+        <joint name="leftarm_elbow_joint" value="1.57"/>
+        <joint name="leftarm_wrist_1_joint" value="0.0"/>
+        <joint name="leftarm_wrist_2_joint" value="0.0"/>
+        <joint name="leftarm_wrist_3_joint" value="0.0"/>
+    </group_state>
+
+    <group_state name="ready" group="rightarm">
+        <joint name="rightarm_shoulder_pan_joint" value="0.0"/>
+        <joint name="rightarm_shoulder_lift_joint" value="0.0"/>
+        <joint name="rightarm_elbow_joint" value="1.57"/>
+        <joint name="rightarm_wrist_1_joint" value="0.0"/>
+        <joint name="rightarm_wrist_2_joint" value="0.0"/>
+        <joint name="rightarm_wrist_3_joint" value="0.0"/>
+    </group_state>
+
+    <!--
+      Pairs of links in the robot model for which collision checking should be disabled
+      during motion planning and simulation.
+
+      Adjacent: Collision checking is unnecessary because the links are always in contact.
+
+      Never: Collision checking is unnecessary because the robotic arm is designed in a way that
+        they will never collide with each other.
+    -->
+
+    <link name="stand_link" />
+
+    <!-- leftarm impossible collisions -->
+    <disable_collisions link1="leftarm_shoulder_link" link2="stand_link" reason="Never"/>
+    <disable_collisions link1="leftarm_upper_arm_link" link2="stand_link" reason="Never"/>
+    <disable_collisions link1="leftarm_forearm_link" link2="stand_link" reason="Never"/>
+    <disable_collisions link1="leftarm_shoulder_link" link2="leftarm_upper_arm_link" reason="Adjacent"/>
+    <disable_collisions link1="leftarm_upper_arm_link" link2="leftarm_forearm_link" reason="Adjacent"/>
+    <disable_collisions link1="leftarm_forearm_link" link2="leftarm_wrist_1_link" reason="Adjacent"/>
+    <disable_collisions link1="leftarm_forearm_link" link2="leftarm_wrist_2_link" reason="Adjacent"/>
+    <disable_collisions link1="leftarm_forearm_link" link2="leftarm_wrist_3_link" reason="Adjacent"/>
+    <disable_collisions link1="leftarm_wrist_1_link" link2="leftarm_wrist_2_link" reason="Adjacent"/>
+    <disable_collisions link1="leftarm_wrist_2_link" link2="leftarm_wrist_3_link" reason="Adjacent"/>
+
+    <!-- rightarm impossible collisions -->
+    <disable_collisions link1="rightarm_shoulder_link" link2="stand_link" reason="Never"/>
+    <disable_collisions link1="rightarm_upper_arm_link" link2="stand_link" reason="Never"/>
+    <disable_collisions link1="rightarm_forearm_link" link2="stand_link" reason="Never"/>
+    <disable_collisions link1="rightarm_shoulder_link" link2="rightarm_upper_arm_link" reason="Adjacent"/>
+    <disable_collisions link1="rightarm_upper_arm_link" link2="rightarm_forearm_link" reason="Adjacent"/>
+    <disable_collisions link1="rightarm_forearm_link" link2="rightarm_wrist_1_link" reason="Adjacent"/>
+    <disable_collisions link1="rightarm_forearm_link" link2="rightarm_wrist_2_link" reason="Adjacent"/>
+    <disable_collisions link1="rightarm_forearm_link" link2="rightarm_wrist_3_link" reason="Adjacent"/>
+    <disable_collisions link1="rightarm_wrist_1_link" link2="rightarm_wrist_2_link" reason="Adjacent"/>
+    <disable_collisions link1="rightarm_wrist_2_link" link2="rightarm_wrist_3_link" reason="Adjacent"/>
+
+    <!-- Disable all collisions between the two arms to allow independent planning -->
+    <disable_collisions link1="leftarm_shoulder_link" link2="rightarm_shoulder_link" reason="Never"/>
+    <disable_collisions link1="leftarm_shoulder_link" link2="rightarm_upper_arm_link" reason="Never"/>
+    <disable_collisions link1="leftarm_shoulder_link" link2="rightarm_forearm_link" reason="Never"/>
+    <disable_collisions link1="leftarm_shoulder_link" link2="rightarm_wrist_1_link" reason="Never"/>
+    <disable_collisions link1="leftarm_shoulder_link" link2="rightarm_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="leftarm_shoulder_link" link2="rightarm_wrist_3_link" reason="Never"/>
+
+    <disable_collisions link1="leftarm_upper_arm_link" link2="rightarm_shoulder_link" reason="Never"/>
+    <disable_collisions link1="leftarm_upper_arm_link" link2="rightarm_upper_arm_link" reason="Never"/>
+    <disable_collisions link1="leftarm_upper_arm_link" link2="rightarm_forearm_link" reason="Never"/>
+    <disable_collisions link1="leftarm_upper_arm_link" link2="rightarm_wrist_1_link" reason="Never"/>
+    <disable_collisions link1="leftarm_upper_arm_link" link2="rightarm_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="leftarm_upper_arm_link" link2="rightarm_wrist_3_link" reason="Never"/>
+
+    <disable_collisions link1="leftarm_forearm_link" link2="rightarm_shoulder_link" reason="Never"/>
+    <disable_collisions link1="leftarm_forearm_link" link2="rightarm_upper_arm_link" reason="Never"/>
+    <disable_collisions link1="leftarm_forearm_link" link2="rightarm_forearm_link" reason="Never"/>
+    <disable_collisions link1="leftarm_forearm_link" link2="rightarm_wrist_1_link" reason="Never"/>
+    <disable_collisions link1="leftarm_forearm_link" link2="rightarm_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="leftarm_forearm_link" link2="rightarm_wrist_3_link" reason="Never"/>
+
+    <disable_collisions link1="leftarm_wrist_1_link" link2="rightarm_shoulder_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_1_link" link2="rightarm_upper_arm_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_1_link" link2="rightarm_forearm_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_1_link" link2="rightarm_wrist_1_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_1_link" link2="rightarm_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_1_link" link2="rightarm_wrist_3_link" reason="Never"/>
+
+    <disable_collisions link1="leftarm_wrist_2_link" link2="rightarm_shoulder_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_2_link" link2="rightarm_upper_arm_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_2_link" link2="rightarm_forearm_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_2_link" link2="rightarm_wrist_1_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_2_link" link2="rightarm_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_2_link" link2="rightarm_wrist_3_link" reason="Never"/>
+
+    <disable_collisions link1="leftarm_wrist_3_link" link2="rightarm_shoulder_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_3_link" link2="rightarm_upper_arm_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_3_link" link2="rightarm_forearm_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_3_link" link2="rightarm_wrist_1_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_3_link" link2="rightarm_wrist_2_link" reason="Never"/>
+    <disable_collisions link1="leftarm_wrist_3_link" link2="rightarm_wrist_3_link" reason="Never"/>
+
+</robot>

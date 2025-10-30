@@ -1,0 +1,1 @@
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_c/dynamixel_interfaces/srv/detail/reboot_dxl__struct.h

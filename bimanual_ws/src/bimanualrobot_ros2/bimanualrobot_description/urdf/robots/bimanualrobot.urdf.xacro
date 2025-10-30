@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!-- Revolute-Revolute Manipulator -->
+<robot name="bimanualrobot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="robot_name" default="bimanualrobot"/>
+  <xacro:arg name="add_world" default="true"/>
+  <xacro:arg name="base_link" default="base_link"/>
+  <xacro:arg name="gripper_type" default="fixed_gripper"/>
+  <xacro:arg name="prefix" default=""/>
+  <xacro:arg name="use_camera" default="false"/>
+  <xacro:arg name="use_gazebo" default="false"/>
+  <xacro:arg name="use_gripper" default="false"/>
+  <xacro:arg name="use_drumstick" default="false"/>
+
+  <xacro:property name="gripper_type" value="$(arg gripper_type)"/>
+
+  <!-- manipulator_h arm-->
+  <xacro:include filename="$(find bimanualrobot_description)/urdf/mech/manipulator_h.xacro" />
+  <!-- stand -->
+  <xacro:include filename="$(find bimanualrobot_description)/urdf/mech/stand.xacro" />
+  <!-- gripper -->
+  <xacro:if value="$(arg use_gripper)">
+    <xacro:if value="${gripper_type == 'fixed_gripper'}">
+      <xacro:include filename="$(find bimanualrobot_description)/urdf/mech/gripper.xacro" />
+    </xacro:if>
+  </xacro:if>
+  <!-- drumstick -->
+  <xacro:if value="$(arg use_drumstick)">
+    <xacro:include filename="$(find bimanualrobot_description)/urdf/mech/drumstick.xacro" />
+    <xacro:include filename="$(find bimanualrobot_description)/urdf/mech/drum.xacro" />
+  </xacro:if>
+
+  <link name="base_link"/>
+  <xacro:stand prefix="" parent="base_link">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:stand>
+
+  <!-- <xacro:include filename="$(find bimanualrobot_description)/urdf/control/common.xacro" /> -->
+  <!-- <xacro:manipulator_arm_gazebo prefix="leftarm" />
+  <xacro:manipulator_arm_gazebo prefix="rightarm" /> -->
+
+  <!-- One of the values should be 226 mm -->
+  <!-- Left arm -->
+  <link name="left_base"/>
+  <joint name="stand_to_left_base" type="fixed">
+    <parent link="stand_link"/>
+    <child link="left_base"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <xacro:manipulator_h_arm prefix="leftarm" joint_limited="false" parent="left_base">
+    <origin xyz="0.045 0.1665 1.526" rpy="${-pi/2} ${-pi/2} 0" />
+  </xacro:manipulator_h_arm>
+
+  <xacro:if value="$(arg use_gripper)">
+    <xacro:if value="${gripper_type == 'fixed_gripper'}">
+      <xacro:fingers prefix="leftarm" parent="leftarm_ee_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+      </xacro:fingers>
+    </xacro:if>
+  </xacro:if>
+
+  <!-- Right arm -->
+  <link name="right_base"/>
+  <joint name="stand_to_right_base" type="fixed">
+    <parent link="stand_link"/>
+    <child link="right_base"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <xacro:manipulator_h_arm prefix="rightarm" joint_limited="false" parent="right_base">
+    <origin xyz="0.045 -0.1665 1.526" rpy="${pi/2} ${-pi/2} 0" />
+  </xacro:manipulator_h_arm>
+
+  <xacro:if value="$(arg use_gripper)">
+    <xacro:if value="${gripper_type == 'fixed_gripper'}">
+      <xacro:fingers prefix="rightarm" parent="rightarm_ee_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+      </xacro:fingers>
+    </xacro:if>
+  </xacro:if>
+
+  <!-- Merge all joints together -->
+  <link name="world" />
+  <!-- <joint name="left_base_to_base_link" type="fixed">
+    <parent link="base_link" />
+    <child link = "left_base" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <joint name="right_base_to_base_link" type="fixed">
+    <parent link="base_link" />
+    <child link = "right_base" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint> -->
+
+  <joint name="world_stand" type="fixed">
+    <parent link="world" />
+    <child link = "base_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <xacro:if value="$(arg use_drumstick)">
+    <xacro:drumstick prefix="leftarm" parent="leftarm_ee_link">
+      <origin xyz="0 0 0.086" rpy="0 0 0" />
+    </xacro:drumstick>
+    <xacro:drumstick prefix="rightarm" parent="rightarm_ee_link">
+      <origin xyz="0 0 0.086" rpy="0 0 0" />
+    </xacro:drumstick>
+  </xacro:if>
+
+  <xacro:include filename="$(find bimanualrobot_description)/urdf/control/gazebo_sim_ros2_control.urdf.xacro" />
+  <xacro:load_gazebo_sim_ros2_control_plugin
+   robot_name="$(arg robot_name)"
+   use_gazebo="$(arg use_gazebo)"/>
+
+  <xacro:include filename="$(find bimanualrobot_description)/urdf/control/bimanualrobot_ros2_controller.urdf.xacro" />
+  <xacro:bimanualrobot_ros2_control
+   prefix="leftarm"
+   use_gazebo="$(arg use_gazebo)"
+   use_gripper="$(arg use_gripper)"
+   gripper_type="$(arg gripper_type)"
+   />
+   <!-- <xacro:bimanualrobot_ros2_control
+   prefix="rightarm"
+   use_gazebo="$(arg use_gazebo)"
+   use_gripper="$(arg use_gripper)"
+   gripper_type="$(arg gripper_type)"
+   /> -->
+
+
+  <xacro:arg name="show_ball_ref" default="false"/>
+  <!-- Initial ball pose (x y z r p y). Change as you like. -->
+  <xacro:arg name="ball_xyz" default="0 0 1.0"/>
+  <xacro:arg name="ball_rpy" default="0 0 0"/>
+
+  <xacro:if value="$(arg show_ball_ref)">
+    <link name="pingpong_ref_link">
+      <visual>
+        <origin xyz="$(arg ball_xyz)" rpy="$(arg ball_rpy)"/>
+        <geometry><sphere radius="0.02"/></geometry>
+        <material name="White">
+          <color rgba="1 1 1 1"/>
+        </material>
+      </visual>
+    </link>
+    <joint name="world_to_pingpong_ref" type="fixed">
+      <parent link="world"/>
+      <child link="pingpong_ref_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+  </xacro:if>
+</robot>

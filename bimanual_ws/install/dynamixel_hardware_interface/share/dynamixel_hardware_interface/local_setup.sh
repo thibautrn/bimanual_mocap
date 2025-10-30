@@ -1,0 +1,1 @@
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_hardware_interface/ament_cmake_environment_hooks/local_setup.sh

@@ -1,0 +1,19 @@
+[0.522s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup': AMENT_PREFIX_PATH=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description:${CMAKE_PREFIX_PATH} CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/build --no-deps symlink_data
+[0.653s] running develop
+[0.733s] running egg_info
+[0.741s] writing bimanualrobot_bringup.egg-info/PKG-INFO
+[0.741s] writing dependency_links to bimanualrobot_bringup.egg-info/dependency_links.txt
+[0.741s] writing entry points to bimanualrobot_bringup.egg-info/entry_points.txt
+[0.741s] writing requirements to bimanualrobot_bringup.egg-info/requires.txt
+[0.741s] writing top-level names to bimanualrobot_bringup.egg-info/top_level.txt
+[0.756s] reading manifest file 'bimanualrobot_bringup.egg-info/SOURCES.txt'
+[0.756s] writing manifest file 'bimanualrobot_bringup.egg-info/SOURCES.txt'
+[0.764s] running build_ext
+[0.764s] Creating /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/python3.12/site-packages/bimanualrobot-bringup.egg-link (link to .)
+[0.764s] Installing hardware_checker script to /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/bimanualrobot_bringup
+[0.764s] Installing joint_state_checker script to /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/bimanualrobot_bringup
+[0.765s] Installing joint_trajectory_executor script to /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/bimanualrobot_bringup
+[0.765s] 
+[0.765s] Installed /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup
+[0.765s] running symlink_data
+[0.782s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup' returned '0': AMENT_PREFIX_PATH=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_description:${CMAKE_PREFIX_PATH} CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/build --no-deps symlink_data

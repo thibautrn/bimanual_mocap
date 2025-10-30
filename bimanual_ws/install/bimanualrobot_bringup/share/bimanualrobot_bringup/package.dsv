@@ -1,0 +1,9 @@
+source;share/bimanualrobot_bringup/hook/pythonpath.ps1
+source;share/bimanualrobot_bringup/hook/pythonpath.dsv
+source;share/bimanualrobot_bringup/hook/pythonpath.sh
+source;share/bimanualrobot_bringup/hook/ament_prefix_path.ps1
+source;share/bimanualrobot_bringup/hook/ament_prefix_path.dsv
+source;share/bimanualrobot_bringup/hook/ament_prefix_path.sh
+source;../../build/bimanualrobot_bringup/share/bimanualrobot_bringup/hook/pythonpath_develop.ps1
+source;../../build/bimanualrobot_bringup/share/bimanualrobot_bringup/hook/pythonpath_develop.dsv
+source;../../build/bimanualrobot_bringup/share/bimanualrobot_bringup/hook/pythonpath_develop.sh

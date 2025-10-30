@@ -1,0 +1,28 @@
+digraph G {
+"leftarm_forearm_link" -> "leftarm_wrist_1_link"[label=" Broadcaster: default_authority\nAverage rate: 18.767\nBuffer length: 3.73\nMost recent transform: 139.3\nOldest transform: 135.57\n"];
+"leftarm_upper_arm_link" -> "leftarm_forearm_link"[label=" Broadcaster: default_authority\nAverage rate: 18.767\nBuffer length: 3.73\nMost recent transform: 139.3\nOldest transform: 135.57\n"];
+"leftarm_shoulder_link" -> "leftarm_upper_arm_link"[label=" Broadcaster: default_authority\nAverage rate: 18.767\nBuffer length: 3.73\nMost recent transform: 139.3\nOldest transform: 135.57\n"];
+"left_base" -> "leftarm_shoulder_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"leftarm_wrist_1_link" -> "leftarm_wrist_2_link"[label=" Broadcaster: default_authority\nAverage rate: 18.767\nBuffer length: 3.73\nMost recent transform: 139.3\nOldest transform: 135.57\n"];
+"leftarm_wrist_2_link" -> "leftarm_wrist_3_link"[label=" Broadcaster: default_authority\nAverage rate: 18.767\nBuffer length: 3.73\nMost recent transform: 139.3\nOldest transform: 135.57\n"];
+"leftarm_wrist_3_link" -> "leftarm_ee_link"[label=" Broadcaster: default_authority\nAverage rate: 18.767\nBuffer length: 3.73\nMost recent transform: 139.3\nOldest transform: 135.57\n"];
+"rightarm_forearm_link" -> "rightarm_wrist_1_link"[label=" Broadcaster: default_authority\nAverage rate: 18.767\nBuffer length: 3.73\nMost recent transform: 139.3\nOldest transform: 135.57\n"];
+"rightarm_upper_arm_link" -> "rightarm_forearm_link"[label=" Broadcaster: default_authority\nAverage rate: 18.767\nBuffer length: 3.73\nMost recent transform: 139.3\nOldest transform: 135.57\n"];
+"rightarm_shoulder_link" -> "rightarm_upper_arm_link"[label=" Broadcaster: default_authority\nAverage rate: 18.767\nBuffer length: 3.73\nMost recent transform: 139.3\nOldest transform: 135.57\n"];
+"right_base" -> "rightarm_shoulder_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"rightarm_wrist_1_link" -> "rightarm_wrist_2_link"[label=" Broadcaster: default_authority\nAverage rate: 18.767\nBuffer length: 3.73\nMost recent transform: 139.3\nOldest transform: 135.57\n"];
+"rightarm_wrist_2_link" -> "rightarm_wrist_3_link"[label=" Broadcaster: default_authority\nAverage rate: 18.767\nBuffer length: 3.73\nMost recent transform: 139.3\nOldest transform: 135.57\n"];
+"rightarm_wrist_3_link" -> "rightarm_ee_link"[label=" Broadcaster: default_authority\nAverage rate: 18.767\nBuffer length: 3.73\nMost recent transform: 139.3\nOldest transform: 135.57\n"];
+"base_link" -> "stand_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"world" -> "base_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"stand_link" -> "left_base"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"leftarm_ee_link" -> "leftarm_drumstick_body"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"leftarm_drumstick_body" -> "leftarm_drumstick_tip"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"stand_link" -> "right_base"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"rightarm_ee_link" -> "rightarm_drumstick_body"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"rightarm_drumstick_body" -> "rightarm_drumstick_tip"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1756061013.1069472"[ shape=plaintext ] ;
+}->"world";
+}

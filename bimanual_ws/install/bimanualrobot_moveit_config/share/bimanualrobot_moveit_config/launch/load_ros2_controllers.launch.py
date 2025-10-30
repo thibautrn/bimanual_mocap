@@ -1,0 +1,1 @@
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_moveit_config/launch/load_ros2_controllers.launch.py

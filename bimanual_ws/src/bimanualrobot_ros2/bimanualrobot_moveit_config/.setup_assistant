@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: bimanualrobot_description
+    relative_path: urdf/robots/bimanualrobot.urdf.xacro
+  SRDF:
+    relative_path: config/bimanualrobot/bimanualrobot.srdf
+  CONFIG:
+    author_name: Mohamed El Mistiri
+    author_email: melmisti@todo.com
+    generated_timestamp: 1834047000

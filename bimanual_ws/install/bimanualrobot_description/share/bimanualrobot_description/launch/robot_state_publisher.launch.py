@@ -1,0 +1,1 @@
+/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/launch/robot_state_publisher.launch.py

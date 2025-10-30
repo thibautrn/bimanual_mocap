@@ -1,0 +1,24 @@
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo//config/ros_gz_bridge.yaml
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo//launch/bimanualrobot.gazebo.launch.py
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo//models/drum_cylinder/model.config
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo//models/drum_cylinder/model.sdf
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo//worlds/empty.world
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo//scripts/spawn_drum.py
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/lib/bimanualrobot_gazebo//spawn_drum.py
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_gazebo
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_gazebo
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/environment/ament_prefix_path.sh
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/environment/ament_prefix_path.dsv
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/environment/path.sh
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/environment/path.dsv
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/local_setup.bash
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/local_setup.sh
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/local_setup.zsh
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/local_setup.dsv
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/package.dsv
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/ament_index/resource_index/packages/bimanualrobot_gazebo
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/cmake/bimanualrobot_gazeboConfig.cmake
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/cmake/bimanualrobot_gazeboConfig-version.cmake
+-- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_gazebo/share/bimanualrobot_gazebo/package.xml

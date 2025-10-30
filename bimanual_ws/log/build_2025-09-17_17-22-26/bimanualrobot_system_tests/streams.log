@@ -1,0 +1,55 @@
+[0.081s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests -- -j6 -l6
+[1.687s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests -- -j6 -l6
+[1.707s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests
+[1.761s] -- Install configuration: ""
+[1.784s] -- Execute custom install script
+[1.784s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/arm_loop_controller.py
+[1.784s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_bimanual_drumsticks.py
+[1.790s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm.py
+[1.790s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm2.2.py
+[1.790s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm2.2elb.py
+[1.792s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm2.2elb_pick.py
+[1.795s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm2.2elb_traj.py
+[1.795s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm2.2elb_traj_copy.py
+[1.797s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm2.py
+[1.799s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm3.py
+[1.819s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm4.py
+[1.819s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm5.py
+[1.820s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm6_anal.py
+[1.820s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_pin.py
+[1.820s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_wrist.py
+[1.820s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/servo_udp_bridge.py
+[1.820s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/udping.py
+[1.822s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/src/.keep
+[1.822s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_bimanual_drumsticks.py
+[1.822s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/arm_loop_controller.py
+[1.824s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm.py
+[1.831s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_pin.py
+[1.831s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_wrist.py
+[1.832s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm2.py
+[1.832s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm2.2.py
+[1.832s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm2.2elb.py
+[1.837s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm2.2elb_pick.py
+[1.837s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm2.2elb_traj.py
+[1.848s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm2.2elb_traj_copy.py
+[1.849s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm3.py
+[1.851s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm4.py
+[1.853s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm5.py
+[1.855s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm6_anal.py
+[1.855s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/servo_udp_bridge.py
+[1.857s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_system_tests
+[1.858s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_system_tests
+[1.858s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/environment/ament_prefix_path.sh
+[1.859s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/environment/ament_prefix_path.dsv
+[1.860s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/environment/path.sh
+[1.860s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/environment/path.dsv
+[1.872s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/local_setup.bash
+[1.899s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/local_setup.sh
+[1.899s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/local_setup.zsh
+[1.899s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/local_setup.dsv
+[1.904s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/package.dsv
+[1.971s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/ament_index/resource_index/packages/bimanualrobot_system_tests
+[1.973s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/cmake/bimanualrobot_system_testsConfig.cmake
+[1.974s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/cmake/bimanualrobot_system_testsConfig-version.cmake
+[1.976s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/package.xml
+[1.997s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/bimanualrobot_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_system_tests

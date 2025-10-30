@@ -1,0 +1,86 @@
+[0.279s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk -- -j6 -l6
+[0.910s] [  0%] Built target ament_cmake_python_symlink_dynamixel_sdk
+[0.986s] [100%] Built target dynamixel_sdk
+[2.678s] running egg_info
+[2.702s] writing dynamixel_sdk.egg-info/PKG-INFO
+[2.703s] writing dependency_links to dynamixel_sdk.egg-info/dependency_links.txt
+[2.703s] writing top-level names to dynamixel_sdk.egg-info/top_level.txt
+[2.808s] reading manifest file 'dynamixel_sdk.egg-info/SOURCES.txt'
+[2.808s] writing manifest file 'dynamixel_sdk.egg-info/SOURCES.txt'
+[2.903s] [100%] Built target ament_cmake_python_build_dynamixel_sdk_egg
+[2.978s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk -- -j6 -l6
+[2.980s] Invoking command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk
+[2.993s] -- Install configuration: ""
+[2.995s] -- Execute custom install script
+[2.996s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/dynamixel_sdk.h
+[2.997s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/group_bulk_read.h
+[2.997s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/group_bulk_write.h
+[2.997s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/group_fast_bulk_read.h
+[2.997s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/group_fast_sync_read.h
+[2.997s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/group_handler.h
+[2.997s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/group_sync_read.h
+[2.997s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/group_sync_write.h
+[2.998s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/packet_handler.h
+[2.998s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/port_handler.h
+[2.998s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/port_handler_arduino.h
+[2.998s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/port_handler_linux.h
+[2.999s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/port_handler_mac.h
+[2.999s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/port_handler_windows.h
+[2.999s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/protocol1_packet_handler.h
+[2.999s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include//dynamixel_sdk/protocol2_packet_handler.h
+[3.000s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/pythonpath.sh
+[3.001s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/pythonpath.dsv
+[3.001s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk-3.8.4-py3.12.egg-info/PKG-INFO
+[3.001s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk-3.8.4-py3.12.egg-info/SOURCES.txt
+[3.001s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk-3.8.4-py3.12.egg-info/dependency_links.txt
+[3.001s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk-3.8.4-py3.12.egg-info/top_level.txt
+[3.002s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/__init__.py
+[3.002s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/group_bulk_read.cpp
+[3.002s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/group_bulk_read.py
+[3.003s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/group_bulk_write.cpp
+[3.003s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/group_bulk_write.py
+[3.003s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/group_fast_bulk_read.cpp
+[3.004s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/group_fast_sync_read.cpp
+[3.004s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/group_handler.cpp
+[3.004s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/group_sync_read.cpp
+[3.006s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/group_sync_read.py
+[3.006s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/group_sync_write.cpp
+[3.007s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/group_sync_write.py
+[3.008s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/packet_handler.cpp
+[3.008s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/packet_handler.py
+[3.009s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/port_handler.cpp
+[3.009s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/port_handler.py
+[3.010s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/port_handler_arduino.cpp
+[3.010s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/port_handler_linux.cpp
+[3.010s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/port_handler_mac.cpp
+[3.010s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/port_handler_windows.cpp
+[3.010s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/protocol1_packet_handler.cpp
+[3.011s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/protocol1_packet_handler.py
+[3.011s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/protocol2_packet_handler.cpp
+[3.011s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/protocol2_packet_handler.py
+[3.011s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk/robotis_def.py
+[3.011s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/library_path.sh
+[3.011s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/library_path.dsv
+[3.012s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/ament_index/resource_index/package_run_dependencies/dynamixel_sdk
+[3.012s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/ament_index/resource_index/parent_prefix_path/dynamixel_sdk
+[3.013s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/ament_prefix_path.sh
+[3.013s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/ament_prefix_path.dsv
+[3.014s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/path.sh
+[3.014s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/path.dsv
+[3.014s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/local_setup.bash
+[3.015s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/local_setup.sh
+[3.015s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/local_setup.zsh
+[3.015s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/local_setup.dsv
+[3.015s] -- Symlinking: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/package.dsv
+[3.029s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/ament_index/resource_index/packages/dynamixel_sdk
+[3.029s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/cmake/ament_cmake_export_targets-extras.cmake
+[3.029s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.029s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/cmake/ament_cmake_export_libraries-extras.cmake
+[3.030s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/cmake/dynamixel_sdkConfig.cmake
+[3.030s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/cmake/dynamixel_sdkConfig-version.cmake
+[3.030s] -- Up-to-date symlink: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/package.xml
+[3.034s] -- Up-to-date: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/libdynamixel_sdk.so
+[3.116s] Listing '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk'...
+[3.154s] -- Up-to-date: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/cmake/dynamixel_sdkExport.cmake
+[3.154s] -- Up-to-date: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/share/dynamixel_sdk/cmake/dynamixel_sdkExport-noconfig.cmake
+[3.194s] Invoked command in '/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk

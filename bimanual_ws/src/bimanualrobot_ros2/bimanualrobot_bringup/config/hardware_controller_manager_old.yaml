@@ -1,0 +1,123 @@
+controller_manager:
+  ros__parameters:
+    use_sim_time: False
+    update_rate: 50 # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    left_arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    right_arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+left_arm_controller:
+  ros__parameters:
+    joints:
+      - leftarm_shoulder_pan_joint
+      - leftarm_shoulder_lift_joint
+      - leftarm_elbow_joint
+      - leftarm_wrist_1_joint
+      - leftarm_wrist_2_joint
+      - leftarm_wrist_3_joint
+
+    interface_name: position
+
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+      - velocity
+
+    allow_partial_joints_goal: true
+    allow_integration_in_goal_trajectories: true
+
+    # Allow non-zero velocity at the end of the trajectory
+    allow_nonzero_velocity_at_trajectory_end: true
+
+right_arm_controller:
+  ros__parameters:
+    joints:
+      - rightarm_shoulder_pan_joint
+      - rightarm_shoulder_lift_joint
+      - rightarm_elbow_joint
+      - rightarm_wrist_1_joint
+      - rightarm_wrist_2_joint
+      - rightarm_wrist_3_joint
+
+    interface_name: position
+
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+      - velocity
+
+    allow_partial_joints_goal: true
+    allow_integration_in_goal_trajectories: true
+
+    # Allow non-zero velocity at the end of the trajectory
+    allow_nonzero_velocity_at_trajectory_end: true
+
+left_arm_dynamixel_hardware:
+  ros__parameters:
+    usb_port: "/dev/ttyUSB0" # for windows it is "COM6" which converts to "/dev/ttyUSB0" in wsl
+    baud_rate: 1000000
+    joints:
+      - leftarm_shoulder_pan_joint
+      - leftarm_shoulder_lift_joint
+      - leftarm_elbow_joint
+      - leftarm_wrist_1_joint
+      - leftarm_wrist_2_joint
+      - leftarm_wrist_3_joint
+    leftarm_shoulder_pan_joint:
+      id: 1
+      model: "H54-200-S500-R"
+    leftarm_shoulder_lift_joint:
+      id: 2
+      model: "H54-200-S500-R"
+    leftarm_elbow_joint:
+      id: 3
+      model: "H54-100-S500-R"
+    leftarm_wrist_1_joint:
+      id: 4
+      model: "H54-100-S500-R"
+    leftarm_wrist_2_joint:
+      id: 5
+      model: "H42-20-S300-R"
+    leftarm_wrist_3_joint:
+      id: 6
+      model: "H42-20-S300-R"
+
+right_arm_dynamixel_hardware:
+  ros__parameters:
+    usb_port: "/dev/ttyUSB1" # for Windows "COM5" which converts to "/dev/ttyUSB1" in wsl
+    baud_rate: 1000000
+    joints:
+      - rightarm_shoulder_pan_joint
+      - rightarm_shoulder_lift_joint
+      - rightarm_elbow_joint
+      - rightarm_wrist_1_joint
+      - rightarm_wrist_2_joint
+      - rightarm_wrist_3_joint
+    rightarm_shoulder_pan_joint:
+      id: 1
+      model: "H54-200-S500-R"
+    rightarm_shoulder_lift_joint:
+      id: 2
+      model: "H54-200-S500-R"
+    rightarm_elbow_joint:
+      id: 3
+      model: "H54-100-S500-R"
+    rightarm_wrist_1_joint:
+      id: 4
+      model: "H54-100-S500-R"
+    rightarm_wrist_2_joint:
+      id: 5
+      model: "H42-20-S300-R"
+    rightarm_wrist_3_joint:
+      id: 6
+      model: "H42-20-S300-R"

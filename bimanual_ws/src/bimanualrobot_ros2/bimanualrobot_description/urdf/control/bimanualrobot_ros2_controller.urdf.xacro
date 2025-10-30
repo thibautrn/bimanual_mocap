@@ -1,0 +1,218 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:include filename="$(find bimanualrobot_description)/urdf/control/arm_ros2_controller.urdf.xacro" />
+    <xacro:property name="prefix_val" value="" />
+    <xacro:macro name="bimanualrobot_ros2_control" params="prefix use_gazebo use_gripper gripper_type">
+        <!-- Identity matrices for 6 joints (row-major 6x6) -->
+        <xacro:property name="I6_right"
+        value="-1,0,0,0,0,0,
+                0,1,0,0,0,0,
+                0,0,1,0,0,0,
+                0,0,0,1,0,0,
+                0,0,0,0,1,0,
+                0,0,0,0,0,1"/>
+        <xacro:property name="I6_left"
+        value="-1,0,0,0,0,0,
+                0,1,0,0,0,0,
+                0,0,1,0,0,0,
+                0,0,0,1,0,0,
+                0,0,0,0,1,0,
+                0,0,0,0,0,1"/>
+        <!-- Suffix prefix with underscore -->
+        <xacro:if value="${prefix != ''}">
+            <xacro:property name="prefix_val" value="${prefix + '_'}" />
+        </xacro:if>
+        <!-- Left Arm Hardware System -->
+        <xacro:if value="${use_gazebo}">
+            <ros2_control name="LeftArmSystem" type="system">
+                <hardware>
+                    <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+                </hardware>
+
+                <!-- Left Arm Joints -->
+                <joint name="leftarm_shoulder_pan_joint">
+                    <command_interface name="position">
+                        <param name="min">-2.879793</param>
+                        <param name="max">2.879793</param>
+                    </command_interface>
+                    <state_interface name="position"/>
+                    <state_interface name="velocity"/>
+                </joint>
+                <joint name="leftarm_shoulder_lift_joint">
+                    <command_interface name="position">
+                        <param name="min">-2.879793</param>
+                        <param name="max">2.879793</param>
+                    </command_interface>
+                    <state_interface name="position"/>
+                    <state_interface name="velocity"/>
+                </joint>
+                <joint name="leftarm_elbow_joint">
+                    <command_interface name="position">
+                        <param name="min">-2.879793</param>
+                        <param name="max">2.879793</param>
+                    </command_interface>
+                    <state_interface name="position"/>
+                    <state_interface name="velocity"/>
+                </joint>
+                <joint name="leftarm_wrist_1_joint">
+                    <command_interface name="position">
+                        <param name="min">-2.879793</param>
+                        <param name="max">2.879793</param>
+                    </command_interface>
+                    <state_interface name="position"/>
+                    <state_interface name="velocity"/>
+                </joint>
+                <joint name="leftarm_wrist_2_joint">
+                    <command_interface name="position">
+                        <param name="min">-2.879793</param>
+                        <param name="max">2.879793</param>
+                    </command_interface>
+                    <state_interface name="position"/>
+                    <state_interface name="velocity"/>
+                </joint>
+                <joint name="leftarm_wrist_3_joint">
+                    <command_interface name="position">
+                        <param name="min">-3.05</param>
+                        <param name="max">3.05</param>
+                    </command_interface>
+                    <state_interface name="position"/>
+                    <state_interface name="velocity"/>
+                </joint>
+            </ros2_control>
+            <!-- Right Arm Hardware System -->
+            <ros2_control name="RightArmSystem" type="system">
+                <hardware>
+                        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+                </hardware>
+
+                <!-- Right Arm Joints -->
+                <joint name="rightarm_shoulder_pan_joint">
+                    <command_interface name="position">
+                        <param name="min">-2.879793</param>
+                        <param name="max">2.879793</param>
+                    </command_interface>
+                    <state_interface name="position"/>
+                    <state_interface name="velocity"/>
+                </joint>
+                <joint name="rightarm_shoulder_lift_joint">
+                    <command_interface name="position">
+                        <param name="min">-2.879793</param>
+                        <param name="max">2.879793</param>
+                    </command_interface>
+                    <state_interface name="position"/>
+                    <state_interface name="velocity"/>
+                </joint>
+                <joint name="rightarm_elbow_joint">
+                    <command_interface name="position">
+                        <param name="min">-2.879793</param>
+                        <param name="max">2.879793</param>
+                    </command_interface>
+                    <state_interface name="position"/>
+                    <state_interface name="velocity"/>
+                </joint>
+                <joint name="rightarm_wrist_1_joint">
+                    <command_interface name="position">
+                        <param name="min">-2.879793</param>
+                        <param name="max">2.879793</param>
+                    </command_interface>
+                    <state_interface name="position"/>
+                    <state_interface name="velocity"/>
+                </joint>
+                <joint name="rightarm_wrist_2_joint">
+                    <command_interface name="position">
+                        <param name="min">-2.879793</param>
+                        <param name="max">2.879793</param>
+                    </command_interface>
+                    <state_interface name="position"/>
+                    <state_interface name="velocity"/>
+                </joint>
+                <joint name="rightarm_wrist_3_joint">
+                    <command_interface name="position">
+                        <param name="min">-3.05</param>
+                        <param name="max">3.05</param>
+                    </command_interface>
+                    <state_interface name="position"/>
+                    <state_interface name="velocity"/>
+                </joint>
+            </ros2_control>
+        </xacro:if>
+        <xacro:unless value="${use_gazebo}">
+            <!-- Left arm -->
+            <xacro:dxl_arm_hardware
+                arm_name="leftarm"
+                port_name="/dev/ttyUSB1"
+                baud_rate="1000000"
+                num_joints="6"
+                joint_names="leftarm_shoulder_pan_joint leftarm_shoulder_lift_joint leftarm_elbow_joint leftarm_wrist_1_joint leftarm_wrist_2_joint leftarm_wrist_3_joint"
+                ids="1 2 3 4 5 6"
+                tj_matrix_csv="${I6_left}"
+                jt_matrix_csv="${I6_left}"
+                dxl_model_folder="/param/dxl_model"
+                disable_torque_at_init="true"/>
+
+            <!-- Right arm -->
+            <xacro:dxl_arm_hardware
+                arm_name="rightarm"
+                port_name="/dev/ttyUSB0"
+                baud_rate="1000000"
+                num_joints="6"
+                joint_names="rightarm_shoulder_pan_joint rightarm_shoulder_lift_joint rightarm_elbow_joint rightarm_wrist_1_joint rightarm_wrist_2_joint rightarm_wrist_3_joint"
+                ids="1 2 3 4 5 6"
+                tj_matrix_csv="${I6_right}"
+                jt_matrix_csv="${I6_right}"
+                dxl_model_folder="/param/dxl_model"
+                disable_torque_at_init="true"/>
+        </xacro:unless>
+
+        <xacro:if value="${use_gripper}">
+            <ros2_control name="${prefix}GripperSystem" type="system">
+                <xacro:if value="${gripper_type == 'adaptive_gripper'}">
+                    <joint name="${prefix_val}gripper_controller">
+                        <command_interface name="position">
+                            <param name="min">-0.7</param>
+                            <param name="max">0.15</param>
+                        </command_interface>
+                        <state_interface name="position"/>
+                        <state_interface name="velocity"/>
+                    </joint>
+                    <joint name="${prefix_val}gripper_base_to_${prefix_val}gripper_left2">
+                        <param name="mimic">gripper_controller</param>
+                        <param name="multiplier">1.0</param>
+                        <state_interface name="position"/>
+                        <state_interface name="velocity"/>
+                    </joint>
+
+                    <joint name="${prefix_val}gripper_left3_to_${prefix_val}gripper_left1">
+                        <param name="mimic">gripper_controller</param>
+                        <param name="multiplier">-1.0</param>
+                        <state_interface name="position"/>
+                        <state_interface name="velocity"/>
+                    </joint>
+
+                    <joint name="${prefix_val}gripper_base_to_${prefix_val}gripper_right3">
+                        <param name="mimic">gripper_controller</param>
+                        <param name="multiplier">-1.0</param>
+                        <state_interface name="position"/>
+                        <state_interface name="velocity"/>
+                    </joint>
+
+                    <joint name="${prefix_val}gripper_base_to_${prefix_val}gripper_right2">
+                        <param name="mimic">gripper_controller</param>
+                        <state_interface name="position"/>
+                        <state_interface name="velocity"/>
+                    </joint>
+
+                    <joint name="${prefix_val}gripper_right3_to_${prefix_val}gripper_right1">
+                        <param name="mimic">gripper_controller</param>
+                        <param name="multiplier">1.0</param>
+                        <state_interface name="position"/>
+                        <state_interface name="velocity"/>
+                    </joint>
+                </xacro:if>
+            </ros2_control>
+        </xacro:if>
+
+        
+    </xacro:macro>
+
+</robot>
