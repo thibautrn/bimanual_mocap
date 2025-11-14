@@ -1,211 +1,494 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-import time
+import time, struct, socket, threading, math
+from collections import deque
+
 import numpy as np
-
 import rclpy
 from rclpy.node import Node
-
-# (kept to preserve your structure; not used)
-from geometry_msgs.msg import PoseStamped, Quaternion
-from moveit_msgs.action import MoveGroup
-from moveit_msgs.msg import MotionPlanRequest, Constraints, PositionConstraint, OrientationConstraint, RobotState
-from shape_msgs.msg import SolidPrimitive
 from rclpy.action import ActionClient
-from tf2_ros import Buffer, TransformListener
+
+from builtin_interfaces.msg import Duration
+from sensor_msgs.msg import JointState
+from trajectory_msgs.msg import JointTrajectoryPoint
+from control_msgs.action import FollowJointTrajectory
+from moveit_msgs.srv import GetStateValidity
+from moveit_msgs.msg import RobotState
+
 
 import pinocchio as pin
 from pinocchio.robot_wrapper import RobotWrapper
+from scipy.optimize import least_squares
 
-# ============================================================
-# UDP listener globals (kept to preserve structure; not used here)
-hand_pos = None
-larm_pos = None
-uarm_pos = None
-hand_rot = None
-larm_rot = None
-uarm_rot = None
-hips_rot = None
 
-# ============================================================
-# Helpers / config (your values)
-SHOULDER_ANCHOR = np.array([0.045, 0.32, 1.526], dtype=float)
+from std_srvs.srv import Trigger
+from pathlib import Path
+# ============================ CONFIG ============================
 
+# URDF & IK target frame
+URDF_PATH = "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/robots/bimanualrobot.urdf"
+F_WRIST   = "rightarm_wrist_2_link"     # IK target frame
+LOG_DIR = Path("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs")  # change if you want
+
+# IK DOFs
+IK_JOINTS = [
+    "rightarm_shoulder_pan_joint",
+    "rightarm_shoulder_lift_joint",
+    "rightarm_elbow_joint",
+    # "rightarm_wrist_1_joint",
+]
+
+# Controller & joint order (must match the controller)
+ACTION_NAME = "/right_arm_controller/follow_joint_trajectory"
+JOINTS = [
+    "rightarm_shoulder_pan_joint",
+    "rightarm_shoulder_lift_joint",
+    "rightarm_elbow_joint",
+    "rightarm_wrist_1_joint",
+    "rightarm_wrist_2_joint",
+    "rightarm_wrist_3_joint",
+]
+
+GROUP_NAME = "right_arm"
+
+# Wearable → robot mapping
+SHOULDER_ANCHOR = np.array([0.045, -0.2925, 1.526], dtype=float)
+L1 = 0.298511306318538     # shoulder→elbow
+L2 = 0.23293990641364998   # elbow→wrist_2
+
+MIN_W_DIST_M       = 0.002 
+
+# UDP
+UDP_PORT = 50003
+PACK_FMT = "ffff fff ffff fff ffff fff ffff"  # 25 floats
+
+# Loop & timing
+CYCLE_SECONDS      = 0.05      # send a new short trajectory ~20 Hz
+BATCH_HORIZON_S    = 0.25      # each goal spans the *recent* 250 ms path
+RESAMPLE_HZ        = 40.0      # JTC-friendly uniform spacing
+DT_STEP            = 1.0 / RESAMPLE_HZ  # 0.025 s
+
+# Smoothing / guards
+LPF_CUTOFF_HZ      = 3.5       # light smoothing of wrist positions
+SPIKE_MAX_SPEED    = 2.0       # m/s (reject absurd jumps)
+MIN_JOINT_STEP_RAD = np.deg2rad(0.1)  # tiny deadband on first point
+
+# IK solver params
+W_POS = 1.0
+W_REG = 1e-3
+MAX_ITERS = 300
+XTOL = FTOL = GTOL = 1e-8
+VERBOSE = 0
+
+# ================================================================
+
+# Shared UDP state
+_udp_lock = threading.Lock()
+_hand_pos = None
+_larm_pos = None
+_uarm_pos = None
+
+def udp_listener(port=UDP_PORT):
+    """Receive wearable packet and keep the latest sample (thread)."""
+    global _hand_pos, _larm_pos, _uarm_pos
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    sock.bind(("0.0.0.0", port))
+    print(f"[UDP] Listening on udp://0.0.0.0:{port}")
+    unpack = struct.Struct(PACK_FMT).unpack_from
+    while True:
+        try:
+            data, _ = sock.recvfrom(1024)
+            if len(data) < 100:
+                continue
+            (hw, hx, hy, hz,
+             hpx, hpy, hpz,
+             lw, lx, ly, lz,
+             lpx, lpy, lpz,
+             uw, ux, uy, uz,
+             upx, upy, upz,
+             qw, qx, qy, qz) = unpack(data)
+            with _udp_lock:
+                _hand_pos = (hpx, hpy, hpz)
+                _larm_pos = (lpx, lpy, lpz)
+                _uarm_pos = (upx, upy, upz)
+        except Exception as e:
+            print(f"[UDP ERROR] {e}")
+
+# ---------------- mapping helpers ----------------
 def remap_watch_to_base(p):
-    """Map watch (x,y,z) -> robot base (x,y,z): (z, -x, y)."""
+    """(x,y,z)_watch -> (z, -x, y)_base"""
     x, y, z = map(float, p)
     return np.array([z, -x, y], dtype=float)
 
+def unit(v):
+    n = np.linalg.norm(v)
+    return v / (n + 1e-12)
 
-class MoveLeftArmClient(Node):
+def scale_watch_to_right_robot(uarm_watch, larm_watch, hand_watch):
+    """Map watch 3 pts (upper, lower, hand) to robot-base wrist (W)."""
+    Sh = remap_watch_to_base(uarm_watch)
+    El = remap_watch_to_base(larm_watch)
+    Wr = remap_watch_to_base(hand_watch)
+
+    # Right-arm flip kept from your previous mapping
+    Sh[1] = -Sh[1]; El[1] = -El[1]; Wr[1] = -Wr[1]
+
+    u1 = unit(El - Sh)  # shoulder->elbow dir
+    u2 = unit(Wr - El)  # elbow->wrist  dir
+
+    E_robot = SHOULDER_ANCHOR + L1 * u1
+    W_robot = E_robot        + L2 * u2
+    return E_robot, W_robot
+
+# ---------------- low-pass EMA ----------------
+class LowPassEMA:
+    def __init__(self, fc_hz=LPF_CUTOFF_HZ):
+        self.fc = float(fc_hz)
+        self.y = None
+        self.t_last = None
+    def update(self, x, t_now):
+        x = np.asarray(x, float)
+        if self.y is None or self.t_last is None:
+            self.y = x.copy()
+            self.t_last = float(t_now)
+            return self.y
+        dt = max(float(t_now - self.t_last), 1e-3)
+        alpha = 1.0 - math.exp(-2.0 * math.pi * self.fc * dt)
+        self.y = (1.0 - alpha) * self.y + alpha * x
+        self.t_last = float(t_now)
+        return self.y
+
+# ---------------- Pinocchio IK ----------------
+def build_index_maps(model: pin.Model, joint_names):
+    idx_q_vars = []
+    for jn in joint_names:
+        jid = model.getJointId(jn)
+        if jid == 0:
+            raise RuntimeError(f"Joint not found in model: {jn}")
+        idx_q_vars.append(model.joints[jid].idx_q)
+
+    lb_all = np.array(model.lowerPositionLimit, dtype=float)
+    ub_all = np.array(model.upperPositionLimit, dtype=float)
+    lb = lb_all[idx_q_vars].copy(); ub = ub_all[idx_q_vars].copy()
+    lb[~np.isfinite(lb)] = -1e9; ub[~np.isfinite(ub)] = +1e9
+    return np.array(idx_q_vars), lb, ub
+
+def full_q_from_vars(model: pin.Model, idx_q_vars, q_vars):
+    q = pin.neutral(model)
+    for v, i in zip(q_vars, idx_q_vars):
+        q[i] = float(v)
+    return q
+
+def residual_wrist_only(q_vars, model, data, fid_wrist, idx_q_vars, target_W, w_pos=W_POS, w_reg=W_REG):
+    q = full_q_from_vars(model, idx_q_vars, q_vars)
+    pin.forwardKinematics(model, data, q)
+    pin.updateFramePlacements(model, data)
+    pW = data.oMf[fid_wrist].translation
+    err_pos = (pW - target_W) * w_pos
+    err_reg = w_reg * q_vars
+    return np.hstack((err_pos, err_reg))
+
+def solve_wrist_ik_least_squares(robot: RobotWrapper,
+                                 fid_wrist: int,
+                                 idx_q_vars,
+                                 lb, ub,
+                                 target_W,
+                                 seed):
+    model = robot.model; data  = model.createData()
+    res = least_squares(
+        residual_wrist_only, np.array(seed, float),
+        bounds=(lb, ub),
+        args=(model, data, fid_wrist, idx_q_vars, target_W, W_POS, W_REG),
+        max_nfev=MAX_ITERS, xtol=XTOL, ftol=FTOL, gtol=GTOL, verbose=VERBOSE
+    )
+    q_vars_sol = res.x
+    q_full     = full_q_from_vars(model, idx_q_vars, q_vars_sol)
+    pin.forwardKinematics(model, data, q_full); pin.updateFramePlacements(model, data)
+    pW = data.oMf[fid_wrist].translation
+    err = np.linalg.norm(pW - target_W)
+    return res.success, q_vars_sol, q_full, pW, err
+
+# ============================ NODE ============================
+
+class WatchPathBatcher(Node):
     def __init__(self):
-        super().__init__('move_left_drumstick_tip_client')
+        super().__init__("watch_path_batcher")
 
-        # --- Load robot model for Pinocchio
-        urdf_path = "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/robots/bimanualrobot.urdf"
-        self.robot: RobotWrapper = RobotWrapper.BuildFromURDF(urdf_path, [])
+        # Pinocchio
+        self.robot: RobotWrapper = RobotWrapper.BuildFromURDF(URDF_PATH, [])
         self.model: pin.Model = self.robot.model
-        self.data: pin.Data = self.model.createData()
+        if not self.model.existFrame(F_WRIST):
+            raise RuntimeError(f"Frame not found: {F_WRIST}")
+        self.fid_wrist = self.model.getFrameId(F_WRIST)
 
-        # Frames we care about
-        self.F_ELBOW = "leftarm_wrist_1_link"   # "elbow" location in your naming
-        self.F_WRIST = "leftarm_wrist_2_link"   # wrist
+        # IK indexing
+        self.idx_q_vars, self.lb, self.ub = build_index_maps(self.model, IK_JOINTS)
 
-        # Joints we allow to move for IK
-        self.IK_JOINTS = [
-            "leftarm_shoulder_pan_joint",
-            "leftarm_shoulder_lift_joint",
-            "leftarm_elbow_joint",
-            "leftarm_wrist_1_joint",
-        ]
+        self._gsv = self.create_client(GetStateValidity, "/check_state_validity")
 
-        # Resolve frame and joint indices
-        self.fid_elbow = self.model.getFrameId(self.F_ELBOW)
-        self.fid_wrist = self.model.getFrameId(self.F_WRIST)
+        # Joint states
+        self._latest_js = None
+        self.create_subscription(JointState, "/joint_states", self._on_js, 10)
 
-        self.idx_q_vars = [self.model.joints[self.model.getJointId(n)].idx_q for n in self.IK_JOINTS]
-        self.idx_v_vars = [self.model.joints[self.model.getJointId(n)].idx_v for n in self.IK_JOINTS]
-        self.lb = np.array([self.model.lowerPositionLimit[i] for i in self.idx_q_vars])
-        self.ub = np.array([self.model.upperPositionLimit[i] for i in self.idx_q_vars])
+        # Trajectory action
+        self._traj_ac = ActionClient(self, FollowJointTrajectory, ACTION_NAME)
 
-        # Measure L1/L2 from the actual model (robust)
-        self.L1, self.L2 = self._measure_link_lengths()
-        self.get_logger().info(f"L1={self.L1:.4f} m, L2={self.L2:.4f} m")
+        # Wrist history (smoothed)
+        self._w_lpf = LowPassEMA(fc_hz=LPF_CUTOFF_HZ)
+        self._w_hist = deque()  # (t, W_smoothed)
+        self._hist_keep_s = 0.6
 
-        # Run one demo solve
-        self.demo_once()
+        # IK warm-start
+        self._last_qvars = None
+        self._last_q_cmd = None
 
-    # ----------------- geometry helpers -----------------
-    def _measure_link_lengths(self):
-        """Measure shoulder→elbow (L1) and elbow→wrist (L2) from model neutral."""
-        q0 = pin.neutral(self.model)
-        pin.forwardKinematics(self.model, self.data, q0)
-        pin.updateFramePlacements(self.model, self.data)
 
-        # Shoulder reference frame: use upper arm link if available
-        shoulder_ref = "leftarm_forearm_link" # or "leftarm_upper_arm_link"
-        if not self.model.existFrame(shoulder_ref):
-            shoulder_ref = "leftarm_shoulder_link"
-        fid_sh = self.model.getFrameId(shoulder_ref)
+        self._log_fh = None
+        LOG_DIR.mkdir(parents=True, exist_ok=True)
+        self._srv_log_start = self.create_service(Trigger, "~/log/start", self._log_start_cb)
+        self._srv_log_stop  = self.create_service(Trigger, "~/log/stop",  self._log_stop_cb)
 
-        S = self.data.oMf[fid_sh].translation.copy()
-        E = self.data.oMf[self.fid_elbow].translation.copy()
-        W = self.data.oMf[self.fid_wrist].translation.copy()
-        L1 = float(np.linalg.norm(E - S))
-        L2 = float(np.linalg.norm(W - E))
-        # L12 = float(np.linalg.norm(W - S))
-        # print(L1, L2, L12)
-        return L1, L2
+    # --- helpers ---
+    def _on_js(self, msg: JointState):
+        self._latest_js = msg
 
-    def _targets_from_wearable(self, uarm_xyz, larm_xyz, hand_xyz):
-        """Build elbow and wrist targets in BASE from wearable points using L1/L2 and anchor."""
-        sh = remap_watch_to_base(uarm_xyz)
-        el = remap_watch_to_base(larm_xyz)
-        wr = remap_watch_to_base(hand_xyz)
+    def _current_positions(self, names, default=0.0):
+        d = {}
+        if self._latest_js:
+            d = dict(zip(self._latest_js.name, self._latest_js.position))
+        return [float(d.get(n, default)) for n in names]
 
-        u1 = el - sh; u1 /= (np.linalg.norm(u1) + 1e-9)
-        u2 = wr - el; u2 /= (np.linalg.norm(u2) + 1e-9)
+    def _append_wrist(self, W, t_now):
+        # reject absurd spikes (simple speed guard relative to last)
+        if self._w_hist:
+            t_prev, W_prev = self._w_hist[-1]
+            dt = max(t_now - t_prev, 1e-3)
+            # speed spike guard
+            if np.linalg.norm(W - W_prev) / dt > SPIKE_MAX_SPEED:
+                return  # drop spike
+            # NEW: distance deadband (skip tiny moves)
+            if np.linalg.norm(W - W_prev) < MIN_W_DIST_M:
+                return  # too close to last accepted point
 
-        tgt_E = SHOULDER_ANCHOR + self.L1 * u1
-        tgt_W = tgt_E + self.L2 * u2
-        return tgt_E, tgt_W
+        self._w_hist.append((t_now, W.copy()))
+        # prune old
+        while self._w_hist and (t_now - self._w_hist[0][0]) > self._hist_keep_s:
+            self._w_hist.popleft()
 
-    # ----------------- IK (Gauss-Newton LM) -----------------
-    def _full_q_from_vars(self, q_vars):
-        q = pin.neutral(self.model)
-        for v, i in zip(q_vars, self.idx_q_vars):
-            q[i] = float(v)
-        return q
+    def _resample_recent_path(self, t_now, horizon_s=BATCH_HORIZON_S, dt=DT_STEP):
+        """Return uniformly sampled wrist waypoints over the last horizon_s."""
+        if not self._w_hist:
+            return []
+        t_start = t_now - horizon_s
+        ts = np.arange(t_start + dt, t_now + 1e-9, dt)  # strictly increasing for time_from_start
+        # gather arrays
+        times = np.array([t for (t, _) in self._w_hist], float)
+        Ws    = np.array([w for (_, w) in self._w_hist], float)  # shape (M,3)
+        if len(times) < 2:
+            return []
+        # interpolate component-wise (linear)
+        W_list = []
+        for tk in ts:
+            tk = float(np.clip(tk, times[0], times[-1]))
+            # indices for interpolation
+            j = int(np.searchsorted(times, tk, side="right") - 1)
+            j = max(0, min(j, len(times)-2))
+            t0, t1 = times[j], times[j+1]
+            a = 0.0 if (t1 <= t0) else (tk - t0) / (t1 - t0)
+            Wk = (1.0 - a) * Ws[j] + a * Ws[j+1]
+            W_list.append(Wk)
+        return W_list  # list of np.array(3,)
 
-    def _positions_and_jacobians(self, q):
-        # Update kinematics
-        pin.forwardKinematics(self.model, self.data, q)
-        pin.updateFramePlacements(self.model, self.data)
+    def _robot_state_from_qcmd(self, q_cmd):
+        js = JointState()
+        js.name = JOINTS
+        js.position = list(map(float, q_cmd))
+        # optional stamp
+        now = self.get_clock().now().to_msg()
+        js.header.stamp = now
 
-        pE = self.data.oMf[self.fid_elbow].translation.copy()
-        pW = self.data.oMf[self.fid_wrist].translation.copy()
+        rs = RobotState()
+        rs.joint_state = js
+        return rs
+    
+    def _is_state_valid(self, q_cmd) -> bool:
+        if not self._gsv.wait_for_service(timeout_sec=0.5):
+            self.get_logger().warn("GetStateValidity service not available; skipping check.")
+            return True  # fallback: allow
 
-        # 6xN Jacobians in WORLD; take linear (bottom 3 rows)
-        JE6 = pin.computeFrameJacobian(self.model, self.data, q, self.fid_elbow, pin.ReferenceFrame.WORLD)
-        JW6 = pin.computeFrameJacobian(self.model, self.data, q, self.fid_wrist, pin.ReferenceFrame.WORLD)
-        JE = JE6[3:6, :]
-        JW = JW6[3:6, :]
+        req = GetStateValidity.Request()
+        req.robot_state = self._robot_state_from_qcmd(q_cmd)
+        req.group_name = GROUP_NAME
 
-        # Keep only the columns for our IK joints (idx_v)
-        JEv = JE[:, self.idx_v_vars]
-        JWv = JW[:, self.idx_v_vars]
-        return pE, pW, JEv, JWv
+        fut = self._gsv.call_async(req)
+        rclpy.spin_until_future_complete(self, fut)
+        if not fut.result():
+            self.get_logger().error("GetStateValidity call failed; skipping check.")
+            return True  # conservative fallback
 
-    def solve_ik_elbow_wrist(self, target_E, target_W, x0=None, max_it=80, lm_lambda=1e-4, tol=1e-5):
-        if x0 is None:
-            x = np.zeros(len(self.idx_q_vars))
-        else:
-            x = np.array(x0, dtype=float)
+        res = fut.result()
+        if not res.valid:
+            self.get_logger().warn("State INVALID (collision or limits). Not sending.")
+            # (Optional) print first few contacts for debugging
+            if res.contacts:
+                pairs = [(c.contact_body_1, c.contact_body_2) for c in res.contacts[:3]]
+                self.get_logger().warn(f"Contacts (first): {pairs}")
+        return res.valid
+    
 
-        for it in range(max_it):
-            q = self._full_q_from_vars(x)
-            pE, pW, JE, JW = self._positions_and_jacobians(q)
+    def _log_start_cb(self, req, resp):
+        if self._log_fh is not None:
+            resp.success = False
+            resp.message = "Already logging."
+            return resp
+        ts = time.strftime("%Y%m%d_%H%M%S")
+        path = LOG_DIR / f"wrist_{ts}.txt"
+        self._log_fh = open(path, "w", buffering=1)  # line-buffered
+        self._log_fh.write("# t_sec  x  y  z   (base frame)\n")
+        resp.success = True
+        resp.message = f"Logging to {path}"
+        self.get_logger().info(resp.message)
+        return resp
 
-            r = np.hstack([(pE - target_E), (pW - target_W)])  # 6
-            if np.linalg.norm(r) < tol:
-                return True, x
+    def _log_stop_cb(self, req, resp):
+        if self._log_fh is None:
+            resp.success = False
+            resp.message = "Not logging."
+            return resp
+        try:
+            path = self._log_fh.name
+        except Exception:
+            path = str(LOG_DIR)
+        self._log_fh.close()
+        self._log_fh = None
+        resp.success = True
+        resp.message = f"Saved: {path}"
+        self.get_logger().info(resp.message)
+        return resp
 
-            J = np.vstack([JE, JW])  # 6 x nv_sel
-            H = J.T @ J + lm_lambda * np.eye(J.shape[1])
-            g = J.T @ r
-            try:
-                dx = -np.linalg.solve(H, g)
-            except np.linalg.LinAlgError:
-                return False, x
 
-            # Basic clamped update
-            xn = np.clip(x + dx, self.lb, self.ub)
+    def _send_followtraj_traj(self, q_points, dt_step):
+        if not q_points:
+            return
+        goal = FollowJointTrajectory.Goal()
+        goal.trajectory.joint_names = JOINTS
 
-            # Simple backtracking if residual not improving
-            qn = self._full_q_from_vars(xn)
-            pEn, pWn, *_ = self._positions_and_jacobians(qn)
-            rn = np.hstack([(pEn - target_E), (pWn - target_W)])
-            if np.linalg.norm(rn) < np.linalg.norm(r):
-                x = xn
+        t_accum = 0.0
+        pts = []
+        for q in q_points:
+            t_accum += dt_step
+            pt = JointTrajectoryPoint()
+            pt.positions = list(map(float, q))
+            sec = int(t_accum); nsec = int((t_accum - sec) * 1e9)
+            pt.time_from_start = Duration(sec=sec, nanosec=nsec)
+            pts.append(pt)
+
+        goal.trajectory.points = pts
+        self._traj_ac.wait_for_server()
+        self._traj_ac.send_goal_async(goal)
+
+    # --- main loop ---
+    def run(self):
+        # wait a moment for /joint_states
+        t0 = time.time()
+        while rclpy.ok() and self._latest_js is None and (time.time() - t0) < 2.0:
+            rclpy.spin_once(self, timeout_sec=0.05)
+
+        last_tick = 0.0
+        while rclpy.ok():
+            now = time.time()
+            if now - last_tick < CYCLE_SECONDS:
+                rclpy.spin_once(self, timeout_sec=0.01)
+                continue
+            last_tick = now
+
+            # latest wearable sample → wrist target (smoothed & buffered)
+            with _udp_lock:
+                hp, lp, up = _hand_pos, _larm_pos, _uarm_pos
+            if hp is None or lp is None or up is None:
+                continue
+
+            _, W_raw = scale_watch_to_right_robot(up, lp, hp)
+            W_smooth = self._w_lpf.update(W_raw, now)
+            if self._log_fh is not None:
+                x, y, z = map(float, W_smooth)
+                self._log_fh.write(f"{now:.6f} {x:.6f} {y:.6f} {z:.6f}\n")
+
+            self._append_wrist(W_smooth, now)
+
+            # resample last horizon_s path at uniform rate
+            W_list = self._resample_recent_path(now, horizon_s=BATCH_HORIZON_S, dt=DT_STEP)
+            if not W_list:
+                continue
+
+            # current measured joints (for non-IK joints)
+            js_now = self._current_positions(JOINTS, default=0.0)
+
+            if self._last_qvars is not None:
+                qvars_seed = self._last_qvars.copy()   # warm start from last good IK
             else:
-                # shrink step
-                x = np.clip(x + 0.5 * dx, self.lb, self.ub)
-
-        return False, x
-
-    # ----------------- Demo -----------------
-    def demo_once(self):
-        # One test triple (use your real sample if you want)
-        uarm =  (-0.169548898935318, 0.43098410964012146,  0.018846701830625534)
-        larm =  (-0.42159175872802734, 0.41295209527015686, -0.04238429665565491)
-        hand =  (-0.6245307326316833, 0.40523090958595276, -0.1269783228635788)
-
-        tgtE, tgtW = self._targets_from_wearable(uarm, larm, hand)
-        self.get_logger().info(f"Targets:\n  elbow {np.round(tgtE,3)}\n  wrist {np.round(tgtW,3)}")
-
-        ok, qvars = self.solve_ik_elbow_wrist(tgtE, tgtW, x0=None)
-        if not ok:
-            self.get_logger().warn("IK did not converge.")
-        else:
-            # Report solution
-            for jn, v in zip(self.IK_JOINTS, qvars):
-                self.get_logger().info(f"{jn:30s} = {v:+.6f} rad")
-
-            # Check achieved errors
-            q_sol = self._full_q_from_vars(qvars)
-            pin.forwardKinematics(self.model, self.data, q_sol)
-            pin.updateFramePlacements(self.model, self.data)
-            pE = self.data.oMf[self.fid_elbow].translation
-            pW = self.data.oMf[self.fid_wrist].translation
-            eE = np.linalg.norm(pE - tgtE)
-            eW = np.linalg.norm(pW - tgtW)
-            self.get_logger().info(f"Achieved errors: elbow={eE*1000:.2f} mm, wrist={eW*1000:.2f} mm")
+                # Project the *measured* joint state onto the IK DOFs (better than zeros)
+                js_vec = np.array(js_now, dtype=float)
+                qvars_seed = np.array([js_vec[JOINTS.index(jn)] for jn in IK_JOINTS], dtype=float)
 
 
-# ============================================================
-if __name__ == "__main__":
+            # IK each waypoint (warm-start)
+            q_points = []
+            last_qvars_solved = None
+            for Wk in W_list:
+                ok, qvars, qfull, pW, err = solve_wrist_ik_least_squares(
+                    self.robot, self.fid_wrist, self.idx_q_vars, self.lb, self.ub, Wk, seed=qvars_seed
+                )
+                if not ok:
+                    break
+                q_cmd = list(js_now)
+                for jn, val in zip(IK_JOINTS, qvars):
+                    if jn in JOINTS:
+                        q_cmd[JOINTS.index(jn)] = float(val)
+                
+
+                if not self._is_state_valid(q_cmd):
+                    break
+
+                q_points.append(q_cmd)
+                qvars_seed = qvars  # warm-start next point
+                last_qvars_solved = qvars 
+
+            if last_qvars_solved is not None:
+                self._last_qvars = last_qvars_solved.copy()
+            if not q_points:
+                continue
+
+            # tiny deadband on the first point to avoid spam
+            if self._last_q_cmd is not None:
+                dq = np.abs(np.array(q_points[0]) - np.array(self._last_q_cmd))
+                if float(np.max(dq)) < MIN_JOINT_STEP_RAD:
+                    continue
+
+            # remember seeds
+            self._last_qvars = qvars_seed
+            self._last_q_cmd = q_points[0]
+
+
+            self._send_followtraj_traj(q_points, dt_step=DT_STEP)
+
+            # light debug
+            print(f"[batch] pts={len(q_points)} over {BATCH_HORIZON_S:.3f}s | W_now={np.round(W_smooth,3)}")
+
+# ============================ main ============================
+
+def main():
+    th = threading.Thread(target=udp_listener, daemon=True)
+    th.start()
+
     rclpy.init()
-    node = MoveLeftArmClient()
-    # No spin: this script just runs one IK solve and exits.
-    node.destroy_node()
-    rclpy.shutdown()
+    node = WatchPathBatcher()
+    try:
+        node.run()
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == "__main__":
+    main()

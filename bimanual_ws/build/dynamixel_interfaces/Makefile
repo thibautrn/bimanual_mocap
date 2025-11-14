@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_interfaces
+CMAKE_SOURCE_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces
+CMAKE_BINARY_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -415,7 +415,7 @@ dynamixel_interfaces__py: cmake_check_build_system
 
 # fast build rule for target.
 dynamixel_interfaces__py/fast:
-	$(MAKE) $(MAKESILENT) -f /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build.make /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build
+	$(MAKE) $(MAKESILENT) -f /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build.make /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build
 .PHONY : dynamixel_interfaces__py/fast
 
 rosidl_generator_c/dynamixel_interfaces/msg/detail/dynamixel_state__description.o: rosidl_generator_c/dynamixel_interfaces/msg/detail/dynamixel_state__description.c.o

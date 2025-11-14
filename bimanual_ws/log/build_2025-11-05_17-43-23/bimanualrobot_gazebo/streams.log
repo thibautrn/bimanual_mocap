@@ -1,0 +1,49 @@
+[0.062s] Invoking command in '/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_gazebo -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_gazebo
+[0.161s] -- The C compiler identification is GNU 13.3.0
+[0.265s] -- The CXX compiler identification is GNU 13.3.0
+[0.299s] -- Detecting C compiler ABI info
+[0.473s] -- Detecting C compiler ABI info - done
+[0.502s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.503s] -- Detecting C compile features
+[0.504s] -- Detecting C compile features - done
+[0.523s] -- Detecting CXX compiler ABI info
+[0.725s] -- Detecting CXX compiler ABI info - done
+[0.753s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.754s] -- Detecting CXX compile features
+[0.755s] -- Detecting CXX compile features - done
+[0.767s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.056s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.177s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.312s] -- Found controller_manager: 4.38.0 (/opt/ros/jazzy/share/controller_manager/cmake)
+[1.453s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.491s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.532s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.578s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.792s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.807s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[2.093s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[2.147s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[2.203s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.547s] -- Found gripper_controllers: 4.33.0 (/opt/ros/jazzy/share/gripper_controllers/cmake)
+[3.666s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[3.668s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[3.668s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[3.930s] [31mCMake Error at CMakeLists.txt:14 (find_package):
+[3.931s]   By not providing "Findgz_ros2_control.cmake" in CMAKE_MODULE_PATH this
+[3.931s]   project has asked CMake to find a package configuration file provided by
+[3.931s]   "gz_ros2_control", but CMake did not find one.
+[3.932s] 
+[3.932s]   Could not find a package configuration file provided by "gz_ros2_control"
+[3.932s]   with any of the following names:
+[3.932s] 
+[3.932s]     gz_ros2_controlConfig.cmake
+[3.933s]     gz_ros2_control-config.cmake
+[3.933s] 
+[3.933s]   Add the installation prefix of "gz_ros2_control" to CMAKE_PREFIX_PATH or
+[3.933s]   set "gz_ros2_control_DIR" to a directory containing one of the above files.
+[3.934s]   If "gz_ros2_control" provides a separate development package or SDK, be
+[3.934s]   sure it has been installed.
+[3.934s] 
+[3.934s] [0m
+[3.934s] -- Configuring incomplete, errors occurred!
+[3.948s] Invoked command in '/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_gazebo -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_gazebo

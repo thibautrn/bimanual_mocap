@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_hardware_interface
+CMAKE_SOURCE_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_hardware_interface
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_hardware_interface
+CMAKE_BINARY_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_hardware_interface
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_hardware_interface/CMakeFiles /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_hardware_interface//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_hardware_interface/CMakeFiles /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_hardware_interface//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_hardware_interface/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_hardware_interface/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

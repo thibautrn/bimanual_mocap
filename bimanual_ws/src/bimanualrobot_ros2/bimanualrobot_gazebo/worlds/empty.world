@@ -35,6 +35,14 @@
     <plugin filename="gz-sim-imu-system"
       name="gz::sim::systems::Imu">
     </plugin>
+
+    <!-- Ball Leash Plugin - keeps ball within radius of anchor point -->
+    <plugin name="ball_leash" filename="libball_leash_plugin.so">
+      <ball_model_name>end_ball</ball_model_name>
+      <anchor_point>0.78 0.55 2.10</anchor_point>
+      <max_distance>0.6</max_distance>
+      <pull_back_factor>0.8</pull_back_factor>
+    </plugin>
  
     <!-- To add realistic gravity, do: 0.0 0.0 -9.8, otherwise do 0.0 0.0 0.0 -->
     <gravity>0.0 0.0 -9.81</gravity>

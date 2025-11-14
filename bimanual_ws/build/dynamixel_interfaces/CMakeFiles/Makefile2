@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_interfaces
+CMAKE_SOURCE_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces
+CMAKE_BINARY_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -127,14 +127,14 @@ dynamixel_interfaces__py/clean: dynamixel_interfaces__py/CMakeFiles/dynamixel_in
 CMakeFiles/uninstall.dir/all: CMakeFiles/dynamixel_interfaces_uninstall.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -153,14 +153,14 @@ CMakeFiles/uninstall.dir/clean:
 CMakeFiles/dynamixel_interfaces_uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces_uninstall.dir/build.make CMakeFiles/dynamixel_interfaces_uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces_uninstall.dir/build.make CMakeFiles/dynamixel_interfaces_uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num= "Built target dynamixel_interfaces_uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num= "Built target dynamixel_interfaces_uninstall"
 .PHONY : CMakeFiles/dynamixel_interfaces_uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces_uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces_uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces_uninstall.dir/rule
 
 # Convenience name for target.
@@ -187,14 +187,14 @@ CMakeFiles/dynamixel_interfaces.dir/all: CMakeFiles/dynamixel_interfaces__rosidl
 CMakeFiles/dynamixel_interfaces.dir/all: CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces.dir/build.make CMakeFiles/dynamixel_interfaces.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces.dir/build.make CMakeFiles/dynamixel_interfaces.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num= "Built target dynamixel_interfaces"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num= "Built target dynamixel_interfaces"
 .PHONY : CMakeFiles/dynamixel_interfaces.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 52
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 52
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces.dir/rule
 
 # Convenience name for target.
@@ -213,14 +213,14 @@ CMakeFiles/dynamixel_interfaces.dir/clean:
 CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=22 "Built target dynamixel_interfaces__rosidl_generator_type_description"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=22 "Built target dynamixel_interfaces__rosidl_generator_type_description"
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/rule
 
 # Convenience name for target.
@@ -239,14 +239,14 @@ CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/clean:
 CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/all: CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Built target dynamixel_interfaces__rosidl_generator_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Built target dynamixel_interfaces__rosidl_generator_c"
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/rule
 
 # Convenience name for target.
@@ -265,14 +265,14 @@ CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/clean:
 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_c.dir/all: CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=35,36,37,38,39,40 "Built target dynamixel_interfaces__rosidl_typesupport_fastrtps_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=35,36,37,38,39,40 "Built target dynamixel_interfaces__rosidl_typesupport_fastrtps_c"
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_c.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_c.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 21
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_c.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_c.dir/rule
 
 # Convenience name for target.
@@ -291,14 +291,14 @@ CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_c.dir/clean:
 CMakeFiles/dynamixel_interfaces__cpp.dir/all: CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__cpp.dir/build.make CMakeFiles/dynamixel_interfaces__cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__cpp.dir/build.make CMakeFiles/dynamixel_interfaces__cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=1 "Built target dynamixel_interfaces__cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=1 "Built target dynamixel_interfaces__cpp"
 .PHONY : CMakeFiles/dynamixel_interfaces__cpp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces__cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces__cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces__cpp.dir/rule
 
 # Convenience name for target.
@@ -318,14 +318,14 @@ CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/all: CMakeF
 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/all: CMakeFiles/dynamixel_interfaces__cpp.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=41,42,43,44,45,46 "Built target dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=41,42,43,44,45,46 "Built target dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp"
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rule
 
 # Convenience name for target.
@@ -344,14 +344,14 @@ CMakeFiles/dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp.dir/clean:
 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_c.dir/all: CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=47,48,49,50,51,52 "Built target dynamixel_interfaces__rosidl_typesupport_introspection_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=47,48,49,50,51,52 "Built target dynamixel_interfaces__rosidl_typesupport_introspection_c"
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_c.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_c.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 21
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_c.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_c.dir/rule
 
 # Convenience name for target.
@@ -370,14 +370,14 @@ CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_c.dir/clean:
 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_c.dir/all: CMakeFiles/dynamixel_interfaces__rosidl_generator_c.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_typesupport_c.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_typesupport_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_typesupport_c.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_typesupport_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=23,24,25,26,27,28 "Built target dynamixel_interfaces__rosidl_typesupport_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=23,24,25,26,27,28 "Built target dynamixel_interfaces__rosidl_typesupport_c"
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_typesupport_c.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_c.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 21
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_c.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_typesupport_c.dir/rule
 
 # Convenience name for target.
@@ -397,14 +397,14 @@ CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_cpp.dir/all: C
 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_cpp.dir/all: CMakeFiles/dynamixel_interfaces__cpp.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=53,54,55,56,57,58 "Built target dynamixel_interfaces__rosidl_typesupport_introspection_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=53,54,55,56,57,58 "Built target dynamixel_interfaces__rosidl_typesupport_introspection_cpp"
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_typesupport_introspection_cpp.dir/rule
 
 # Convenience name for target.
@@ -424,14 +424,14 @@ CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/all: CMakeFiles/dyna
 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/all: CMakeFiles/dynamixel_interfaces__cpp.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=29,30,31,32,33,34 "Built target dynamixel_interfaces__rosidl_typesupport_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=29,30,31,32,33,34 "Built target dynamixel_interfaces__rosidl_typesupport_cpp"
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/rule
 
 # Convenience name for target.
@@ -450,14 +450,14 @@ CMakeFiles/dynamixel_interfaces__rosidl_typesupport_cpp.dir/clean:
 CMakeFiles/ament_cmake_python_symlink_dynamixel_interfaces.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_dynamixel_interfaces.dir/build.make CMakeFiles/ament_cmake_python_symlink_dynamixel_interfaces.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_dynamixel_interfaces.dir/build.make CMakeFiles/ament_cmake_python_symlink_dynamixel_interfaces.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num= "Built target ament_cmake_python_symlink_dynamixel_interfaces"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num= "Built target ament_cmake_python_symlink_dynamixel_interfaces"
 .PHONY : CMakeFiles/ament_cmake_python_symlink_dynamixel_interfaces.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ament_cmake_python_symlink_dynamixel_interfaces.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ament_cmake_python_symlink_dynamixel_interfaces.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/ament_cmake_python_symlink_dynamixel_interfaces.dir/rule
 
 # Convenience name for target.
@@ -476,14 +476,14 @@ CMakeFiles/ament_cmake_python_symlink_dynamixel_interfaces.dir/clean:
 CMakeFiles/ament_cmake_python_build_dynamixel_interfaces_egg.dir/all: CMakeFiles/ament_cmake_python_symlink_dynamixel_interfaces.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_dynamixel_interfaces_egg.dir/build.make CMakeFiles/ament_cmake_python_build_dynamixel_interfaces_egg.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_dynamixel_interfaces_egg.dir/build.make CMakeFiles/ament_cmake_python_build_dynamixel_interfaces_egg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num= "Built target ament_cmake_python_build_dynamixel_interfaces_egg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num= "Built target ament_cmake_python_build_dynamixel_interfaces_egg"
 .PHONY : CMakeFiles/ament_cmake_python_build_dynamixel_interfaces_egg.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ament_cmake_python_build_dynamixel_interfaces_egg.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ament_cmake_python_build_dynamixel_interfaces_egg.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/ament_cmake_python_build_dynamixel_interfaces_egg.dir/rule
 
 # Convenience name for target.
@@ -504,14 +504,14 @@ CMakeFiles/dynamixel_interfaces__rosidl_generator_py.dir/all: CMakeFiles/dynamix
 CMakeFiles/dynamixel_interfaces__rosidl_generator_py.dir/all: dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_generator_py.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_generator_py.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces__rosidl_generator_py.dir/build.make CMakeFiles/dynamixel_interfaces__rosidl_generator_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=17,18,19,20,21 "Built target dynamixel_interfaces__rosidl_generator_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=17,18,19,20,21 "Built target dynamixel_interfaces__rosidl_generator_py"
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_generator_py.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces__rosidl_generator_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 58
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 58
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces__rosidl_generator_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_generator_py.dir/rule
 
 # Convenience name for target.
@@ -534,14 +534,14 @@ CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c.dir/all: CMakeF
 CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c.dir/all: dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=61,62 "Built target dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=61,62 "Built target dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c"
 .PHONY : CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 60
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 60
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rule
 
 # Convenience name for target.
@@ -564,14 +564,14 @@ CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_introspection_c.dir/all: C
 CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_introspection_c.dir/all: dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_introspection_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_introspection_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=63,64 "Built target dynamixel_interfaces_s__rosidl_typesupport_introspection_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=63,64 "Built target dynamixel_interfaces_s__rosidl_typesupport_introspection_c"
 .PHONY : CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_introspection_c.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_introspection_c.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 60
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 60
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_introspection_c.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_introspection_c.dir/rule
 
 # Convenience name for target.
@@ -593,14 +593,14 @@ CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_c.dir/all: CMakeFiles/dyna
 CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_c.dir/all: dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_c.dir/build.make CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_c.dir/build.make CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=59,60 "Built target dynamixel_interfaces_s__rosidl_typesupport_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=59,60 "Built target dynamixel_interfaces_s__rosidl_typesupport_c"
 .PHONY : CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_c.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_c.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 60
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 60
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_c.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_c.dir/rule
 
 # Convenience name for target.
@@ -613,20 +613,20 @@ CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_c.dir/clean:
 .PHONY : CMakeFiles/dynamixel_interfaces_s__rosidl_typesupport_c.dir/clean
 
 #=============================================================================
-# Target rules for target /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir
+# Target rules for target /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir
 
 # All Build rule for target.
 dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/all: CMakeFiles/dynamixel_interfaces.dir/all
-	$(MAKE) $(MAKESILENT) -f /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build.make /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/depend
-	$(MAKE) $(MAKESILENT) -f /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build.make /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=2 "Built target dynamixel_interfaces__py"
+	$(MAKE) $(MAKESILENT) -f /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build.make /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/depend
+	$(MAKE) $(MAKESILENT) -f /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build.make /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=2 "Built target dynamixel_interfaces__py"
 .PHONY : dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/all
 
 # Build rule for subdir invocation for target.
 dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 53
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 53
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles 0
 .PHONY : dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/rule
 
 # Convenience name for target.
@@ -635,7 +635,7 @@ dynamixel_interfaces__py: dynamixel_interfaces__py/CMakeFiles/dynamixel_interfac
 
 # clean rule for target.
 dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/clean:
-	$(MAKE) $(MAKESILENT) -f /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build.make /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/clean
+	$(MAKE) $(MAKESILENT) -f /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build.make /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/clean
 .PHONY : dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/clean
 
 #=============================================================================

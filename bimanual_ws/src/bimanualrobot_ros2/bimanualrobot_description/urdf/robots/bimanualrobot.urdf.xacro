@@ -9,7 +9,7 @@
   <xacro:arg name="use_camera" default="false"/>
   <xacro:arg name="use_gazebo" default="false"/>
   <xacro:arg name="use_gripper" default="false"/>
-  <xacro:arg name="use_drumstick" default="false"/>
+  <xacro:arg name="use_drumstick" default="true"/>
 
   <xacro:property name="gripper_type" value="$(arg gripper_type)"/>
 
@@ -25,7 +25,7 @@
   </xacro:if>
   <!-- drumstick -->
   <xacro:if value="$(arg use_drumstick)">
-    <xacro:include filename="$(find bimanualrobot_description)/urdf/mech/drumstick.xacro" />
+    <xacro:include filename="$(find bimanualrobot_description)/urdf/mech/pingpong.xacro" />
     <xacro:include filename="$(find bimanualrobot_description)/urdf/mech/drum.xacro" />
   </xacro:if>
 
@@ -98,12 +98,12 @@
   </joint>
 
   <xacro:if value="$(arg use_drumstick)">
-    <xacro:drumstick prefix="leftarm" parent="leftarm_ee_link">
+    <xacro:ping prefix="leftarm" parent="leftarm_ee_link">
       <origin xyz="0 0 0.086" rpy="0 0 0" />
-    </xacro:drumstick>
-    <xacro:drumstick prefix="rightarm" parent="rightarm_ee_link">
+    </xacro:ping>
+    <xacro:ping prefix="rightarm" parent="rightarm_ee_link">
       <origin xyz="0 0 0.086" rpy="0 0 0" />
-    </xacro:drumstick>
+    </xacro:ping>
   </xacro:if>
 
   <xacro:include filename="$(find bimanualrobot_description)/urdf/control/gazebo_sim_ros2_control.urdf.xacro" />

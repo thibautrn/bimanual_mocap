@@ -1,21 +1,21 @@
 CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp.o: \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_hardware_interface/src/dynamixel_hardware_interface.cpp \
  /usr/include/stdc-predef.h \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel_hardware_interface.hpp \
  /usr/include/c++/13/memory /usr/include/c++/13/bits/memoryfwd.h \
- /usr/include/aarch64-linux-gnu/c++/13/bits/c++config.h \
- /usr/include/aarch64-linux-gnu/c++/13/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
- /usr/include/aarch64-linux-gnu/bits/wordsize.h \
- /usr/include/aarch64-linux-gnu/bits/timesize.h \
- /usr/include/aarch64-linux-gnu/sys/cdefs.h \
- /usr/include/aarch64-linux-gnu/bits/long-double.h \
- /usr/include/aarch64-linux-gnu/gnu/stubs.h \
- /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
- /usr/include/aarch64-linux-gnu/c++/13/bits/cpu_defines.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/bits/timesize.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/long-double.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
  /usr/include/c++/13/pstl/pstl_config.h \
  /usr/include/c++/13/bits/allocator.h \
- /usr/include/aarch64-linux-gnu/c++/13/bits/c++allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
  /usr/include/c++/13/bits/new_allocator.h /usr/include/c++/13/new \
  /usr/include/c++/13/bits/exception.h \
  /usr/include/c++/13/bits/functexcept.h \
@@ -40,15 +40,15 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /usr/include/c++/13/bits/alloc_traits.h \
  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
  /usr/include/c++/13/bits/align.h \
- /usr/lib/gcc/aarch64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
- /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
- /usr/include/aarch64-linux-gnu/bits/types.h \
- /usr/include/aarch64-linux-gnu/bits/typesizes.h \
- /usr/include/aarch64-linux-gnu/bits/time64.h \
- /usr/include/aarch64-linux-gnu/bits/wchar.h \
- /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
- /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
- /usr/include/aarch64-linux-gnu/bits/stdint-least.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/time64.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/unique_ptr.h /usr/include/c++/13/tuple \
  /usr/include/c++/13/bits/invoke.h \
@@ -60,52 +60,52 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/c++/13/bits/stringfwd.h /usr/include/c++/13/bits/postypes.h \
  /usr/include/c++/13/cwchar /usr/include/wchar.h \
- /usr/include/aarch64-linux-gnu/bits/floatn.h \
- /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
- /usr/lib/gcc/aarch64-linux-gnu/13/include/stddef.h \
- /usr/lib/gcc/aarch64-linux-gnu/13/include/stdarg.h \
- /usr/include/aarch64-linux-gnu/bits/types/wint_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/mbstate_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
- /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
- /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/c++/13/bits/shared_ptr_base.h /usr/include/c++/13/typeinfo \
  /usr/include/c++/13/bits/allocated_ptr.h \
  /usr/include/c++/13/bits/refwrap.h \
  /usr/include/c++/13/ext/aligned_buffer.h \
  /usr/include/c++/13/ext/atomicity.h \
- /usr/include/aarch64-linux-gnu/c++/13/bits/gthr.h \
- /usr/include/aarch64-linux-gnu/c++/13/bits/gthr-default.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h \
- /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
- /usr/include/aarch64-linux-gnu/bits/endian.h \
- /usr/include/aarch64-linux-gnu/bits/endianness.h \
- /usr/include/aarch64-linux-gnu/bits/sched.h \
- /usr/include/aarch64-linux-gnu/bits/types/struct_sched_param.h \
- /usr/include/aarch64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
- /usr/include/aarch64-linux-gnu/bits/time.h \
- /usr/include/aarch64-linux-gnu/bits/timex.h \
- /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
- /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/struct_tm.h \
- /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/struct_itimerspec.h \
- /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
- /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
- /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
- /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
- /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
- /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
- /usr/include/aarch64-linux-gnu/bits/setjmp.h \
- /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
- /usr/include/aarch64-linux-gnu/bits/pthread_stack_min-dynamic.h \
- /usr/include/aarch64-linux-gnu/c++/13/bits/atomic_word.h \
- /usr/include/aarch64-linux-gnu/sys/single_threaded.h \
+ /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endianness.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
+ /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+ /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+ /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+ /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
  /usr/include/c++/13/ext/concurrence.h /usr/include/c++/13/exception \
  /usr/include/c++/13/bits/exception_ptr.h \
  /usr/include/c++/13/bits/cxxabi_init_exception.h \
@@ -118,9 +118,9 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /usr/include/c++/13/pstl/execution_defs.h /usr/include/c++/13/string \
  /usr/include/c++/13/bits/char_traits.h \
  /usr/include/c++/13/bits/localefwd.h \
- /usr/include/aarch64-linux-gnu/c++/13/bits/c++locale.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
  /usr/include/c++/13/clocale /usr/include/locale.h \
- /usr/include/aarch64-linux-gnu/bits/locale.h /usr/include/c++/13/cctype \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/13/cctype \
  /usr/include/ctype.h /usr/include/c++/13/bits/ostream_insert.h \
  /usr/include/c++/13/bits/cxxabi_forced.h \
  /usr/include/c++/13/bits/range_access.h \
@@ -128,27 +128,26 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /usr/include/c++/13/bits/basic_string.h /usr/include/c++/13/string_view \
  /usr/include/c++/13/bits/string_view.tcc \
  /usr/include/c++/13/ext/string_conversions.h /usr/include/c++/13/cstdlib \
- /usr/include/stdlib.h /usr/include/aarch64-linux-gnu/bits/waitflags.h \
- /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
- /usr/include/aarch64-linux-gnu/sys/types.h /usr/include/endian.h \
- /usr/include/aarch64-linux-gnu/bits/byteswap.h \
- /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
- /usr/include/aarch64-linux-gnu/sys/select.h \
- /usr/include/aarch64-linux-gnu/bits/select.h \
- /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/alloca.h /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+ /usr/include/alloca.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/c++/13/bits/std_abs.h /usr/include/c++/13/cstdio \
- /usr/include/stdio.h \
- /usr/include/aarch64-linux-gnu/bits/types/__fpos_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/__fpos64_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
- /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
- /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/stdio.h /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/c++/13/cerrno /usr/include/errno.h \
- /usr/include/aarch64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
- /usr/include/aarch64-linux-gnu/asm/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/aarch64-linux-gnu/bits/types/error_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/13/bits/charconv.h \
  /usr/include/c++/13/bits/basic_string.tcc \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
@@ -173,50 +172,34 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /usr/include/c++/13/bits/uniform_int_dist.h \
  /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp \
  /usr/include/c++/13/csignal /usr/include/signal.h \
- /usr/include/aarch64-linux-gnu/bits/signum-generic.h \
- /usr/include/aarch64-linux-gnu/bits/signum-arch.h \
- /usr/include/aarch64-linux-gnu/bits/types/sig_atomic_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/siginfo_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/__sigval_t.h \
- /usr/include/aarch64-linux-gnu/bits/siginfo-arch.h \
- /usr/include/aarch64-linux-gnu/bits/siginfo-consts.h \
- /usr/include/aarch64-linux-gnu/bits/siginfo-consts-arch.h \
- /usr/include/aarch64-linux-gnu/bits/types/sigval_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/sigevent_t.h \
- /usr/include/aarch64-linux-gnu/bits/sigevent-consts.h \
- /usr/include/aarch64-linux-gnu/bits/sigaction.h \
- /usr/include/aarch64-linux-gnu/bits/sigcontext.h \
- /usr/include/aarch64-linux-gnu/asm/sigcontext.h \
- /usr/include/linux/types.h /usr/include/aarch64-linux-gnu/asm/types.h \
- /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
- /usr/include/aarch64-linux-gnu/asm/bitsperlong.h \
- /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
- /usr/include/linux/stddef.h \
- /usr/include/aarch64-linux-gnu/asm/posix_types.h \
- /usr/include/asm-generic/posix_types.h \
- /usr/include/aarch64-linux-gnu/asm/sve_context.h \
- /usr/include/aarch64-linux-gnu/bits/types/stack_t.h \
- /usr/include/aarch64-linux-gnu/sys/ucontext.h \
- /usr/include/aarch64-linux-gnu/sys/procfs.h \
- /usr/include/aarch64-linux-gnu/sys/time.h \
- /usr/include/aarch64-linux-gnu/sys/user.h \
- /usr/include/aarch64-linux-gnu/bits/procfs.h \
- /usr/include/aarch64-linux-gnu/bits/procfs-id.h \
- /usr/include/aarch64-linux-gnu/bits/procfs-prregset.h \
- /usr/include/aarch64-linux-gnu/bits/procfs-extra.h \
- /usr/include/aarch64-linux-gnu/bits/sigstack.h \
- /usr/include/aarch64-linux-gnu/bits/sigstksz.h /usr/include/unistd.h \
- /usr/include/aarch64-linux-gnu/bits/posix_opt.h \
- /usr/include/aarch64-linux-gnu/bits/environments.h \
- /usr/include/aarch64-linux-gnu/bits/confname.h \
- /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
- /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
- /usr/include/aarch64-linux-gnu/bits/unistd_ext.h \
+ /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
+ /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
+ /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
+ /usr/include/x86_64-linux-gnu/bits/sigaction.h \
+ /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
+ /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
+ /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstack.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstksz.h /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/linux/close_range.h \
- /usr/include/aarch64-linux-gnu/bits/ss_flags.h \
- /usr/include/aarch64-linux-gnu/bits/types/struct_sigstack.h \
- /usr/include/aarch64-linux-gnu/bits/sigthread.h \
- /usr/include/aarch64-linux-gnu/bits/signal_ext.h \
+ /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
+ /usr/include/x86_64-linux-gnu/bits/sigthread.h \
+ /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
  /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/list_parameters.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp \
@@ -237,14 +220,14 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /usr/include/c++/13/bits/locale_classes.h \
  /usr/include/c++/13/bits/locale_classes.tcc \
  /usr/include/c++/13/system_error \
- /usr/include/aarch64-linux-gnu/c++/13/bits/error_constants.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
  /usr/include/c++/13/streambuf /usr/include/c++/13/bits/streambuf.tcc \
  /usr/include/c++/13/bits/basic_ios.h \
  /usr/include/c++/13/bits/locale_facets.h /usr/include/c++/13/cwctype \
- /usr/include/wctype.h /usr/include/aarch64-linux-gnu/bits/wctype-wchar.h \
- /usr/include/aarch64-linux-gnu/c++/13/bits/ctype_base.h \
+ /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
  /usr/include/c++/13/bits/streambuf_iterator.h \
- /usr/include/aarch64-linux-gnu/c++/13/bits/ctype_inline.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc /usr/include/c++/13/ostream \
  /usr/include/c++/13/bits/ostream.tcc \
@@ -254,8 +237,8 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /usr/include/c++/13/codecvt /usr/include/c++/13/bits/codecvt.h \
  /usr/include/c++/13/iomanip /usr/include/c++/13/locale \
  /usr/include/c++/13/bits/locale_facets_nonio.h /usr/include/c++/13/ctime \
- /usr/include/aarch64-linux-gnu/c++/13/bits/time_members.h \
- /usr/include/aarch64-linux-gnu/c++/13/bits/messages_members.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/13/bits/locale_facets_nonio.tcc \
  /usr/include/c++/13/bits/locale_conv.h \
  /usr/include/c++/13/bits/quoted_string.h \
@@ -269,7 +252,7 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
  /opt/ros/jazzy/include/rcutils/rcutils/allocator.h \
- /usr/lib/gcc/aarch64-linux-gnu/13/include/stdbool.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
  /opt/ros/jazzy/include/rcutils/rcutils/macros.h \
  /opt/ros/jazzy/include/rcutils/rcutils/types/rcutils_ret.h \
  /opt/ros/jazzy/include/rcutils/rcutils/visibility_control.h \
@@ -372,7 +355,7 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /opt/ros/jazzy/include/rcl_yaml_param_parser/rcl_yaml_param_parser/types.h \
  /opt/ros/jazzy/include/rcl/rcl/context.h \
  /opt/ros/jazzy/include/rcl/rcl/init_options.h \
- /usr/lib/gcc/aarch64-linux-gnu/13/include/stdalign.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdalign.h \
  /opt/ros/jazzy/include/rcl/rcl/guard_condition.h \
  /opt/ros/jazzy/include/rcl/rcl/node_options.h \
  /opt/ros/jazzy/include/rcl/rcl/domain_id.h \
@@ -490,7 +473,7 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /opt/ros/jazzy/include/rmw/rmw/error_handling.h \
  /opt/ros/jazzy/include/rmw/rmw/impl/cpp/demangle.hpp \
  /usr/include/c++/13/cxxabi.h \
- /usr/include/aarch64-linux-gnu/c++/13/bits/cxxabi_tweaks.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/cxxabi_tweaks.h \
  /opt/ros/jazzy/include/rmw/rmw/impl/config.h \
  /opt/ros/jazzy/include/rclcpp/rclcpp/publisher_base.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/network_flow_endpoint.hpp \
@@ -557,15 +540,15 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /opt/ros/jazzy/include/libstatistics_collector/libstatistics_collector/visibility_control.hpp \
  /opt/ros/jazzy/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/types.hpp \
  /usr/include/c++/13/cmath /usr/include/math.h \
- /usr/include/aarch64-linux-gnu/bits/math-vector.h \
- /usr/include/aarch64-linux-gnu/bits/libm-simd-decl-stubs.h \
- /usr/include/aarch64-linux-gnu/bits/flt-eval-method.h \
- /usr/include/aarch64-linux-gnu/bits/fp-logb.h \
- /usr/include/aarch64-linux-gnu/bits/fp-fast.h \
- /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h \
- /usr/include/aarch64-linux-gnu/bits/mathcalls.h \
- /usr/include/aarch64-linux-gnu/bits/mathcalls-narrow.h \
- /usr/include/aarch64-linux-gnu/bits/iscanonical.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+ /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+ /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
  /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/tr1/gamma.tcc \
  /usr/include/c++/13/tr1/special_function_util.h \
  /usr/include/c++/13/tr1/bessel_function.tcc \
@@ -712,9 +695,11 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /opt/ros/jazzy/include/hardware_interface/hardware_interface/hardware_info.hpp \
  /opt/ros/jazzy/include/joint_limits/joint_limits/joint_limits.hpp \
  /opt/ros/jazzy/include/hardware_interface/hardware_interface/introspection.hpp \
- /opt/ros/jazzy/include/pal_statistics/pal_statistics_macros.hpp \
- /opt/ros/jazzy/include/pal_statistics/pal_statistics.hpp \
- /opt/ros/jazzy/include/pal_statistics/pal_statistics_utils.hpp \
+ /opt/ros/jazzy/include/hardware_interface/hardware_interface/types/statistics_types.hpp \
+ /opt/ros/jazzy/include/realtime_tools/realtime_tools/mutex.hpp \
+ /opt/ros/jazzy/include/pal_statistics/pal_statistics/pal_statistics_macros.hpp \
+ /opt/ros/jazzy/include/pal_statistics/pal_statistics/pal_statistics.hpp \
+ /opt/ros/jazzy/include/pal_statistics/pal_statistics/pal_statistics_utils.hpp \
  /opt/ros/jazzy/include/pal_statistics_msgs/pal_statistics_msgs/msg/statistics.hpp \
  /opt/ros/jazzy/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics__struct.hpp \
  /opt/ros/jazzy/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
@@ -735,7 +720,7 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /opt/ros/jazzy/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_values__builder.hpp \
  /opt/ros/jazzy/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_values__traits.hpp \
  /opt/ros/jazzy/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_values__type_support.hpp \
- /opt/ros/jazzy/include/pal_statistics/static_circular_buffer.hpp \
+ /opt/ros/jazzy/include/pal_statistics/pal_statistics/static_circular_buffer.hpp \
  /opt/ros/jazzy/include/rclcpp_lifecycle/rclcpp_lifecycle/lifecycle_node.hpp \
  /opt/ros/jazzy/include/rclcpp_lifecycle/rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp \
  /opt/ros/jazzy/include/lifecycle_msgs/lifecycle_msgs/msg/transition.hpp \
@@ -761,7 +746,7 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /opt/ros/jazzy/include/rclcpp_lifecycle/rclcpp_lifecycle/managed_entity.hpp \
  /opt/ros/jazzy/include/rclcpp_lifecycle/rclcpp_lifecycle/transition.hpp \
  /opt/ros/jazzy/include/rclcpp_lifecycle/rclcpp_lifecycle/lifecycle_node_impl.hpp \
- /opt/ros/jazzy/include/pal_statistics/registration_utils.hpp \
+ /opt/ros/jazzy/include/pal_statistics/pal_statistics/registration_utils.hpp \
  /opt/ros/jazzy/include/hardware_interface/hardware_interface/lexical_casts.hpp \
  /usr/include/c++/13/regex /usr/include/c++/13/bitset \
  /usr/include/c++/13/stack /usr/include/c++/13/bits/stl_stack.h \
@@ -778,6 +763,7 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /usr/include/c++/13/bits/regex_executor.tcc \
  /opt/ros/jazzy/include/hardware_interface/hardware_interface/macros.hpp \
  /opt/ros/jazzy/include/hardware_interface/hardware_interface/system_interface.hpp \
+ /opt/ros/jazzy/include/hardware_interface/hardware_interface/hardware_component_interface.hpp \
  /opt/ros/jazzy/include/hardware_interface/hardware_interface/component_parser.hpp \
  /opt/ros/jazzy/include/hardware_interface/hardware_interface/types/hardware_component_interface_params.hpp \
  /opt/ros/jazzy/include/hardware_interface/hardware_interface/types/hardware_component_params.hpp \
@@ -792,12 +778,12 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /opt/ros/jazzy/include/lifecycle_msgs/lifecycle_msgs/msg/detail/state__type_support.hpp \
  /opt/ros/jazzy/include/realtime_tools/realtime_tools/async_function_handler.hpp \
  /opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_helpers.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_hardware_interface/include/dynamixel_hardware_interface/visibility_control.h \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel/dynamixel.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel/dynamixel_info.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_hardware_interface/include/dynamixel_hardware_interface/visibility_control.h \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel/dynamixel.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_hardware_interface/include/dynamixel_hardware_interface/dynamixel/dynamixel_info.hpp \
  /usr/include/c++/13/fstream \
- /usr/include/aarch64-linux-gnu/c++/13/bits/basic_file.h \
- /usr/include/aarch64-linux-gnu/c++/13/bits/c++io.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
  /usr/include/boost/algorithm/string.hpp \
  /usr/include/boost/algorithm/string/std_containers_traits.hpp \
@@ -1084,14 +1070,14 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /usr/include/boost/range/detail/misc_concept.hpp \
  /usr/include/boost/type_traits/make_unsigned.hpp \
  /usr/include/boost/type_traits/is_signed.hpp /usr/include/c++/13/climits \
- /usr/lib/gcc/aarch64-linux-gnu/13/include/limits.h \
- /usr/lib/gcc/aarch64-linux-gnu/13/include/syslimits.h \
- /usr/include/limits.h /usr/include/aarch64-linux-gnu/bits/posix1_lim.h \
- /usr/include/aarch64-linux-gnu/bits/local_lim.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
- /usr/include/aarch64-linux-gnu/bits/posix2_lim.h \
- /usr/include/aarch64-linux-gnu/bits/xopen_lim.h \
- /usr/include/aarch64-linux-gnu/bits/uio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
  /usr/include/boost/type_traits/is_unsigned.hpp \
  /usr/include/boost/type_traits/add_volatile.hpp \
  /usr/include/boost/range/detail/has_member_size.hpp \
@@ -1217,38 +1203,38 @@ CMakeFiles/dynamixel_hardware_interface.dir/src/dynamixel_hardware_interface.cpp
  /usr/include/boost/algorithm/string/formatter.hpp \
  /usr/include/boost/algorithm/string/detail/formatter.hpp \
  /usr/include/boost/algorithm/string/erase.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/dynamixel_sdk.h \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/group_bulk_read.h \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/port_handler.h \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/packet_handler.h \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/group_handler.h \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/group_bulk_write.h \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/group_sync_read.h \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/group_sync_write.h \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/group_fast_sync_read.h \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/group_fast_bulk_read.h \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/dynamixel_sdk.h \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/group_bulk_read.h \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/port_handler.h \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/packet_handler.h \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/group_handler.h \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/group_bulk_write.h \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/group_sync_read.h \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/group_sync_write.h \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/group_fast_sync_read.h \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/dynamixel_sdk/include/dynamixel_sdk/group_fast_bulk_read.h \
  /usr/include/c++/13/cstdarg \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/msg/dynamixel_state.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/msg/detail/dynamixel_state__struct.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/msg/detail/dynamixel_state__builder.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/msg/detail/dynamixel_state__traits.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/msg/detail/dynamixel_state__type_support.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/get_data_from_dxl.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/get_data_from_dxl__struct.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/get_data_from_dxl__builder.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/get_data_from_dxl__traits.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/get_data_from_dxl__type_support.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/set_data_to_dxl.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/set_data_to_dxl__struct.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/set_data_to_dxl__builder.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/set_data_to_dxl__traits.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/set_data_to_dxl__type_support.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/reboot_dxl.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/reboot_dxl__struct.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/reboot_dxl__builder.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/reboot_dxl__traits.hpp \
- /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/reboot_dxl__type_support.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/msg/dynamixel_state.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/msg/detail/dynamixel_state__struct.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/msg/detail/dynamixel_state__builder.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/msg/detail/dynamixel_state__traits.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/msg/detail/dynamixel_state__type_support.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/get_data_from_dxl.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/get_data_from_dxl__struct.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/get_data_from_dxl__builder.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/get_data_from_dxl__traits.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/get_data_from_dxl__type_support.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/set_data_to_dxl.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/set_data_to_dxl__struct.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/set_data_to_dxl__builder.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/set_data_to_dxl__traits.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/set_data_to_dxl__type_support.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/reboot_dxl.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/reboot_dxl__struct.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/reboot_dxl__builder.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/reboot_dxl__traits.hpp \
+ /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/detail/reboot_dxl__type_support.hpp \
  /opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_publisher.hpp \
  /opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_buffer.hpp \
  /opt/ros/jazzy/include/std_srvs/std_srvs/srv/set_bool.hpp \

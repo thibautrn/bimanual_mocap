@@ -1,5 +1,6 @@
 #!/bin/bash
 # Single script to launch the bimanualrobot with Gazebo, RViz, and MoveIt 2
+export GZ_SIM_SYSTEM_PLUGIN_PATH=$GZ_SIM_SYSTEM_PLUGIN_PATH:$HOME/bimanual_ws/install/bimanualrobot_gazebo/lib
 
 cleanup() {
     echo "Cleaning up..."
@@ -26,6 +27,25 @@ ros2 launch bimanualrobot_gazebo bimanualrobot.gazebo.launch.py \
     yaw:=0.0 &
 
 sleep 15
+
+echo "Spawning rope rig (cube + rope + ball) at x=0.60, z=1.80 ..."
+# ros2 run ros_gz_sim create \
+#   -file "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/ball_only.sdf" \
+#   -name end_ball \
+#   -x 0.78 -y 0.55 -z 2.0 &
+
+ROPE_XACRO="$(ros2 pkg prefix bimanualrobot_description)/share/bimanualrobot_description/urdf/rope_square_rig_spawn.urdf.xacro"
+ROPE_URDF="$(mktemp /tmp/rope_rig_XXXX.urdf)"
+
+xacro "$ROPE_XACRO" > "$ROPE_URDF"
+
+ros2 run ros_gz_sim create \
+  -file "$ROPE_URDF" \
+  -name rope_square_rig \
+  -x 0.78 -y 0.55 -z 2.05 \
+  -R 0.0 -P 0.0 -Y 0.0 &
+
+
 
 echo "Spawning velocity controller..."
 ros2 run controller_manager spawner joint_group_velocity_controller --controller-manager /controller_manager &

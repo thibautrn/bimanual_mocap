@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces
+CMAKE_SOURCE_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces
+CMAKE_BINARY_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces
 
 # Utility rule file for ament_cmake_python_symlink_dynamixel_sdk_custom_interfaces.
 
@@ -67,7 +67,7 @@ include CMakeFiles/ament_cmake_python_symlink_dynamixel_sdk_custom_interfaces.di
 include CMakeFiles/ament_cmake_python_symlink_dynamixel_sdk_custom_interfaces.dir/progress.make
 
 CMakeFiles/ament_cmake_python_symlink_dynamixel_sdk_custom_interfaces:
-	/usr/bin/cmake -E create_symlink /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_py/dynamixel_sdk_custom_interfaces /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/ament_cmake_python/dynamixel_sdk_custom_interfaces/dynamixel_sdk_custom_interfaces
+	/usr/bin/cmake -E create_symlink /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_py/dynamixel_sdk_custom_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/ament_cmake_python/dynamixel_sdk_custom_interfaces/dynamixel_sdk_custom_interfaces
 
 ament_cmake_python_symlink_dynamixel_sdk_custom_interfaces: CMakeFiles/ament_cmake_python_symlink_dynamixel_sdk_custom_interfaces
 ament_cmake_python_symlink_dynamixel_sdk_custom_interfaces: CMakeFiles/ament_cmake_python_symlink_dynamixel_sdk_custom_interfaces.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/ament_cmake_python_symlink_dynamixel_sdk_custom_interfaces.dir/clean:
 .PHONY : CMakeFiles/ament_cmake_python_symlink_dynamixel_sdk_custom_interfaces.dir/clean
 
 CMakeFiles/ament_cmake_python_symlink_dynamixel_sdk_custom_interfaces.dir/depend:
-	cd /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/CMakeFiles/ament_cmake_python_symlink_dynamixel_sdk_custom_interfaces.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/CMakeFiles/ament_cmake_python_symlink_dynamixel_sdk_custom_interfaces.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/ament_cmake_python_symlink_dynamixel_sdk_custom_interfaces.dir/depend
 

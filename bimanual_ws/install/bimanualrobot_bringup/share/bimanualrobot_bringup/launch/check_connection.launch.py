@@ -1,1 +1,1 @@
-/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_bringup/launch/check_connection.launch.py
+/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_bringup/launch/check_connection.launch.py

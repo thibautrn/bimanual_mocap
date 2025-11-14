@@ -60,7 +60,7 @@ if __name__ == "__main__":
 
     # Required IP argument
     # parser.add_argument('ip', type=str, help=f'put your local IP here.')
-    mac_ip = "192.168.1.191" #lab
+    mac_ip = "192.168.1.167" #lab
     # mac_ip = "192.168.1.103" #lab2
     parser.add_argument('smooth', nargs='?', type=int, default=5, help=f'smooth predicted trajectories')
     args = parser.parse_args()

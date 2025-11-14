@@ -13,61 +13,64 @@ from builtin_interfaces.msg import Duration
 from sensor_msgs.msg import JointState
 from trajectory_msgs.msg import JointTrajectoryPoint
 from control_msgs.action import FollowJointTrajectory
+
 from moveit_msgs.srv import GetStateValidity
 from moveit_msgs.msg import RobotState
-
 
 import pinocchio as pin
 from pinocchio.robot_wrapper import RobotWrapper
 from scipy.optimize import least_squares
 
-
 from std_srvs.srv import Trigger
 from pathlib import Path
+
+import subprocess, re, threading, time
+
 # ============================ CONFIG ============================
 
 # URDF & IK target frame
-URDF_PATH = "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/robots/bimanualrobot.urdf"
-F_WRIST   = "rightarm_wrist_2_link"     # IK target frame
-LOG_DIR = Path("/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs")  # change if you want
+URDF_PATH = "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/robots/bimanualrobot.urdf"
+F_WRIST   = "leftarm_wrist_2_link"     # IK target frame
+LOG_DIR = Path("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs")  # change if you want
 
 # IK DOFs
 IK_JOINTS = [
-    "rightarm_shoulder_pan_joint",
-    "rightarm_shoulder_lift_joint",
-    "rightarm_elbow_joint",
-    # "rightarm_wrist_1_joint",
+    "leftarm_shoulder_pan_joint",
+    "leftarm_shoulder_lift_joint",
+    "leftarm_elbow_joint",
+    # "leftarm_wrist_1_joint",
 ]
 
 # Controller & joint order (must match the controller)
-ACTION_NAME = "/right_arm_controller/follow_joint_trajectory"
+ACTION_NAME = "/left_arm_controller/follow_joint_trajectory"
 JOINTS = [
-    "rightarm_shoulder_pan_joint",
-    "rightarm_shoulder_lift_joint",
-    "rightarm_elbow_joint",
-    "rightarm_wrist_1_joint",
-    "rightarm_wrist_2_joint",
-    "rightarm_wrist_3_joint",
+    "leftarm_shoulder_pan_joint",
+    "leftarm_shoulder_lift_joint",
+    "leftarm_elbow_joint",
+    "leftarm_wrist_1_joint",
+    "leftarm_wrist_2_joint",
+    "leftarm_wrist_3_joint",
 ]
 
-GROUP_NAME = "right_arm"
+ALLOWED_CONTACT_PAIRS = {
+        ("rightarm_racket_handle", "rightarm_racket_blade"),
+        ("leftarm_racket_handle", "leftarm_racket_blade"),
+    }
+GROUP_NAME = "left_arm"
 
 # Wearable → robot mapping
-SHOULDER_ANCHOR = np.array([0.045, -0.2925, 1.526], dtype=float)
+SHOULDER_ANCHOR = np.array([0.045, 0.2925, 1.526], dtype=float)
 L1 = 0.298511306318538     # shoulder→elbow
 L2 = 0.23293990641364998   # elbow→wrist_2
-
-MIN_W_DIST_M       = 0.002 
 
 # UDP
 UDP_PORT = 50003
 PACK_FMT = "ffff fff ffff fff ffff fff ffff"  # 25 floats
+MIN_W_DIST_M = 0.002  
 
 # Loop & timing
-CYCLE_SECONDS      = 0.05      # send a new short trajectory ~20 Hz
-BATCH_HORIZON_S    = 0.25      # each goal spans the *recent* 250 ms path
-RESAMPLE_HZ        = 40.0      # JTC-friendly uniform spacing
-DT_STEP            = 1.0 / RESAMPLE_HZ  # 0.025 s
+CYCLE_SECONDS      = 0.06     # loop at ~40 Hz
+UPSAMPLE_FACTOR    = 2         # target ~2 points per cycle (midpoint + current)
 
 # Smoothing / guards
 LPF_CUTOFF_HZ      = 3.5       # light smoothing of wrist positions
@@ -80,6 +83,10 @@ W_REG = 1e-3
 MAX_ITERS = 300
 XTOL = FTOL = GTOL = 1e-8
 VERBOSE = 0
+
+# Contact detection
+CONTACT_COOLDOWN_S = 1.5  # Don't log same contact twice within 1500ms
+CONTACT_DISTANCE_THRESHOLD = 0.2  # 20cm - consider contact if ball-racket distance < this
 
 # ================================================================
 
@@ -115,6 +122,221 @@ def udp_listener(port=UDP_PORT):
         except Exception as e:
             print(f"[UDP ERROR] {e}")
 
+
+class GzPoseReader:
+    """
+    Generic reader for Gazebo's aggregate pose stream.
+    Reads position for any entity matching the target regex.
+    """
+
+    def __init__(self, world="default", target_regex=r"end_ball$", name="PoseReader", verbose=False):
+        self.topic = f"/world/{world}/pose/info"
+        self.target = re.compile(target_regex)
+        self.name = name
+        self.verbose = bool(verbose)
+
+        self._proc = None
+        self._th = None
+        self._stop = threading.Event()
+
+        # public state
+        self.have = False
+        self.xyz  = np.zeros(3, dtype=float)
+        self.vel  = np.zeros(3, dtype=float)
+
+        # internals
+        self._last_ts  = None
+        self._last_xyz = np.zeros(3, dtype=float)
+
+    # ---------- lifecycle ----------
+    def start(self):
+        if self._proc is not None:
+            return
+        if self.verbose:
+            print(f"[{self.name}] spawn: gz topic -e -t {self.topic}")
+        self._proc = subprocess.Popen(
+            ["gz", "topic", "-e", "-t", self.topic],
+            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
+            text=True, bufsize=1
+        )
+        self._th = threading.Thread(target=self._run, daemon=True)
+        self._th.start()
+
+    def stop(self):
+        self._stop.set()
+        try:
+            if self._proc and self._proc.poll() is None:
+                self._proc.terminate()
+        except Exception:
+            pass
+
+    # ---------- helpers ----------
+    def _dbg(self, *a):
+        if self.verbose:
+            print(f"[{self.name}]", *a)
+
+    def _commit(self, x, y, z, reason=""):
+        # fill missing from last-known
+        px = self.xyz[0] if x is None else x
+        py = self.xyz[1] if y is None else y
+        pz = self.xyz[2] if z is None else z
+
+        now = time.time()
+        if self._last_ts is not None:
+            dt = max(now - self._last_ts, 1e-6)
+            self.vel[:] = [(px - self._last_xyz[0]) / dt,
+                           (py - self._last_xyz[1]) / dt,
+                           (pz - self._last_xyz[2]) / dt]
+        self.xyz[:] = (px, py, pz)
+        self._last_xyz[:] = self.xyz
+        self._last_ts = now
+        self.have = True
+        self._dbg(f"COMMIT {reason}: xyz=({px:.6f},{py:.6f},{pz:.6f})")
+
+    # ---------- core parsing loop ----------
+    def _run(self):
+        in_pose = False
+        in_pos  = False
+        cur_name = ""
+        bx = by = bz = None
+        name_matched = False
+
+        rx_name   = re.compile(r'name:\s+"([^"]+)"')
+        rx_posblk = re.compile(r'position\s*\{([^}]*)\}')
+        rx_num_x  = re.compile(r'\bx:\s*([-\d.e+]+)')
+        rx_num_y  = re.compile(r'\by:\s*([-\d.e+]+)')
+        rx_num_z  = re.compile(r'\bz:\s*([-\d.e+]+)')
+
+        for ln in self._proc.stdout:
+            if self._stop.is_set():
+                break
+            s = ln.lstrip()
+
+            # start pose
+            if not in_pose and s.startswith("pose {"):
+                in_pose = True; in_pos = False
+                cur_name = ""; bx = by = bz = None
+                name_matched = False
+                self._dbg("POSE{")
+                continue
+
+            # outside pose: sometimes position appears anyway
+            if not in_pose:
+                m_any = rx_posblk.search(ln)
+                if m_any:
+                    block = m_any.group(1)
+                    mx = rx_num_x.search(block); my = rx_num_y.search(block); mz = rx_num_z.search(block)
+                    if mx: bx = float(mx.group(1))
+                    if my: by = float(my.group(1))
+                    if mz: bz = float(mz.group(1))
+                    self._dbg(f"pos-outside: x={bx} y={by} z={bz}")
+                continue
+
+            # inside pose: name
+            m_name = rx_name.search(ln)
+            if m_name:
+                cur_name = m_name.group(1)
+                name_matched = bool(self.target.search(cur_name))
+                self._dbg("NAME:", cur_name, "match=", name_matched)
+                if name_matched and (bx is not None or by is not None or bz is not None):
+                    self._commit(bx, by, bz, reason="on_name_match")
+                continue
+
+            # inline position
+            m_inline = rx_posblk.search(ln)
+            if m_inline:
+                block = m_inline.group(1)
+                mx = rx_num_x.search(block); my = rx_num_y.search(block); mz = rx_num_z.search(block)
+                if mx: bx = float(mx.group(1))
+                if my: by = float(my.group(1))
+                if mz: bz = float(mz.group(1))
+                self._dbg(f"pos-inline: x={bx} y={by} z={bz}")
+                if name_matched:
+                    self._commit(bx, by, bz, reason="inline_after_name")
+                continue
+
+            # multiline position
+            if "position {" in ln:
+                in_pos = True; self._dbg("  POSITION{"); continue
+            if in_pos:
+                mx = rx_num_x.search(ln); my = rx_num_y.search(ln); mz = rx_num_z.search(ln)
+                if mx: bx = float(mx.group(1))
+                if my: by = float(my.group(1))
+                if mz: bz = float(mz.group(1))
+                if "}" in ln:
+                    in_pos = False
+                    self._dbg(f"  }}POSITION  (x={bx} y={by} z={bz})")
+                    if name_matched:
+                        self._commit(bx, by, bz, reason="end_position_block")
+                continue
+
+            # end pose
+            if "}" in ln and in_pose and not in_pos:
+                self._dbg("}POSE")
+                if name_matched:
+                    self._commit(bx, by, bz, reason="end_of_block")
+                in_pose = False; name_matched = False
+                continue
+
+    # ---------- public getter ----------
+    def get(self):
+        """Returns (have_pose: bool, xyz: np.array(3), vel: np.array(3))"""
+        return bool(self.have), self.xyz.copy(), self.vel.copy()
+
+
+# Convenience aliases
+class GzBallPoseReader(GzPoseReader):
+    def __init__(self, world="default", verbose=False):
+        super().__init__(world=world, target_regex=r"(?:^end_ball$|::end_ball$)", 
+                        name="BallReader", verbose=verbose)
+        
+        self._world_to_real = np.array([0.78, 0.55, 2.10], dtype=float)
+
+    def get(self):
+        have, ball_world, vel = super().get()
+        if not have:
+            return False, np.zeros(3), np.zeros(3)
+
+        # Express ball in your real-world frame (same as W)
+        ball_real = ball_world + self._world_to_real
+        return True, ball_real, vel
+
+
+class GzRacketPoseReader(GzPoseReader):
+    def __init__(self, world="default", verbose=False):
+        super().__init__(
+            world=world,
+            # Match the left EE link from /world/.../pose/info
+            # Works for names like:
+            #   bimanualrobot::leftarm_ee_link
+            #   leftarm_ee_link
+            target_regex=r"(?:^leftarm_ee_link$|::leftarm_ee_link$)",
+            name="RacketReader",
+            verbose=verbose,
+        )
+
+        # TODO: set using your real transform:
+        # measure in Gazebo: ee_link -> racket middle / handle tip
+        # For now: along +Z in ee frame, adjust after checking.
+        self._offset = np.array([0.0, 0.0, 0.09], dtype=float)
+
+    def get(self):
+        """
+        Returns:
+            have (bool),
+            racket_center_xyz (np.array(3)),
+            vel (np.array(3))
+        """
+        have, ee_xyz, vel = super().get()
+        if not have:
+            return False, np.zeros(3), np.zeros(3)
+
+        racket_center = ee_xyz + self._offset
+        return True, racket_center, vel
+
+
+
+
 # ---------------- mapping helpers ----------------
 def remap_watch_to_base(p):
     """(x,y,z)_watch -> (z, -x, y)_base"""
@@ -125,14 +347,14 @@ def unit(v):
     n = np.linalg.norm(v)
     return v / (n + 1e-12)
 
-def scale_watch_to_right_robot(uarm_watch, larm_watch, hand_watch):
+def scale_watch_to_left_robot(uarm_watch, larm_watch, hand_watch):
     """Map watch 3 pts (upper, lower, hand) to robot-base wrist (W)."""
     Sh = remap_watch_to_base(uarm_watch)
     El = remap_watch_to_base(larm_watch)
     Wr = remap_watch_to_base(hand_watch)
 
-    # Right-arm flip kept from your previous mapping
-    Sh[1] = -Sh[1]; El[1] = -El[1]; Wr[1] = -Wr[1]
+    # left-arm flip kept from your previous mapping
+    # Sh[1] = -Sh[1]; El[1] = -El[1]; Wr[1] = -Wr[1]
 
     u1 = unit(El - Sh)  # shoulder->elbow dir
     u2 = unit(Wr - El)  # elbow->wrist  dir
@@ -211,9 +433,9 @@ def solve_wrist_ik_least_squares(robot: RobotWrapper,
 
 # ============================ NODE ============================
 
-class WatchPathBatcher(Node):
+class WatchMidpointStreamer(Node):
     def __init__(self):
-        super().__init__("watch_path_batcher")
+        super().__init__("watch_midpoint_streamer")
 
         # Pinocchio
         self.robot: RobotWrapper = RobotWrapper.BuildFromURDF(URDF_PATH, [])
@@ -225,26 +447,41 @@ class WatchPathBatcher(Node):
         # IK indexing
         self.idx_q_vars, self.lb, self.ub = build_index_maps(self.model, IK_JOINTS)
 
-        self._gsv = self.create_client(GetStateValidity, "/check_state_validity")
-
         # Joint states
         self._latest_js = None
         self.create_subscription(JointState, "/joint_states", self._on_js, 10)
 
+        self._gsv = self.create_client(GetStateValidity, "/check_state_validity")
+
         # Trajectory action
         self._traj_ac = ActionClient(self, FollowJointTrajectory, ACTION_NAME)
+        self._traj_ac.wait_for_server() 
 
-        # Wrist history (smoothed)
+        # LPF + spike guard state
         self._w_lpf = LowPassEMA(fc_hz=LPF_CUTOFF_HZ)
-        self._w_hist = deque()  # (t, W_smoothed)
-        self._hist_keep_s = 0.6
+        self._prev_W = None
+        self._prev_W_t = None
 
         # IK warm-start
         self._last_qvars = None
         self._last_q_cmd = None
 
+        # Pose readers
+        self._ball_reader = GzBallPoseReader(world="default", verbose=False)
+        self._ball_reader.start()
+        
+        self._racket_reader = GzRacketPoseReader(world="default", verbose=False)
+        self._racket_reader.start()
 
+        # Contact detection state
+        self._last_contact_logged = None
+
+        # Log file handles
         self._log_fh = None
+        self._ball_log_fh = None
+        self._racket_log_fh = None
+        self._contact_log_fh = None
+        
         LOG_DIR.mkdir(parents=True, exist_ok=True)
         self._srv_log_start = self.create_service(Trigger, "~/log/start", self._log_start_cb)
         self._srv_log_stop  = self.create_service(Trigger, "~/log/stop",  self._log_stop_cb)
@@ -258,53 +495,11 @@ class WatchPathBatcher(Node):
         if self._latest_js:
             d = dict(zip(self._latest_js.name, self._latest_js.position))
         return [float(d.get(n, default)) for n in names]
-
-    def _append_wrist(self, W, t_now):
-        # reject absurd spikes (simple speed guard relative to last)
-        if self._w_hist:
-            t_prev, W_prev = self._w_hist[-1]
-            dt = max(t_now - t_prev, 1e-3)
-            # speed spike guard
-            if np.linalg.norm(W - W_prev) / dt > SPIKE_MAX_SPEED:
-                return  # drop spike
-            # NEW: distance deadband (skip tiny moves)
-            if np.linalg.norm(W - W_prev) < MIN_W_DIST_M:
-                return  # too close to last accepted point
-
-        self._w_hist.append((t_now, W.copy()))
-        # prune old
-        while self._w_hist and (t_now - self._w_hist[0][0]) > self._hist_keep_s:
-            self._w_hist.popleft()
-
-    def _resample_recent_path(self, t_now, horizon_s=BATCH_HORIZON_S, dt=DT_STEP):
-        """Return uniformly sampled wrist waypoints over the last horizon_s."""
-        if not self._w_hist:
-            return []
-        t_start = t_now - horizon_s
-        ts = np.arange(t_start + dt, t_now + 1e-9, dt)  # strictly increasing for time_from_start
-        # gather arrays
-        times = np.array([t for (t, _) in self._w_hist], float)
-        Ws    = np.array([w for (_, w) in self._w_hist], float)  # shape (M,3)
-        if len(times) < 2:
-            return []
-        # interpolate component-wise (linear)
-        W_list = []
-        for tk in ts:
-            tk = float(np.clip(tk, times[0], times[-1]))
-            # indices for interpolation
-            j = int(np.searchsorted(times, tk, side="right") - 1)
-            j = max(0, min(j, len(times)-2))
-            t0, t1 = times[j], times[j+1]
-            a = 0.0 if (t1 <= t0) else (tk - t0) / (t1 - t0)
-            Wk = (1.0 - a) * Ws[j] + a * Ws[j+1]
-            W_list.append(Wk)
-        return W_list  # list of np.array(3,)
-
+    
     def _robot_state_from_qcmd(self, q_cmd):
         js = JointState()
         js.name = JOINTS
         js.position = list(map(float, q_cmd))
-        # optional stamp
         now = self.get_clock().now().to_msg()
         js.header.stamp = now
 
@@ -312,68 +507,111 @@ class WatchPathBatcher(Node):
         rs.joint_state = js
         return rs
     
+    def _norm_pair(self, a, b):
+        return (a, b) if a <= b else (b, a)
+    
     def _is_state_valid(self, q_cmd) -> bool:
         if not self._gsv.wait_for_service(timeout_sec=0.5):
-            self.get_logger().warn("GetStateValidity service not available; skipping check.")
-            return True  # fallback: allow
+            self.get_logger().warn("GetStateValidity not available; skipping check.")
+            return True
 
         req = GetStateValidity.Request()
         req.robot_state = self._robot_state_from_qcmd(q_cmd)
         req.group_name = GROUP_NAME
-
         fut = self._gsv.call_async(req)
         rclpy.spin_until_future_complete(self, fut)
         if not fut.result():
             self.get_logger().error("GetStateValidity call failed; skipping check.")
-            return True  # conservative fallback
+            return True
 
         res = fut.result()
-        if not res.valid:
-            self.get_logger().warn("State INVALID (collision or limits). Not sending.")
-            # (Optional) print first few contacts for debugging
-            if res.contacts:
-                pairs = [(c.contact_body_1, c.contact_body_2) for c in res.contacts[:3]]
-                self.get_logger().warn(f"Contacts (first): {pairs}")
-        return res.valid
-    
+        if res.valid:
+            return True
 
+        # If invalid, inspect contacts
+        if res.contacts:
+            pairs = [(self._norm_pair(c.contact_body_1, c.contact_body_2)) for c in res.contacts]
+            non_whitelisted = [
+                p for p in pairs
+                if p not in { self._norm_pair(*pair) for pair in ALLOWED_CONTACT_PAIRS }
+            ]
+            if not non_whitelisted:
+                return True
+
+        self.get_logger().warn("State INVALID (collision or limits). Not sending.")
+        return False
+    
     def _log_start_cb(self, req, resp):
-        if self._log_fh is not None:
+        if any([self._log_fh, self._ball_log_fh, self._racket_log_fh, self._contact_log_fh]):
             resp.success = False
             resp.message = "Already logging."
             return resp
+
         ts = time.strftime("%Y%m%d_%H%M%S")
-        path = LOG_DIR / f"wrist_{ts}.txt"
-        self._log_fh = open(path, "w", buffering=1)  # line-buffered
-        self._log_fh.write("# t_sec  x  y  z   (base frame)\n")
-        resp.success = True
-        resp.message = f"Logging to {path}"
-        self.get_logger().info(resp.message)
+        wrist_path = LOG_DIR / f"wrist_{ts}.txt"
+        ball_path = LOG_DIR / f"ball_{ts}.txt"
+        racket_path = LOG_DIR / f"racket_{ts}.txt"
+        contact_path = LOG_DIR / f"contacts_{ts}.txt"
+
+        try:
+            self._log_fh = open(wrist_path, "w", buffering=1)
+            self._log_fh.write("# t_sec  x  y  z   (wrist in base frame)\n")
+            
+            self._ball_log_fh = open(ball_path, "w", buffering=1)
+            self._ball_log_fh.write("# t_sec  x  y  z  vx  vy  vz   (ball in world frame)\n")
+            
+            self._racket_log_fh = open(racket_path, "w", buffering=1)
+            self._racket_log_fh.write("# t_sec  x  y  z   (racket blade center in world frame)\n")
+            
+            self._contact_log_fh = open(contact_path, "w", buffering=1)
+            self._contact_log_fh.write("# t_sec  racket_x  racket_y  racket_z  ball_x  ball_y  ball_z  ball_vx  ball_vy  ball_vz  distance\n")
+            
+            resp.success = True
+            resp.message = f"Logging to {wrist_path.parent} (4 files)"
+            self.get_logger().info(resp.message)
+            
+        except Exception as e:
+            # Clean up on error
+            for fh in [self._log_fh, self._ball_log_fh, self._racket_log_fh, self._contact_log_fh]:
+                try:
+                    if fh: fh.close()
+                except: pass
+            self._log_fh = self._ball_log_fh = self._racket_log_fh = self._contact_log_fh = None
+            resp.success = False
+            resp.message = f"Failed to open logs: {e}"
+            self.get_logger().error(resp.message)
+        
         return resp
 
     def _log_stop_cb(self, req, resp):
-        if self._log_fh is None:
+        if not any([self._log_fh, self._ball_log_fh, self._racket_log_fh, self._contact_log_fh]):
             resp.success = False
             resp.message = "Not logging."
             return resp
-        try:
-            path = self._log_fh.name
-        except Exception:
-            path = str(LOG_DIR)
-        self._log_fh.close()
-        self._log_fh = None
+
+        paths = []
+        for fh in [self._log_fh, self._ball_log_fh, self._racket_log_fh, self._contact_log_fh]:
+            try:
+                if fh is not None:
+                    paths.append(fh.name)
+                    fh.close()
+            except: pass
+        
+        self._log_fh = self._ball_log_fh = self._racket_log_fh = self._contact_log_fh = None
+        
         resp.success = True
-        resp.message = f"Saved: {path}"
+        resp.message = "Saved: " + ", ".join(map(str, paths)) if paths else f"Saved to {LOG_DIR}"
         self.get_logger().info(resp.message)
         return resp
 
-
-    def _send_followtraj_traj(self, q_points, dt_step):
+    def _send_followtraj_traj(self, q_points, total_dt):
+        """Send a tiny multi-point trajectory that spans total_dt seconds."""
         if not q_points:
             return
         goal = FollowJointTrajectory.Goal()
         goal.trajectory.joint_names = JOINTS
 
+        dt_step = float(total_dt) / float(len(q_points))
         t_accum = 0.0
         pts = []
         for q in q_points:
@@ -385,42 +623,82 @@ class WatchPathBatcher(Node):
             pts.append(pt)
 
         goal.trajectory.points = pts
-        self._traj_ac.wait_for_server()
         self._traj_ac.send_goal_async(goal)
 
     # --- main loop ---
     def run(self):
-        # wait a moment for /joint_states
-        t0 = time.time()
-        while rclpy.ok() and self._latest_js is None and (time.time() - t0) < 2.0:
-            rclpy.spin_once(self, timeout_sec=0.05)
-
-        last_tick = 0.0
+        last_tick = time.monotonic()
         while rclpy.ok():
-            now = time.time()
+            now = time.monotonic()
+
+            # RATE GATE FIRST: bail early with no extra work
             if now - last_tick < CYCLE_SECONDS:
                 rclpy.spin_once(self, timeout_sec=0.01)
                 continue
             last_tick = now
 
-            # latest wearable sample → wrist target (smoothed & buffered)
+            # (A) Control tick starts here: snapshot sensors once per tick
             with _udp_lock:
                 hp, lp, up = _hand_pos, _larm_pos, _uarm_pos
             if hp is None or lp is None or up is None:
                 continue
 
-            _, W_raw = scale_watch_to_right_robot(up, lp, hp)
-            W_smooth = self._w_lpf.update(W_raw, now)
+            _, W_raw = scale_watch_to_left_robot(up, lp, hp)
+            W = self._w_lpf.update(W_raw, now)
+
+            # Log wrist
             if self._log_fh is not None:
-                x, y, z = map(float, W_smooth)
+                x, y, z = map(float, W)
                 self._log_fh.write(f"{now:.6f} {x:.6f} {y:.6f} {z:.6f}\n")
 
-            self._append_wrist(W_smooth, now)
+            # Get ball and racket poses
+            have_ball, ball_pos, ball_vel = self._ball_reader.get()
+            have_racket, racket_pos, _ = self._racket_reader.get()
 
-            # resample last horizon_s path at uniform rate
-            W_list = self._resample_recent_path(now, horizon_s=BATCH_HORIZON_S, dt=DT_STEP)
-            if not W_list:
-                continue
+            # Log ball
+            if self._ball_log_fh is not None and have_ball:
+                self._ball_log_fh.write(f"{now:.6f} {ball_pos[0]:.6f} {ball_pos[1]:.6f} {ball_pos[2]:.6f} "
+                                       f"{ball_vel[0]:.6f} {ball_vel[1]:.6f} {ball_vel[2]:.6f}\n")
+            
+            # Log racket
+            if self._racket_log_fh is not None and have_racket:
+                self._racket_log_fh.write(f"{now:.6f} {racket_pos[0]:.6f} {racket_pos[1]:.6f} {racket_pos[2]:.6f}\n")
+                print(f"Racket pos: {racket_pos}")
+            
+            # Detect and log contact events (distance-based)
+            if self._contact_log_fh is not None and have_ball and have_racket:
+                distance = np.linalg.norm(ball_pos - racket_pos)
+                print(distance)
+                # Contact detected if distance is below threshold
+                if distance < CONTACT_DISTANCE_THRESHOLD:
+                    # Cooldown: don't log same contact multiple times
+                    if (self._last_contact_logged is None or 
+                        now - self._last_contact_logged > CONTACT_COOLDOWN_S):
+                        
+                        self._contact_log_fh.write(
+                            f"{now:.6f} "
+                            f"{racket_pos[0]:.6f} {racket_pos[1]:.6f} {racket_pos[2]:.6f} "
+                            f"{ball_pos[0]:.6f} {ball_pos[1]:.6f} {ball_pos[2]:.6f} "
+                            f"{ball_vel[0]:.6f} {ball_vel[1]:.6f} {ball_vel[2]:.6f} "
+                            f"{distance:.6f}\n"
+                        )
+                        self._last_contact_logged = now
+                        print(f"[CONTACT] Ball-racket contact detected at t={now:.3f}, distance={distance*1000:.1f}mm")
+
+            # simple spike guard w.r.t. previous W
+            if self._prev_W is not None and self._prev_W_t is not None:
+                dt = max(now - self._prev_W_t, 1e-3)
+                if np.linalg.norm(W - self._prev_W) / dt > SPIKE_MAX_SPEED:
+                    # drop this sample; try next tick
+                    continue
+
+            # Build upsampled waypoint list: [midpoint, current] or [current]
+            W_list = []
+            if self._prev_W is not None and UPSAMPLE_FACTOR >= 2:
+                W_mid = 0.5 * (self._prev_W + W)
+                W_list = [W_mid, W]
+            else:
+                W_list = [W]
 
             # current measured joints (for non-IK joints)
             js_now = self._current_positions(JOINTS, default=0.0)
@@ -431,7 +709,6 @@ class WatchPathBatcher(Node):
                 # Project the *measured* joint state onto the IK DOFs (better than zeros)
                 js_vec = np.array(js_now, dtype=float)
                 qvars_seed = np.array([js_vec[JOINTS.index(jn)] for jn in IK_JOINTS], dtype=float)
-
 
             # IK each waypoint (warm-start)
             q_points = []
@@ -446,35 +723,37 @@ class WatchPathBatcher(Node):
                 for jn, val in zip(IK_JOINTS, qvars):
                     if jn in JOINTS:
                         q_cmd[JOINTS.index(jn)] = float(val)
-                
 
                 if not self._is_state_valid(q_cmd):
                     break
-
                 q_points.append(q_cmd)
                 qvars_seed = qvars  # warm-start next point
-                last_qvars_solved = qvars 
+                last_qvars_solved = qvars
 
             if last_qvars_solved is not None:
                 self._last_qvars = last_qvars_solved.copy()
             if not q_points:
+                # remember W anyway
+                self._prev_W = W.copy(); self._prev_W_t = now
                 continue
 
             # tiny deadband on the first point to avoid spam
             if self._last_q_cmd is not None:
                 dq = np.abs(np.array(q_points[0]) - np.array(self._last_q_cmd))
                 if float(np.max(dq)) < MIN_JOINT_STEP_RAD:
+                    self._prev_W = W.copy(); self._prev_W_t = now
                     continue
 
             # remember seeds
             self._last_qvars = qvars_seed
             self._last_q_cmd = q_points[0]
+            self._prev_W = W.copy(); self._prev_W_t = now
 
-
-            self._send_followtraj_traj(q_points, dt_step=DT_STEP)
+            # Send as a tiny multi-point traj spanning this loop period
+            self._send_followtraj_traj(q_points, total_dt=CYCLE_SECONDS)
 
             # light debug
-            print(f"[batch] pts={len(q_points)} over {BATCH_HORIZON_S:.3f}s | W_now={np.round(W_smooth,3)}")
+            print(f"[tick] pts={len(q_points)} over {CYCLE_SECONDS:.3f}s | W={np.round(W,3)}")
 
 # ============================ main ============================
 
@@ -483,10 +762,12 @@ def main():
     th.start()
 
     rclpy.init()
-    node = WatchPathBatcher()
+    node = WatchMidpointStreamer()
     try:
         node.run()
     finally:
+        node._ball_reader.stop()
+        node._racket_reader.stop()
         node.destroy_node()
         rclpy.shutdown()
 

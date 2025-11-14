@@ -1,0 +1,162 @@
+# Task: Ping Pong Ball Bouncing - Sequential Hit Control
+
+## Objective
+Generate DMP weights for a wrist trajectory that enables 3-4 consecutive successful ball bounces.
+The ball hangs from a rope attached at (x=0.78, y=0.55, z=2.1).
+
+## Key Constraints
+- Ball must rise ≥ 10cm per hit (validates contact strength)
+- Ball must stay within 50cm radius of rope anchor (prevents drift-out)
+- Same motion is repeated for all hits in an episode
+
+## Success Pattern
+**Good episode:** Drift remains stable across hits [0.30, 0.28, 0.32, 0.29]m → 4 hits ✓
+**Bad episode:** Drift accumulates [0.35, 0.42, 0.48, 0.53]m → 3 hits, then miss ✗
+
+## Action Space: DMP Weights
+You will generate weights that define the wrist trajectory shape.
+- DMP uses goal-invariant formulation
+- All episodes share canonical start (y0*) and goal (g*) positions
+- **Weights encode the SHAPE of motion** in this normalized space
+- Same weights are executed for all hits in an episode
+
+**Canonical Trajectory Endpoints:**
+- Start position (y0*): [-0.030, 0.441, 1.027]
+- Goal position (g*): [0.113, 0.393, 1.014]
+**DMP Parameters:**
+- Basis functions: 35 RBFs per axis
+- Weight dimensions: 3 axes × 35 = 105 total values
+- Motion duration: ~30.90s
+
+---
+
+## Demonstration Episodes
+
+### Episode 1: SUCCESS (3/3 hits)
+**Episode reward:** 0.919
+**Consistency score:** 0.914 (drift_std=0.012, drift_trend=+0.010)
+
+**DMP Weights (used for ALL hits):**
+```
+[-115.426, 100.495, 21.873, 30.274, 17.902, 19.145, 8.934, 12.958, ...] (shape: 3×35, total: 105 values)
+```
+
+**Hit Sequence:**
+```
+Hit 1 ✓: ball_pos=[0.79, 0.56, 1.69], height=0.173m, drift=0.019m
+Hit 2 ✓: ball_pos=[0.77, 0.51, 1.78], height=0.146m, drift=0.046m
+Hit 3 ✓: ball_pos=[0.76, 0.54, 1.82], height=0.155m, drift=0.039m
+```
+
+**Episode Analysis:**
+- Average height: 0.158m (consistent power)
+- Drift range: [0.019, 0.046]m (stable control)
+- All hits successful: True
+
+**Why this works:** Very stable drift across hits → motion is repeatable and well-controlled. Good height gains → sufficient upward force. Drift not accumulating → ball returns to similar position each time.
+
+---
+
+### Episode 2: SUCCESS (2/3 hits)
+**Episode reward:** 0.759
+**Consistency score:** 0.901 (drift_std=0.025, drift_trend=-0.004)
+
+**DMP Weights (used for ALL hits):**
+```
+[-3.153, 98.006, 31.304, 32.443, 15.310, 11.260, 14.049, 7.516, ...] (shape: 3×35, total: 105 values)
+```
+
+**Hit Sequence:**
+```
+Hit 1 ✓: ball_pos=[0.72, 0.58, 1.86], height=0.123m, drift=0.114m
+Hit 2 ✓: ball_pos=[0.76, 0.58, 1.85], height=0.184m, drift=0.058m
+Hit 3 ✗: ball_pos=[0.70, 0.58, 1.89], height=0.004m, drift=0.107m
+```
+
+**Episode Analysis:**
+- Average height: 0.104m (consistent power)
+- Drift range: [0.058, 0.114]m (stable control)
+- All hits successful: False
+
+**Why this works:** Very stable drift across hits → motion is repeatable and well-controlled. Drift not accumulating → ball returns to similar position each time.
+
+---
+
+### Episode 3: SUCCESS (2/5 hits)
+**Episode reward:** 0.723
+**Consistency score:** 0.783 (drift_std=0.039, drift_trend=+0.015)
+
+**DMP Weights (used for ALL hits):**
+```
+[-5.879, 111.168, 32.368, 29.595, 17.961, 17.273, 12.096, 14.099, ...] (shape: 3×35, total: 105 values)
+```
+
+**Hit Sequence:**
+```
+Hit 1 ✓: ball_pos=[0.79, 0.51, 1.69], height=0.146m, drift=0.060m
+Hit 2 ✗: ball_pos=[0.75, 0.55, 1.83], height=0.028m, drift=0.061m
+Hit 3 ✗: ball_pos=[0.71, 0.54, 1.83], height=-0.001m, drift=0.091m
+Hit 4 ✗: ball_pos=[0.74, 0.52, 1.81], height=0.005m, drift=0.166m
+Hit 5 ✓: ball_pos=[0.76, 0.46, 1.80], height=0.105m, drift=0.084m
+```
+
+**Episode Analysis:**
+- Average height: 0.057m (consistent power)
+- Drift range: [0.060, 0.166]m (stable control)
+- All hits successful: False
+
+**Why this works:** Very stable drift across hits → motion is repeatable and well-controlled. 
+
+---
+
+### Counter-Example 1: FAILURE (0/3 hits)
+**Episode reward:** 0.006
+**Consistency score:** 0.273 (drift_std=0.082, drift_trend=+0.100)
+
+**DMP Weights:**
+```
+[-16.574, 104.478, 23.689, 26.976, 30.061, 4.700, 25.447, 0.716, ...] (shape: 3×35, total: 105 values)
+```
+
+**Failure at Hit 1:**
+- Height: 0.009m ✗ (too weak - insufficient force)
+- Drift: 0.011m ✓
+
+**Why this failed:** Drift accumulating (trend=0.100) → motion too forceful, ball progressively drifts out of range. Low height gains → insufficient power, ball doesn't return reliably. 
+
+---
+
+## Your Task
+
+Generate NEW DMP weights that will achieve 3-4 consecutive successful hits with stable drift.
+
+**Required Output Format (JSON only):**
+```json
+{
+  "dmp_weights": [
+    [w_x1, w_x2, ..., w_x35],  // X-axis weights (35 values)
+    [w_y1, w_y2, ..., w_y35],  // Y-axis weights (35 values)  
+    [w_z1, w_z2, ..., w_z35]   // Z-axis weights (35 values)
+  ],
+  "reasoning": "Brief explanation of strategy (e.g., 'gentler upward motion to reduce drift accumulation')",
+  "expected_outcome": {
+    "predicted_hits": 3 or 4,
+    "avg_drift_m": <predicted average drift>,
+    "drift_will_be_stable": true/false,
+    "confidence": <0.0 to 1.0>
+  }
+}
+```
+
+**Critical Guidelines:**
+1. **Weight magnitudes:** Successful episodes typically have weights in range [-0.3, +0.3]
+2. **Drift control:** Aim for drift_std < 0.05 to ensure stability across hits
+3. **Consistent power:** Target heights around 0.15-0.20m per hit
+4. **Shape matters:** Smooth weight curves → smoother motion → more repeatable outcomes
+
+**Pattern Recognition:**
+- Weights with large values (|w| > 0.4) → too aggressive → drift accumulates
+- Weights with tiny values (|w| < 0.1) → too gentle → ball doesn't rise enough
+- Erratic weight patterns → jerky motion → inconsistent results
+
+Respond with JSON only (no markdown formatting):

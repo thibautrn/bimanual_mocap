@@ -35,10 +35,10 @@ install(PROGRAMS
   scripts/move_right_arm2.2elb_pick.py
   scripts/move_right_arm2.2elb_traj.py
   scripts/move_right_arm2.2elb_traj_copy.py 
-
   scripts/move_right_arm_horizon.py
   scripts/move_right_arm_fast.py
   scripts/move_right_arm_fast_dmp.py
+  scripts/move_right_arm_fast_dmp_ball.py
   scripts/move_right_arm_fast_wrist.py
   scripts/move_right_arm_fast_record.py
   scripts/move_right_arm_fast_hz.py

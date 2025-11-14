@@ -69,8 +69,8 @@ dynamixel_interfaces__srv__GetDataFromDxl_Event__get_type_hash(
 
 // Include directives for referenced types
 #include "builtin_interfaces/msg/detail/time__functions.h"
-#include "std_msgs/msg/detail/header__functions.h"
 #include "service_msgs/msg/detail/service_event_info__functions.h"
+#include "std_msgs/msg/detail/header__functions.h"
 
 // Hashes for external referenced types
 #ifndef NDEBUG

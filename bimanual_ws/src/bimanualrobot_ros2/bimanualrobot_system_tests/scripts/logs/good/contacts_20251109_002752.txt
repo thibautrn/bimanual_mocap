@@ -1,0 +1,2 @@
+# t_sec  racket_x  racket_y  racket_z  ball_x  ball_y  ball_z  ball_vx  ball_vy  ball_vz  distance
+173211.701583 0.603228 0.513666 1.581044 0.780493 0.547997 1.665058 0.000000 0.000000 0.000000 0.199147

@@ -1,0 +1,10 @@
+[0.068s] Invoking command in '/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk -- -j20 -l20
+[0.177s] [100%] Built target dynamixel_sdk
+[0.194s] [100%] Built target ament_cmake_python_symlink_dynamixel_sdk
+[0.767s] running egg_info
+[0.847s] writing dynamixel_sdk.egg-info/PKG-INFO
+[0.848s] writing dependency_links to dynamixel_sdk.egg-info/dependency_links.txt
+[0.848s] writing top-level names to dynamixel_sdk.egg-info/top_level.txt
+[0.989s] reading manifest file 'dynamixel_sdk.egg-info/SOURCES.txt'
+[0.990s] writing manifest file 'dynamixel_sdk.egg-info/SOURCES.txt'
+[1.035s] [100%] Built target ament_cmake_python_build_dynamixel_sdk_egg

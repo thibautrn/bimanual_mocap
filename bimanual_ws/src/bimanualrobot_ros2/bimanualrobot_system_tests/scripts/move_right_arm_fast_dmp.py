@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import time, struct, socket, threading, math
-from collections import deque
+import math
+import subprocess
+import re
+import threading
+import time
+from pathlib import Path
 
 import numpy as np
 import rclpy
@@ -20,146 +24,330 @@ import pinocchio as pin
 from pinocchio.robot_wrapper import RobotWrapper
 from scipy.optimize import least_squares
 
-from std_srvs.srv import Trigger
-from pathlib import Path
-
 # ============================ CONFIG ============================
 
-# URDF & IK target frame
-URDF_PATH = "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/robots/bimanualrobot.urdf"
-F_WRIST   = "rightarm_wrist_2_link"     # IK target frame
-LOG_DIR   = Path("/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs")
+URDF_PATH = "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/robots/bimanualrobot.urdf"
+F_WRIST   = "leftarm_wrist_2_link"
+LOG_DIR   = Path("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/good")
+WORLD_NAME  = "default"
+WORLD_TOPIC = f"/world/{WORLD_NAME}/pose/info"
 
-# ---- DMP model (baseline + weights) ----
-DMP_BASELINE_PATH = "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/baseline.npz"
-DMP_WEIGHTS_PATH  = "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/wrist_20251020_031909_weights.npz"  # pick one
-DMP_TAU_SECONDS   = 3  # duration of one DMP stroke; tune (e.g., 0.4–0.8 s)
+# ----- Ball models -----
+PINNED_BALL_MODEL = "ball_only"  # from ball_only.sdf
+PINNED_BALL_POS   = np.array([0.80, -0.55, 1.25], dtype=float)  # must match ball_only.sdf
 
-# IK DOFs
+FREE_BALL_MODEL_NAME = "ball_only_free"
+FREE_BALL_SDF = "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/ball_only_free.sdf"
+
+BALL_RADIUS    = 0.03
+CONTACT_MARGIN = 0.2  # detection margin
+
+RACKET_FRAME = "leftarm_ee_link"  # must exist in URDF
+
+BALL_PRINT_PERIOD_S = 0.2  # just for debug prints via pose/info
+
 IK_JOINTS = [
-    "rightarm_shoulder_pan_joint",
-    "rightarm_shoulder_lift_joint",
-    "rightarm_elbow_joint",
-    # "rightarm_wrist_1_joint",
+    "leftarm_shoulder_pan_joint",
+    "leftarm_shoulder_lift_joint",
+    "leftarm_elbow_joint",
 ]
 
-# Controller & joint order (must match the controller)
-ACTION_NAME = "/right_arm_controller/follow_joint_trajectory"
+ACTION_NAME = "/left_arm_controller/follow_joint_trajectory"
 JOINTS = [
-    "rightarm_shoulder_pan_joint",
-    "rightarm_shoulder_lift_joint",
-    "rightarm_elbow_joint",
-    "rightarm_wrist_1_joint",
-    "rightarm_wrist_2_joint",
-    "rightarm_wrist_3_joint",
+    "leftarm_shoulder_pan_joint",
+    "leftarm_shoulder_lift_joint",
+    "leftarm_elbow_joint",
+    "leftarm_wrist_1_joint",
+    "leftarm_wrist_2_joint",
+    "leftarm_wrist_3_joint",
 ]
 
-GROUP_NAME = "right_arm"
+ALLOWED_CONTACT_PAIRS = {
+    ("rightarm_racket_handle", "rightarm_racket_blade"),
+    ("leftarm_racket_handle", "leftarm_racket_blade"),
+}
 
-# Wearable → robot mapping (for optional teleop start pose)
-SHOULDER_ANCHOR = np.array([0.045, -0.2925, 1.526], dtype=float)
-L1 = 0.298511306318538     # shoulder→elbow
-L2 = 0.23293990641364998   # elbow→wrist_2
+GROUP_NAME = "left_arm"
 
-MIN_W_DIST_M       = 0.002 
+CYCLE_SECONDS      = 0.025
+UPSAMPLE_FACTOR    = 2
+BATCH_HORIZON_S    = 0.25
+RESAMPLE_HZ        = 40.0
+DT_STEP            = 1.0 / RESAMPLE_HZ
 
-# UDP (wearable)
-UDP_PORT = 50003
-PACK_FMT = "ffff fff ffff fff ffff fff ffff"  # 25 floats
+LPF_CUTOFF_HZ      = 3.5
+SPIKE_MAX_SPEED    = 2.0
+MIN_W_DIST_M       = 0.002
+MIN_JOINT_STEP_RAD = np.deg2rad(0.1)
 
-# Loop & timing
-CYCLE_SECONDS      = 0.05      # send a new short trajectory ~20 Hz
-RESAMPLE_HZ        = 40.0      # JTC-friendly uniform spacing
-DT_STEP            = 1.0 / RESAMPLE_HZ  # 0.025 s
-
-# Smoothing / guards
-LPF_CUTOFF_HZ      = 3.5       # light smoothing of wrist positions
-SPIKE_MAX_SPEED    = 2.0       # m/s (reject absurd jumps)
-MIN_JOINT_STEP_RAD = np.deg2rad(0.1)  # tiny deadband on first point
-
-# IK solver params
-W_POS = 1.0
-W_REG = 1e-3
-MAX_ITERS = 300
+W_POS    = 1.0
+W_REG    = 1e-3
+MAX_ITERS= 300
 XTOL = FTOL = GTOL = 1e-8
-VERBOSE = 0
+VERBOSE  = 0
+
+# ============================ DMP CONFIG ============================
+
+BASELINE_PATH  = str(LOG_DIR / "baseline.npz")
+WEIGHTS_PATH   = str(LOG_DIR / "generated_dmp_weights.npz")
+DMP_DT         = DT_STEP
+TAU_OVERRIDE   = None
+USE_WEIGHTED_OFFSET_GOAL = True
+ADDITIONAL_DZ  = 0.0
 
 # ================================================================
 
-# Shared UDP state
-_udp_lock = threading.Lock()
-_hand_pos = None
-_larm_pos = None
-_uarm_pos = None
+class GzBallPoseReader:
+    """Optional: reads pose/info for debug; target_regex currently unused for release."""
+    def __init__(self, world="default", target_regex=r".*", verbose=False):
+        self.topic = f"/world/{world}/pose/info"
+        self.target = re.compile(target_regex)
+        self.verbose = bool(verbose)
 
-def udp_listener(port=UDP_PORT):
-    """Receive wearable packet and keep the latest sample (thread)."""
-    global _hand_pos, _larm_pos, _uarm_pos
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.bind(("0.0.0.0", port))
-    print(f"[UDP] Listening on udp://0.0.0.0:{port}")
-    unpack = struct.Struct(PACK_FMT).unpack_from
-    while True:
+        self._proc = None
+        self._th = None
+        self._stop = threading.Event()
+
+        self.have = False
+        self.xyz  = np.zeros(3, dtype=float)
+        self.vel  = np.zeros(3, dtype=float)
+
+        self._last_ts  = None
+        self._last_xyz = np.zeros(3, dtype=float)
+
+    def start(self):
+        if self._proc is not None:
+            return
+        self._proc = subprocess.Popen(
+            ["gz", "topic", "-e", "-t", self.topic],
+            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
+            text=True, bufsize=1
+        )
+        self._th = threading.Thread(target=self._run, daemon=True)
+        self._th.start()
+
+    def stop(self):
+        self._stop.set()
         try:
-            data, _ = sock.recvfrom(1024)
-            if len(data) < 100:
+            if self._proc and self._proc.poll() is None:
+                self._proc.terminate()
+        except Exception:
+            pass
+
+    def _dbg(self, *a):
+        if self.verbose:
+            print("[GzBallPoseReader]", *a)
+
+    def _commit(self, x, y, z, reason=""):
+        px = self.xyz[0] if x is None else x
+        py = self.xyz[1] if y is None else y
+        pz = self.xyz[2] if z is None else z
+
+        now = time.time()
+        if self._last_ts is not None:
+            dt = max(now - self._last_ts, 1e-6)
+            self.vel[:] = [
+                (px - self._last_xyz[0]) / dt,
+                (py - self._last_xyz[1]) / dt,
+                (pz - self._last_xyz[2]) / dt,
+            ]
+        self.xyz[:] = (px, py, pz)
+        self._last_xyz[:] = self.xyz
+        self._last_ts = now
+        self.have = True
+        self._dbg(
+            f"COMMIT {reason}: xyz=({px:.6f},{py:.6f},{pz:.6f}) "
+            f"vel=({self.vel[0]:.3f},{self.vel[1]:.3f},{self.vel[2]:.3f})"
+        )
+
+    def _run(self):
+        in_pose = False
+        in_pos  = False
+        cur_name = ""
+        bx = by = bz = None
+        name_matched = False
+
+        rx_name   = re.compile(r'name:\s+"([^"]+)"')
+        rx_posblk = re.compile(r'position\s*\{([^}]*)\}')
+        rx_num_x  = re.compile(r'\bx:\s*([-\d.e+]+)')
+        rx_num_y  = re.compile(r'\by:\s*([-\d.e+]+)')
+        rx_num_z  = re.compile(r'\bz:\s*([-\d.e+]+)')
+
+        for ln in self._proc.stdout:
+            if self._stop.is_set():
+                break
+            s = ln.lstrip()
+
+            if not in_pose and s.startswith("pose {"):
+                in_pose = True
+                in_pos = False
+                cur_name = ""
+                bx = by = bz = None
+                name_matched = False
                 continue
-            (hw, hx, hy, hz,
-             hpx, hpy, hpz,
-             lw, lx, ly, lz,
-             lpx, lpy, lpz,
-             uw, ux, uy, uz,
-             upx, upy, upz,
-             qw, qx, qy, qz) = unpack(data)
-            with _udp_lock:
-                _hand_pos = (hpx, hpy, hpz)
-                _larm_pos = (lpx, lpy, lpz)
-                _uarm_pos = (upx, upy, upz)
-        except Exception as e:
-            print(f"[UDP ERROR] {e}")
 
-# ---------------- mapping helpers ----------------
-def remap_watch_to_base(p):
-    """(x,y,z)_watch -> (z, -x, y)_base"""
-    x, y, z = map(float, p)
-    return np.array([z, -x, y], dtype=float)
+            if not in_pose:
+                m_any = rx_posblk.search(ln)
+                if m_any:
+                    block = m_any.group(1)
+                    mx = rx_num_x.search(block)
+                    my = rx_num_y.search(block)
+                    mz = rx_num_z.search(block)
+                    if mx: bx = float(mx.group(1))
+                    if my: by = float(my.group(1))
+                    if mz: bz = float(mz.group(1))
+                continue
 
-def unit(v):
-    n = np.linalg.norm(v)
-    return v / (n + 1e-12)
+            m_name = rx_name.search(ln)
+            if m_name:
+                cur_name = m_name.group(1)
+                name_matched = bool(self.target.search(cur_name))
+                if name_matched and (bx is not None or by is not None or bz is not None):
+                    self._commit(bx, by, bz, reason="on_name_match")
+                continue
 
-def scale_watch_to_right_robot(uarm_watch, larm_watch, hand_watch):
-    """Map watch 3 pts (upper, lower, hand) to robot-base wrist (W)."""
-    Sh = remap_watch_to_base(uarm_watch)
-    El = remap_watch_to_base(larm_watch)
-    Wr = remap_watch_to_base(hand_watch)
+            m_inline = rx_posblk.search(ln)
+            if m_inline:
+                block = m_inline.group(1)
+                mx = rx_num_x.search(block)
+                my = rx_num_y.search(block)
+                mz = rx_num_z.search(block)
+                if mx: bx = float(mx.group(1))
+                if my: by = float(my.group(1))
+                if mz: bz = float(mz.group(1))
+                if name_matched:
+                    self._commit(bx, by, bz, reason="inline_after_name")
+                continue
 
-    # Right-arm flip (kept)
-    Sh[1] = -Sh[1]; El[1] = -El[1]; Wr[1] = -Wr[1]
+            if "position {" in ln:
+                in_pos = True
+                continue
 
-    u1 = unit(El - Sh)  # shoulder->elbow dir
-    u2 = unit(Wr - El)  # elbow->wrist  dir
+            if in_pos:
+                mx = rx_num_x.search(ln)
+                my = rx_num_y.search(ln)
+                mz = rx_num_z.search(ln)
+                if mx: bx = float(mx.group(1))
+                if my: by = float(my.group(1))
+                if mz: bz = float(mz.group(1))
+                if "}" in ln:
+                    in_pos = False
+                    if name_matched:
+                        self._commit(bx, by, bz, reason="end_position_block")
+                continue
 
-    E_robot = SHOULDER_ANCHOR + L1 * u1
-    W_robot = E_robot        + L2 * u2
-    return E_robot, W_robot
+            if "}" in ln and in_pose and not in_pos:
+                if name_matched:
+                    self._commit(bx, by, bz, reason="end_of_block")
+                in_pose = False
+                name_matched = False
+                continue
 
-# ---------------- DMP helpers ----------------
-def load_dmp_model(baseline_path, weights_path):
-    b = np.load(baseline_path)
-    wfile = np.load(weights_path, allow_pickle=True)
-    baseline = {
-        "c": b["c"], "h": b["h"],
-        "K": float(b["K"]), "D": float(b["D"]),
-        "tau": float(b["tau"]),
-        "alpha_s": float(b["alpha_s"]),
-    }
-    weights = {
-        "w": wfile["w"],        # (3, M)
-        "y0": wfile["y0"],      # (3,)
-        "g":  wfile["g"],       # (3,)
-    }
-    return baseline, weights
+    def get(self):
+        return bool(self.have), self.xyz.copy(), self.vel.copy()
+
+# ---------------- low-pass EMA ----------------
+class LowPassEMA:
+    def __init__(self, fc_hz=LPF_CUTOFF_HZ):
+        self.fc = float(fc_hz)
+        self.y = None
+        self.t_last = None
+
+    def update(self, x, t_now):
+        x = np.asarray(x, float)
+        if self.y is None or self.t_last is None:
+            self.y = x.copy()
+            self.t_last = float(t_now)
+            return self.y
+        dt = max(float(t_now - self.t_last), 1e-3)
+        alpha = 1.0 - math.exp(-2.0 * math.pi * self.fc * dt)
+        self.y = (1.0 - alpha) * self.y + alpha * x
+        self.t_last = float(t_now)
+        return self.y
+
+# ---------------- Pinocchio helpers ----------------
+
+def build_index_maps(model: pin.Model, joint_names):
+    idx_q_vars = []
+    for jn in joint_names:
+        jid = model.getJointId(jn)
+        if jid == 0:
+            raise RuntimeError(f"Joint not found in model: {jn}")
+        idx_q_vars.append(model.joints[jid].idx_q)
+
+    lb_all = np.array(model.lowerPositionLimit, dtype=float)
+    ub_all = np.array(model.upperPositionLimit, dtype=float)
+    lb = lb_all[idx_q_vars].copy()
+    ub = ub_all[idx_q_vars].copy()
+    lb[~np.isfinite(lb)] = -1e9
+    ub[~np.isfinite(ub)] = +1e9
+    return np.array(idx_q_vars), lb, ub
+
+def build_q_index_map(model: pin.Model):
+    """
+    Map joint_name -> index in q.
+    Uses model.names + getJointId; skips universe (index 0).
+    """
+    mapping = {}
+    for name in model.names[1:]:
+        jid = model.getJointId(name)
+        if jid == 0:
+            continue
+        j = model.joints[jid]
+        if j.nq > 0:
+            mapping[name] = j.idx_q
+    return mapping
+
+def q_from_joint_state(model: pin.Model, q_index_map, js: JointState):
+    q = pin.neutral(model)
+    name_to_pos = dict(zip(js.name, js.position))
+    for jname, idx in q_index_map.items():
+        if jname in name_to_pos:
+            q[idx] = float(name_to_pos[jname])
+    return q
+
+def full_q_from_vars(model: pin.Model, idx_q_vars, q_vars):
+    q = pin.neutral(model)
+    for v, i in zip(q_vars, idx_q_vars):
+        q[i] = float(v)
+    return q
+
+def residual_wrist_only(q_vars, model, data, fid_wrist, idx_q_vars, target_W,
+                        w_pos=W_POS, w_reg=W_REG):
+    q = full_q_from_vars(model, idx_q_vars, q_vars)
+    pin.forwardKinematics(model, data, q)
+    pin.updateFramePlacements(model, data)
+    pW = data.oMf[fid_wrist].translation
+    err_pos = (pW - target_W) * w_pos
+    err_reg = w_reg * q_vars
+    return np.hstack((err_pos, err_reg))
+
+def solve_wrist_ik_least_squares(robot: RobotWrapper,
+                                 fid_wrist: int,
+                                 idx_q_vars,
+                                 lb, ub,
+                                 target_W,
+                                 seed):
+    model = robot.model
+    data  = model.createData()
+    res = least_squares(
+        residual_wrist_only,
+        np.array(seed, float),
+        bounds=(lb, ub),
+        args=(model, data, fid_wrist, idx_q_vars, target_W, W_POS, W_REG),
+        max_nfev=MAX_ITERS,
+        xtol=XTOL, ftol=FTOL, gtol=GTOL,
+        verbose=VERBOSE
+    )
+    q_vars_sol = res.x
+    q_full     = full_q_from_vars(model, idx_q_vars, q_vars_sol)
+    pin.forwardKinematics(model, data, q_full)
+    pin.updateFramePlacements(model, data)
+    pW = data.oMf[fid_wrist].translation
+    err = np.linalg.norm(pW - target_W)
+    return res.success, q_vars_sol, q_full, pW, err
+
+# ---------------- DMP rollout ----------------
 
 def canonical_by_steps(N, dt, tau, alpha_s):
     S = np.empty(int(N), float)
@@ -176,114 +364,95 @@ def design_matrix(S, c, h):
         Phi[k, :] = (psi / (psi.sum() + 1e-12)) * s
     return Phi
 
-def rollout_dmp_batch(y0, g, W, K, D, tau, dt, c, h, alpha_s):
-    """
-    y0,g: (3,) start/goal in base frame for this *stroke*
-    W:    (3,M) weights
-    Return: Y (N,3) positions
-    """
-    N = int(np.round(tau / dt)) + 1
+def rollout_dmp_3d(y0, g, W, K, D, tau, dt, c, h, alpha_s):
+    N   = int(np.round(tau / dt)) + 1
     S   = canonical_by_steps(N, dt, tau, alpha_s)
     Phi = design_matrix(S, c, h)
-
     Y  = np.zeros((N, 3), float)
     Yd = np.zeros_like(Y)
     Y[0] = y0
-
     for k in range(N-1):
         acc = np.zeros(3, float)
         for d in range(3):
             f = float(Phi[k].dot(W[d]))
-            acc[d] = (K*(g[d] - Y[k,d]) - D*tau*Yd[k,d] + K * f * (g[d] - y0[d])) / (tau**2)
+            acc[d] = (
+                K*(g[d] - Y[k,d])
+                - D*tau*Yd[k,d]
+                + K * f * (g[d] - y0[d])
+            ) / (tau**2)
         Yd[k+1] = Yd[k] + acc * dt
         Y[k+1]  = Y[k]  + Yd[k+1] * dt
-
     return Y
 
-# ---------------- low-pass EMA ----------------
-class LowPassEMA:
-    def __init__(self, fc_hz=LPF_CUTOFF_HZ):
-        self.fc = float(fc_hz)
-        self.y = None
-        self.t_last = None
-    def update(self, x, t_now):
-        x = np.asarray(x, float)
-        if self.y is None or self.t_last is None:
-            self.y = x.copy()
-            self.t_last = float(t_now)
-            return self.y
-        dt = max(float(t_now - self.t_last), 1e-3)
-        alpha = 1.0 - math.exp(-2.0 * math.pi * self.fc * dt)
-        self.y = (1.0 - alpha) * self.y + alpha * x
-        self.t_last = float(t_now)
-        return self.y
+class DMPRolloutSource:
+    def __init__(self, baseline_path, weights_path, dt,
+                 tau_override=None,
+                 use_weighted_offset_goal=True,
+                 add_dz=0.0):
+        b = np.load(baseline_path)
+        w = np.load(weights_path, allow_pickle=True)
 
-# ---------------- Pinocchio IK ----------------
-def build_index_maps(model: pin.Model, joint_names):
-    idx_q_vars = []
-    for jn in joint_names:
-        jid = model.getJointId(jn)
-        if jid == 0:
-            raise RuntimeError(f"Joint not found in model: {jn}")
-        idx_q_vars.append(model.joints[jid].idx_q)
+        c, h = b["c"], b["h"]
+        K, D = float(b["K"]), float(b["D"])
+        alpha_s = float(b["alpha_s"])
+        tau = float(tau_override) if tau_override is not None else float(b["tau"])
+        W = w["w"]
 
-    lb_all = np.array(model.lowerPositionLimit, dtype=float)
-    ub_all = np.array(model.upperPositionLimit, dtype=float)
-    lb = lb_all[idx_q_vars].copy(); ub = ub_all[idx_q_vars].copy()
-    lb[~np.isfinite(lb)] = -1e9; ub[~np.isfinite(ub)] = +1e9
-    return np.array(idx_q_vars), lb, ub
+        y0_w = w["y0"].astype(float)
+        g_w  = w["g"].astype(float)
 
-def full_q_from_vars(model: pin.Model, idx_q_vars, q_vars):
-    q = pin.neutral(model)
-    for v, i in zip(q_vars, idx_q_vars):
-        q[i] = float(v)
-    return q
+        y0 = y0_w.copy()
+        if use_weighted_offset_goal:
+            g = y0 + (g_w - y0_w)
+        else:
+            g = g_w.copy()
+        g = g + np.array([0.0, 0.0, float(add_dz)], float)
 
-def residual_wrist_only(q_vars, model, data, fid_wrist, idx_q_vars, target_W, w_pos=W_POS, w_reg=W_REG):
-    q = full_q_from_vars(model, idx_q_vars, q_vars)
-    pin.forwardKinematics(model, data, q)
-    pin.updateFramePlacements(model, data)
-    pW = data.oMf[fid_wrist].translation
-    err_pos = (pW - target_W) * w_pos
-    err_reg = w_reg * q_vars
-    return np.hstack((err_pos, err_reg))
+        Y = rollout_dmp_3d(y0, g, W, K, D, tau, dt, c, h, alpha_s)
 
-def solve_wrist_ik_least_squares(robot: RobotWrapper,
-                                 fid_wrist: int,
-                                 idx_q_vars,
-                                 lb, ub,
-                                 target_W,
-                                 seed):
-    model = robot.model; data  = model.createData()
-    res = least_squares(
-        residual_wrist_only, np.array(seed, float),
-        bounds=(lb, ub),
-        args=(model, data, fid_wrist, idx_q_vars, target_W, W_POS, W_REG),
-        max_nfev=MAX_ITERS, xtol=XTOL, ftol=FTOL, gtol=FTOL, verbose=VERBOSE
-    )
-    q_vars_sol = res.x
-    q_full     = full_q_from_vars(model, idx_q_vars, q_vars_sol)
-    pin.forwardKinematics(model, data, q_full); pin.updateFramePlacements(model, data)
-    pW = data.oMf[fid_wrist].translation
-    err = np.linalg.norm(pW - target_W)
-    return res.success, q_vars_sol, q_full, pW, err
+        self.Y = Y
+        self.dt = float(dt)
+        self.N  = len(Y)
+        self.k  = 0
+
+    def next(self):
+        if self.k >= self.N:
+            return None
+        Yk = self.Y[self.k].copy()
+        self.k += 1
+        return Yk
 
 # ============================ NODE ============================
 
-class WatchPathBatcher(Node):
-    def __init__(self):
-        super().__init__("watch_path_batcher")
+class DMPRobotBatcher(Node):
+    def __init__(self, dmp_source: DMPRolloutSource):
+        super().__init__("dmp_robot_batcher")
+        self._dmp = dmp_source
 
-        # Pinocchio
+        # Pinocchio model
         self.robot: RobotWrapper = RobotWrapper.BuildFromURDF(URDF_PATH, [])
         self.model: pin.Model = self.robot.model
+
         if not self.model.existFrame(F_WRIST):
             raise RuntimeError(f"Frame not found: {F_WRIST}")
         self.fid_wrist = self.model.getFrameId(F_WRIST)
 
+        # Racket frame
+        if not self.model.existFrame(RACKET_FRAME):
+            self.get_logger().warn(
+                f"Racket frame {RACKET_FRAME} not found; ball release-on-hit disabled."
+            )
+            self.fid_racket = None
+        else:
+            self.fid_racket = self.model.getFrameId(RACKET_FRAME)
+
+        # Joint name -> q index
+        self.q_index_map = build_q_index_map(self.model)
+
         # IK indexing
         self.idx_q_vars, self.lb, self.ub = build_index_maps(self.model, IK_JOINTS)
 
+        # MoveIt validity
         self._gsv = self.create_client(GetStateValidity, "/check_state_validity")
 
         # Joint states
@@ -293,26 +462,32 @@ class WatchPathBatcher(Node):
         # Trajectory action
         self._traj_ac = ActionClient(self, FollowJointTrajectory, ACTION_NAME)
 
-        # Wrist history (smoothed)
+        # Smoothing
         self._w_lpf = LowPassEMA(fc_hz=LPF_CUTOFF_HZ)
-        self._w_hist = deque()  # (t, W_smoothed)
-        self._hist_keep_s = 0.6
+        self._prev_W = None
+        self._prev_W_t = None
 
-        # IK warm-start
+        # IK warm start
         self._last_qvars = None
         self._last_q_cmd = None
 
-        # ---- DMP model (load once) ----
-        try:
-            self._dmp_baseline, self._dmp_weights = load_dmp_model(DMP_BASELINE_PATH, DMP_WEIGHTS_PATH)
-            self.get_logger().info(
-                f"DMP loaded: M={len(self._dmp_baseline['c'])}, K={self._dmp_baseline['K']}, "
-                f"D={self._dmp_baseline['D']}, alpha_s={self._dmp_baseline['alpha_s']}"
-            )
-        except Exception as e:
-            raise RuntimeError(f"Failed to load DMP files: {e}")
+        # DMP timing
+        self._last_dmp_time = None
 
-    # --- helpers ---
+        # Ball pose reader (debug only)
+        self._ball_reader = GzBallPoseReader(
+            world=WORLD_NAME,
+            target_regex=r"^ball_only(?:::.+)?$",
+            verbose=False,
+        )
+        self._ball_reader.start()
+        self._last_ball_print = 0.0
+
+        # Ball release state
+        self.ball_released = False
+
+    # --- basic helpers ---
+
     def _on_js(self, msg: JointState):
         self._latest_js = msg
 
@@ -322,69 +497,26 @@ class WatchPathBatcher(Node):
             d = dict(zip(self._latest_js.name, self._latest_js.position))
         return [float(d.get(n, default)) for n in names]
 
-    def _append_wrist(self, W, t_now):
-        if self._w_hist:
-            t_prev, W_prev = self._w_hist[-1]
-            dt = max(t_now - t_prev, 1e-3)
-            if np.linalg.norm(W - W_prev) / dt > SPIKE_MAX_SPEED:
-                return  # drop spike
-            if np.linalg.norm(W - W_prev) < MIN_W_DIST_M:
-                return  # too close to last accepted point
-        self._w_hist.append((t_now, W.copy()))
-        while self._w_hist and (t_now - self._w_hist[0][0]) > self._hist_keep_s:
-            self._w_hist.popleft()
-
-    def _current_wrist_fk(self):
-        """FK of right wrist in base frame from /joint_states."""
-        if self._latest_js is None:
-            return None
-
-        # Start from neutral config
-        q = pin.neutral(self.model)
-
-        # Map incoming joint states into the Pinocchio config vector
-        js_map = dict(zip(self._latest_js.name, self._latest_js.position))
-        for jname, qval in js_map.items():
-            try:
-                jid = self.model.getJointId(jname)
-            except Exception:
-                continue  # name not in model
-            if jid <= 0:
-                continue
-            # Most of your joints are 1-DoF; write into the first config index for that joint
-            idx_q = self.model.joints[jid].idx_q
-            nq_j  = self.model.joints[jid].nq  # number of cfg dofs for this joint
-            # If nq_j > 0, assign the first dof (typical revolute); extend if you later add multi-dof joints
-            if nq_j >= 1:
-                q[idx_q] = float(qval)
-
-        # Forward kinematics → wrist pose
-        data = self.model.createData()
-        pin.forwardKinematics(self.model, data, q)
-        pin.updateFramePlacements(self.model, data)
-        pW = data.oMf[self.fid_wrist].translation
-        return np.array(pW, dtype=float)
-
-
     def _robot_state_from_qcmd(self, q_cmd):
         js = JointState()
         js.name = JOINTS
         js.position = list(map(float, q_cmd))
-        now = self.get_clock().now().to_msg()
-        js.header.stamp = now
+        js.header.stamp = self.get_clock().now().to_msg()
         rs = RobotState()
         rs.joint_state = js
         return rs
-    
+
+    def _norm_pair(self, a, b):
+        return (a, b) if a <= b else (b, a)
+
     def _is_state_valid(self, q_cmd) -> bool:
         if not self._gsv.wait_for_service(timeout_sec=0.5):
-            self.get_logger().warn("GetStateValidity service not available; skipping check.")
+            self.get_logger().warn("GetStateValidity not available; skipping check.")
             return True
 
         req = GetStateValidity.Request()
         req.robot_state = self._robot_state_from_qcmd(q_cmd)
         req.group_name = GROUP_NAME
-
         fut = self._gsv.call_async(req)
         rclpy.spin_until_future_complete(self, fut)
         if not fut.result():
@@ -392,26 +524,37 @@ class WatchPathBatcher(Node):
             return True
 
         res = fut.result()
-        if not res.valid:
-            self.get_logger().warn("State INVALID (collision or limits). Not sending.")
-            if res.contacts:
-                pairs = [(c.contact_body_1, c.contact_body_2) for c in res.contacts[:3]]
-                self.get_logger().warn(f"Contacts (first): {pairs}")
-        return res.valid
+        if res.valid:
+            return True
 
-    def _send_followtraj_traj(self, q_points, dt_step):
+        if res.contacts:
+            pairs = [self._norm_pair(c.contact_body_1, c.contact_body_2)
+                     for c in res.contacts]
+            non_whitelisted = [
+                p for p in pairs
+                if p not in {self._norm_pair(*pair) for pair in ALLOWED_CONTACT_PAIRS}
+            ]
+            if not non_whitelisted:
+                return True
+
+        self.get_logger().warn("State INVALID (collision or limits). Not sending.")
+        return False
+
+    def _send_followtraj_traj(self, q_points, total_dt):
         if not q_points:
             return
         goal = FollowJointTrajectory.Goal()
         goal.trajectory.joint_names = JOINTS
 
+        dt_step = float(total_dt) / float(len(q_points))
         t_accum = 0.0
         pts = []
         for q in q_points:
             t_accum += dt_step
             pt = JointTrajectoryPoint()
             pt.positions = list(map(float, q))
-            sec = int(t_accum); nsec = int((t_accum - sec) * 1e9)
+            sec = int(t_accum)
+            nsec = int((t_accum - sec) * 1e9)
             pt.time_from_start = Duration(sec=sec, nanosec=nsec)
             pts.append(pt)
 
@@ -419,80 +562,183 @@ class WatchPathBatcher(Node):
         self._traj_ac.wait_for_server()
         self._traj_ac.send_goal_async(goal)
 
+    def _get_ball_pose(self):
+        return self._ball_reader.get()
+
+    # --- ball release logic ---
+
+    def _compute_racket_position(self):
+        if self.fid_racket is None or self._latest_js is None:
+            return None
+        q = q_from_joint_state(self.model, self.q_index_map, self._latest_js)
+        data = self.model.createData()
+        pin.forwardKinematics(self.model, data, q)
+        pin.updateFramePlacements(self.model, data)
+        p = data.oMf[self.fid_racket].translation
+        return np.array([p[0], p[1], p[2]], dtype=float)
+
+    def _trigger_ball_release_if_hit(self):
+        if self.ball_released:
+            return
+
+        racket_pos = self._compute_racket_position()
+        if racket_pos is None:
+            return
+
+        # Use live ball pose if available, else fallback
+        have_ball, ball_pos, _ = self._get_ball_pose()
+        center = ball_pos if have_ball else PINNED_BALL_POS
+
+        dist = float(np.linalg.norm(racket_pos - center))
+        if dist > (BALL_RADIUS + CONTACT_MARGIN):
+            return  # not close enough
+
+        self.get_logger().info(
+            f"Racket-ball proximity {dist:.3f} m <= "
+            f"{BALL_RADIUS + CONTACT_MARGIN:.3f} -> releasing ball."
+        )
+
+        # -------- 1) Delete pinned model: ball_only --------
+        try:
+            rm_cmd = [
+                "gz", "service",
+                "-s", f"/world/{WORLD_NAME}/remove",
+                "--reqtype", "gz.msgs.Entity",
+                "--reptype", "gz.msgs.Boolean",
+                "--timeout", "300",
+                # MODEL = 2
+                "--req", f'name: "{PINNED_BALL_MODEL}", type: 2',
+            ]
+            self.get_logger().info("Removing pinned ball: " + " ".join(rm_cmd))
+            subprocess.run(rm_cmd, check=False)
+        except Exception as e:
+            self.get_logger().error(f"Failed to remove {PINNED_BALL_MODEL}: {e}")
+
+        # -------- 2) Spawn free ball via /world/default/create (fast) --------
+        try:
+            # Build EntityFactory request:
+            # sdf_filename: path to ball_only_free.sdf
+            # name: desired model name
+            # pose: spawn at 'center'
+            create_req = (
+                f'sdf_filename: "{FREE_BALL_SDF}", '
+                f'name: "{FREE_BALL_MODEL_NAME}", '
+                f'pose: {{ position: {{ x: {center[0]}, y: {center[1]}, z: {center[2]} }}, '
+                f'orientation: {{ x: 0, y: 0, z: 0, w: 1 }} }}'
+            )
+
+            spawn_cmd = [
+                "gz", "service",
+                "-s", f"/world/{WORLD_NAME}/create",
+                "--reqtype", "gz.msgs.EntityFactory",
+                "--reptype", "gz.msgs.Boolean",
+                "--timeout", "300",
+                "--req", create_req,
+            ]
+            self.get_logger().info("Spawning free ball: " + " ".join(spawn_cmd))
+            subprocess.run(spawn_cmd, check=False)
+        except Exception as e:
+            self.get_logger().error(f"Failed to spawn free ball: {e}")
+            return
+
+        self.ball_released = True
+        self.get_logger().info("Ball released: pinned removed, free spawned.")
+
+
     # --- main loop ---
+
     def run(self):
-        # wait a moment for /joint_states
+        # wait for /joint_states
         t0 = time.time()
         while rclpy.ok() and self._latest_js is None and (time.time() - t0) < 2.0:
             rclpy.spin_once(self, timeout_sec=0.05)
 
+        self._last_dmp_time = time.time()
+        self._prev_W = None
+        self._prev_W_t = None
+        self._pending_W = None
+        self._last_q_cmd = None
+
+        finished = False
         last_tick = 0.0
-        while rclpy.ok():
+
+        while rclpy.ok() and not finished:
             now = time.time()
+
+            # debug ball pose
+            have, bp, bv = self._get_ball_pose()
+            if have and (now - self._last_ball_print) >= BALL_PRINT_PERIOD_S:
+                print(
+                    f"[ball_pose_dbg] pos=({bp[0]:.3f},{bp[1]:.3f},{bp[2]:.3f}) "
+                    f"vel=({bv[0]:.2f},{bv[1]:.2f},{bv[2]:.2f})"
+                )
+                self._last_ball_print = now
+
+            # ball release on racket "contact"
+            if not self.ball_released:
+                self._trigger_ball_release_if_hit()
+
+            # advance DMP
+            while (now - self._last_dmp_time) >= self._dmp.dt:
+                W_raw = self._dmp.next()
+                if W_raw is None:
+                    finished = True
+                    break
+                self._last_dmp_time += self._dmp.dt
+                self._pending_W = self._w_lpf.update(W_raw, self._last_dmp_time)
+
+            if finished:
+                break
+
+            # control tick
             if now - last_tick < CYCLE_SECONDS:
                 rclpy.spin_once(self, timeout_sec=0.01)
                 continue
             last_tick = now
 
-            # latest wearable sample -> optional smoothing; else FK fallback
-            with _udp_lock:
-                hp, lp, up = _hand_pos, _larm_pos, _uarm_pos
+            if self._pending_W is None:
+                rclpy.spin_once(self, timeout_sec=0.01)
+                continue
 
-            if hp is not None and lp is not None and up is not None:
-                _, W_raw = scale_watch_to_right_robot(up, lp, hp)
-                W_smooth = self._w_lpf.update(W_raw, now)
-                self._append_wrist(W_smooth, now)
-                y0 = W_smooth.copy()
-            else:
-                W_fk = self._current_wrist_fk()
-                if W_fk is None:
+            W = self._pending_W.copy()
+
+            # spike guard
+            if self._prev_W is not None and self._prev_W_t is not None:
+                dt_prev = max(now - self._prev_W_t, 1e-3)
+                if np.linalg.norm(W - self._prev_W) / dt_prev > SPIKE_MAX_SPEED:
                     rclpy.spin_once(self, timeout_sec=0.01)
                     continue
-                y0 = W_fk
 
-            # ---- DMP rollout: generate a short stroke to a goal ----
-            baseline = self._dmp_baseline
-            weights  = self._dmp_weights
+            # upsample
+            if self._prev_W is not None and UPSAMPLE_FACTOR >= 2:
+                W_mid = 0.5 * (self._prev_W + W)
+                W_list = [W_mid, W]
+            else:
+                W_list = [W]
 
-            # Default goal: use the learned offset from the weights file (goal-invariant retargeting)
-            g_offset = (weights["g"] - weights["y0"])    # 3-vector from training
-            g = (y0 + g_offset).astype(float)
-            # If you have a live target, replace the line above with: g = live_goal_vec
-
-            tau = float(DMP_TAU_SECONDS)
-
-            Y = rollout_dmp_batch(
-                y0=y0, g=g, W=weights["w"],
-                K=baseline["K"], D=baseline["D"],
-                tau=tau, dt=DT_STEP,
-                c=baseline["c"], h=baseline["h"],
-                alpha_s=baseline["alpha_s"],
-            )
-
-            # Skip the first sample (it's y0), otherwise first IK has zero move (deadband)
-            if len(Y) <= 1:
-                self.get_logger().warn("DMP rollout too short; skipping.")
-                continue
-            W_list = [Y[k].copy() for k in range(1, len(Y))]
-
-            # current measured joints (for non-IK joints)
             js_now = self._current_positions(JOINTS, default=0.0)
 
+            # IK seed
             if self._last_qvars is not None:
                 qvars_seed = self._last_qvars.copy()
             else:
                 js_vec = np.array(js_now, dtype=float)
-                qvars_seed = np.array([js_vec[JOINTS.index(jn)] for jn in IK_JOINTS], dtype=float)
+                qvars_seed = np.array(
+                    [js_vec[JOINTS.index(jn)] for jn in IK_JOINTS],
+                    dtype=float
+                )
 
-            # IK each waypoint (warm-start)
+            # IK for W_list
             q_points = []
             last_qvars_solved = None
-            for i, Wk in enumerate(W_list):
+            for Wk in W_list:
                 ok, qvars, qfull, pW, err = solve_wrist_ik_least_squares(
-                    self.robot, self.fid_wrist, self.idx_q_vars, self.lb, self.ub, Wk, seed=qvars_seed
+                    self.robot, self.fid_wrist,
+                    self.idx_q_vars, self.lb, self.ub,
+                    Wk, seed=qvars_seed
                 )
                 if not ok:
-                    self.get_logger().warn(f"IK failed at waypoint {i}; err={err:.4f}")
+                    q_points = []
                     break
 
                 q_cmd = list(js_now)
@@ -501,43 +747,61 @@ class WatchPathBatcher(Node):
                         q_cmd[JOINTS.index(jn)] = float(val)
 
                 if not self._is_state_valid(q_cmd):
-                    self.get_logger().warn(f"State invalid at waypoint {i}; dropping stroke.")
+                    q_points = []
                     break
 
                 q_points.append(q_cmd)
-                qvars_seed = qvars  # warm-start next point
-                last_qvars_solved = qvars 
+                qvars_seed = qvars
+                last_qvars_solved = qvars
 
             if last_qvars_solved is not None:
                 self._last_qvars = last_qvars_solved.copy()
+
+            # deadbands
             if not q_points:
-                self.get_logger().warn("No IK points produced; skipping send.")
+                self._prev_W = W.copy()
+                self._prev_W_t = now
+                rclpy.spin_once(self, timeout_sec=0.01)
                 continue
 
-            # tiny deadband on the first point to avoid spam
             if self._last_q_cmd is not None:
                 dq = np.abs(np.array(q_points[0]) - np.array(self._last_q_cmd))
                 if float(np.max(dq)) < MIN_JOINT_STEP_RAD:
-                    # still send the rest if there is significant movement later
-                    # (but generally the first point defines the span)
-                    self.get_logger().warn("First point within joint deadband; skipping this stroke.")
+                    self._prev_W = W.copy()
+                    self._prev_W_t = now
+                    rclpy.spin_once(self, timeout_sec=0.01)
                     continue
 
-            # remember seeds
-            self._last_qvars = qvars_seed
+            # send trajectory
             self._last_q_cmd = q_points[0]
+            self._prev_W = W.copy()
+            self._prev_W_t = now
+            self._send_followtraj_traj(q_points, total_dt=CYCLE_SECONDS)
 
-            self._send_followtraj_traj(q_points, dt_step=DT_STEP)
-            print(f"[dmp] sent pts={len(q_points)} over {DMP_TAU_SECONDS:.3f}s | y0={np.round(y0,3)} -> g={np.round(g,3)}")
+            print(
+                f"[tick+DMP] pts={len(q_points)} over {CYCLE_SECONDS:.3f}s | "
+                f"W={np.round(W,3)} | finished={finished}"
+            )
+
+            rclpy.spin_once(self, timeout_sec=0.01)
+
+        print("[DMP] Finished full rollout.")
+        time.sleep(0.5)
 
 # ============================ main ============================
 
 def main():
-    th = threading.Thread(target=udp_listener, daemon=True)
-    th.start()
+    dmp_src = DMPRolloutSource(
+        baseline_path=BASELINE_PATH,
+        weights_path=WEIGHTS_PATH,
+        dt=DMP_DT,
+        tau_override=TAU_OVERRIDE,
+        use_weighted_offset_goal=USE_WEIGHTED_OFFSET_GOAL,
+        add_dz=ADDITIONAL_DZ,
+    )
 
     rclpy.init()
-    node = WatchPathBatcher()
+    node = DMPRobotBatcher(dmp_src)
     try:
         node.run()
     finally:

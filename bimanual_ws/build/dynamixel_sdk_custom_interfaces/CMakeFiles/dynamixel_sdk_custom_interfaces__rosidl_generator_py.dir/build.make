@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces
+CMAKE_SOURCE_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces
+CMAKE_BINARY_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces
 
 # Include any dependencies generated for this target.
 include CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/depend.make
@@ -72,30 +72,30 @@ include CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/flag
 CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.o: CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/flags.make
 CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.o: rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c
 CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.o: CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.o -MF CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.o.d -o CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.o -c /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.o -MF CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.o.d -o CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.o -c /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c
 
 CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c > CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c > CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.i
 
 CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c -o CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c -o CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/msg/_set_position_s.c.s
 
 CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.o: CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/flags.make
 CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.o: rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c
 CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.o: CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.o -MF CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.o.d -o CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.o -c /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.o -MF CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.o.d -o CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.o -c /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c
 
 CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c > CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c > CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.i
 
 CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c -o CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c -o CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/rosidl_generator_py/dynamixel_sdk_custom_interfaces/srv/_get_position_s.c.s
 
 # Object files for target dynamixel_sdk_custom_interfaces__rosidl_generator_py
 dynamixel_sdk_custom_interfaces__rosidl_generator_py_OBJECTS = \
@@ -129,7 +129,7 @@ libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so: /opt/ros/jazzy/lib/l
 libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so: /opt/ros/jazzy/lib/librosidl_typesupport_introspection_c.so
 libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so: /opt/ros/jazzy/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
 libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so: /opt/ros/jazzy/lib/libbuiltin_interfaces__rosidl_generator_py.so
-libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so: /usr/lib/aarch64-linux-gnu/libpython3.12.so
+libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so: /usr/lib/x86_64-linux-gnu/libpython3.12.so
 libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so: /opt/ros/jazzy/lib/libservice_msgs__rosidl_typesupport_c.so
 libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so: /opt/ros/jazzy/lib/libbuiltin_interfaces__rosidl_typesupport_c.so
 libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so: /opt/ros/jazzy/lib/libservice_msgs__rosidl_generator_c.so
@@ -137,7 +137,7 @@ libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so: /opt/ros/jazzy/lib/l
 libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so: /opt/ros/jazzy/lib/librosidl_runtime_c.so
 libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so: /opt/ros/jazzy/lib/librcutils.so
 libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so: CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C shared library libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C shared library libdynamixel_sdk_custom_interfaces__rosidl_generator_py.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -149,6 +149,6 @@ CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/clean:
 .PHONY : CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/clean
 
 CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/depend:
-	cd /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/dynamixel_sdk_custom_interfaces__rosidl_generator_py.dir/depend
 

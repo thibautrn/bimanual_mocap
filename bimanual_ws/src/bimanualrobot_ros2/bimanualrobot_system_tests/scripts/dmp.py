@@ -2,9 +2,9 @@ import os, glob, math, time
 import numpy as np
 
 # ======================= USER SETTINGS =======================
-INPUT_DIR   = "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/dmp"       # folder with *.txt (timestamp x y z)
-OUTPUT_DIR  = "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs"         # we'll save baseline + weights here
-FILES       = sorted(glob.glob(os.path.join(INPUT_DIR, "*.txt")))  # or make a hardcoded list
+INPUT_DIR   = "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/good"       # folder with *.txt (timestamp x y z)
+OUTPUT_DIR  = "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/good"         # we'll save baseline + weights here
+FILES       = sorted(glob.glob(os.path.join(INPUT_DIR, "wrist_*.txt")))  # or make a hardcoded list
 
 # DMP hyperparameters (robust defaults)
 M_BASIS     = 35          # number of RBFs per axis (25–50 is common)
@@ -189,7 +189,9 @@ def main():
         K=K_SPRING, D=D_DAMP,
         tau=run_time_nom, alpha_s=ALPHA_S,
         run_time=run_time_nom,
-        goal_invariant=GOAL_INVARIANT
+        goal_invariant=GOAL_INVARIANT,
+        y0_star=y0_star if GOAL_INVARIANT else np.array([0.0, 0.0, 0.0]),  # ADD THIS
+        g_star=g_star if GOAL_INVARIANT else np.array([0.0, 0.0, 0.0])     # ADD THIS
     )
     np.savez_compressed(os.path.join(OUTPUT_DIR, "baseline.npz"), **baseline)
     print("[baseline]")

@@ -1,1 +1,1 @@
-/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_hardware_interface/scripts/cluster_model_files.py
+/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_hardware_interface/scripts/cluster_model_files.py

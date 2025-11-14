@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_gazebo
+CMAKE_SOURCE_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_gazebo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_gazebo
+CMAKE_BINARY_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_gazebo/CMakeFiles /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_gazebo//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo/CMakeFiles /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/bimanualrobot_gazebo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -197,6 +197,43 @@ bimanualrobot_gazebo_uninstall/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bimanualrobot_gazebo_uninstall.dir/build.make CMakeFiles/bimanualrobot_gazebo_uninstall.dir/build
 .PHONY : bimanualrobot_gazebo_uninstall/fast
 
+#=============================================================================
+# Target rules for targets named ball_leash_plugin
+
+# Build rule for target.
+ball_leash_plugin: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ball_leash_plugin
+.PHONY : ball_leash_plugin
+
+# fast build rule for target.
+ball_leash_plugin/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ball_leash_plugin.dir/build.make CMakeFiles/ball_leash_plugin.dir/build
+.PHONY : ball_leash_plugin/fast
+
+src/ball_leash_plugin.o: src/ball_leash_plugin.cc.o
+.PHONY : src/ball_leash_plugin.o
+
+# target to build an object file
+src/ball_leash_plugin.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ball_leash_plugin.dir/build.make CMakeFiles/ball_leash_plugin.dir/src/ball_leash_plugin.cc.o
+.PHONY : src/ball_leash_plugin.cc.o
+
+src/ball_leash_plugin.i: src/ball_leash_plugin.cc.i
+.PHONY : src/ball_leash_plugin.i
+
+# target to preprocess a source file
+src/ball_leash_plugin.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ball_leash_plugin.dir/build.make CMakeFiles/ball_leash_plugin.dir/src/ball_leash_plugin.cc.i
+.PHONY : src/ball_leash_plugin.cc.i
+
+src/ball_leash_plugin.s: src/ball_leash_plugin.cc.s
+.PHONY : src/ball_leash_plugin.s
+
+# target to generate assembly for a file
+src/ball_leash_plugin.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ball_leash_plugin.dir/build.make CMakeFiles/ball_leash_plugin.dir/src/ball_leash_plugin.cc.s
+.PHONY : src/ball_leash_plugin.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,6 +249,10 @@ help:
 	@echo "... test"
 	@echo "... bimanualrobot_gazebo_uninstall"
 	@echo "... uninstall"
+	@echo "... ball_leash_plugin"
+	@echo "... src/ball_leash_plugin.o"
+	@echo "... src/ball_leash_plugin.i"
+	@echo "... src/ball_leash_plugin.s"
 .PHONY : help
 
 

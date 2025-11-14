@@ -1,0 +1,16 @@
+```json
+{
+  "dmp_weights": [
+    [-0.12, 0.08, 0.05, -0.09, 0.15, 0.14, -0.11, 0.03, -0.04, 0.10, -0.13, 0.07, -0.06, 0.12, -0.08, 0.11, 0.09, -0.10, 0.02, -0.05, 0.13, -0.07, 0.04, -0.02, 0.06, -0.03, 0.09, -0.12, 0.05, 0.10, -0.04, 0.11, -0.06, 0.08, -0.01],
+    [0.14, -0.08, 0.11, -0.06, 0.07, -0.10, 0.09, -0.12, 0.04, 0.05, -0.07, 0.08, -0.03, 0.12, -0.11, 0.06, 0.10, -0.09, 0.13, -0.04, 0.03, 0.02, -0.05, 0.08, -0.02, 0.09, -0.01, 0.07, -0.06, 0.04, 0.11, -0.03, 0.05, 0.12, -0.08],
+    [0.10, -0.07, 0.09, 0.06, -0.05, 0.11, -0.04, 0.12, -0.08, 0.07, -0.03, 0.10, -0.02, 0.09, 0.05, -0.11, 0.04, 0.08, -0.06, 0.12, -0.09, 0.02, 0.07, -0.01, 0.06, -0.05, 0.11, -0.04, 0.08, 0.03, -0.07, 0.09, -0.03, 0.04, 0.10]
+  ],
+  "reasoning": "The strategy focuses on achieving a gentler upward motion to minimize drift accumulation while maintaining sufficient power for consistent height gains. This is achieved by using moderately sized weights within the stable range, ensuring smooth transitions between basis functions to promote a repeatable motion pattern.",
+  "expected_outcome": {
+    "predicted_hits": 4,
+    "avg_drift_m": 0.035,
+    "drift_will_be_stable": true,
+    "confidence": 0.85
+  }
+}
+```

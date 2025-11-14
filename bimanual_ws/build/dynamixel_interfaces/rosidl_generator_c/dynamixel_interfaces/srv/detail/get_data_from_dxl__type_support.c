@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "dynamixel_interfaces/srv/detail/get_data_from_dxl__type_support.h"
-#include "rosidl_typesupport_interface/macros.h"
-#include "dynamixel_interfaces/srv/detail/get_data_from_dxl__functions.h"
 #include "dynamixel_interfaces/srv/detail/get_data_from_dxl__struct.h"
+#include "dynamixel_interfaces/srv/detail/get_data_from_dxl__type_support.h"
+#include "dynamixel_interfaces/srv/detail/get_data_from_dxl__functions.h"
+#include "rosidl_typesupport_interface/macros.h"
 
 #ifdef __cplusplus
 extern "C"

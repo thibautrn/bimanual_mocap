@@ -1,0 +1,1620 @@
+[
+  {
+    "episode_id": "20251108_001459",
+    "num_hits": 3,
+    "num_successful_hits": 3,
+    "hits": [
+      {
+        "hit_number": 1,
+        "contact_time": 86041.35041,
+        "contact_distance": 0.188051,
+        "racket_pos_at_contact": [
+          0.613516,
+          0.546444,
+          1.632032
+        ],
+        "ball_pos_at_contact": [
+          0.792583,
+          0.56078,
+          1.687644
+        ],
+        "ball_pos_before": [
+          0.793705,
+          0.562385,
+          1.685546
+        ],
+        "ball_pos_after": [
+          0.762358,
+          0.556829,
+          1.859022
+        ],
+        "height_gain": 0.17347599999999996,
+        "max_xy_drift": 0.01891759511671611,
+        "z_descent": 0.07944899999999988,
+        "z_max": 1.859022,
+        "reward": 0.7866593268106575,
+        "reward_components": {
+          "height": 0.7000405286213154,
+          "centering": 1.0,
+          "descent": 0.4931124999999985,
+          "success": 1.0
+        },
+        "success": true
+      },
+      {
+        "hit_number": 2,
+        "contact_time": 86046.2354,
+        "contact_distance": 0.192699,
+        "racket_pos_at_contact": [
+          0.620371,
+          0.561887,
+          1.669164
+        ],
+        "ball_pos_at_contact": [
+          0.77522,
+          0.517232,
+          1.774808
+        ],
+        "ball_pos_before": [
+          0.773798,
+          0.51484,
+          1.776206
+        ],
+        "ball_pos_after": [
+          0.743232,
+          0.521595,
+          1.922358
+        ],
+        "height_gain": 0.14615200000000006,
+        "max_xy_drift": 0.04646213349599868,
+        "z_descent": 0.09084000000000003,
+        "z_max": 1.922358,
+        "reward": 0.8117650447440349,
+        "reward_components": {
+          "height": 0.6235300894880698,
+          "centering": 1.0,
+          "descent": 1.0,
+          "success": 1.0
+        },
+        "success": true
+      },
+      {
+        "hit_number": 3,
+        "contact_time": 86052.136086,
+        "contact_distance": 0.193192,
+        "racket_pos_at_contact": [
+          0.623438,
+          0.545788,
+          1.69286
+        ],
+        "ball_pos_at_contact": [
+          0.768562,
+          0.538006,
+          1.820146
+        ],
+        "ball_pos_before": [
+          0.76261,
+          0.537493,
+          1.819315
+        ],
+        "ball_pos_after": [
+          0.750095,
+          0.525613,
+          1.974492
+        ],
+        "height_gain": 0.1551769999999999,
+        "max_xy_drift": 0.03858801360526357,
+        "z_descent": 0.07957599999999987,
+        "z_max": 1.974492,
+        "reward": 0.7620067278225529,
+        "reward_components": {
+          "height": 0.6503384556451061,
+          "centering": 1.0,
+          "descent": 0.49469999999999836,
+          "success": 1.0
+        },
+        "success": true
+      }
+    ],
+    "episode_reward": 0.9189080217895451,
+    "all_successful": true,
+    "metadata": {
+      "avg_height": 0.15826833333333332,
+      "max_height": 0.17347599999999996,
+      "min_height": 0.14615200000000006,
+      "avg_drift": 0.03465591407265945,
+      "max_drift": 0.04646213349599868,
+      "min_drift": 0.01891759511671611,
+      "drift_std": 0.011583650940950404,
+      "drift_trend": 0.00983520924427373,
+      "consistency_score": 0.9143245592591034,
+      "avg_descent": 0.08328833333333326,
+      "success_rate": 1.0
+    }
+  },
+  {
+    "episode_id": "20251109_004841",
+    "num_hits": 3,
+    "num_successful_hits": 2,
+    "hits": [
+      {
+        "hit_number": 1,
+        "contact_time": 174468.218379,
+        "contact_distance": 0.190913,
+        "racket_pos_at_contact": [
+          0.582088,
+          0.584994,
+          1.720237
+        ],
+        "ball_pos_at_contact": [
+          0.716117,
+          0.579865,
+          1.856096
+        ],
+        "ball_pos_before": [
+          0.717281,
+          0.576698,
+          1.856611
+        ],
+        "ball_pos_after": [
+          0.694438,
+          0.625328,
+          1.979929
+        ],
+        "height_gain": 0.12331800000000004,
+        "max_xy_drift": 0.11399633076551191,
+        "z_descent": 0.11783200000000016,
+        "z_max": 1.979929,
+        "reward": 0.7743746639646554,
+        "reward_components": {
+          "height": 0.5487493279293106,
+          "centering": 1.0,
+          "descent": 1.0,
+          "success": 1.0
+        },
+        "success": true
+      },
+      {
+        "hit_number": 2,
+        "contact_time": 174475.929806,
+        "contact_distance": 0.199456,
+        "racket_pos_at_contact": [
+          0.590826,
+          0.630069,
+          1.76873
+        ],
+        "ball_pos_at_contact": [
+          0.762696,
+          0.583983,
+          1.858839
+        ],
+        "ball_pos_before": [
+          0.757714,
+          0.577938,
+          1.852638
+        ],
+        "ball_pos_after": [
+          0.722966,
+          0.56208,
+          2.036417
+        ],
+        "height_gain": 0.18377900000000014,
+        "max_xy_drift": 0.05829925862307344,
+        "z_descent": 0.08600000000000008,
+        "z_max": 2.036417,
+        "reward": 0.8626871249102471,
+        "reward_components": {
+          "height": 0.7253742498204943,
+          "centering": 1.0,
+          "descent": 1.0,
+          "success": 1.0
+        },
+        "success": true
+      },
+      {
+        "hit_number": 3,
+        "contact_time": 174481.98116,
+        "contact_distance": 0.184011,
+        "racket_pos_at_contact": [
+          0.606236,
+          0.618625,
+          1.734143
+        ],
+        "ball_pos_at_contact": [
+          0.692801,
+          0.5849,
+          1.892979
+        ],
+        "ball_pos_before": [
+          0.698983,
+          0.583813,
+          1.8888
+        ],
+        "ball_pos_after": [
+          0.682074,
+          0.592869,
+          1.87911
+        ],
+        "height_gain": 0.004329000000000027,
+        "max_xy_drift": 0.10689832850423812,
+        "z_descent": 0.014019000000000004,
+        "z_max": 1.893129,
+        "reward": -0.14395031249999984,
+        "reward_components": {
+          "height": -0.9567099999999997,
+          "centering": 1.0,
+          "descent": -0.32476249999999995,
+          "success": 0.0
+        },
+        "success": false
+      }
+    ],
+    "episode_reward": 0.7590901729477015,
+    "all_successful": false,
+    "metadata": {
+      "avg_height": 0.10380866666666673,
+      "max_height": 0.18377900000000014,
+      "min_height": 0.004329000000000027,
+      "avg_drift": 0.09306463929760783,
+      "max_drift": 0.11399633076551191,
+      "min_drift": 0.05829925862307344,
+      "drift_std": 0.024753035896083922,
+      "drift_trend": -0.0035490011306369014,
+      "consistency_score": 0.9009878564156643,
+      "avg_descent": 0.07261700000000008,
+      "success_rate": 0.6666666666666666
+    }
+  },
+  {
+    "episode_id": "20251108_002123",
+    "num_hits": 5,
+    "num_successful_hits": 2,
+    "hits": [
+      {
+        "hit_number": 1,
+        "contact_time": 86423.050536,
+        "contact_distance": 0.197086,
+        "racket_pos_at_contact": [
+          0.612382,
+          0.547682,
+          1.607165
+        ],
+        "ball_pos_at_contact": [
+          0.78798,
+          0.516786,
+          1.691153
+        ],
+        "ball_pos_before": [
+          0.788665,
+          0.514774,
+          1.692311
+        ],
+        "ball_pos_after": [
+          0.797258,
+          0.492117,
+          1.838399
+        ],
+        "height_gain": 0.146088,
+        "max_xy_drift": 0.06040099546365111,
+        "z_descent": 0.09613699999999992,
+        "z_max": 1.838399,
+        "reward": 0.8116672315943516,
+        "reward_components": {
+          "height": 0.6233344631887031,
+          "centering": 1.0,
+          "descent": 1.0,
+          "success": 1.0
+        },
+        "success": true
+      },
+      {
+        "hit_number": 2,
+        "contact_time": 86427.882902,
+        "contact_distance": 0.196401,
+        "racket_pos_at_contact": [
+          0.624804,
+          0.553451,
+          1.676471
+        ],
+        "ball_pos_at_contact": [
+          0.744528,
+          0.560515,
+          1.832002
+        ],
+        "ball_pos_before": [
+          0.745339,
+          0.554766,
+          1.834181
+        ],
+        "ball_pos_after": [
+          0.733449,
+          0.588949,
+          1.862669
+        ],
+        "height_gain": 0.028487999999999847,
+        "max_xy_drift": 0.06069613004137902,
+        "z_descent": 0.042318999999999996,
+        "z_max": 1.862669,
+        "reward": 0.021063437499999227,
+        "reward_components": {
+          "height": -0.7151200000000015,
+          "centering": 1.0,
+          "descent": 0.028987499999999944,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 3,
+        "contact_time": 86433.916923,
+        "contact_distance": 0.180899,
+        "racket_pos_at_contact": [
+          0.622157,
+          0.580709,
+          1.670781
+        ],
+        "ball_pos_at_contact": [
+          0.701468,
+          0.541759,
+          1.828633
+        ],
+        "ball_pos_before": [
+          0.705286,
+          0.544088,
+          1.829104
+        ],
+        "ball_pos_after": [
+          0.693556,
+          0.521744,
+          1.811405
+        ],
+        "height_gain": -0.0012870000000000381,
+        "max_xy_drift": 0.0914701812833013,
+        "z_descent": 0.016412000000000093,
+        "z_max": 1.827817,
+        "reward": -0.16829125000000006,
+        "reward_components": {
+          "height": -1.0128700000000004,
+          "centering": 1.0,
+          "descent": -0.29484999999999884,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 4,
+        "contact_time": 86435.46966,
+        "contact_distance": 0.144778,
+        "racket_pos_at_contact": [
+          0.64282,
+          0.416279,
+          1.821327
+        ],
+        "ball_pos_at_contact": [
+          0.742811,
+          0.520637,
+          1.812845
+        ],
+        "ball_pos_before": [
+          0.739282,
+          0.52067,
+          1.8115
+        ],
+        "ball_pos_after": [
+          0.748417,
+          0.713265,
+          1.816507
+        ],
+        "height_gain": 0.005006999999999984,
+        "max_xy_drift": 0.166291749987785,
+        "z_descent": 0.022599000000000036,
+        "z_max": 1.816507,
+        "reward": -0.12715406250000003,
+        "reward_components": {
+          "height": -0.9499300000000002,
+          "centering": 1.0,
+          "descent": -0.21751249999999955,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 5,
+        "contact_time": 86440.293363,
+        "contact_distance": 0.184632,
+        "racket_pos_at_contact": [
+          0.634624,
+          0.538962,
+          1.674968
+        ],
+        "ball_pos_at_contact": [
+          0.750921,
+          0.466191,
+          1.798533
+        ],
+        "ball_pos_before": [
+          0.75763,
+          0.457575,
+          1.80395
+        ],
+        "ball_pos_after": [
+          0.719491,
+          0.501219,
+          1.90876
+        ],
+        "height_gain": 0.10481000000000007,
+        "max_xy_drift": 0.08375831199946669,
+        "z_descent": 0.11630300000000005,
+        "z_max": 1.90876,
+        "reward": 0.7404098801548117,
+        "reward_components": {
+          "height": 0.4808197603096233,
+          "centering": 1.0,
+          "descent": 1.0,
+          "success": 1.0
+        },
+        "success": true
+      }
+    ],
+    "episode_reward": 0.7228432070377495,
+    "all_successful": false,
+    "metadata": {
+      "avg_height": 0.05662119999999997,
+      "max_height": 0.146088,
+      "min_height": -0.0012870000000000381,
+      "avg_drift": 0.09252347375511663,
+      "max_drift": 0.166291749987785,
+      "min_drift": 0.06040099546365111,
+      "drift_std": 0.038896091020644286,
+      "drift_trend": 0.015231025301803718,
+      "consistency_score": 0.783491534710208,
+      "avg_descent": 0.058754000000000015,
+      "success_rate": 0.4
+    }
+  },
+  {
+    "episode_id": "20251108_002855",
+    "num_hits": 1,
+    "num_successful_hits": 1,
+    "hits": [
+      {
+        "hit_number": 1,
+        "contact_time": 86881.147248,
+        "contact_distance": 0.196088,
+        "racket_pos_at_contact": [
+          0.599552,
+          0.506858,
+          1.607544
+        ],
+        "ball_pos_at_contact": [
+          0.786599,
+          0.537482,
+          1.657806
+        ],
+        "ball_pos_before": [
+          0.786876,
+          0.536541,
+          1.657724
+        ],
+        "ball_pos_after": [
+          0.792942,
+          0.517536,
+          1.809799
+        ],
+        "height_gain": 0.15207499999999996,
+        "max_xy_drift": 0.034948628871530905,
+        "z_descent": 0.08453199999999983,
+        "z_max": 1.809799,
+        "reward": 0.8206488953552068,
+        "reward_components": {
+          "height": 0.6412977907104136,
+          "centering": 1.0,
+          "descent": 1.0,
+          "success": 1.0
+        },
+        "success": true
+      }
+    ],
+    "episode_reward": 0.6128613352732286,
+    "all_successful": true,
+    "metadata": {
+      "avg_height": 0.15207499999999996,
+      "max_height": 0.15207499999999996,
+      "min_height": 0.15207499999999996,
+      "avg_drift": 0.034948628871530905,
+      "max_drift": 0.034948628871530905,
+      "min_drift": 0.034948628871530905,
+      "drift_std": 0.0,
+      "drift_trend": 0.0,
+      "consistency_score": 1.0,
+      "avg_descent": 0.08453199999999983,
+      "success_rate": 1.0
+    }
+  },
+  {
+    "episode_id": "20251108_235737",
+    "num_hits": 1,
+    "num_successful_hits": 1,
+    "hits": [
+      {
+        "hit_number": 1,
+        "contact_time": 171406.046382,
+        "contact_distance": 0.184874,
+        "racket_pos_at_contact": [
+          0.575681,
+          0.575913,
+          1.708315
+        ],
+        "ball_pos_at_contact": [
+          0.744266,
+          0.565446,
+          1.783469
+        ],
+        "ball_pos_before": [
+          0.749134,
+          0.567172,
+          1.784361
+        ],
+        "ball_pos_after": [
+          0.720599,
+          0.559447,
+          1.916166
+        ],
+        "height_gain": 0.13180499999999995,
+        "max_xy_drift": 0.060147523722926484,
+        "z_descent": 0.09609500000000004,
+        "z_max": 1.916166,
+        "reward": 0.7888570943907334,
+        "reward_components": {
+          "height": 0.5777141887814666,
+          "centering": 1.0,
+          "descent": 1.0,
+          "success": 1.0
+        },
+        "success": true
+      }
+    ],
+    "episode_reward": 0.6033237949838867,
+    "all_successful": true,
+    "metadata": {
+      "avg_height": 0.13180499999999995,
+      "max_height": 0.13180499999999995,
+      "min_height": 0.13180499999999995,
+      "avg_drift": 0.060147523722926484,
+      "max_drift": 0.060147523722926484,
+      "min_drift": 0.060147523722926484,
+      "drift_std": 0.0,
+      "drift_trend": 0.0,
+      "consistency_score": 1.0,
+      "avg_descent": 0.09609500000000004,
+      "success_rate": 1.0
+    }
+  },
+  {
+    "episode_id": "20251108_003200",
+    "num_hits": 5,
+    "num_successful_hits": 1,
+    "hits": [
+      {
+        "hit_number": 1,
+        "contact_time": 87061.738332,
+        "contact_distance": 0.194733,
+        "racket_pos_at_contact": [
+          0.621403,
+          0.56036,
+          1.640859
+        ],
+        "ball_pos_at_contact": [
+          0.809005,
+          0.509394,
+          1.652228
+        ],
+        "ball_pos_before": [
+          0.81163,
+          0.510405,
+          1.653653
+        ],
+        "ball_pos_after": [
+          0.796212,
+          0.47382,
+          1.846706
+        ],
+        "height_gain": 0.19305299999999992,
+        "max_xy_drift": 0.07788595087690722,
+        "z_descent": 0.0678049999999999,
+        "z_max": 1.846706,
+        "reward": 0.7917533837553392,
+        "reward_components": {
+          "height": 0.7466161425106786,
+          "centering": 1.0,
+          "descent": 0.34756249999999866,
+          "success": 1.0
+        },
+        "success": true
+      },
+      {
+        "hit_number": 2,
+        "contact_time": 87064.352112,
+        "contact_distance": 0.197914,
+        "racket_pos_at_contact": [
+          0.624353,
+          0.544455,
+          1.652223
+        ],
+        "ball_pos_at_contact": [
+          0.789621,
+          0.514333,
+          1.75686
+        ],
+        "ball_pos_before": [
+          0.785651,
+          0.50414,
+          1.760781
+        ],
+        "ball_pos_after": [
+          0.807371,
+          0.581308,
+          1.772361
+        ],
+        "height_gain": 0.011580000000000146,
+        "max_xy_drift": 0.04158560454051373,
+        "z_descent": 0.014491000000000032,
+        "z_max": 1.772361,
+        "reward": -0.10695781249999922,
+        "reward_components": {
+          "height": -0.8841999999999985,
+          "centering": 1.0,
+          "descent": -0.3188624999999996,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 3,
+        "contact_time": 87068.951713,
+        "contact_distance": 0.190013,
+        "racket_pos_at_contact": [
+          0.626835,
+          0.584175,
+          1.674652
+        ],
+        "ball_pos_at_contact": [
+          0.773956,
+          0.549977,
+          1.789937
+        ],
+        "ball_pos_before": [
+          0.774886,
+          0.552653,
+          1.790001
+        ],
+        "ball_pos_after": [
+          0.771085,
+          0.538146,
+          1.830389
+        ],
+        "height_gain": 0.04038800000000009,
+        "max_xy_drift": 0.014832212950197312,
+        "z_descent": 0.03163300000000002,
+        "z_max": 1.830389,
+        "reward": 0.06386656250000049,
+        "reward_components": {
+          "height": -0.5961199999999991,
+          "centering": 1.0,
+          "descent": -0.10458749999999972,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 4,
+        "contact_time": 87070.496815,
+        "contact_distance": 0.191039,
+        "racket_pos_at_contact": [
+          0.649604,
+          0.44794,
+          1.7589
+        ],
+        "ball_pos_at_contact": [
+          0.749082,
+          0.512719,
+          1.90858
+        ],
+        "ball_pos_before": [
+          0.748159,
+          0.513381,
+          1.916028
+        ],
+        "ball_pos_after": [
+          0.757405,
+          0.516232,
+          1.832854
+        ],
+        "height_gain": -0.018463000000000118,
+        "max_xy_drift": 0.04809255352962666,
+        "z_descent": 0.06471099999999996,
+        "z_max": 1.897565,
+        "reward": -0.17870406250000065,
+        "reward_components": {
+          "height": -1.1846300000000012,
+          "centering": 1.0,
+          "descent": 0.30888749999999954,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 5,
+        "contact_time": 87074.311625,
+        "contact_distance": 0.197147,
+        "racket_pos_at_contact": [
+          0.619547,
+          0.494701,
+          1.861324
+        ],
+        "ball_pos_at_contact": [
+          0.789148,
+          0.549707,
+          1.945447
+        ],
+        "ball_pos_before": [
+          0.802469,
+          0.559127,
+          1.918902
+        ],
+        "ball_pos_after": [
+          0.703715,
+          0.521475,
+          2.015918
+        ],
+        "height_gain": 0.09701599999999999,
+        "max_xy_drift": 0.08144370356264509,
+        "z_descent": 0.005425000000000235,
+        "z_max": 2.015918,
+        "reward": 0.30605656250000035,
+        "reward_components": {
+          "height": -0.02984000000000009,
+          "centering": 1.0,
+          "descent": -0.43218749999999706,
+          "success": 0.0
+        },
+        "success": false
+      }
+    ],
+    "episode_reward": 0.5833792358411579,
+    "all_successful": false,
+    "metadata": {
+      "avg_height": 0.0647148,
+      "max_height": 0.19305299999999992,
+      "min_height": -0.018463000000000118,
+      "avg_drift": 0.052768005091978,
+      "max_drift": 0.08144370356264509,
+      "min_drift": 0.014832212950197312,
+      "drift_std": 0.02465456200407922,
+      "drift_trend": 0.0013622454360588618,
+      "consistency_score": 0.8959327702394476,
+      "avg_descent": 0.036813000000000026,
+      "success_rate": 0.2
+    }
+  },
+  {
+    "episode_id": "20251108_015256",
+    "num_hits": 5,
+    "num_successful_hits": 1,
+    "hits": [
+      {
+        "hit_number": 1,
+        "contact_time": 91918.059739,
+        "contact_distance": 0.199115,
+        "racket_pos_at_contact": [
+          0.598641,
+          0.563565,
+          1.661829
+        ],
+        "ball_pos_at_contact": [
+          0.7965,
+          0.553758,
+          1.681891
+        ],
+        "ball_pos_before": [
+          0.803425,
+          0.555199,
+          1.660611
+        ],
+        "ball_pos_after": [
+          0.748441,
+          0.54162,
+          1.825747
+        ],
+        "height_gain": 0.16513599999999995,
+        "max_xy_drift": 0.032652639724836965,
+        "z_descent": 0.042232999999999965,
+        "z_max": 1.825747,
+        "reward": 0.717563836102667,
+        "reward_components": {
+          "height": 0.6781495472053343,
+          "centering": 1.0,
+          "descent": 0.027912499999999563,
+          "success": 1.0
+        },
+        "success": true
+      },
+      {
+        "hit_number": 2,
+        "contact_time": 91919.628956,
+        "contact_distance": 0.19512,
+        "racket_pos_at_contact": [
+          0.60921,
+          0.530789,
+          1.673489
+        ],
+        "ball_pos_at_contact": [
+          0.726176,
+          0.553244,
+          1.828042
+        ],
+        "ball_pos_before": [
+          0.725819,
+          0.552745,
+          1.830608
+        ],
+        "ball_pos_after": [
+          0.731272,
+          0.559824,
+          1.795626
+        ],
+        "height_gain": -0.005233000000000043,
+        "max_xy_drift": 0.05356505922707457,
+        "z_descent": 0.029749000000000025,
+        "z_max": 1.825375,
+        "reward": -0.1671821875000002,
+        "reward_components": {
+          "height": -1.0523300000000004,
+          "centering": 1.0,
+          "descent": -0.12813749999999968,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 3,
+        "contact_time": 91925.250613,
+        "contact_distance": 0.194607,
+        "racket_pos_at_contact": [
+          0.604791,
+          0.541183,
+          1.65297
+        ],
+        "ball_pos_at_contact": [
+          0.731439,
+          0.513256,
+          1.798063
+        ],
+        "ball_pos_before": [
+          0.731908,
+          0.504011,
+          1.797631
+        ],
+        "ball_pos_after": [
+          0.725322,
+          0.573561,
+          1.801665
+        ],
+        "height_gain": 0.004034000000000093,
+        "max_xy_drift": 0.05953826000984575,
+        "z_descent": 0.008345000000000047,
+        "z_max": 1.801665,
+        "reward": -0.15429093749999945,
+        "reward_components": {
+          "height": -0.9596599999999991,
+          "centering": 1.0,
+          "descent": -0.3956874999999994,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 4,
+        "contact_time": 91926.763741,
+        "contact_distance": 0.181422,
+        "racket_pos_at_contact": [
+          0.609968,
+          0.514091,
+          1.773269
+        ],
+        "ball_pos_at_contact": [
+          0.600505,
+          0.608674,
+          1.927795
+        ],
+        "ball_pos_before": [
+          0.604116,
+          0.610989,
+          1.93232
+        ],
+        "ball_pos_after": [
+          0.604936,
+          0.584107,
+          1.875801
+        ],
+        "height_gain": -0.008817999999999993,
+        "max_xy_drift": 0.19019699672182,
+        "z_descent": 0.04770099999999999,
+        "z_max": 1.923502,
+        "reward": -0.15705718749999997,
+        "reward_components": {
+          "height": -1.08818,
+          "centering": 1.0,
+          "descent": 0.09626249999999992,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 5,
+        "contact_time": 91931.716321,
+        "contact_distance": 0.179679,
+        "racket_pos_at_contact": [
+          0.591405,
+          0.555384,
+          1.633532
+        ],
+        "ball_pos_at_contact": [
+          0.678874,
+          0.482548,
+          1.772559
+        ],
+        "ball_pos_before": [
+          0.683317,
+          0.490731,
+          1.774346
+        ],
+        "ball_pos_after": [
+          0.670732,
+          0.444521,
+          1.774076
+        ],
+        "height_gain": -0.00026999999999999247,
+        "max_xy_drift": 0.15187269427056338,
+        "z_descent": 0.00533399999999995,
+        "z_max": 1.774076,
+        "reward": -0.18051562500000004,
+        "reward_components": {
+          "height": -1.0027,
+          "centering": 1.0,
+          "descent": -0.4333250000000006,
+          "success": 0.0
+        },
+        "success": false
+      }
+    ],
+    "episode_reward": 0.502451939358817,
+    "all_successful": false,
+    "metadata": {
+      "avg_height": 0.030969800000000002,
+      "max_height": 0.16513599999999995,
+      "min_height": -0.008817999999999993,
+      "avg_drift": 0.09756512999082814,
+      "max_drift": 0.19019699672182,
+      "min_drift": 0.032652639724836965,
+      "drift_std": 0.061847643014692276,
+      "drift_trend": 0.03750720465861982,
+      "consistency_score": 0.6025806093067516,
+      "avg_descent": 0.026672399999999995,
+      "success_rate": 0.2
+    }
+  },
+  {
+    "episode_id": "20251109_002752",
+    "num_hits": 1,
+    "num_successful_hits": 0,
+    "hits": [
+      {
+        "hit_number": 1,
+        "contact_time": 173211.701583,
+        "contact_distance": 0.199147,
+        "racket_pos_at_contact": [
+          0.603228,
+          0.513666,
+          1.581044
+        ],
+        "ball_pos_at_contact": [
+          0.780493,
+          0.547997,
+          1.665058
+        ],
+        "ball_pos_before": [
+          0.780332,
+          0.548098,
+          1.665069
+        ],
+        "ball_pos_after": [
+          0.78117,
+          0.547743,
+          1.665068
+        ],
+        "height_gain": -9.999999999177334e-07,
+        "max_xy_drift": 0.002542233073500599,
+        "z_descent": 1.8000000000073513e-05,
+        "z_max": 1.665068,
+        "reward": -0.1874768749999995,
+        "reward_components": {
+          "height": -1.0000099999999992,
+          "centering": 1.0,
+          "descent": -0.4997749999999991,
+          "success": 0.0
+        },
+        "success": false
+      }
+    ],
+    "episode_reward": 0.14375693750000018,
+    "all_successful": false,
+    "metadata": {
+      "avg_height": -9.999999999177334e-07,
+      "max_height": -9.999999999177334e-07,
+      "min_height": -9.999999999177334e-07,
+      "avg_drift": 0.002542233073500599,
+      "max_drift": 0.002542233073500599,
+      "min_drift": 0.002542233073500599,
+      "drift_std": 0.0,
+      "drift_trend": 0.0,
+      "consistency_score": 1.0,
+      "avg_descent": 1.8000000000073513e-05,
+      "success_rate": 0.0
+    }
+  },
+  {
+    "episode_id": "20251108_022227",
+    "num_hits": 3,
+    "num_successful_hits": 0,
+    "hits": [
+      {
+        "hit_number": 1,
+        "contact_time": 93689.218176,
+        "contact_distance": 0.198019,
+        "racket_pos_at_contact": [
+          0.64692,
+          0.462959,
+          1.497427
+        ],
+        "ball_pos_at_contact": [
+          0.776912,
+          0.5554,
+          1.614765
+        ],
+        "ball_pos_before": [
+          0.777427,
+          0.55526,
+          1.614807
+        ],
+        "ball_pos_after": [
+          0.775081,
+          0.555715,
+          1.614684
+        ],
+        "height_gain": -6.800000000017903e-05,
+        "max_xy_drift": 0.007540410201043382,
+        "z_descent": 5.499999999991623e-05,
+        "z_max": 1.614739,
+        "reward": -0.18775406250000104,
+        "reward_components": {
+          "height": -1.0006800000000018,
+          "centering": 1.0,
+          "descent": -0.49931250000000105,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 2,
+        "contact_time": 93692.337538,
+        "contact_distance": 0.192618,
+        "racket_pos_at_contact": [
+          0.641611,
+          0.542135,
+          1.488034
+        ],
+        "ball_pos_at_contact": [
+          0.786142,
+          0.542251,
+          1.615362
+        ],
+        "ball_pos_before": [
+          0.786181,
+          0.541682,
+          1.615437
+        ],
+        "ball_pos_after": [
+          0.784228,
+          0.549083,
+          1.614724
+        ],
+        "height_gain": -0.0002249999999999197,
+        "max_xy_drift": 0.008955066722252785,
+        "z_descent": 0.00048800000000004395,
+        "z_max": 1.615212,
+        "reward": -0.18786249999999954,
+        "reward_components": {
+          "height": -1.0022499999999992,
+          "centering": 1.0,
+          "descent": -0.49389999999999945,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 3,
+        "contact_time": 93696.213454,
+        "contact_distance": 0.181859,
+        "racket_pos_at_contact": [
+          0.663359,
+          0.499969,
+          1.690444
+        ],
+        "ball_pos_at_contact": [
+          0.784897,
+          0.493175,
+          1.825555
+        ],
+        "ball_pos_before": [
+          0.783213,
+          0.489515,
+          1.830756
+        ],
+        "ball_pos_after": [
+          0.787351,
+          0.522849,
+          1.819424
+        ],
+        "height_gain": -0.01133200000000012,
+        "max_xy_drift": 0.050755621087718014,
+        "z_descent": 0.02369500000000002,
+        "z_max": 1.819424,
+        "reward": -0.20713656250000057,
+        "reward_components": {
+          "height": -1.1133200000000012,
+          "centering": 1.0,
+          "descent": -0.20381249999999973,
+          "success": 0.0
+        },
+        "success": false
+      }
+    ],
+    "episode_reward": 0.10840122003862761,
+    "all_successful": false,
+    "metadata": {
+      "avg_height": -0.003875000000000073,
+      "max_height": -6.800000000017903e-05,
+      "min_height": -0.01133200000000012,
+      "avg_drift": 0.022417032670338063,
+      "max_drift": 0.050755621087718014,
+      "min_drift": 0.007540410201043382,
+      "drift_std": 0.020046728883378058,
+      "drift_trend": 0.021607605443337306,
+      "consistency_score": 0.8333826626931385,
+      "avg_descent": 0.008079333333333327,
+      "success_rate": 0.0
+    }
+  },
+  {
+    "episode_id": "20251108_235300",
+    "num_hits": 2,
+    "num_successful_hits": 0,
+    "hits": [
+      {
+        "hit_number": 1,
+        "contact_time": 171134.63296,
+        "contact_distance": 0.199791,
+        "racket_pos_at_contact": [
+          0.583438,
+          0.561352,
+          1.680913
+        ],
+        "ball_pos_at_contact": [
+          0.728024,
+          0.496271,
+          1.802469
+        ],
+        "ball_pos_before": [
+          0.735128,
+          0.502238,
+          1.8007
+        ],
+        "ball_pos_after": [
+          0.702702,
+          0.486682,
+          1.822076
+        ],
+        "height_gain": 0.02137600000000006,
+        "max_xy_drift": 0.09992071821199046,
+        "z_descent": 0.008558000000000066,
+        "z_max": 1.822076,
+        "reward": -0.06724812499999959,
+        "reward_components": {
+          "height": -0.7862399999999994,
+          "centering": 1.0,
+          "descent": -0.3930249999999992,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 2,
+        "contact_time": 171136.133947,
+        "contact_distance": 0.191678,
+        "racket_pos_at_contact": [
+          0.57458,
+          0.59729,
+          1.782695
+        ],
+        "ball_pos_at_contact": [
+          0.734902,
+          0.49688,
+          1.813603
+        ],
+        "ball_pos_before": [
+          0.730008,
+          0.496615,
+          1.816167
+        ],
+        "ball_pos_after": [
+          0.798299,
+          0.389264,
+          1.782505
+        ],
+        "height_gain": -0.010805000000000176,
+        "max_xy_drift": 0.1617742720490499,
+        "z_descent": 0.02478199999999986,
+        "z_max": 1.805362,
+        "reward": -0.20280312500000108,
+        "reward_components": {
+          "height": -1.1080500000000018,
+          "centering": 1.0,
+          "descent": -0.19022500000000175,
+          "success": 0.0
+        },
+        "success": false
+      }
+    ],
+    "episode_reward": 0.08526804789552855,
+    "all_successful": false,
+    "metadata": {
+      "avg_height": 0.005285499999999943,
+      "max_height": 0.02137600000000006,
+      "min_height": -0.010805000000000176,
+      "avg_drift": 0.13084749513052019,
+      "max_drift": 0.1617742720490499,
+      "min_drift": 0.09992071821199046,
+      "drift_std": 0.03092677691852972,
+      "drift_trend": 0.06185355383705943,
+      "consistency_score": 0.6288786769776433,
+      "avg_descent": 0.016669999999999963,
+      "success_rate": 0.0
+    }
+  },
+  {
+    "episode_id": "20251108_014936",
+    "num_hits": 2,
+    "num_successful_hits": 0,
+    "hits": [
+      {
+        "hit_number": 1,
+        "contact_time": 91716.250677,
+        "contact_distance": 0.199414,
+        "racket_pos_at_contact": [
+          0.655212,
+          0.456849,
+          1.553085
+        ],
+        "ball_pos_at_contact": [
+          0.776524,
+          0.547631,
+          1.682731
+        ],
+        "ball_pos_before": [
+          0.77654,
+          0.54779,
+          1.682736
+        ],
+        "ball_pos_after": [
+          0.776651,
+          0.546922,
+          1.682731
+        ],
+        "height_gain": -5.000000000032756e-06,
+        "max_xy_drift": 0.0045486135250206155,
+        "z_descent": 5.000000000032756e-06,
+        "z_max": 1.682731,
+        "reward": -0.18751718750000013,
+        "reward_components": {
+          "height": -1.0000500000000003,
+          "centering": 1.0,
+          "descent": -0.4999374999999996,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 3,
+        "contact_time": 91719.34753,
+        "contact_distance": 0.190409,
+        "racket_pos_at_contact": [
+          0.671151,
+          0.453799,
+          1.702038
+        ],
+        "ball_pos_at_contact": [
+          0.714921,
+          0.505676,
+          1.879938
+        ],
+        "ball_pos_before": [
+          0.713748,
+          0.502941,
+          1.88219
+        ],
+        "ball_pos_after": [
+          0.751653,
+          0.52366,
+          1.850723
+        ],
+        "height_gain": -0.005862000000000034,
+        "max_xy_drift": 0.075754427335965,
+        "z_descent": 0.0256050000000001,
+        "z_max": 1.876328,
+        "reward": -0.1768021875,
+        "reward_components": {
+          "height": -1.0586200000000003,
+          "centering": 1.0,
+          "descent": -0.17993749999999875,
+          "success": 0.0
+        },
+        "success": false
+      }
+    ],
+    "episode_reward": 0.05990511717686674,
+    "all_successful": false,
+    "metadata": {
+      "avg_height": -0.0029335000000000333,
+      "max_height": -5.000000000032756e-06,
+      "min_height": -0.005862000000000034,
+      "avg_drift": 0.04015152043049281,
+      "max_drift": 0.075754427335965,
+      "min_drift": 0.0045486135250206155,
+      "drift_std": 0.035602906905472194,
+      "drift_trend": 0.07120581381094437,
+      "consistency_score": 0.5727651171343338,
+      "avg_descent": 0.012805000000000066,
+      "success_rate": 0.0
+    }
+  },
+  {
+    "episode_id": "20251108_002448",
+    "num_hits": 2,
+    "num_successful_hits": 0,
+    "hits": [
+      {
+        "hit_number": 1,
+        "contact_time": 86631.140407,
+        "contact_distance": 0.194035,
+        "racket_pos_at_contact": [
+          0.637442,
+          0.468959,
+          1.529655
+        ],
+        "ball_pos_at_contact": [
+          0.761624,
+          0.523257,
+          1.668508
+        ],
+        "ball_pos_before": [
+          0.762697,
+          0.52311,
+          1.668348
+        ],
+        "ball_pos_after": [
+          0.75278,
+          0.527955,
+          1.670004
+        ],
+        "height_gain": 0.0016560000000001018,
+        "max_xy_drift": 0.035027281153409626,
+        "z_descent": 0.0004220000000001445,
+        "z_max": 1.670004,
+        "reward": -0.17856062499999925,
+        "reward_components": {
+          "height": -0.983439999999999,
+          "centering": 1.0,
+          "descent": -0.4947249999999982,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 2,
+        "contact_time": 86632.648722,
+        "contact_distance": 0.092046,
+        "racket_pos_at_contact": [
+          0.649523,
+          0.50625,
+          1.758378
+        ],
+        "ball_pos_at_contact": [
+          0.682694,
+          0.588335,
+          1.733193
+        ],
+        "ball_pos_before": [
+          0.687671,
+          0.582312,
+          1.729948
+        ],
+        "ball_pos_after": [
+          0.676498,
+          0.606121,
+          1.736408
+        ],
+        "height_gain": 0.007522999999999946,
+        "max_xy_drift": 0.1177379745239402,
+        "z_descent": 0.0010630000000000361,
+        "z_max": 1.737471,
+        "reward": -0.1482240625000002,
+        "reward_components": {
+          "height": -0.9247700000000005,
+          "centering": 1.0,
+          "descent": -0.48671249999999955,
+          "success": 0.0
+        },
+        "success": false
+      }
+    ],
+    "episode_reward": 0.0517294648303634,
+    "all_successful": false,
+    "metadata": {
+      "avg_height": 0.004589500000000024,
+      "max_height": 0.007522999999999946,
+      "min_height": 0.0016560000000001018,
+      "avg_drift": 0.07638262783867492,
+      "max_drift": 0.1177379745239402,
+      "min_drift": 0.035027281153409626,
+      "drift_std": 0.04135534668526529,
+      "drift_trend": 0.08271069337053055,
+      "consistency_score": 0.5037358397768166,
+      "avg_descent": 0.0007425000000000903,
+      "success_rate": 0.0
+    }
+  },
+  {
+    "episode_id": "20251108_001911",
+    "num_hits": 3,
+    "num_successful_hits": 0,
+    "hits": [
+      {
+        "hit_number": 1,
+        "contact_time": 86292.263652,
+        "contact_distance": 0.192609,
+        "racket_pos_at_contact": [
+          0.608004,
+          0.539268,
+          1.579388
+        ],
+        "ball_pos_at_contact": [
+          0.774477,
+          0.540167,
+          1.676261
+        ],
+        "ball_pos_before": [
+          0.775076,
+          0.5397,
+          1.676147
+        ],
+        "ball_pos_after": [
+          0.778495,
+          0.546589,
+          1.685209
+        ],
+        "height_gain": 0.009061999999999903,
+        "max_xy_drift": 0.011160244172956094,
+        "z_descent": 0.00832900000000003,
+        "z_max": 1.685209,
+        "reward": -0.12917593750000045,
+        "reward_components": {
+          "height": -0.909380000000001,
+          "centering": 1.0,
+          "descent": -0.3958874999999996,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 2,
+        "contact_time": 86296.14773,
+        "contact_distance": 0.179202,
+        "racket_pos_at_contact": [
+          0.601412,
+          0.58273,
+          1.733749
+        ],
+        "ball_pos_at_contact": [
+          0.719796,
+          0.529601,
+          1.857345
+        ],
+        "ball_pos_before": [
+          0.725624,
+          0.531356,
+          1.860726
+        ],
+        "ball_pos_after": [
+          0.698771,
+          0.504382,
+          1.862558
+        ],
+        "height_gain": 0.0018319999999998338,
+        "max_xy_drift": 0.09316196844743033,
+        "z_descent": 0.014634000000000036,
+        "z_max": 1.862558,
+        "reward": -0.15547437500000078,
+        "reward_components": {
+          "height": -0.9816800000000017,
+          "centering": 1.0,
+          "descent": -0.31707499999999955,
+          "success": 0.0
+        },
+        "success": false
+      },
+      {
+        "hit_number": 3,
+        "contact_time": 86309.518569,
+        "contact_distance": 0.194425,
+        "racket_pos_at_contact": [
+          0.596124,
+          0.575136,
+          1.827954
+        ],
+        "ball_pos_at_contact": [
+          0.750823,
+          0.463848,
+          1.866476
+        ],
+        "ball_pos_before": [
+          0.754539,
+          0.461536,
+          1.869123
+        ],
+        "ball_pos_after": [
+          0.761514,
+          0.340074,
+          1.865296
+        ],
+        "height_gain": -0.003827000000000025,
+        "max_xy_drift": 0.21073836307611393,
+        "z_descent": 0.00607000000000002,
+        "z_max": 1.865296,
+        "reward": -0.19715062500000008,
+        "reward_components": {
+          "height": -1.0382700000000002,
+          "centering": 1.0,
+          "descent": -0.42412499999999975,
+          "success": 0.0
+        },
+        "success": false
+      }
+    ],
+    "episode_reward": 0.006462457976701391,
+    "all_successful": false,
+    "metadata": {
+      "avg_height": 0.0023556666666665707,
+      "max_height": 0.009061999999999903,
+      "min_height": -0.003827000000000025,
+      "avg_drift": 0.10502019189883345,
+      "max_drift": 0.21073836307611393,
+      "min_drift": 0.011160244172956094,
+      "drift_std": 0.0819077508900442,
+      "drift_trend": 0.0997890594515789,
+      "consistency_score": 0.2732127586335076,
+      "avg_descent": 0.009677666666666696,
+      "success_rate": 0.0
+    }
+  }
+]

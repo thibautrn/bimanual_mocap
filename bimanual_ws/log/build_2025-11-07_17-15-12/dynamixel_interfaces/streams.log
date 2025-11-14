@@ -1,0 +1,24 @@
+[0.057s] Invoking command in '/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces -- -j20 -l20
+[0.167s] [  1%] Built target dynamixel_interfaces__rosidl_generator_type_description
+[0.190s] [  1%] Built target ament_cmake_python_symlink_dynamixel_interfaces
+[0.284s] [  3%] Built target dynamixel_interfaces__cpp
+[0.294s] [ 25%] Built target dynamixel_interfaces__rosidl_generator_c
+[0.322s] [ 34%] Built target dynamixel_interfaces__rosidl_typesupport_c
+[0.330s] [ 43%] Built target dynamixel_interfaces__rosidl_typesupport_cpp
+[0.337s] [ 59%] Built target dynamixel_interfaces__rosidl_typesupport_fastrtps_c
+[0.338s] [ 62%] Built target dynamixel_interfaces__rosidl_typesupport_introspection_c
+[0.338s] [ 71%] Built target dynamixel_interfaces__rosidl_typesupport_fastrtps_cpp
+[0.342s] [ 81%] Built target dynamixel_interfaces__rosidl_typesupport_introspection_cpp
+[0.397s] [ 81%] Built target dynamixel_interfaces
+[0.438s] [ 82%] Built target dynamixel_interfaces__py
+[0.483s] [ 90%] Built target dynamixel_interfaces__rosidl_generator_py
+[0.538s] [ 95%] Built target dynamixel_interfaces_s__rosidl_typesupport_c
+[0.539s] [ 96%] Built target dynamixel_interfaces_s__rosidl_typesupport_introspection_c
+[0.541s] [100%] Built target dynamixel_interfaces_s__rosidl_typesupport_fastrtps_c
+[0.749s] running egg_info
+[0.806s] writing dynamixel_interfaces.egg-info/PKG-INFO
+[0.806s] writing dependency_links to dynamixel_interfaces.egg-info/dependency_links.txt
+[0.807s] writing top-level names to dynamixel_interfaces.egg-info/top_level.txt
+[0.962s] reading manifest file 'dynamixel_interfaces.egg-info/SOURCES.txt'
+[0.963s] writing manifest file 'dynamixel_interfaces.egg-info/SOURCES.txt'
+[1.012s] [100%] Built target ament_cmake_python_build_dynamixel_interfaces_egg

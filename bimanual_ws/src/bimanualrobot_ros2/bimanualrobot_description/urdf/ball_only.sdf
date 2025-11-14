@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="end_ball">  <!-- CHANGED: Must match plugin's ball_model_name -->
+    <!-- Dynamic model (not static, no fixed joint) -->
+    <static>true</static>
+
+    <!-- Ball link -->
+    <link name="end_ball_link">  <!-- CHANGED: Better naming -->
+      <!-- Pose will be set by spawn command, so can remove or keep as default -->
+      <pose>0 0 0 0 0 0</pose>
+
+      <inertial>
+        <mass>0.0027</mass>  <!-- CHANGED: Real ping pong ball mass (2.7g) -->
+        <inertia>
+          <ixx>4.5e-7</ixx>  <!-- CHANGED: More realistic for 40mm ball -->
+          <iyy>4.5e-7</iyy>
+          <izz>4.5e-7</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>  <!-- CHANGED: 40mm diameter = 20mm radius -->
+          </sphere>
+        </geometry>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.9</restitution_coefficient>  <!-- ADDED: Bouncy! -->
+            <threshold>0.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>  <!-- CHANGED: Match collision -->
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0.5 0 1</ambient>  <!-- CHANGED: Orange for visibility -->
+          <diffuse>1 0.5 0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- REMOVED: No fixed joint! Ball should be free to move -->
+  </model>
+</sdf>

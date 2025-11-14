@@ -1,1 +1,1 @@
-/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_moveit_config/launch/bringup_with_servo.launch.py
+/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_moveit_config/launch/bringup_with_servo.launch.py

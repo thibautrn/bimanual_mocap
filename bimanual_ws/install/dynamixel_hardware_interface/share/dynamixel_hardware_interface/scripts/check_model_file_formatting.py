@@ -1,1 +1,1 @@
-/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_hardware_interface/scripts/check_model_file_formatting.py
+/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_hardware_interface/scripts/check_model_file_formatting.py

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces
+CMAKE_SOURCE_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces
+CMAKE_BINARY_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces
 
 # Utility rule file for dynamixel_sdk_custom_interfaces.
 
@@ -66,8 +66,8 @@ include CMakeFiles/dynamixel_sdk_custom_interfaces.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/dynamixel_sdk_custom_interfaces.dir/progress.make
 
-CMakeFiles/dynamixel_sdk_custom_interfaces: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces/msg/SetPosition.msg
-CMakeFiles/dynamixel_sdk_custom_interfaces: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces/srv/GetPosition.srv
+CMakeFiles/dynamixel_sdk_custom_interfaces: /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces/msg/SetPosition.msg
+CMakeFiles/dynamixel_sdk_custom_interfaces: /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces/srv/GetPosition.srv
 CMakeFiles/dynamixel_sdk_custom_interfaces: /opt/ros/jazzy/share/builtin_interfaces/msg/Duration.idl
 CMakeFiles/dynamixel_sdk_custom_interfaces: /opt/ros/jazzy/share/builtin_interfaces/msg/Time.idl
 CMakeFiles/dynamixel_sdk_custom_interfaces: /opt/ros/jazzy/share/service_msgs/msg/ServiceEventInfo.idl
@@ -85,6 +85,6 @@ CMakeFiles/dynamixel_sdk_custom_interfaces.dir/clean:
 .PHONY : CMakeFiles/dynamixel_sdk_custom_interfaces.dir/clean
 
 CMakeFiles/dynamixel_sdk_custom_interfaces.dir/depend:
-	cd /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/CMakeFiles/dynamixel_sdk_custom_interfaces.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/CMakeFiles/dynamixel_sdk_custom_interfaces.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/dynamixel_sdk_custom_interfaces.dir/depend
 

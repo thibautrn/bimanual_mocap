@@ -1,8 +1,8 @@
-# Install script for directory: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk
+# Install script for directory: /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk")
+  set(CMAKE_INSTALL_PREFIX "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/dynamixel_sdk")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  include("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -53,7 +53,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdynamixel_sdk.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk/libdynamixel_sdk.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk/libdynamixel_sdk.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdynamixel_sdk.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libdynamixel_sdk.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -69,7 +69,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   execute_process(
         COMMAND
         "/usr/bin/python3" "-m" "compileall"
-        "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk"
+        "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/dynamixel_sdk/lib/python3.12/site-packages/dynamixel_sdk"
       )
 endif()
 
@@ -77,7 +77,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/dynamixel_sdk/cmake/dynamixel_sdkExport.cmake")
     file(DIFFERENT _cmake_export_file_changed FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/dynamixel_sdk/cmake/dynamixel_sdkExport.cmake"
-         "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk/CMakeFiles/Export/9c527f08dbce30453c1a89e61256c9e7/dynamixel_sdkExport.cmake")
+         "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk/CMakeFiles/Export/9c527f08dbce30453c1a89e61256c9e7/dynamixel_sdkExport.cmake")
     if(_cmake_export_file_changed)
       file(GLOB _cmake_old_config_files "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/dynamixel_sdk/cmake/dynamixel_sdkExport-*.cmake")
       if(_cmake_old_config_files)
@@ -90,9 +90,9 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     endif()
     unset(_cmake_export_file_changed)
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/dynamixel_sdk/cmake" TYPE FILE FILES "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk/CMakeFiles/Export/9c527f08dbce30453c1a89e61256c9e7/dynamixel_sdkExport.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/dynamixel_sdk/cmake" TYPE FILE FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk/CMakeFiles/Export/9c527f08dbce30453c1a89e61256c9e7/dynamixel_sdkExport.cmake")
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/dynamixel_sdk/cmake" TYPE FILE FILES "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk/CMakeFiles/Export/9c527f08dbce30453c1a89e61256c9e7/dynamixel_sdkExport-noconfig.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/dynamixel_sdk/cmake" TYPE FILE FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk/CMakeFiles/Export/9c527f08dbce30453c1a89e61256c9e7/dynamixel_sdkExport-noconfig.cmake")
   endif()
 endif()
 
@@ -104,5 +104,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

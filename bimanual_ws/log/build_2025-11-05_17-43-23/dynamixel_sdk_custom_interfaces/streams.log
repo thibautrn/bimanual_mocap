@@ -1,0 +1,32 @@
+[0.058s] Invoking command in '/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/dynamixel_sdk_custom_interfaces
+[0.170s] -- The C compiler identification is GNU 13.3.0
+[0.278s] -- The CXX compiler identification is GNU 13.3.0
+[0.311s] -- Detecting C compiler ABI info
+[0.486s] -- Detecting C compiler ABI info - done
+[0.510s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.511s] -- Detecting C compile features
+[0.512s] -- Detecting C compile features - done
+[0.531s] -- Detecting CXX compiler ABI info
+[0.721s] -- Detecting CXX compiler ABI info - done
+[0.738s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.738s] -- Detecting CXX compile features
+[0.739s] -- Detecting CXX compile features - done
+[0.748s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.021s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.148s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.274s] -- Found builtin_interfaces: 2.0.3 (/opt/ros/jazzy/share/builtin_interfaces/cmake)
+[1.386s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.440s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.487s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.552s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.600s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[1.649s] -- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[2.934s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[4.207s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.732s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.751s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[4.998s] -- Found PythonExtra: /usr/bin/python3  
+[5.812s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[5.914s] -- Configuring done (5.8s)
+[5.996s] -- Generating done (0.1s)
+[6.025s] -- Build files have been written to: /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces

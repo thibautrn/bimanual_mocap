@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Keep macro name/params so existing calls still work -->
+  <xacro:macro name="ping" params="prefix parent *origin">
+
+    <!-- Racket blade (thin cylinder) -->
+    <link name="${prefix}_racket_blade">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 ${pi/2} ${pi/2}"/>
+        <geometry>
+          <cylinder radius="0.095" length="0.02"/>
+        </geometry>
+        <material name="wood"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 ${pi/2} ${pi/2}"/>
+        <geometry>
+          <cylinder radius="0.095" length="0.02"/>
+        </geometry>
+        <surface>
+          <friction><ode><mu>0.9</mu><mu2>0.9</mu2></ode></friction>
+          <bounce>
+            <restitution_coefficient>0.8</restitution_coefficient>
+            <threshold>0.0</threshold>
+          </bounce>
+        </surface>
+      </collision>
+
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.12"/>
+        <inertia ixx="0.0010" ixy="0.0" ixz="0.0"
+                 iyy="0.0010" iyz="0.0"
+                 izz="0.0020"/>
+      </inertial>
+    </link>
+
+    <!-- Handle (box), centered at y=-0.07 so its near face is at y=0 -->
+    <link name="${prefix}_racket_handle">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.028 0.022 0.14"/>
+        </geometry>
+        <material name="wood"/>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.028 0.022 0.14"/>
+        </geometry>
+        <surface>
+          <friction><ode><mu>0.9</mu><mu2>0.9</mu2></ode></friction>
+        </surface>
+      </collision>
+
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.05"/>
+        <inertia ixx="0.0004" ixy="0.0" ixz="0.0"
+                 iyy="0.0006" iyz="0.0"
+                 izz="0.0006"/>
+      </inertial>
+    </link>
+
+    <!-- Attach blade to wrist (same API; different joint name) -->
+    <joint name="${prefix}_racket_mount_joint" type="fixed">
+      <xacro:insert_block name="origin"/>
+      <parent link="${parent}"/>
+      <child  link="${prefix}_racket_handle"/>
+    </joint>
+
+    <!-- Attach handle to blade at legacy tip location (z = 0.0945) -->
+    <joint name="${prefix}_racket_handle_joint" type="fixed">
+      <parent link="${prefix}_racket_handle"/>
+      <child  link="${prefix}_racket_blade"/>
+      <origin xyz="0 0 0.0945" rpy="0 0 0"/>
+    </joint>
+
+  </xacro:macro>
+</robot>

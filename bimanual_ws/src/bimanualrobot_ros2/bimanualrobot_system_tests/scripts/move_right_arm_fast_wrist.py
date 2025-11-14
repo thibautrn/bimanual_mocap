@@ -27,10 +27,10 @@ from pathlib import Path
 # ============================ CONFIG ============================
 
 # URDF & IK target frame
-URDF_PATH = "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/robots/bimanualrobot.urdf"
+URDF_PATH = "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/robots/bimanualrobot.urdf"
 F_WRIST   = "rightarm_wrist_2_link"     # IK target frame
 F_AXIS      = "rightarm_wrist_3_link"
-LOG_DIR = Path("/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs")  # change if you want
+LOG_DIR = Path("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs")  # change if you want
 
 # IK DOFs
 IK_JOINTS = [
@@ -51,6 +51,11 @@ JOINTS = [
     "rightarm_wrist_2_joint",
     "rightarm_wrist_3_joint",
 ]
+
+ALLOWED_CONTACT_PAIRS = {
+    ("leftarm_racket_handle", "leftarm_racket_blade"),
+    ("rightarm_racket_handle", "rightarm_racket_blade"),
+}
 
 GROUP_NAME = "right_arm"
 
@@ -386,29 +391,40 @@ class WatchPathBatcher(Node):
         rs.joint_state = js
         return rs
     
+    def _norm_pair(self, a, b):
+        return (a, b) if a <= b else (b, a)
+    
     def _is_state_valid(self, q_cmd) -> bool:
         if not self._gsv.wait_for_service(timeout_sec=0.5):
-            self.get_logger().warn("GetStateValidity service not available; skipping check.")
-            return True  # fallback: allow
+            self.get_logger().warn("GetStateValidity not available; skipping check.")
+            return True
 
         req = GetStateValidity.Request()
         req.robot_state = self._robot_state_from_qcmd(q_cmd)
         req.group_name = GROUP_NAME
-
         fut = self._gsv.call_async(req)
         rclpy.spin_until_future_complete(self, fut)
         if not fut.result():
             self.get_logger().error("GetStateValidity call failed; skipping check.")
-            return True  # conservative fallback
+            return True
 
         res = fut.result()
-        if not res.valid:
-            self.get_logger().warn("State INVALID (collision or limits). Not sending.")
-            # (Optional) print first few contacts for debugging
-            if res.contacts:
-                pairs = [(c.contact_body_1, c.contact_body_2) for c in res.contacts[:3]]
-                self.get_logger().warn(f"Contacts (first): {pairs}")
-        return res.valid
+        if res.valid:
+            return True
+
+        if res.contacts:
+            pairs = [self._norm_pair(c.contact_body_1, c.contact_body_2)
+                     for c in res.contacts]
+            non_whitelisted = [
+                p for p in pairs
+                if p not in {self._norm_pair(*pair)
+                             for pair in ALLOWED_CONTACT_PAIRS}
+            ]
+            if not non_whitelisted:
+                return True
+
+        self.get_logger().warn("State INVALID (collision or limits). Not sending.")
+        return False
     
 
 

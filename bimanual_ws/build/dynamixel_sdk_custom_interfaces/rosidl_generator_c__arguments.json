@@ -1,14 +1,14 @@
 {
   "package_name": "dynamixel_sdk_custom_interfaces",
-  "output_dir": "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_c/dynamixel_sdk_custom_interfaces",
+  "output_dir": "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_c/dynamixel_sdk_custom_interfaces",
   "template_dir": "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource",
   "idl_tuples": [
-    "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_adapter/dynamixel_sdk_custom_interfaces:msg/SetPosition.idl",
-    "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_adapter/dynamixel_sdk_custom_interfaces:srv/GetPosition.idl"
+    "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_adapter/dynamixel_sdk_custom_interfaces:msg/SetPosition.idl",
+    "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_adapter/dynamixel_sdk_custom_interfaces:srv/GetPosition.idl"
   ],
   "ros_interface_files": [
-    "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces/msg/SetPosition.msg",
-    "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces/srv/GetPosition.srv"
+    "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces/msg/SetPosition.msg",
+    "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk_custom_interfaces/srv/GetPosition.srv"
   ],
   "ros_interface_dependencies": [
     "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces/msg/Duration.idl",
@@ -35,14 +35,14 @@
     "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/msg__type_support.h.em",
     "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/srv__type_support.c.em",
     "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/srv__type_support.h.em",
-    "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_adapter/dynamixel_sdk_custom_interfaces/msg/SetPosition.idl",
-    "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_adapter/dynamixel_sdk_custom_interfaces/srv/GetPosition.idl",
+    "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_adapter/dynamixel_sdk_custom_interfaces/msg/SetPosition.idl",
+    "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_adapter/dynamixel_sdk_custom_interfaces/srv/GetPosition.idl",
     "/opt/ros/jazzy/share/builtin_interfaces/msg/Duration.idl",
     "/opt/ros/jazzy/share/builtin_interfaces/msg/Time.idl",
     "/opt/ros/jazzy/share/service_msgs/msg/ServiceEventInfo.idl"
   ],
   "type_description_tuples": [
-    "msg/SetPosition.idl:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_type_description/dynamixel_sdk_custom_interfaces/msg/SetPosition.json",
-    "srv/GetPosition.idl:/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_type_description/dynamixel_sdk_custom_interfaces/srv/GetPosition.json"
+    "msg/SetPosition.idl:/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_type_description/dynamixel_sdk_custom_interfaces/msg/SetPosition.json",
+    "srv/GetPosition.idl:/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/rosidl_generator_type_description/dynamixel_sdk_custom_interfaces/srv/GetPosition.json"
   ]
 }

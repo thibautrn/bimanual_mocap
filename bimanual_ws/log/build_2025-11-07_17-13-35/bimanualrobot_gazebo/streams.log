@@ -1,0 +1,5 @@
+[0.063s] Invoking command in '/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo -- -j20 -l20
+[0.162s] gmake[2]: *** No rule to make target '/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_gazebo/scripts/ball_leash_plugin.cc', needed by 'CMakeFiles/ball_leash_plugin.dir/scripts/ball_leash_plugin.cc.o'.  Stop.
+[0.162s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/ball_leash_plugin.dir/all] Error 2
+[0.162s] gmake: *** [Makefile:146: all] Error 2
+[0.169s] Invoked command in '/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo -- -j20 -l20

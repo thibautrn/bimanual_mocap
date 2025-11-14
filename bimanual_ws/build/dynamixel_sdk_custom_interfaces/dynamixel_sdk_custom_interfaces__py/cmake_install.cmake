@@ -1,8 +1,8 @@
-# Install script for directory: /home/thibaut/Documents/Bimanual_Robot/bimanual_ws/build/dynamixel_sdk_custom_interfaces/dynamixel_sdk_custom_interfaces__py
+# Install script for directory: /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_sdk_custom_interfaces/dynamixel_sdk_custom_interfaces__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/install/dynamixel_sdk_custom_interfaces")
+  set(CMAKE_INSTALL_PREFIX "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/dynamixel_sdk_custom_interfaces")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

@@ -7,8 +7,6 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-
-find_package(ament_cmake REQUIRED)
 find_package(controller_manager REQUIRED)
 find_package(gripper_controllers REQUIRED)
 find_package(gz_ros2_control REQUIRED)
@@ -21,6 +19,31 @@ find_package(ros2_control REQUIRED)
 find_package(ros2_controllers REQUIRED)
 find_package(trajectory_msgs REQUIRED)
 find_package(xacro REQUIRED)
+
+# Find NEW Gazebo (gz-sim) instead of old gazebo
+find_package(gz-sim8 REQUIRED)
+find_package(gz-plugin2 REQUIRED)
+find_package(gz-common5 REQUIRED)
+
+# Build the ball leash plugin
+add_library(ball_leash_plugin SHARED src/ball_leash_plugin.cc)
+target_include_directories(ball_leash_plugin PUBLIC 
+  ${gz-sim8_INCLUDE_DIRS}
+  ${gz-plugin2_INCLUDE_DIRS}
+  ${gz-common5_INCLUDE_DIRS}
+)
+target_link_libraries(ball_leash_plugin 
+  gz-sim8::gz-sim8
+  gz-plugin2::gz-plugin2
+  gz-common5::gz-common5
+)
+
+# Install the plugin library
+install(TARGETS ball_leash_plugin
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+  RUNTIME DESTINATION bin
+)
 
 # Copy necessary files to designated locations in the project 
 install(
@@ -36,12 +59,7 @@ install(PROGRAMS
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # comment the line when a copyright and license is added to all source files
   set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # comment the line when this package is in a git repo and when
-  # a copyright and license is added to all source files
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()

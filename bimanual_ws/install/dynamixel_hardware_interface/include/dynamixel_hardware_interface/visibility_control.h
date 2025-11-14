@@ -1,1 +1,1 @@
-/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/dynamixel_hardware_interface/include/dynamixel_hardware_interface/visibility_control.h
+/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_hardware_interface/include/dynamixel_hardware_interface/visibility_control.h

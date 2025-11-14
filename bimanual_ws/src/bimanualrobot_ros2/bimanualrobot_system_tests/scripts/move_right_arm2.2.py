@@ -22,7 +22,7 @@ import random
 # ============================ CONFIG ============================
 
 # URDF & IK target frame
-URDF_PATH = "/home/thibaut/Documents/Bimanual_Robot/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/robots/bimanualrobot.urdf"
+URDF_PATH = "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/robots/bimanualrobot.urdf"
 F_WRIST   = "rightarm_wrist_2_link"
 GROUP_NAME = "rightarm"
 

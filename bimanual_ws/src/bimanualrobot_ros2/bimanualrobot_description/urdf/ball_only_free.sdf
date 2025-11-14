@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="ball_only_free">
+    <static>false</static>
+
+    <link name="ball_only">
+      <!-- Spawn pose will be given via CLI or code -->
+      <pose>0 0 0 0 0 0</pose>
+
+      <inertial>
+        <mass>0.005</mass>
+        <inertia>
+          <ixx>1e-5</ixx>
+          <iyy>1e-5</iyy>
+          <izz>1e-5</izz>   
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="ball_only_collision">
+        <geometry>
+          <sphere><radius>0.03</radius></sphere>
+        </geometry>
+      </collision>
+
+      <visual name="ball_only_visual">
+        <geometry>
+          <sphere><radius>0.03</radius></sphere>
+        </geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
