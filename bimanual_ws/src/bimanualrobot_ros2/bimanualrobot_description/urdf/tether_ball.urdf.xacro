@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<robot name="flexible_cable" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Colors -->
+  <xacro:property name="blue_color" value="0 0 0.8 1"/>
+  <xacro:property name="red_color"  value="1 0 0 1"/>
+  <xacro:property name="gray_color" value="0.5 0.5 0.5 1"/>
+
+  <!-- Geometry / dynamics -->
+  <xacro:property name="pillar_h"        value="3.0"/>   <!-- pillar height -->
+  <xacro:property name="pillar_xy"       value="0.10"/>  <!-- pillar thickness -->
+  <xacro:property name="arm_len"         value="0.25"/>  <!-- side arm length -->
+  <xacro:property name="arm_xy"          value="0.02"/>  <!-- side arm thickness -->
+  <xacro:property name="sphere_radius"   value="0.003"/>
+  <xacro:property name="cylinder_radius" value="0.003"/>
+  <xacro:property name="cylinder_length" value="0.01"/>
+  <xacro:property name="damping"         value="0.002"/>
+  <xacro:property name="friction"        value="0.0"/>
+  <xacro:property name="effort_lim"      value="10"/>
+  <xacro:property name="vel_lim"         value="10"/>
+
+
+  <xacro:property name="arm_yaw" value="${-pi/2}"/>  <!-- NORTH by default -->
+  <xacro:property name="c_yaw"   value="${cos(arm_yaw)}"/>
+  <xacro:property name="s_yaw"   value="${sin(arm_yaw)}"/>
+  <!-- Ball at the bottom -->
+  <xacro:property name="ball_radius" value="0.03"/>
+  <xacro:property name="ball_mass"   value="0.10"/>
+
+  <!-- Materials -->
+  <material name="blue"><color rgba="${blue_color}"/></material>
+  <material name="gray"><color rgba="${gray_color}"/></material>
+  <material name="red"><color rgba="${red_color}"/></material>
+
+  <!-- World -->
+  <link name="world"/>
+
+  <!-- Vertical pillar (centered at origin; z runs from -pillar_h/2 to +pillar_h/2) -->
+  <link name="base_link">
+    <visual>
+      <geometry><cylinder radius="0.02" length="3.0"/></geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry><cylinder radius="0.02" length="3.0"/></geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.02"/>
+    </inertial>
+  </link>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Gray</material>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+  <!-- Fix pillar to world (spawn pose will place it) -->
+  <joint name="fixed_to_world" type="fixed">
+    <parent link="world"/>
+    <child  link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Small mount at the very top center of the pillar -->
+  <link name="arm_mount">
+    <visual>
+      <geometry><box size="0.03 0.03 0.03"/></geometry>
+      <material name="gray"/>
+    </visual>
+    <collision><geometry><box size="0.03 0.03 0.03"/></geometry></collision>
+    <inertial>
+      <mass value="0.02"/>
+      <inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/>
+    </inertial>
+  </link>
+
+  <!-- Place mount at the top face of the pillar (z = +pillar_h/2) -->
+  <joint name="base_to_arm_mount" type="fixed">
+    <parent link="base_link"/>
+    <child  link="arm_mount"/>
+    <origin xyz="0 0 ${pillar_h/2 + 0.015}" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Side arm: sticks out to the LEFT (negative Y). Flip sign if you want the other side. -->
+  <xacro:property name="arm_sign" value="-1"/> <!-- -1 = left along -Y; +1 = right along +Y -->
+
+  <link name="arm_link">
+    <visual>
+      <geometry><box size="${arm_xy} ${arm_len} ${arm_xy}"/></geometry>
+      <!-- Center the arm; we’ll place the tip with a child link -->
+      <material name="gray"/>
+    </visual>
+    <collision><geometry><box size="${arm_xy} ${arm_len} ${arm_xy}"/></geometry></collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="1e-3" ixy="0" ixz="0" iyy="1e-3" iyz="0" izz="1e-3"/>
+    </inertial>
+  </link>
+
+  <!-- Fix arm to the mount; shift so the arm extends along -Y from the mount -->
+  <joint name="arm_mount_to_arm" type="fixed">
+    <parent link="arm_mount"/>
+    <child  link="arm_link"/>
+    <!-- world offset = Rz(yaw) * [0, L/2, 0] = [sin(yaw)*L/2, cos(yaw)*L/2, 0] -->
+    <origin xyz="${s_yaw * arm_len/2} ${c_yaw * arm_len/2} 0" rpy="0 0 ${arm_yaw}"/>
+  </joint>
+
+  <!-- Arm tip (empty link) at the far edge; this is where the rope attaches -->
+  <link name="arm_end">
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+
+  <joint name="arm_to_arm_end" type="fixed">
+    <parent link="arm_link"/>
+    <child  link="arm_end"/>
+    <origin xyz="0 ${arm_sign*arm_len/2} 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ===== Rope segment macro (sphere + revolute + cylinder + revolute) ===== -->
+  <xacro:macro name="cable_segment" params="name parent">
+    <link name="${name}_sphere">
+      <visual><geometry><sphere radius="${sphere_radius}"/></geometry><material name="gray"/></visual>
+      <collision><geometry><sphere radius="${sphere_radius}"/></geometry></collision>
+      <inertial>
+        <mass value="0.005"/>
+        <inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/>
+      </inertial>
+    </link>
+
+    <joint name="${parent}_to_${name}_sphere" type="revolute">
+      <parent link="${parent}"/>
+      <child  link="${name}_sphere"/>
+      <!-- hang straight down from parent -->
+      <origin xyz="0 0 ${-cylinder_length - 2*sphere_radius}" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="-2.0" upper="2.0" effort="${effort_lim}" velocity="${vel_lim}"/>
+      <dynamics damping="${damping}" friction="${friction}"/>
+    </joint>
+
+    <link name="${name}_cylinder">
+      <visual>
+        <geometry><cylinder length="${cylinder_length}" radius="${cylinder_radius}"/></geometry>
+        <origin xyz="0 0 ${-cylinder_length/2 - sphere_radius}" rpy="0 0 0"/>
+        <material name="blue"/>
+      </visual>
+      <collision>
+        <geometry><cylinder length="${cylinder_length}" radius="${cylinder_radius}"/></geometry>
+        <origin xyz="0 0 ${-cylinder_length/2 - sphere_radius}" rpy="0 0 0"/>
+      </collision>
+      <inertial>
+        <mass value="0.001"/>
+        <inertia ixx="1e-3" ixy="0" ixz="0" iyy="1e-3" iyz="0" izz="1e-3"/>
+        <origin xyz="0 0 ${-cylinder_length/2 - sphere_radius}" rpy="0 0 0"/>
+      </inertial>
+    </link>
+
+    <joint name="${name}_sphere_to_cylinder" type="revolute">
+      <parent link="${name}_sphere"/>
+      <child  link="${name}_cylinder"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+      <limit lower="-2.0" upper="2.0" effort="${effort_lim}" velocity="${vel_lim}"/>
+      <dynamics damping="${damping}" friction="${friction}"/>
+    </joint>
+
+    <!-- Enable gravity so the rope sags -->
+    <gazebo reference="${name}_sphere"><gravity>true</gravity><selfCollide>false</selfCollide></gazebo>
+    <gazebo reference="${name}_cylinder"><gravity>true</gravity><selfCollide>false</selfCollide></gazebo>
+  </xacro:macro>
+
+  <!-- Rope attached to the arm tip -->
+  <xacro:cable_segment name="segment_1"  parent="arm_end"/>
+  <xacro:cable_segment name="segment_2"  parent="segment_1_cylinder"/>
+  <xacro:cable_segment name="segment_3"  parent="segment_2_cylinder"/>
+  <xacro:cable_segment name="segment_4"  parent="segment_3_cylinder"/>
+  <xacro:cable_segment name="segment_5"  parent="segment_4_cylinder"/>
+  <xacro:cable_segment name="segment_6"  parent="segment_5_cylinder"/>
+  <xacro:cable_segment name="segment_7"  parent="segment_6_cylinder"/>
+  <xacro:cable_segment name="segment_8"  parent="segment_7_cylinder"/>
+  <xacro:cable_segment name="segment_9"  parent="segment_8_cylinder"/>
+  <xacro:cable_segment name="segment_10" parent="segment_9_cylinder"/>
+  <xacro:cable_segment name="segment_11" parent="segment_10_cylinder"/>
+  <xacro:cable_segment name="segment_12" parent="segment_11_cylinder"/>
+  <xacro:cable_segment name="segment_13" parent="segment_12_cylinder"/>
+  <xacro:cable_segment name="segment_14" parent="segment_13_cylinder"/>
+  <xacro:cable_segment name="segment_15" parent="segment_14_cylinder"/>
+  <xacro:cable_segment name="segment_16" parent="segment_15_cylinder"/>
+  <xacro:cable_segment name="segment_17" parent="segment_16_cylinder"/>
+  <xacro:cable_segment name="segment_18" parent="segment_17_cylinder"/>
+  <xacro:cable_segment name="segment_19" parent="segment_18_cylinder"/>
+  <xacro:cable_segment name="segment_20" parent="segment_19_cylinder"/>
+  <xacro:cable_segment name="segment_21" parent="segment_20_cylinder"/>
+  <xacro:cable_segment name="segment_22" parent="segment_21_cylinder"/>
+  <xacro:cable_segment name="segment_23" parent="segment_22_cylinder"/>
+  <xacro:cable_segment name="segment_24" parent="segment_23_cylinder"/>
+  <xacro:cable_segment name="segment_25" parent="segment_24_cylinder"/>
+  <xacro:cable_segment name="segment_26" parent="segment_25_cylinder"/>
+  <xacro:cable_segment name="segment_27" parent="segment_26_cylinder"/>
+  <xacro:cable_segment name="segment_28" parent="segment_27_cylinder"/>
+  <xacro:cable_segment name="segment_29" parent="segment_28_cylinder"/>
+  <xacro:cable_segment name="segment_30" parent="segment_29_cylinder"/>
+  <xacro:cable_segment name="segment_31" parent="segment_30_cylinder"/>
+  <xacro:cable_segment name="segment_32" parent="segment_31_cylinder"/>
+  <xacro:cable_segment name="segment_33" parent="segment_32_cylinder"/>
+  <xacro:cable_segment name="segment_34" parent="segment_33_cylinder"/>
+  <xacro:cable_segment name="segment_35" parent="segment_34_cylinder"/>
+  <xacro:cable_segment name="segment_36" parent="segment_35_cylinder"/>
+  <xacro:cable_segment name="segment_37" parent="segment_36_cylinder"/>
+  <xacro:cable_segment name="segment_38" parent="segment_37_cylinder"/>
+  <xacro:cable_segment name="segment_39" parent="segment_38_cylinder"/>
+  <xacro:cable_segment name="segment_40" parent="segment_39_cylinder"/>
+  <xacro:cable_segment name="segment_41" parent="segment_40_cylinder"/>
+  <xacro:cable_segment name="segment_42" parent="segment_41_cylinder"/>
+  <xacro:cable_segment name="segment_43" parent="segment_42_cylinder"/>
+  <xacro:cable_segment name="segment_44" parent="segment_43_cylinder"/>
+  <xacro:cable_segment name="segment_45" parent="segment_44_cylinder"/>
+  <xacro:cable_segment name="segment_46" parent="segment_45_cylinder"/>
+  <xacro:cable_segment name="segment_47" parent="segment_46_cylinder"/>
+  <xacro:cable_segment name="segment_48" parent="segment_47_cylinder"/>
+  <xacro:cable_segment name="segment_49" parent="segment_48_cylinder"/>
+  <xacro:cable_segment name="segment_50" parent="segment_49_cylinder"/>
+  <!-- Bottom ball -->
+  <link name="end_ball">
+    <visual><geometry><sphere radius="${ball_radius}"/></geometry><material name="gray"/></visual>
+    <collision><geometry><sphere radius="${ball_radius}"/></geometry></collision>
+    <inertial>
+      <mass value="${ball_mass}"/>
+      <inertia ixx="${0.4*ball_mass*ball_radius*ball_radius}" ixy="0" ixz="0"
+               iyy="${0.4*ball_mass*ball_radius*ball_radius}" iyz="0"
+               izz="${0.4*ball_mass*ball_radius*ball_radius}"/>
+    </inertial>
+  </link>
+
+  <joint name="joint_end_ball" type="revolute">
+    <parent link="segment_50_cylinder"/>
+    <child  link="end_ball"/>
+    <origin xyz="0 0 ${-cylinder_length - 2*sphere_radius}" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="${effort_lim}" velocity="${vel_lim}"/>
+    <dynamics damping="${damping}" friction="${friction}"/>
+  </joint>
+
+  <gazebo>
+    <self_collide>false</self_collide>
+  </gazebo>
+</robot>

@@ -53,6 +53,7 @@
 /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/robots/bimanualrobot.urdf
 /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/robots/bimanualrobot.urdf.xacro
 /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/rope_square_rig_spawn.urdf.xacro
+/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/urdf/tether_ball.urdf.xacro
 /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_description/share/bimanualrobot_description/rviz/bimanualrobot_description.rviz
 /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_description/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_description
 /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_description/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_description
