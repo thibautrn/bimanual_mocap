@@ -1,0 +1,2 @@
+source;share/bimanualrobot_description/environment/ament_prefix_path.sh
+source;share/bimanualrobot_description/environment/path.sh

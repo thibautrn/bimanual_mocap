@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -123,7 +123,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +181,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +251,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/${destination}")
+      set(destination "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -311,49 +311,49 @@ message(STATUS "Execute custom install script")
 # begin of custom install code
 
 # install(DIRECTORY "scripts" "src" "DESTINATION" "share/bimanualrobot_system_tests")
-ament_cmake_symlink_install_directory("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" DIRECTORY "scripts" "src" "DESTINATION" "share/bimanualrobot_system_tests")
+ament_cmake_symlink_install_directory("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" DIRECTORY "scripts" "src" "DESTINATION" "share/bimanualrobot_system_tests")
 
 # install(PROGRAMS "scripts/move_bimanual_drumsticks.py" "scripts/arm_loop_controller.py" "scripts/move_right_arm.py" "scripts/move_right_arm_pin_follow.py" "scripts/move_right_arm_pin.py" "scripts/move_right_arm_wrist.py" "scripts/move_right_arm2.py" "scripts/move_right_arm2.2.py" "scripts/move_right_arm2.2elb.py" "scripts/move_right_arm2.2elb_pick.py" "scripts/move_right_arm2.2elb_traj.py" "scripts/move_right_arm2.2elb_traj_copy.py" "scripts/move_right_arm_horizon.py" "scripts/move_right_arm_fast.py" "scripts/move_right_arm_fast_dmp.py" "scripts/move_right_arm_fast_dmp_ball.py" "scripts/move_right_arm_fast_wrist.py" "scripts/move_right_arm_fast_record.py" "scripts/move_right_arm_fast_hz.py" "scripts/move_right_arm_pred_csv.py" "scripts/move_right_arm_record.py" "scripts/move_right_arm_pred.py" "scripts/move_right_arm_basic.py" "scripts/move_right_arm_base.py" "scripts/move_left_arm_basic.py" "scripts/servo_udp_bridge.py" "DESTINATION" "lib/bimanualrobot_system_tests")
-ament_cmake_symlink_install_programs("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" PROGRAMS "scripts/move_bimanual_drumsticks.py" "scripts/arm_loop_controller.py" "scripts/move_right_arm.py" "scripts/move_right_arm_pin_follow.py" "scripts/move_right_arm_pin.py" "scripts/move_right_arm_wrist.py" "scripts/move_right_arm2.py" "scripts/move_right_arm2.2.py" "scripts/move_right_arm2.2elb.py" "scripts/move_right_arm2.2elb_pick.py" "scripts/move_right_arm2.2elb_traj.py" "scripts/move_right_arm2.2elb_traj_copy.py" "scripts/move_right_arm_horizon.py" "scripts/move_right_arm_fast.py" "scripts/move_right_arm_fast_dmp.py" "scripts/move_right_arm_fast_dmp_ball.py" "scripts/move_right_arm_fast_wrist.py" "scripts/move_right_arm_fast_record.py" "scripts/move_right_arm_fast_hz.py" "scripts/move_right_arm_pred_csv.py" "scripts/move_right_arm_record.py" "scripts/move_right_arm_pred.py" "scripts/move_right_arm_basic.py" "scripts/move_right_arm_base.py" "scripts/move_left_arm_basic.py" "scripts/servo_udp_bridge.py" "DESTINATION" "lib/bimanualrobot_system_tests")
+ament_cmake_symlink_install_programs("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" PROGRAMS "scripts/move_bimanual_drumsticks.py" "scripts/arm_loop_controller.py" "scripts/move_right_arm.py" "scripts/move_right_arm_pin_follow.py" "scripts/move_right_arm_pin.py" "scripts/move_right_arm_wrist.py" "scripts/move_right_arm2.py" "scripts/move_right_arm2.2.py" "scripts/move_right_arm2.2elb.py" "scripts/move_right_arm2.2elb_pick.py" "scripts/move_right_arm2.2elb_traj.py" "scripts/move_right_arm2.2elb_traj_copy.py" "scripts/move_right_arm_horizon.py" "scripts/move_right_arm_fast.py" "scripts/move_right_arm_fast_dmp.py" "scripts/move_right_arm_fast_dmp_ball.py" "scripts/move_right_arm_fast_wrist.py" "scripts/move_right_arm_fast_record.py" "scripts/move_right_arm_fast_hz.py" "scripts/move_right_arm_pred_csv.py" "scripts/move_right_arm_record.py" "scripts/move_right_arm_pred.py" "scripts/move_right_arm_basic.py" "scripts/move_right_arm_base.py" "scripts/move_left_arm_basic.py" "scripts/servo_udp_bridge.py" "DESTINATION" "lib/bimanualrobot_system_tests")
 
-# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_system_tests" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_system_tests" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_system_tests" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_system_tests" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_system_tests" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_system_tests" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_system_tests" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_system_tests" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/bimanualrobot_system_tests/environment")
-ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/bimanualrobot_system_tests/environment")
+ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/bimanualrobot_system_tests/environment")
 
-# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/bimanualrobot_system_tests/environment")
-ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/bimanualrobot_system_tests/environment")
+# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/bimanualrobot_system_tests/environment")
+ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/bimanualrobot_system_tests/environment")
 
 # install(FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/bimanualrobot_system_tests/environment")
-ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/bimanualrobot_system_tests/environment")
+ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/bimanualrobot_system_tests/environment")
 
-# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/bimanualrobot_system_tests/environment")
-ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/bimanualrobot_system_tests/environment")
+# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/bimanualrobot_system_tests/environment")
+ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/bimanualrobot_system_tests/environment")
 
-# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/bimanualrobot_system_tests")
-ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/bimanualrobot_system_tests")
+# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/bimanualrobot_system_tests")
+ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/bimanualrobot_system_tests")
 
-# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/bimanualrobot_system_tests")
-ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/bimanualrobot_system_tests")
+# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/bimanualrobot_system_tests")
+ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/bimanualrobot_system_tests")
 
-# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/bimanualrobot_system_tests")
-ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/bimanualrobot_system_tests")
+# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/bimanualrobot_system_tests")
+ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/bimanualrobot_system_tests")
 
-# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/bimanualrobot_system_tests")
-ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/bimanualrobot_system_tests")
+# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/bimanualrobot_system_tests")
+ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/bimanualrobot_system_tests")
 
-# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/bimanualrobot_system_tests")
-ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/bimanualrobot_system_tests")
+# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/bimanualrobot_system_tests")
+ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/bimanualrobot_system_tests")
 
-# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_index/share/ament_index/resource_index/packages/bimanualrobot_system_tests" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_index/share/ament_index/resource_index/packages/bimanualrobot_system_tests" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_index/share/ament_index/resource_index/packages/bimanualrobot_system_tests" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_index/share/ament_index/resource_index/packages/bimanualrobot_system_tests" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_core/bimanualrobot_system_testsConfig.cmake" "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_core/bimanualrobot_system_testsConfig-version.cmake" "DESTINATION" "share/bimanualrobot_system_tests/cmake")
-ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_core/bimanualrobot_system_testsConfig.cmake" "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_core/bimanualrobot_system_testsConfig-version.cmake" "DESTINATION" "share/bimanualrobot_system_tests/cmake")
+# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_core/bimanualrobot_system_testsConfig.cmake" "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_core/bimanualrobot_system_testsConfig-version.cmake" "DESTINATION" "share/bimanualrobot_system_tests/cmake")
+ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_core/bimanualrobot_system_testsConfig.cmake" "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests/ament_cmake_core/bimanualrobot_system_testsConfig-version.cmake" "DESTINATION" "share/bimanualrobot_system_tests/cmake")
 
-# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/package.xml" "DESTINATION" "share/bimanualrobot_system_tests")
-ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/package.xml" "DESTINATION" "share/bimanualrobot_system_tests")
+# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/package.xml" "DESTINATION" "share/bimanualrobot_system_tests")
+ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/package.xml" "DESTINATION" "share/bimanualrobot_system_tests")

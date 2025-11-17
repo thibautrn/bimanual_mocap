@@ -92,6 +92,12 @@
     <scene>
       <shadows>false</shadows>
     </scene>
+    <plugin filename="gz-sim-apply-link-wrench-system"
+        name="gz::sim::systems::ApplyLinkWrench"/>
+
+    <!-- lets you call /world/<world>/set_pose etc. (handy too) -->
+    <plugin filename="gz-sim-user-commands-system"
+            name="gz::sim::systems::UserCommands"/>
  
   </world>
 </sdf>

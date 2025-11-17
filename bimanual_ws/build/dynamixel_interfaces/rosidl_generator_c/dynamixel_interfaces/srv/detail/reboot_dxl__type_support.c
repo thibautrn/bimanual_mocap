@@ -5,9 +5,9 @@
 #include <string.h>
 
 #include "dynamixel_interfaces/srv/detail/reboot_dxl__type_support.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "dynamixel_interfaces/srv/detail/reboot_dxl__functions.h"
 #include "dynamixel_interfaces/srv/detail/reboot_dxl__struct.h"
-#include "rosidl_typesupport_interface/macros.h"
 
 #ifdef __cplusplus
 extern "C"

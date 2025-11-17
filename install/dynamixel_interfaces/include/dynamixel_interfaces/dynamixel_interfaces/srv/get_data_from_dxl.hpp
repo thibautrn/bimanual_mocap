@@ -1,0 +1,1 @@
+/home/thibaut/Documents/bimanual_mocap/build/dynamixel_interfaces/rosidl_generator_cpp/dynamixel_interfaces/srv/get_data_from_dxl.hpp

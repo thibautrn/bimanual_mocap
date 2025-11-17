@@ -1,0 +1,1 @@
+/home/thibaut/Documents/bimanual_mocap/build/bimanualrobot_ros2/ament_cmake_environment_hooks/local_setup.zsh

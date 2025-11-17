@@ -1,0 +1,1 @@
+/home/thibaut/Documents/bimanual_mocap/build/bimanualrobot_drumstick_moveit_config/ament_cmake_core/bimanualrobot_drumstick_moveit_configConfig-version.cmake

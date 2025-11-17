@@ -1,8 +1,0 @@
-[0.056s] Invoking command in '/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo -- -j20 -l20
-[0.114s] [31mCMake Error at CMakeLists.txt:62:
-[0.114s]   Parse error.  Function missing ending ")".  End of file reached.
-[0.114s] 
-[0.115s] [0m
-[0.115s] -- Configuring incomplete, errors occurred!
-[0.119s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
-[0.124s] Invoked command in '/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo -- -j20 -l20

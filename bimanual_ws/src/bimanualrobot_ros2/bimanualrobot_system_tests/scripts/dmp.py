@@ -2,8 +2,8 @@ import os, glob, math, time
 import numpy as np
 
 # ======================= USER SETTINGS =======================
-INPUT_DIR   = "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/good"       # folder with *.txt (timestamp x y z)
-OUTPUT_DIR  = "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/good"         # we'll save baseline + weights here
+INPUT_DIR   = "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/good"       # folder with *.txt (timestamp x y z)
+OUTPUT_DIR  = "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/good"         # we'll save baseline + weights here
 FILES       = sorted(glob.glob(os.path.join(INPUT_DIR, "wrist_*.txt")))  # or make a hardcoded list
 
 # DMP hyperparameters (robust defaults)

@@ -1,1 +1,1 @@
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config/scripts/spawn_drum.py
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config/scripts/spawn_drum.py

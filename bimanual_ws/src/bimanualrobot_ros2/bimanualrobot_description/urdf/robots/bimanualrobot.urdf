@@ -45,7 +45,7 @@
     <visual>
       <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/stand.stl"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/stand.stl"/>
         <!-- <mesh filename="package://bbbot_description/meshes/visual/stand_low.stl" /> -->
       </geometry>
       <material name="light_grey"/>
@@ -53,7 +53,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="-0.3 -0.3 0"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/collision/stand.stl"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/collision/stand.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -90,7 +90,7 @@
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -124,7 +124,7 @@
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 -0.126"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_2.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -152,13 +152,13 @@
     <collision>
       <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-.001 0 0.148"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/collision/link3.stl"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/collision/link3.stl"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 -0.159"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_3.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -185,13 +185,13 @@
     <collision>
       <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.03 0.0 0.1285"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/collision/link4.stl"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/collision/link4.stl"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="-0.03 0 -0.423"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_4.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -224,7 +224,7 @@
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 -0.654"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_5.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_5.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -251,13 +251,13 @@
     <collision>
       <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="0.0 0.0 0.081"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/collision/link6.stl"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/collision/link6.stl"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 -0.681"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_6.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_6.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -325,7 +325,7 @@
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -359,7 +359,7 @@
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 -0.126"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_2.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -387,13 +387,13 @@
     <collision>
       <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-.001 0 0.148"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/collision/link3.stl"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/collision/link3.stl"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 -0.159"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_3.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -420,13 +420,13 @@
     <collision>
       <origin rpy="1.5707963267948966 0 3.141592653589793" xyz="-0.03 0.0 0.1285"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/collision/link4.stl"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/collision/link4.stl"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="-0.03 0 -0.423"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_4.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -459,7 +459,7 @@
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 -0.654"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_5.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_5.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>
@@ -486,13 +486,13 @@
     <collision>
       <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="0.0 0.0 0.081"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/collision/link6.stl"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/collision/link6.stl"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 3.141592653589793" xyz="0 0 -0.681"/>
       <geometry>
-        <mesh filename="/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_6.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/meshes/visual/link_6.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="grey"/>
     </visual>

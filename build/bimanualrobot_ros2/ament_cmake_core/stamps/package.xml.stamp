@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>bimanualrobot_ros2</name>
+  <version>0.0.0</version>
+  <description>Robotis Bimanual Robot used in the Interactive Robotics Lab</description>
+  <maintainer email="66651404+MohamedElMistiri@users.noreply.github.com">melmisti</maintainer>
+  <license>BDS-3-Clause</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>bimanualrobot_description</exec_depend>
+  <exec_depend>bimanualrobot_bringup</exec_depend>
+  <exec_depend>bimanualrobot_gazebo</exec_depend>
+  <exec_depend>bimanualrobot_moveit_config</exec_depend>
+  <exec_depend>bimanualrobot_system_tests</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

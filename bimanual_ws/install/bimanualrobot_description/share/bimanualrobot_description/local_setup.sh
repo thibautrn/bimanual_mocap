@@ -1,1 +1,1 @@
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_description/ament_cmake_environment_hooks/local_setup.sh
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_description/ament_cmake_environment_hooks/local_setup.sh

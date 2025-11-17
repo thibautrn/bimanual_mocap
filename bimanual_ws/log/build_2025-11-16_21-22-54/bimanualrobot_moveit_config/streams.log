@@ -1,0 +1,124 @@
+[0.013s] Invoking command in '/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_moveit_config': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_moveit_config -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config
+[0.094s] -- The C compiler identification is GNU 13.3.0
+[0.146s] -- The CXX compiler identification is GNU 13.3.0
+[0.159s] -- Detecting C compiler ABI info
+[0.214s] -- Detecting C compiler ABI info - done
+[0.221s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.222s] -- Detecting C compile features
+[0.222s] -- Detecting C compile features - done
+[0.229s] -- Detecting CXX compiler ABI info
+[0.289s] -- Detecting CXX compiler ABI info - done
+[0.302s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.303s] -- Detecting CXX compile features
+[0.303s] -- Detecting CXX compile features - done
+[0.311s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.424s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.473s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.510s] -- Found moveit_ros_planning_interface: 2.12.3 (/opt/ros/jazzy/share/moveit_ros_planning_interface/cmake)
+[0.608s] -- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: date_time filesystem program_options system thread 
+[0.658s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.668s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.677s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.689s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.886s] -- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[0.934s] -- Found parameter_traits: 0.5.0 (/opt/ros/jazzy/share/parameter_traits/cmake)
+[0.967s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.969s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.015s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.025s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.042s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.090s] -- Found rclcpp_lifecycle: 28.1.11 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)
+[1.113s] -- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: filesystem 
+[1.158s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.158s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.263s] -- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread chrono 
+[1.298s] -- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: thread system filesystem regex date_time program_options 
+[1.326s] -- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread 
+[1.356s] -- Found moveit_kinematics: 2.12.3 (/opt/ros/jazzy/share/moveit_kinematics/cmake)
+[1.359s] -- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: program_options system 
+[1.370s] -- Found moveit_planners_ompl: 2.12.3 (/opt/ros/jazzy/share/moveit_planners_ompl/cmake)
+[1.383s] -- Found moveit_ros_visualization: 2.12.3 (/opt/ros/jazzy/share/moveit_ros_visualization/cmake)
+[1.387s] -- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: thread date_time system filesystem 
+[1.429s] -- Setting OGRE_DIR to: '/opt/ros/jazzy/share/rviz_ogre_vendor/cmake/../../../opt/rviz_ogre_vendor/lib/OGRE/cmake'
+[1.431s] -- Found OGRE
+[1.431s] --   static     : OFF
+[1.431s] --   components : MeshLodGenerator;Overlay;Paging;Property;RTShaderSystem;Terrain;Volume
+[1.431s] --   plugins    : Plugin_BSPSceneManager;Plugin_OctreeSceneManager;Plugin_PCZSceneManager;Plugin_ParticleFX;RenderSystem_GL;RenderSystem_GL3Plus;Codec_STBI
+[1.431s] --   media      : /opt/ros/jazzy/opt/rviz_ogre_vendor/share/OGRE/Media
+[1.431s] -- OGRE_LIBRARIES: OgreMeshLodGenerator;OgreOverlay;OgrePaging;OgreProperty;OgreRTShaderSystem;OgreTerrain;OgreVolume;OgreMain
+[1.431s] -- OGRE_LIBRARY_DIRS: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib
+[1.431s] -- OGRE_PLUGINS: Plugin_BSPSceneManager;Plugin_OctreeSceneManager;Plugin_PCZSceneManager;Plugin_ParticleFX;RenderSystem_GL;RenderSystem_GL3Plus;Codec_STBI
+[1.431s] -- OGRE_PLUGIN_DIR: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/OGRE
+[1.433s] -- rviz_ogre_vendor::OgreOverlay for IMPORTED_LOCATION_RELEASE: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreOverlay.so
+[1.433s] -- rviz_ogre_vendor::OgreOverlay for IMPORTED_LOCATION_DEBUG: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreOverlay.so
+[1.433s] -- rviz_ogre_vendor::OgreMain for IMPORTED_LOCATION_RELEASE: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreMain.so
+[1.433s] -- rviz_ogre_vendor::OgreMain for IMPORTED_LOCATION_DEBUG: /opt/ros/jazzy/opt/rviz_ogre_vendor/lib/libOgreMain.so
+[1.456s] -- Found ZLIB: /usr/lib/aarch64-linux-gnu/libz.so (found version "1.3")  
+[1.467s] -- Found OpenGL: /usr/lib/aarch64-linux-gnu/libOpenGL.so   
+[1.571s] -- Found X11: /usr/include   
+[1.572s] -- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so
+[1.635s] -- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so - found
+[1.635s] -- Looking for gethostbyname
+[1.681s] -- Looking for gethostbyname - found
+[1.681s] -- Looking for connect
+[1.735s] -- Looking for connect - found
+[1.735s] -- Looking for remove
+[1.781s] -- Looking for remove - found
+[1.782s] -- Looking for shmat
+[1.827s] -- Looking for shmat - found
+[1.827s] -- Looking for IceConnectionNumber in ICE
+[1.874s] -- Looking for IceConnectionNumber in ICE - found
+[1.908s] -- Setting yaml-cpp_DIR to: '/opt/ros/jazzy/share/yaml_cpp_vendor/cmake/../../../opt/yaml_cpp_vendor/share/cmake/yaml-cpp'
+[1.911s] -- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1") 
+[1.911s] -- Checking for module 'yaml-cpp'
+[1.917s] --   Found yaml-cpp, version 0.8.0
+[2.003s] -- Found rviz_visual_tools: 4.1.4 (/opt/ros/jazzy/share/rviz_visual_tools/cmake)
+[2.015s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[2.077s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.077s] -- Configured 'flake8' exclude dirs and/or files: 
+[2.078s] -- Added test 'lint_cmake' to check CMake code style
+[2.078s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.079s] -- Added test 'xmllint' to check XML markup files
+[2.080s] -- Configuring done (2.0s)
+[2.085s] -- Generating done (0.0s)
+[2.086s] -- Build files have been written to: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_moveit_config
+[2.097s] Invoked command in '/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_moveit_config' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_moveit_config -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config
+[2.098s] Invoking command in '/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_moveit_config': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_moveit_config -- -j6 -l6
+[2.123s] Invoked command in '/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_moveit_config' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_moveit_config -- -j6 -l6
+[2.124s] Invoking command in '/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_moveit_config': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_moveit_config
+[2.127s] -- Install configuration: ""
+[2.127s] -- Execute custom install script
+[2.128s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/bimanualrobot.srdf
+[2.132s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/gz_pid.yaml
+[2.136s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/initial_positions.yaml
+[2.140s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/joint_limits.yaml
+[2.144s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/kinematics.yaml
+[2.148s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/moveit_controllers.yaml
+[2.152s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/pilz_cartesian_limits.yaml
+[2.157s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/ros2_controllers.yaml
+[2.161s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/ros2_controllers_template.yaml
+[2.166s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/bimanualrobot/servo_params.yaml
+[2.170s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/ompl_planning.yaml
+[2.174s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/pilz_industrial_motion_planner_planning.yaml
+[2.178s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/config/stomp_planning.yaml
+[2.182s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/launch/bringup_with_servo.launch.py
+[2.186s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/launch/load_ros2_controllers.launch.py
+[2.190s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/launch/move_group.launch.py
+[2.195s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/rviz/move_group.rviz
+[2.200s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/.setup_assistant
+[2.205s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_moveit_config
+[2.209s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_moveit_config
+[2.215s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/environment/ament_prefix_path.sh
+[2.221s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/environment/ament_prefix_path.dsv
+[2.226s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/environment/path.sh
+[2.232s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/environment/path.dsv
+[2.235s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/local_setup.bash
+[2.239s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/local_setup.sh
+[2.243s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/local_setup.zsh
+[2.247s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/local_setup.dsv
+[2.251s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/package.dsv
+[2.255s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/ament_index/resource_index/packages/bimanualrobot_moveit_config
+[2.259s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/cmake/bimanualrobot_moveit_configConfig.cmake
+[2.264s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/cmake/bimanualrobot_moveit_configConfig-version.cmake
+[2.268s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_moveit_config/share/bimanualrobot_moveit_config/package.xml
+[2.276s] Invoked command in '/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_moveit_config' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_moveit_config

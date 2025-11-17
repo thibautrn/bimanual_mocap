@@ -1,0 +1,1 @@
+/home/thibaut/Documents/bimanual_mocap/build/bimanualrobot_bringup/launch/check_connection.launch.py

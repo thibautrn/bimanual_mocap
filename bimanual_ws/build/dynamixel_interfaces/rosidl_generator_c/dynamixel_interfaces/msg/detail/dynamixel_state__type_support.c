@@ -5,9 +5,9 @@
 #include <string.h>
 
 #include "dynamixel_interfaces/msg/detail/dynamixel_state__type_support.h"
-#include "dynamixel_interfaces/msg/detail/dynamixel_state__struct.h"
 #include "dynamixel_interfaces/msg/detail/dynamixel_state__functions.h"
 #include "rosidl_typesupport_interface/macros.h"
+#include "dynamixel_interfaces/msg/detail/dynamixel_state__struct.h"
 
 #ifdef __cplusplus
 extern "C"

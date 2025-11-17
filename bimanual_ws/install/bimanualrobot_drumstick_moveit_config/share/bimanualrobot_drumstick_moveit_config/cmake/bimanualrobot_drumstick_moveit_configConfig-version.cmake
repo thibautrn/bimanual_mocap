@@ -1,1 +1,1 @@
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_core/bimanualrobot_drumstick_moveit_configConfig-version.cmake
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_core/bimanualrobot_drumstick_moveit_configConfig-version.cmake

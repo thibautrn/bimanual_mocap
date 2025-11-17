@@ -53,32 +53,32 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces
+CMAKE_SOURCE_DIR = /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces
+CMAKE_BINARY_DIR = /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces
 
 # Utility rule file for dynamixel_interfaces__py.
 
 # Include any custom commands dependencies for this target.
-include /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/compiler_depend.make
+include /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/compiler_depend.make
 
 # Include the progress variables for this target.
-include /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/progress.make
+include /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/progress.make
 
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_introspection_c.c
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_c.c
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/msg/_dynamixel_state.py
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_get_data_from_dxl.py
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_set_data_to_dxl.py
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_reboot_dxl.py
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/msg/__init__.py
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/__init__.py
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/msg/_dynamixel_state_s.c
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_get_data_from_dxl_s.c
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_set_data_to_dxl_s.c
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_reboot_dxl_s.c
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_c.c
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/msg/_dynamixel_state.py
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_get_data_from_dxl.py
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_set_data_to_dxl.py
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_reboot_dxl.py
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/msg/__init__.py
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/__init__.py
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/msg/_dynamixel_state_s.c
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_get_data_from_dxl_s.c
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_set_data_to_dxl_s.c
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_reboot_dxl_s.c
 
 rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/jazzy/lib/rosidl_generator_py/rosidl_generator_py
 rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/jazzy/lib/python3.12/site-packages/rosidl_generator_py/__init__.py
@@ -162,8 +162,8 @@ rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_types
 rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/jazzy/share/geometry_msgs/msg/Wrench.idl
 rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/jazzy/share/geometry_msgs/msg/WrenchStamped.idl
 rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/jazzy/share/service_msgs/msg/ServiceEventInfo.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
-	cd /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py && /usr/bin/python3 /opt/ros/jazzy/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
+	cd /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py && /usr/bin/python3 /opt/ros/jazzy/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
 
 rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_introspection_c.c: rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_introspection_c.c
@@ -201,7 +201,7 @@ rosidl_generator_py/dynamixel_interfaces/srv/_set_data_to_dxl_s.c: rosidl_genera
 rosidl_generator_py/dynamixel_interfaces/srv/_reboot_dxl_s.c: rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/dynamixel_interfaces/srv/_reboot_dxl_s.c
 
-dynamixel_interfaces__py: /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py
+dynamixel_interfaces__py: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py
 dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_c.c
 dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/_dynamixel_interfaces_s.ep.rosidl_typesupport_introspection_c.c
@@ -215,18 +215,18 @@ dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_reboot_d
 dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_reboot_dxl_s.c
 dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_set_data_to_dxl.py
 dynamixel_interfaces__py: rosidl_generator_py/dynamixel_interfaces/srv/_set_data_to_dxl_s.c
-dynamixel_interfaces__py: /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build.make
+dynamixel_interfaces__py: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build.make
 .PHONY : dynamixel_interfaces__py
 
 # Rule to build all files generated by this target.
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build: dynamixel_interfaces__py
-.PHONY : /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build: dynamixel_interfaces__py
+.PHONY : /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/build
 
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/clean:
-	cd /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py && $(CMAKE_COMMAND) -P CMakeFiles/dynamixel_interfaces__py.dir/cmake_clean.cmake
-.PHONY : /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/clean
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/clean:
+	cd /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py && $(CMAKE_COMMAND) -P CMakeFiles/dynamixel_interfaces__py.dir/cmake_clean.cmake
+.PHONY : /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/clean
 
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/depend:
-	cd /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/DependInfo.cmake "--color=$(COLOR)"
-.PHONY : /home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/depend
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/depend:
+	cd /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/DependInfo.cmake "--color=$(COLOR)"
+.PHONY : /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/dynamixel_interfaces__py/CMakeFiles/dynamixel_interfaces__py.dir/depend
 

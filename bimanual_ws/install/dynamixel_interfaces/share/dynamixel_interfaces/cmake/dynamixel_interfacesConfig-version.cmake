@@ -1,1 +1,1 @@
-/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/ament_cmake_core/dynamixel_interfacesConfig-version.cmake
+/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/ament_cmake_core/dynamixel_interfacesConfig-version.cmake

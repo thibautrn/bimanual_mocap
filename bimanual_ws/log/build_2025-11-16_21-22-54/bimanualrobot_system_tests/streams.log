@@ -1,0 +1,278 @@
+[0.023s] Invoking command in '/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests
+[0.091s] -- The C compiler identification is GNU 13.3.0
+[0.144s] -- The CXX compiler identification is GNU 13.3.0
+[0.156s] -- Detecting C compiler ABI info
+[0.222s] -- Detecting C compiler ABI info - done
+[0.227s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.227s] -- Detecting C compile features
+[0.227s] -- Detecting C compile features - done
+[0.234s] -- Detecting CXX compiler ABI info
+[0.301s] -- Detecting CXX compiler ABI info - done
+[0.307s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.307s] -- Detecting CXX compile features
+[0.307s] -- Detecting CXX compile features - done
+[0.309s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.422s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.471s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.504s] -- Found rclcpp: 28.1.11 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.545s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.558s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.572s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.584s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.650s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.653s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.714s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.729s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.741s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.796s] -- Found rclcpp_action: 28.1.11 (/opt/ros/jazzy/share/rclcpp_action/cmake)
+[0.824s] -- Found control_msgs: 5.5.0 (/opt/ros/jazzy/share/control_msgs/cmake)
+[0.885s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.950s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.950s] -- Configured 'flake8' exclude dirs and/or files: 
+[0.951s] -- Added test 'lint_cmake' to check CMake code style
+[0.952s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.957s] -- Added test 'xmllint' to check XML markup files
+[0.959s] -- Configuring done (0.9s)
+[0.964s] -- Generating done (0.0s)
+[0.966s] -- Build files have been written to: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests
+[0.973s] Invoked command in '/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests
+[0.974s] Invoking command in '/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests -- -j6 -l6
+[1.001s] Invoked command in '/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests -- -j6 -l6
+[1.001s] Invoking command in '/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests
+[1.006s] -- Install configuration: ""
+[1.006s] -- Execute custom install script
+[1.008s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/arm_loop_controller.py
+[1.011s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/dmp.py
+[1.016s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/dmp_compare.py
+[1.023s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/ball_20251107_184557.txt
+[1.026s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/ball_20251107_185423.txt
+[1.032s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/ball_20251107_185816.txt
+[1.040s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/ball_20251107_214203.txt
+[1.042s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/ball_20251107_221407.txt
+[1.055s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/ball_20251107_221555.txt
+[1.067s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/ball_20251107_222635.txt
+[1.072s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/ball_20251107_222849.txt
+[1.077s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/ball_20251108_000440.txt
+[1.082s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/ball_20251108_000618.txt
+[1.090s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/ball_20251108_001307.txt
+[1.092s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/baseline.npz
+[1.097s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/baseline2.npz
+[1.105s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/bimanual_robot_log.txt
+[1.111s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/contacts_20251107_184557.txt
+[1.115s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/contacts_20251107_185423.txt
+[1.121s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/contacts_20251107_185816.txt
+[1.128s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/contacts_20251107_214203.txt
+[1.133s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/contacts_20251107_221407.txt
+[1.139s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/contacts_20251107_221555.txt
+[1.142s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/contacts_20251107_222635.txt
+[1.146s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/contacts_20251107_222849.txt
+[1.152s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/contacts_20251108_000440.txt
+[1.157s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/contacts_20251108_000618.txt
+[1.161s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/contacts_20251108_001307.txt
+[1.166s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/dmp/wrist_20251107_184557.txt
+[1.171s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/dmp/wrist_20251107_185423.txt
+[1.177s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/dmp/wrist_20251107_185816.txt
+[1.181s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/dmp/wrist_20251107_214203.txt
+[1.187s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/dmp/wrist_20251107_221407.txt
+[1.191s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/dmp/wrist_20251107_221555.txt
+[1.197s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/dmp/wrist_20251107_222635.txt
+[1.202s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/dmp/wrist_20251107_222849.txt
+[1.207s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/ball_20251108_001459.txt
+[1.211s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/ball_20251108_001911.txt
+[1.218s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/ball_20251108_002123.txt
+[1.223s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/ball_20251108_002448.txt
+[1.228s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/ball_20251108_002855.txt
+[1.235s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/ball_20251108_003200.txt
+[1.241s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/ball_20251108_014936.txt
+[1.246s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/ball_20251108_015256.txt
+[1.253s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/ball_20251108_022227.txt
+[1.261s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/ball_20251108_235300.txt
+[1.264s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/ball_20251108_235737.txt
+[1.271s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/ball_20251109_002752.txt
+[1.278s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/ball_20251109_004841.txt
+[1.284s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/baseline.npz
+[1.289s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/contacts_20251108_001459.txt
+[1.296s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/contacts_20251108_001911.txt
+[1.303s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/contacts_20251108_002123.txt
+[1.314s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/contacts_20251108_002448.txt
+[1.322s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/contacts_20251108_002855.txt
+[1.329s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/contacts_20251108_003200.txt
+[1.334s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/contacts_20251108_014936.txt
+[1.340s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/contacts_20251108_015256.txt
+[1.346s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/contacts_20251108_022227.txt
+[1.351s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/contacts_20251108_235300.txt
+[1.357s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/contacts_20251108_235737.txt
+[1.360s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/contacts_20251109_002752.txt
+[1.365s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/contacts_20251109_004841.txt
+[1.372s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/generated_dmp_weights.npz
+[1.376s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/last_icl_prompt.txt
+[1.385s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/last_icl_response.txt
+[1.387s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/processed_episodes.json
+[1.395s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/weights_comparison.png
+[1.402s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_001459.txt
+[1.408s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_001459_recon.npz
+[1.413s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_001459_weights.npz
+[1.421s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_001911.txt
+[1.426s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_001911_recon.npz
+[1.431s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_001911_weights.npz
+[1.436s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_002123.txt
+[1.441s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_002123_recon.npz
+[1.447s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_002123_weights.npz
+[1.456s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_002448.txt
+[1.465s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_002448_recon.npz
+[1.469s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_002448_weights.npz
+[1.477s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_002855.txt
+[1.485s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_002855_recon.npz
+[1.491s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_002855_weights.npz
+[1.501s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_003200.txt
+[1.507s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_003200_recon.npz
+[1.513s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_003200_weights.npz
+[1.519s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_014936.txt
+[1.526s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_014936_recon.npz
+[1.537s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_014936_weights.npz
+[1.542s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_015256.txt
+[1.548s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_015256_recon.npz
+[1.552s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_015256_weights.npz
+[1.558s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_022227.txt
+[1.564s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_022227_recon.npz
+[1.569s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_022227_weights.npz
+[1.574s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_235300.txt
+[1.579s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_235300_recon.npz
+[1.584s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_235300_weights.npz
+[1.588s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_235737.txt
+[1.593s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_235737_recon.npz
+[1.601s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251108_235737_weights.npz
+[1.607s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251109_002752.txt
+[1.610s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251109_002752_recon.npz
+[1.614s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251109_002752_weights.npz
+[1.619s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251109_004841.txt
+[1.624s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251109_004841_recon.npz
+[1.629s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/good/wrist_20251109_004841_weights.npz
+[1.634s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/icl.py
+[1.640s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/processed_episodes.json
+[1.644s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251107_184557.txt
+[1.648s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251107_185423.txt
+[1.655s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251107_185816.txt
+[1.658s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251107_214203.txt
+[1.666s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251107_221407.txt
+[1.671s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251107_221555.txt
+[1.676s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251107_222635.txt
+[1.681s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251107_222849.txt
+[1.685s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_000440.txt
+[1.690s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_000618.txt
+[1.695s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_001307.txt
+[1.701s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_001459.txt
+[1.706s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_001911.txt
+[1.712s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_002123.txt
+[1.717s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_002448.txt
+[1.723s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_002855.txt
+[1.728s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_003200.txt
+[1.736s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_014936.txt
+[1.741s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_015256.txt
+[1.746s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_022227.txt
+[1.751s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_235005.txt
+[1.755s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_235300.txt
+[1.760s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251108_235737.txt
+[1.764s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251109_002752.txt
+[1.773s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/racket_20251109_004841.txt
+[1.775s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251020_031909.txt
+[1.780s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251020_041138.txt
+[1.785s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251103_004433.txt
+[1.790s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251103_004433_recon.npz
+[1.794s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251103_004433_weights.npz
+[1.799s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251103_004509.txt
+[1.804s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251103_004509_recon.npz
+[1.808s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251103_004509_weights.npz
+[1.813s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251103_004546.txt
+[1.818s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251103_004546_recon.npz
+[1.825s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251103_004546_weights.npz
+[1.829s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_184557_recon.npz
+[1.835s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_184557_weights.npz
+[1.840s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_185423_recon.npz
+[1.846s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_185423_weights.npz
+[1.851s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_185816_recon.npz
+[1.856s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_185816_weights.npz
+[1.860s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_214203_recon.npz
+[1.865s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_214203_weights.npz
+[1.869s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_221407_recon.npz
+[1.875s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_221407_weights.npz
+[1.879s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_221555_recon.npz
+[1.884s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_221555_weights.npz
+[1.889s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_222635_recon.npz
+[1.893s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_222635_weights.npz
+[1.898s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_222849_recon.npz
+[1.904s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251107_222849_weights.npz
+[1.909s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251108_000440.txt
+[1.913s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251108_000618.txt
+[1.918s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/logs/wrist_20251108_001307.txt
+[1.922s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_bimanual_drumsticks.py
+[1.927s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_left_arm_basic.py
+[1.931s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm.py
+[1.936s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm2.2.py
+[1.941s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm2.2elb.py
+[1.946s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm2.2elb_pick.py
+[1.952s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm2.2elb_traj.py
+[1.957s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm2.2elb_traj_copy.py
+[1.961s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm2.py
+[1.966s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_base.py
+[1.971s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_basic.py
+[1.976s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_fast.py
+[1.981s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_fast_dmp.py
+[1.985s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_fast_dmp_ball.py
+[1.990s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_fast_hz.py
+[1.993s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_fast_record.py
+[1.999s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_fast_wrist.py
+[2.004s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_horizon.py
+[2.008s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_pin.py
+[2.013s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_pin_follow.py
+[2.017s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_pred.py
+[2.022s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_pred_csv.py
+[2.027s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_record.py
+[2.033s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/move_right_arm_wrist.py
+[2.037s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/rewards.py
+[2.042s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/servo_udp_bridge.py
+[2.047s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/tether_deadzone.py
+[2.051s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/scripts/udping.py
+[2.060s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/src/.keep
+[2.065s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_bimanual_drumsticks.py
+[2.070s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/arm_loop_controller.py
+[2.074s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm.py
+[2.079s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_pin_follow.py
+[2.084s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_pin.py
+[2.090s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_wrist.py
+[2.096s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm2.py
+[2.104s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm2.2.py
+[2.110s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm2.2elb.py
+[2.115s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm2.2elb_pick.py
+[2.119s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm2.2elb_traj.py
+[2.124s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm2.2elb_traj_copy.py
+[2.128s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_horizon.py
+[2.134s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_fast.py
+[2.138s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_fast_dmp.py
+[2.142s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_fast_dmp_ball.py
+[2.146s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_fast_wrist.py
+[2.150s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_fast_record.py
+[2.155s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_fast_hz.py
+[2.159s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_pred_csv.py
+[2.164s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_record.py
+[2.169s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_pred.py
+[2.172s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_basic.py
+[2.176s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_right_arm_base.py
+[2.180s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/move_left_arm_basic.py
+[2.184s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/lib/bimanualrobot_system_tests/servo_udp_bridge.py
+[2.188s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_system_tests
+[2.193s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_system_tests
+[2.198s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/environment/ament_prefix_path.sh
+[2.203s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/environment/ament_prefix_path.dsv
+[2.207s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/environment/path.sh
+[2.213s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/environment/path.dsv
+[2.219s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/local_setup.bash
+[2.224s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/local_setup.sh
+[2.228s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/local_setup.zsh
+[2.233s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/local_setup.dsv
+[2.237s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/package.dsv
+[2.241s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/ament_index/resource_index/packages/bimanualrobot_system_tests
+[2.245s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/cmake/bimanualrobot_system_testsConfig.cmake
+[2.249s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/cmake/bimanualrobot_system_testsConfig-version.cmake
+[2.253s] -- Symlinking: /home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_system_tests/share/bimanualrobot_system_tests/package.xml
+[2.258s] Invoked command in '/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_system_tests

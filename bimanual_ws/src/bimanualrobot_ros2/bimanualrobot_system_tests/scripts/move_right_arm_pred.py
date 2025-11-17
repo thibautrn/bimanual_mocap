@@ -22,9 +22,9 @@ from collections import deque
 
 
 # URDF & IK target frame
-URDF_PATH = "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/robots/bimanualrobot.urdf"
+URDF_PATH = "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/robots/bimanualrobot.urdf"
 F_WRIST   = "rightarm_wrist_2_link"    # IK target frame
-LOG_PATH = "/home/asurite.ad.asu.edu/troisin/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/bimanual_robot_log.txt"
+LOG_PATH = "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/bimanual_robot_log.txt"
 # IK joints (include wrist_1 so wrist_2 position is actually controllable)
 IK_JOINTS = [
     "rightarm_shoulder_pan_joint",
