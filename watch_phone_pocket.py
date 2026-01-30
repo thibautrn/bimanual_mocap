@@ -4,7 +4,7 @@ import sys
 import os
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
-src_path = os.path.join(script_dir, "arm-pose-estimation","src")
+src_path = os.path.join(script_dir,"arm-pose-estimation","src")
 sys.path.append(src_path)
 
 import wear_mocap_ape.config as config # type: ignore
@@ -16,10 +16,10 @@ from wear_mocap_ape.stream.publisher.pose_est_udp import PoseEstPublisherUDP
 
 
 
-def run_watch_phone_pocket_kalman(ip: str, smooth: int, stream_mc: bool):
+def run_watch_phone_pocket_kalman(listen_ip: str, send_ip: str, smooth: int, stream_mc: bool):
     # the listener fills the que with received and parsed smartwatch data
     lstn = ImuListener(
-        ip=mac_ip,
+        ip=listen_ip,
         msg_size=messaging.watch_phone_imu_msg_len,
         port=config.PORT_LISTEN_WATCH_PHONE_IMU
     )
@@ -37,7 +37,7 @@ def run_watch_phone_pocket_kalman(ip: str, smooth: int, stream_mc: bool):
 
     # the publisher publishes pose estimates from the queue via UDP
     pub = PoseEstPublisherUDP(
-        ip=vm_ip,
+        ip=send_ip,
         port=config.PORT_PUB_LEFT_ARM
     )
     pub.publish_in_thread(msg_q)
@@ -61,12 +61,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='')
 
     # Required IP argument
-    # parser.add_argument('ip', type=str, help=f'put your local IP here.')
+    # mac_ip = "192.168.1.191" #lab
     vm_ip = "192.168.252.130"
-    mac_ip = "192.168.1.191" #lab1
+    mac_ip = "192.168.0.47"
+    # mac_ip = "192.168.1.243" #sierra 
     # mac_ip = "192.168.1.105" #lab2
     parser.add_argument('smooth', nargs='?', type=int, default=5, help=f'smooth predicted trajectories')
     args = parser.parse_args()
 
+    #IF no VM, set send_ip to the same as listen_ip 
 
-    run_watch_phone_pocket_kalman(ip=vm_ip,  smooth=args.smooth, stream_mc=True)
+    run_watch_phone_pocket_kalman(listen_ip=mac_ip, send_ip=vm_ip, smooth=args.smooth, stream_mc=True)
