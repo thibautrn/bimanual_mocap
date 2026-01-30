@@ -61,14 +61,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='')
 
     # Required IP argument
-    # mac_ip = "192.168.1.191" #lab
     vm_ip = "192.168.252.130"
-    mac_ip = "192.168.0.47"
-    # mac_ip = "192.168.1.243" #sierra 
-    # mac_ip = "192.168.1.105" #lab2
+    computer_ip = "........"
+
     parser.add_argument('smooth', nargs='?', type=int, default=5, help=f'smooth predicted trajectories')
     args = parser.parse_args()
 
     #IF no VM, set send_ip to the same as listen_ip 
 
-    run_watch_phone_pocket_kalman(listen_ip=mac_ip, send_ip=vm_ip, smooth=args.smooth, stream_mc=True)
+    run_watch_phone_pocket_kalman(listen_ip=computer_ip, send_ip=vm_ip, smooth=args.smooth, stream_mc=True)
