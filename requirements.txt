@@ -1,0 +1,9 @@
+aenum
+torch
+numpy
+pandas
+matplotlib
+pynput
+einops
+bayesian-torch
+sympy
