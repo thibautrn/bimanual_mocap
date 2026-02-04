@@ -53,3 +53,25 @@ move_left_arm_basic : which isn't up to date, however, you can change a few thin
 - in scale_watch_to_right_robot() get rid of : Sh[1] = -Sh[1]; El[1] = -El[1]; Wr[1] = -Wr[1]  
 
 
+
+Ball tracking :
+Install ZED sdk on ubuntu : 
+https://www.stereolabs.com/docs/development/zed-sdk/linux
+
+sudo apt update
+sudo apt install -y \
+  python3 python3-pip python3-venv \
+  build-essential pkg-config \
+  libgl1 libglib2.0-0 libusb-1.0-0 udev
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -U pip
+
+python -m pip install numpy opencv-python
+
+python -m pip install cython
+
+cd /usr/local/zed/
+python -m pip install -U pip
+python -m pip install requests
+python get_python_api.py
