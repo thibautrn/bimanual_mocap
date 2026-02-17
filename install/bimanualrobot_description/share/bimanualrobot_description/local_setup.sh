@@ -1,1 +1,0 @@
-/home/thibaut/Documents/bimanual_mocap/build/bimanualrobot_description/ament_cmake_environment_hooks/local_setup.sh

@@ -156,4 +156,39 @@
     <disable_collisions link1="leftarm_wrist_3_link" link2="rightarm_wrist_2_link" reason="Never"/>
     <disable_collisions link1="leftarm_wrist_3_link" link2="rightarm_wrist_3_link" reason="Never"/>
 
+    <disable_collisions link1="leftarm_cup_pole"        link2="leftarm_cup_bottom"       reason="Never"/>
+    <disable_collisions link1="leftarm_cup_pole"        link2="leftarm_cup_wall_x_plus"  reason="Never"/>
+    <disable_collisions link1="leftarm_cup_pole"        link2="leftarm_cup_wall_x_minus" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_pole"        link2="leftarm_cup_wall_y_plus"  reason="Never"/>
+    <disable_collisions link1="leftarm_cup_pole"        link2="leftarm_cup_wall_y_minus" reason="Never"/>
+
+    <disable_collisions link1="leftarm_cup_bottom"      link2="leftarm_cup_wall_x_plus"  reason="Never"/>
+    <disable_collisions link1="leftarm_cup_bottom"      link2="leftarm_cup_wall_x_minus" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_bottom"      link2="leftarm_cup_wall_y_plus"  reason="Never"/>
+    <disable_collisions link1="leftarm_cup_bottom"      link2="leftarm_cup_wall_y_minus" reason="Never"/>
+
+
+    <disable_collisions link1="rightarm_cup_wall_x_plus" link2="rightarm_cup_wall_y_plus"  reason="Never"/>
+    <disable_collisions link1="rightarm_cup_wall_x_plus" link2="rightarm_cup_wall_y_minus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_wall_x_minus" link2="rightarm_cup_wall_y_plus"  reason="Never"/>
+    <disable_collisions link1="rightarm_cup_wall_x_minus" link2="rightarm_cup_wall_y_minus" reason="Never"/>
+
+    <disable_collisions link1="rightarm_cup_pole"        link2="rightarm_cup_bottom"       reason="Never"/>
+    <disable_collisions link1="rightarm_cup_pole"        link2="rightarm_cup_wall_x_plus"  reason="Never"/>
+    <disable_collisions link1="rightarm_cup_pole"        link2="rightarm_cup_wall_x_minus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_pole"        link2="rightarm_cup_wall_y_plus"  reason="Never"/>
+    <disable_collisions link1="rightarm_cup_pole"        link2="rightarm_cup_wall_y_minus" reason="Never"/>
+
+    <disable_collisions link1="rightarm_cup_bottom"      link2="rightarm_cup_wall_x_plus"  reason="Never"/>
+    <disable_collisions link1="rightarm_cup_bottom"      link2="rightarm_cup_wall_x_minus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_bottom"      link2="rightarm_cup_wall_y_plus"  reason="Never"/>
+    <disable_collisions link1="rightarm_cup_bottom"      link2="rightarm_cup_wall_y_minus" reason="Never"/>
+
+
+    <disable_collisions link1="rightarm_cup_wall_x_plus" link2="rightarm_cup_wall_y_plus"  reason="Never"/>
+    <disable_collisions link1="rightarm_cup_wall_x_plus" link2="rightarm_cup_wall_y_minus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_wall_x_minus" link2="rightarm_cup_wall_y_plus"  reason="Never"/>
+    <disable_collisions link1="rightarm_cup_wall_x_minus" link2="rightarm_cup_wall_y_minus" reason="Never"/>
+    
+
 </robot>

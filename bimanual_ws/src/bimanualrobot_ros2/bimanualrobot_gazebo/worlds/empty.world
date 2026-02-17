@@ -37,7 +37,7 @@
     </plugin>
 
     <!-- Ball Leash Plugin - keeps ball within radius of anchor point -->
-    <plugin name="ball_leash" filename="libball_leash_plugin.so">
+    <plugin name="ball_leash::BallLeashPlugin" filename="libball_leash_plugin.so">
       <ball_model_name>end_ball</ball_model_name>
       <anchor_point>0.78 0.55 2.10</anchor_point>
       <max_distance>0.6</max_distance>

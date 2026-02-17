@@ -1,1 +1,0 @@
-/home/thibaut/Documents/bimanual_mocap/build/dynamixel_sdk_custom_interfaces/ament_cmake_core/dynamixel_sdk_custom_interfacesConfig-version.cmake

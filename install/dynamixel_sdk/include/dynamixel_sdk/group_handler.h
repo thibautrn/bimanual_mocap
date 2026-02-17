@@ -1,1 +1,0 @@
-/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/DynamixelSDK/ros/dynamixel_sdk/include/dynamixel_sdk/group_handler.h

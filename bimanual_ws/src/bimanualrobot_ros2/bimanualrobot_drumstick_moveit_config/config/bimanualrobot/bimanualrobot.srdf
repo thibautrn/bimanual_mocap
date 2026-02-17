@@ -202,4 +202,71 @@
     <disable_collisions link1="rightarm_upper_arm_link" link2="stand_link" reason="Never"/>
     <disable_collisions link1="rightarm_wrist_1_link" link2="rightarm_wrist_2_link" reason="Adjacent"/>
     <disable_collisions link1="rightarm_wrist_2_link" link2="rightarm_wrist_3_link" reason="Adjacent"/>
+    <!-- Cup internal links: disable self-collision (rigid assembly) -->
+    <!-- ================= LEFT CUP: disable all internal collisions ================= -->
+
+    <!-- pole with everything -->
+    <disable_collisions link1="leftarm_cup_pole" link2="leftarm_cup_bottom" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_pole" link2="leftarm_cup_sensor" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_pole" link2="leftarm_cup_wall_x_plus" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_pole" link2="leftarm_cup_wall_x_minus" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_pole" link2="leftarm_cup_wall_y_plus" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_pole" link2="leftarm_cup_wall_y_minus" reason="Never"/>
+
+    <!-- bottom with everything except pole (already done) -->
+    <disable_collisions link1="leftarm_cup_bottom" link2="leftarm_cup_sensor" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_bottom" link2="leftarm_cup_wall_x_plus" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_bottom" link2="leftarm_cup_wall_x_minus" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_bottom" link2="leftarm_cup_wall_y_plus" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_bottom" link2="leftarm_cup_wall_y_minus" reason="Never"/>
+
+    <!-- sensor with walls -->
+    <disable_collisions link1="leftarm_cup_sensor" link2="leftarm_cup_wall_x_plus" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_sensor" link2="leftarm_cup_wall_x_minus" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_sensor" link2="leftarm_cup_wall_y_plus" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_sensor" link2="leftarm_cup_wall_y_minus" reason="Never"/>
+
+    <!-- wall-to-wall pairs -->
+    <disable_collisions link1="leftarm_cup_wall_x_plus"  link2="leftarm_cup_wall_x_minus" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_wall_y_plus"  link2="leftarm_cup_wall_y_minus" reason="Never"/>
+
+    <disable_collisions link1="leftarm_cup_wall_x_plus"  link2="leftarm_cup_wall_y_plus"  reason="Never"/>
+    <disable_collisions link1="leftarm_cup_wall_x_plus"  link2="leftarm_cup_wall_y_minus" reason="Never"/>
+    <disable_collisions link1="leftarm_cup_wall_x_minus" link2="leftarm_cup_wall_y_plus"  reason="Never"/>
+    <disable_collisions link1="leftarm_cup_wall_x_minus" link2="leftarm_cup_wall_y_minus" reason="Never"/>
+
+
+    <!-- ================= RIGHT CUP: disable all internal collisions ================= -->
+
+    <!-- pole with everything -->
+    <disable_collisions link1="rightarm_cup_pole" link2="rightarm_cup_bottom" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_pole" link2="rightarm_cup_sensor" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_pole" link2="rightarm_cup_wall_x_plus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_pole" link2="rightarm_cup_wall_x_minus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_pole" link2="rightarm_cup_wall_y_plus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_pole" link2="rightarm_cup_wall_y_minus" reason="Never"/>
+
+    <!-- bottom with everything except pole (already done) -->
+    <disable_collisions link1="rightarm_cup_bottom" link2="rightarm_cup_sensor" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_bottom" link2="rightarm_cup_wall_x_plus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_bottom" link2="rightarm_cup_wall_x_minus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_bottom" link2="rightarm_cup_wall_y_plus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_bottom" link2="rightarm_cup_wall_y_minus" reason="Never"/>
+
+    <!-- sensor with walls -->
+    <disable_collisions link1="rightarm_cup_sensor" link2="rightarm_cup_wall_x_plus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_sensor" link2="rightarm_cup_wall_x_minus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_sensor" link2="rightarm_cup_wall_y_plus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_sensor" link2="rightarm_cup_wall_y_minus" reason="Never"/>
+
+    <!-- wall-to-wall pairs -->
+    <disable_collisions link1="rightarm_cup_wall_x_plus"  link2="rightarm_cup_wall_x_minus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_wall_y_plus"  link2="rightarm_cup_wall_y_minus" reason="Never"/>
+
+    <disable_collisions link1="rightarm_cup_wall_x_plus"  link2="rightarm_cup_wall_y_plus"  reason="Never"/>
+    <disable_collisions link1="rightarm_cup_wall_x_plus"  link2="rightarm_cup_wall_y_minus" reason="Never"/>
+    <disable_collisions link1="rightarm_cup_wall_x_minus" link2="rightarm_cup_wall_y_plus"  reason="Never"/>
+    <disable_collisions link1="rightarm_cup_wall_x_minus" link2="rightarm_cup_wall_y_minus" reason="Never"/>
+
+
 </robot>

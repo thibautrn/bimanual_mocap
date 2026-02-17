@@ -1,1 +1,0 @@
-/home/thibaut/Documents/bimanual_mocap/build/bimanualrobot_gazebo/ament_cmake_core/bimanualrobot_gazeboConfig.cmake

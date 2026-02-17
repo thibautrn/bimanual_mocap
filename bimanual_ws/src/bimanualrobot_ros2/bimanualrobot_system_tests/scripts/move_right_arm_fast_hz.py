@@ -498,29 +498,55 @@ class WatchMidpointStreamer(Node):
         req = GetStateValidity.Request()
         req.robot_state = self._robot_state_from_qcmd(q_cmd)
         req.group_name = GROUP_NAME
+
         fut = self._gsv.call_async(req)
         rclpy.spin_until_future_complete(self, fut)
+
         if not fut.result():
             self.get_logger().error("GetStateValidity call failed; skipping check.")
             return True
 
         res = fut.result()
+
+        # ---- fast pass ----
         if res.valid:
             return True
 
+        # ---- print why invalid ----
+        # Note: MoveIt can mark invalid due to collision OR joint limits, etc.
+        self.get_logger().warn(
+            f"State INVALID: contacts={len(res.contacts)} "
+            f"(group='{req.group_name}')"
+        )
+
+        # Build whitelist normalized pairs once
+        whitelist = {self._norm_pair(a, b) for (a, b) in ALLOWED_CONTACT_PAIRS}
+
         if res.contacts:
+            # Each element is a moveit_msgs/msg/ContactInformation
             pairs = [self._norm_pair(c.contact_body_1, c.contact_body_2)
-                     for c in res.contacts]
-            non_whitelisted = [
-                p for p in pairs
-                if p not in {self._norm_pair(*pair)
-                             for pair in ALLOWED_CONTACT_PAIRS}
-            ]
+                    for c in res.contacts]
+
+            # Print every raw contact pair (deduplicated)
+            uniq_pairs = sorted(set(pairs))
+            self.get_logger().warn("Contacts reported by MoveIt:")
+            for (a, b) in uniq_pairs:
+                tag = "ALLOWED" if (a, b) in whitelist else "BLOCKED"
+                self.get_logger().warn(f"  - {a}  <->  {b}   [{tag}]")
+
+            non_whitelisted = [p for p in uniq_pairs if p not in whitelist]
+
+            # If everything is whitelisted, treat as valid
             if not non_whitelisted:
                 return True
+        else:
+            # No contacts list, but state invalid -> could be bounds/constraints
+            # There isn't always extra info in this service response.
+            self.get_logger().warn("No contacts returned. Likely joint limits/constraints.")
 
-        self.get_logger().warn("State INVALID (collision or limits). Not sending.")
+        self.get_logger().warn("Not sending q_cmd due to invalid state.")
         return False
+
 
     def _send_followtraj_traj(self, q_points, total_dt):
         if not q_points:

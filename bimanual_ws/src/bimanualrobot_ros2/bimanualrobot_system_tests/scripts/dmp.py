@@ -2,12 +2,12 @@ import os, glob, math, time
 import numpy as np
 
 # ======================= USER SETTINGS =======================
-INPUT_DIR   = "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/good"       # folder with *.txt (timestamp x y z)
-OUTPUT_DIR  = "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/good"         # we'll save baseline + weights here
-FILES       = sorted(glob.glob(os.path.join(INPUT_DIR, "wrist_*.txt")))  # or make a hardcoded list
+INPUT_DIR   = "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/joints"       # folder with *.txt (timestamp x y z)
+OUTPUT_DIR  = "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/joints"         # we'll save baseline + weights here
+FILES       = sorted(glob.glob(os.path.join(INPUT_DIR, "joints_*.txt")))  # or make a hardcoded list
 
 # DMP hyperparameters (robust defaults)
-M_BASIS     = 35          # number of RBFs per axis (25–50 is common)
+M_BASIS     = 25          # number of RBFs per axis (25–50 is common)
 ALPHA_S     = 5.0         # canonical decay
 K_SPRING    = 1000.0      # stiffness
 D_DAMP      = 2.0 * math.sqrt(K_SPRING)  # near-critical damping

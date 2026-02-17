@@ -49,6 +49,7 @@ install(PROGRAMS
   scripts/move_right_arm_base.py
   scripts/move_left_arm_basic.py
   scripts/servo_udp_bridge.py
+  scripts/robot_right_arm_record.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

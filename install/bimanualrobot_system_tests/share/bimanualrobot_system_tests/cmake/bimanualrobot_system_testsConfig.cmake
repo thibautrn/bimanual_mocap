@@ -1,1 +1,0 @@
-/home/thibaut/Documents/bimanual_mocap/build/bimanualrobot_system_tests/ament_cmake_core/bimanualrobot_system_testsConfig.cmake

@@ -1,1 +1,0 @@
-/home/thibaut/Documents/bimanual_mocap/build/dynamixel_interfaces/rosidl_generator_c/dynamixel_interfaces/srv/detail/reboot_dxl__struct.h
