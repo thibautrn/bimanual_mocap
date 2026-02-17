@@ -1,1 +1,0 @@
-/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_bringup/launch/hardware_check.launch.py

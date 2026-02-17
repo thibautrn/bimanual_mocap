@@ -1,1 +1,0 @@
-/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config/launch/demo.launch.py

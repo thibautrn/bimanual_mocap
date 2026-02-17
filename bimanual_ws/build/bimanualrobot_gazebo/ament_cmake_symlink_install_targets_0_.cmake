@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_gazebo/libball_leash_plugin.so" "TARGETS" "ball_leash_plugin" "LIBRARY_DESTINATION" "lib" "ARCHIVE_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

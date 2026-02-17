@@ -1,1 +1,0 @@
-/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_c/dynamixel_interfaces/srv/detail/set_data_to_dxl__type_support.h

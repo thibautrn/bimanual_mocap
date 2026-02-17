@@ -1,1 +1,0 @@
-/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_ros2/ament_cmake_core/bimanualrobot_ros2Config-version.cmake
