@@ -1,0 +1,12 @@
+
+# colcon artifacts (this repo lives inside bimanual_ws/src)
+../../build/
+../../install/
+../../log/
+
+# also ignore common python junk
+**/__pycache__/
+*.pyc
+
+# local mujoco checkout (not part of this repo)
+../../../bimanual_mujoco/

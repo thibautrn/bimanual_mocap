@@ -45,16 +45,16 @@ echo "Spawning rope rig (cube + rope + ball) at x=0.60, z=1.80 ..."
 #   -x 0.78 -y 0.55 -z 2.05 \
 #   -R 0.0 -P 0.0 -Y 0.0 &
 
-ROPE_XACRO="$(ros2 pkg prefix bimanualrobot_description)/share/bimanualrobot_description/urdf/tether_ball.urdf.xacro"
-ROPE_URDF="$(mktemp /tmp/rope_rig_XXXX.urdf)"
+# ROPE_XACRO="$(ros2 pkg prefix bimanualrobot_description)/share/bimanualrobot_description/urdf/tether_ball.urdf.xacro"
+# ROPE_URDF="$(mktemp /tmp/rope_rig_XXXX.urdf)"
 
-xacro "$ROPE_XACRO" > "$ROPE_URDF"
+# xacro "$ROPE_XACRO" > "$ROPE_URDF"
 
-ros2 run ros_gz_sim create \
-  -file "$ROPE_URDF" \
-  -name tether \
-  -x 1.0 -y 0.55 -z 1.5 \
-  -R 0.0 -P 0.0 -Y 0.0 &
+# ros2 run ros_gz_sim create \
+#   -file "$ROPE_URDF" \
+#   -name tether \
+#   -x 1.0 -y 0.55 -z 1.5 \
+#   -R 0.0 -P 0.0 -Y 0.0 &
 
 
 
