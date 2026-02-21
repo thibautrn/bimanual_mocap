@@ -19,7 +19,7 @@ LEFT = False  # Set to False to use right arm
 
 # ============================ CONFIG ============================
 
-LOG_DIR = Path("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_system_tests/scripts/logs/joints")
+LOG_DIR = Path("/home/asurite.ad.asu.edu/troisin/Documents/robot/mujoco_bimanual/logs/robot_episode")
 
 def arm(name):
     """Replace ARM with left or right based on LEFT global"""
@@ -45,7 +45,7 @@ MIN_JOINT_STEP_RAD = np.deg2rad(0.1)
 
 # DMP CONFIG
 BASELINE_PATH = str(LOG_DIR / "baseline.npz")
-WEIGHTS_PATH  = str(LOG_DIR / "joints_20260206_182508_weights.npz")
+WEIGHTS_PATH  = str(Path("/home/asurite.ad.asu.edu/troisin/Documents/robot/mujoco_bimanual/logs/real_icl_logs/202602191732/iter_002/weights_iter002.npz"))
 DMP_DT        = 0.025
 
 
