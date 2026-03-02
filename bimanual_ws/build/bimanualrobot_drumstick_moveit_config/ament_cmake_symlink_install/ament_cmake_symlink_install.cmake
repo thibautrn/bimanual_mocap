@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_drumstick_moveit_config/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/install/bimanualrobot_drumstick_moveit_config/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -55,6 +55,11 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
         # remove trailing slash
         string(SUBSTRING "${dir}" 0 ${offset} dir)
       endif()
+      
+      # Create destination directory.
+      # This does *not* solve the problem of empty directories WITHIN the install tree,
+      # but does make sure that the top-level directory specified by the caller gets created.
+      file(MAKE_DIRECTORY "${destination}")
 
       # glob recursive files
       set(relative_files "")
@@ -123,7 +128,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_drumstick_moveit_config/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/install/bimanualrobot_drumstick_moveit_config/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +186,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_drumstick_moveit_config/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/install/bimanualrobot_drumstick_moveit_config/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +256,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/install/bimanualrobot_drumstick_moveit_config/${destination}")
+      set(destination "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/install/bimanualrobot_drumstick_moveit_config/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -310,56 +315,56 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_drumstick_moveit_config" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_drumstick_moveit_config" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_drumstick_moveit_config" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/bimanualrobot_drumstick_moveit_config" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_drumstick_moveit_config" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_drumstick_moveit_config" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_drumstick_moveit_config" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/bimanualrobot_drumstick_moveit_config" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/environment")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/environment")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/environment")
 
-# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/environment")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/environment")
+# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/environment")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/environment")
 
 # install(FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/environment")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/environment")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/environment")
 
-# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/environment")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/environment")
+# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/environment")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/environment")
 
-# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
+# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
 
-# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
+# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
 
-# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
+# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
 
-# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
+# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
 
-# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
+# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
 
-# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_index/share/ament_index/resource_index/packages/bimanualrobot_drumstick_moveit_config" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_index/share/ament_index/resource_index/packages/bimanualrobot_drumstick_moveit_config" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_index/share/ament_index/resource_index/packages/bimanualrobot_drumstick_moveit_config" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_index/share/ament_index/resource_index/packages/bimanualrobot_drumstick_moveit_config" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_core/bimanualrobot_drumstick_moveit_configConfig.cmake" "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_core/bimanualrobot_drumstick_moveit_configConfig-version.cmake" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/cmake")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_core/bimanualrobot_drumstick_moveit_configConfig.cmake" "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_core/bimanualrobot_drumstick_moveit_configConfig-version.cmake" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/cmake")
+# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_core/bimanualrobot_drumstick_moveit_configConfig.cmake" "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_core/bimanualrobot_drumstick_moveit_configConfig-version.cmake" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/cmake")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_core/bimanualrobot_drumstick_moveit_configConfig.cmake" "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_drumstick_moveit_config/ament_cmake_core/bimanualrobot_drumstick_moveit_configConfig-version.cmake" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config/cmake")
 
-# install(FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config/package.xml" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config/package.xml" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
+# install(FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config/package.xml" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config/package.xml" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
 
 # install(DIRECTORY "launch" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config" "PATTERN_EXCLUDE" "setup_assistant.launch")
-ament_cmake_symlink_install_directory("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" DIRECTORY "launch" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config" "PATTERN_EXCLUDE" "setup_assistant.launch")
+ament_cmake_symlink_install_directory("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" DIRECTORY "launch" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config" "PATTERN_EXCLUDE" "setup_assistant.launch")
 
 # install(DIRECTORY "config" "scripts" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
-ament_cmake_symlink_install_directory("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" DIRECTORY "config" "scripts" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
+ament_cmake_symlink_install_directory("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" DIRECTORY "config" "scripts" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
 
 # install(PROGRAMS "scripts/spawn_drum.py" "DESTINATION" "lib/bimanualrobot_drumstick_moveit_config/")
-ament_cmake_symlink_install_programs("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" PROGRAMS "scripts/spawn_drum.py" "DESTINATION" "lib/bimanualrobot_drumstick_moveit_config/")
+ament_cmake_symlink_install_programs("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" PROGRAMS "scripts/spawn_drum.py" "DESTINATION" "lib/bimanualrobot_drumstick_moveit_config/")
 
 # install(FILES ".setup_assistant" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
-ament_cmake_symlink_install_files("/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES ".setup_assistant" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")
+ament_cmake_symlink_install_files("/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_drumstick_moveit_config" FILES ".setup_assistant" "DESTINATION" "share/bimanualrobot_drumstick_moveit_config")

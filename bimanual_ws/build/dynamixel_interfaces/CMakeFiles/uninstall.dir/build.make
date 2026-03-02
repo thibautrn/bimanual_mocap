@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces
+CMAKE_SOURCE_DIR = /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces
+CMAKE_BINARY_DIR = /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/uninstall.dir/depend
 

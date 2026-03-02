@@ -105,6 +105,7 @@
     <disable_collisions link1="rightarm_shoulder_link" link2="stand_link" reason="Never"/>
     <disable_collisions link1="rightarm_upper_arm_link" link2="stand_link" reason="Never"/>
     <disable_collisions link1="rightarm_forearm_link" link2="stand_link" reason="Never"/>
+    <disable_collisions link1="rightarm_forearm_link" link2="rightarm_shoulder_link" reason="Never"/>
     <disable_collisions link1="rightarm_shoulder_link" link2="rightarm_upper_arm_link" reason="Adjacent"/>
     <disable_collisions link1="rightarm_upper_arm_link" link2="rightarm_forearm_link" reason="Adjacent"/>
     <disable_collisions link1="rightarm_forearm_link" link2="rightarm_wrist_1_link" reason="Adjacent"/>
@@ -156,39 +157,23 @@
     <disable_collisions link1="leftarm_wrist_3_link" link2="rightarm_wrist_2_link" reason="Never"/>
     <disable_collisions link1="leftarm_wrist_3_link" link2="rightarm_wrist_3_link" reason="Never"/>
 
-    <disable_collisions link1="leftarm_cup_pole"        link2="leftarm_cup_bottom"       reason="Never"/>
-    <disable_collisions link1="leftarm_cup_pole"        link2="leftarm_cup_wall_x_plus"  reason="Never"/>
-    <disable_collisions link1="leftarm_cup_pole"        link2="leftarm_cup_wall_x_minus" reason="Never"/>
-    <disable_collisions link1="leftarm_cup_pole"        link2="leftarm_cup_wall_y_plus"  reason="Never"/>
-    <disable_collisions link1="leftarm_cup_pole"        link2="leftarm_cup_wall_y_minus" reason="Never"/>
+    <!-- leftarm_cup: disable with all physically-touching parent links.
+         Collisions with upper arm, shoulder, stand, and the right arm
+         are intentionally left ENABLED so MoveIt detects them. -->
+    <disable_collisions link1="leftarm_cup" link2="leftarm_ee_link"      reason="Adjacent"/>
+    <disable_collisions link1="leftarm_cup" link2="leftarm_wrist_3_link"  reason="Adjacent"/>
+    <disable_collisions link1="leftarm_cup" link2="leftarm_wrist_2_link"  reason="Never"/>
+    <disable_collisions link1="leftarm_cup" link2="leftarm_wrist_1_link"  reason="Never"/>
+    <disable_collisions link1="leftarm_cup" link2="leftarm_forearm_link"  reason="Never"/>
 
-    <disable_collisions link1="leftarm_cup_bottom"      link2="leftarm_cup_wall_x_plus"  reason="Never"/>
-    <disable_collisions link1="leftarm_cup_bottom"      link2="leftarm_cup_wall_x_minus" reason="Never"/>
-    <disable_collisions link1="leftarm_cup_bottom"      link2="leftarm_cup_wall_y_plus"  reason="Never"/>
-    <disable_collisions link1="leftarm_cup_bottom"      link2="leftarm_cup_wall_y_minus" reason="Never"/>
+    <!-- rightarm_cup: same logic -->
+    <disable_collisions link1="rightarm_cup" link2="rightarm_ee_link"      reason="Adjacent"/>
+    <disable_collisions link1="rightarm_cup" link2="rightarm_wrist_3_link"  reason="Adjacent"/>
+    <disable_collisions link1="rightarm_cup" link2="rightarm_wrist_2_link"  reason="Never"/>
+    <disable_collisions link1="rightarm_cup" link2="rightarm_wrist_1_link"  reason="Never"/>
+    <disable_collisions link1="rightarm_cup" link2="rightarm_forearm_link"  reason="Never"/>
 
-
-    <disable_collisions link1="rightarm_cup_wall_x_plus" link2="rightarm_cup_wall_y_plus"  reason="Never"/>
-    <disable_collisions link1="rightarm_cup_wall_x_plus" link2="rightarm_cup_wall_y_minus" reason="Never"/>
-    <disable_collisions link1="rightarm_cup_wall_x_minus" link2="rightarm_cup_wall_y_plus"  reason="Never"/>
-    <disable_collisions link1="rightarm_cup_wall_x_minus" link2="rightarm_cup_wall_y_minus" reason="Never"/>
-
-    <disable_collisions link1="rightarm_cup_pole"        link2="rightarm_cup_bottom"       reason="Never"/>
-    <disable_collisions link1="rightarm_cup_pole"        link2="rightarm_cup_wall_x_plus"  reason="Never"/>
-    <disable_collisions link1="rightarm_cup_pole"        link2="rightarm_cup_wall_x_minus" reason="Never"/>
-    <disable_collisions link1="rightarm_cup_pole"        link2="rightarm_cup_wall_y_plus"  reason="Never"/>
-    <disable_collisions link1="rightarm_cup_pole"        link2="rightarm_cup_wall_y_minus" reason="Never"/>
-
-    <disable_collisions link1="rightarm_cup_bottom"      link2="rightarm_cup_wall_x_plus"  reason="Never"/>
-    <disable_collisions link1="rightarm_cup_bottom"      link2="rightarm_cup_wall_x_minus" reason="Never"/>
-    <disable_collisions link1="rightarm_cup_bottom"      link2="rightarm_cup_wall_y_plus"  reason="Never"/>
-    <disable_collisions link1="rightarm_cup_bottom"      link2="rightarm_cup_wall_y_minus" reason="Never"/>
-
-
-    <disable_collisions link1="rightarm_cup_wall_x_plus" link2="rightarm_cup_wall_y_plus"  reason="Never"/>
-    <disable_collisions link1="rightarm_cup_wall_x_plus" link2="rightarm_cup_wall_y_minus" reason="Never"/>
-    <disable_collisions link1="rightarm_cup_wall_x_minus" link2="rightarm_cup_wall_y_plus"  reason="Never"/>
-    <disable_collisions link1="rightarm_cup_wall_x_minus" link2="rightarm_cup_wall_y_minus" reason="Never"/>
+    <!-- The two cups can collide with each other (intentionally NOT disabled) -->
     
 
 </robot>

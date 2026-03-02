@@ -1,0 +1,1 @@
+# t_sec  q1(shoulder_pan)  q2(shoulder_lift)  q3(elbow)   (joint angles in radians)

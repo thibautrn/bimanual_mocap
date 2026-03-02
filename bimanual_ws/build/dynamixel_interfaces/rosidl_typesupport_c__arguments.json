@@ -1,12 +1,12 @@
 {
   "package_name": "dynamixel_interfaces",
-  "output_dir": "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_typesupport_c/dynamixel_interfaces",
+  "output_dir": "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_typesupport_c/dynamixel_interfaces",
   "template_dir": "/opt/ros/jazzy/share/rosidl_typesupport_c/resource",
   "idl_tuples": [
-    "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces:msg/DynamixelState.idl",
-    "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces:srv/GetDataFromDxl.idl",
-    "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces:srv/SetDataToDxl.idl",
-    "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces:srv/RebootDxl.idl"
+    "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces:msg/DynamixelState.idl",
+    "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces:srv/GetDataFromDxl.idl",
+    "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces:srv/SetDataToDxl.idl",
+    "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces:srv/RebootDxl.idl"
   ],
   "ros_interface_dependencies": [
     "std_msgs:/opt/ros/jazzy/share/std_msgs/msg/Bool.idl",
@@ -82,10 +82,10 @@
     "/opt/ros/jazzy/share/rosidl_typesupport_c/resource/idl__type_support.cpp.em",
     "/opt/ros/jazzy/share/rosidl_typesupport_c/resource/msg__type_support.cpp.em",
     "/opt/ros/jazzy/share/rosidl_typesupport_c/resource/srv__type_support.cpp.em",
-    "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces/msg/DynamixelState.idl",
-    "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces/srv/GetDataFromDxl.idl",
-    "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces/srv/SetDataToDxl.idl",
-    "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces/srv/RebootDxl.idl",
+    "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces/msg/DynamixelState.idl",
+    "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces/srv/GetDataFromDxl.idl",
+    "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces/srv/SetDataToDxl.idl",
+    "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_adapter/dynamixel_interfaces/srv/RebootDxl.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/Bool.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/Byte.idl",
     "/opt/ros/jazzy/share/std_msgs/msg/ByteMultiArray.idl",

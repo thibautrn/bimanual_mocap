@@ -99,12 +99,12 @@
   <xacro:if value="$(arg use_cup_and_ball)">
     <!-- Left cup and ball - matching MuJoCo orientation (1.5707963 0 0) -->
     <xacro:cup_and_ball prefix="leftarm" parent="leftarm_ee_link">
-      <origin xyz="0 0.15 0.09" rpy="1.5707963 0 0" />
+      <origin xyz="0 0.01 0.09" rpy="1.5707963 0 0" />
     </xacro:cup_and_ball>
     
     <!-- Right cup and ball - ADD PI rotation to compensate for arm orientation difference -->
     <xacro:cup_and_ball prefix="rightarm" parent="rightarm_ee_link">
-      <origin xyz="0 -0.15 0.09" rpy="1.5707963 0 ${pi}" />
+      <origin xyz="0 -0.01 0.09" rpy="1.5707963 0 ${pi}" />
     </xacro:cup_and_ball>
   </xacro:if>
 

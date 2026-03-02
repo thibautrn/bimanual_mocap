@@ -1,1 +1,1 @@
-/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_description/ament_cmake_core/bimanualrobot_descriptionConfig-version.cmake
+/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_description/ament_cmake_core/bimanualrobot_descriptionConfig-version.cmake

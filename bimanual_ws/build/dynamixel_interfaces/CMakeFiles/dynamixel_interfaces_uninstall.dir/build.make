@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces
+CMAKE_SOURCE_DIR = /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces
+CMAKE_BINARY_DIR = /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces
 
 # Utility rule file for dynamixel_interfaces_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/dynamixel_interfaces_uninstall.dir/compiler_depend.make
 include CMakeFiles/dynamixel_interfaces_uninstall.dir/progress.make
 
 CMakeFiles/dynamixel_interfaces_uninstall:
-	/usr/bin/cmake -P /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 dynamixel_interfaces_uninstall: CMakeFiles/dynamixel_interfaces_uninstall
 dynamixel_interfaces_uninstall: CMakeFiles/dynamixel_interfaces_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/dynamixel_interfaces_uninstall.dir/clean:
 .PHONY : CMakeFiles/dynamixel_interfaces_uninstall.dir/clean
 
 CMakeFiles/dynamixel_interfaces_uninstall.dir/depend:
-	cd /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles/dynamixel_interfaces_uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles/dynamixel_interfaces_uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/dynamixel_interfaces_uninstall.dir/depend
 

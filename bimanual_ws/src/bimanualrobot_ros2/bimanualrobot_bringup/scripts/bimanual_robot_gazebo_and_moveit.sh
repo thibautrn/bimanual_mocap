@@ -30,7 +30,7 @@ sleep 15
 
 echo "Spawning rope rig (cube + rope + ball) at x=0.60, z=1.80 ..."
 # ros2 run ros_gz_sim create \
-#   -file "/home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/ball_only.sdf" \
+#   -file "/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/bimanualrobot_ros2/bimanualrobot_description/urdf/ball_only.sdf" \
 #   -name end_ball \
 #   -x 0.78 -y 0.55 -z 2.0 &
 

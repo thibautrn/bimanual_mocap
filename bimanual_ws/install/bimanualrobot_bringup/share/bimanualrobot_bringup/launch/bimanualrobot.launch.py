@@ -1,1 +1,1 @@
-/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/bimanualrobot_bringup/launch/bimanualrobot.launch.py
+/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/bimanualrobot_bringup/launch/bimanualrobot.launch.py

@@ -12,6 +12,9 @@ from sensor_msgs.msg import JointState
 from trajectory_msgs.msg import JointTrajectoryPoint
 from control_msgs.action import FollowJointTrajectory
 
+from moveit_msgs.srv import GetStateValidity
+from moveit_msgs.msg import RobotState
+
 from pathlib import Path
 
 # ============================ GLOBAL ARM SELECTION ============================
@@ -19,7 +22,7 @@ LEFT = False  # Set to False to use right arm
 
 # ============================ CONFIG ============================
 
-LOG_DIR = Path("/home/asurite.ad.asu.edu/troisin/Documents/robot/mujoco_bimanual/logs/robot_episode")
+LOG_DIR = Path("/home/asurite.ad.asu.edu/troisin/Documents/robot/mujoco_bimanual/logs/robot_sideways2")
 
 def arm(name):
     """Replace ARM with left or right based on LEFT global"""
@@ -39,13 +42,14 @@ JOINTS = [
 ]
 
 ACTION_NAME = arm("/ARM_arm_controller/follow_joint_trajectory")
+GROUP_NAME  = arm("ARMarm").replace("arm", "_arm")  # "left_arm" or "right_arm"
 
 CYCLE_SECONDS      = 0.025
 MIN_JOINT_STEP_RAD = np.deg2rad(0.1)
 
 # DMP CONFIG
 BASELINE_PATH = str(LOG_DIR / "baseline.npz")
-WEIGHTS_PATH  = str(Path("/home/asurite.ad.asu.edu/troisin/Documents/robot/mujoco_bimanual/logs/real_icl_logs/202602191732/iter_002/weights_iter002.npz"))
+WEIGHTS_PATH  = str(Path("/home/asurite.ad.asu.edu/troisin/Documents/robot/mujoco_bimanual/logs/robot_sideways2/weights_iter008.npz"))
 DMP_DT        = 0.025
 
 
@@ -147,12 +151,55 @@ class DMPRobotExecutor(Node):
 
         self._traj_ac = ActionClient(self, FollowJointTrajectory, ACTION_NAME)
 
+        # MoveIt collision checking
+        self._gsv = self.create_client(GetStateValidity, "/check_state_validity")
+
         self._last_dmp_time  = None
         self._pending_joints = None
         self._last_q_cmd     = None
 
     def _on_js(self, msg: JointState):
         self._latest_js = msg
+
+    def _robot_state_from_qcmd(self, q_cmd):
+        js = JointState()
+        js.name = JOINTS
+        js.position = list(map(float, q_cmd))
+        js.header.stamp = self.get_clock().now().to_msg()
+        rs = RobotState()
+        rs.joint_state = js
+        return rs
+
+    def _is_state_valid(self, q_cmd) -> bool:
+        if not self._gsv.wait_for_service(timeout_sec=0.5):
+            self.get_logger().warn("GetStateValidity not available; skipping check.")
+            return True
+
+        req = GetStateValidity.Request()
+        req.robot_state = self._robot_state_from_qcmd(q_cmd)
+        req.group_name  = GROUP_NAME
+
+        fut = self._gsv.call_async(req)
+        rclpy.spin_until_future_complete(self, fut)
+
+        if not fut.result():
+            self.get_logger().error("GetStateValidity call failed; skipping check.")
+            return True
+
+        res = fut.result()
+        if res.valid:
+            return True
+
+        self.get_logger().warn(
+            f"State INVALID: contacts={len(res.contacts)} "
+            f"(group='{req.group_name}')"
+        )
+        for c in res.contacts:
+            self.get_logger().warn(
+                f"  contact: '{c.contact_body_1}' <-> '{c.contact_body_2}'"
+            )
+        self.get_logger().warn("Not sending q_cmd due to invalid state.")
+        return False
 
     def _send_joint_trajectory(self, joint_angles):
         goal = FollowJointTrajectory.Goal()
@@ -224,6 +271,11 @@ class DMPRobotExecutor(Node):
                 if float(np.max(dq)) < MIN_JOINT_STEP_RAD:
                     rclpy.spin_once(self, timeout_sec=0.01)
                     continue
+
+            # Collision check before sending
+            if not self._is_state_valid(q_cmd):
+                rclpy.spin_once(self, timeout_sec=0.01)
+                continue
 
             self._last_q_cmd = q_cmd.copy()
             self._send_joint_trajectory(q_cmd)

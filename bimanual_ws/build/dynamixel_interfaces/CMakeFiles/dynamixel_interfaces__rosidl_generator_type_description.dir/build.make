@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces
+CMAKE_SOURCE_DIR = /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces
+CMAKE_BINARY_DIR = /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces
 
 # Utility rule file for dynamixel_interfaces__rosidl_generator_type_description.
 
@@ -77,8 +77,8 @@ rosidl_generator_type_description/dynamixel_interfaces/msg/DynamixelState.json: 
 rosidl_generator_type_description/dynamixel_interfaces/msg/DynamixelState.json: rosidl_adapter/dynamixel_interfaces/srv/GetDataFromDxl.idl
 rosidl_generator_type_description/dynamixel_interfaces/msg/DynamixelState.json: rosidl_adapter/dynamixel_interfaces/srv/SetDataToDxl.idl
 rosidl_generator_type_description/dynamixel_interfaces/msg/DynamixelState.json: rosidl_adapter/dynamixel_interfaces/srv/RebootDxl.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating type hashes for ROS interfaces"
-	/usr/bin/python3 /opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description --generator-arguments-file /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_type_description__arguments.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating type hashes for ROS interfaces"
+	/usr/bin/python3 /opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description --generator-arguments-file /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_type_description__arguments.json
 
 rosidl_generator_type_description/dynamixel_interfaces/srv/GetDataFromDxl.json: rosidl_generator_type_description/dynamixel_interfaces/msg/DynamixelState.json
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_type_description/dynamixel_interfaces/srv/GetDataFromDxl.json
@@ -106,6 +106,6 @@ CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/clean:
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/clean
 
 CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/depend:
-	cd /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces /home/thibaut/Documents/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces /home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/src/dynamixel_interfaces /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces /home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/dynamixel_interfaces__rosidl_generator_type_description.dir/depend
 

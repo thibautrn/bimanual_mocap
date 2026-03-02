@@ -1,1 +1,1 @@
-/home/thibaut/Documents/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_c/dynamixel_interfaces/msg/detail/dynamixel_state__struct.h
+/home/asurite.ad.asu.edu/troisin/Documents/robot/bimanual_mocap/bimanual_ws/build/dynamixel_interfaces/rosidl_generator_c/dynamixel_interfaces/msg/detail/dynamixel_state__struct.h
